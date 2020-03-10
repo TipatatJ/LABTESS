@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
             // Build message to reply back
             $messages = [
                 'type' => 'text',
-                'text' => json_encode($POST),
+                'text' => $content,
             ];
             
         }
@@ -31,7 +31,7 @@ if (!is_null($events['events'])) {
             // Build message to reply back
             $messages = [
                 'type' => 'text',
-                'text' => json_encode($POST),
+                'text' => $content,
             ];
         }
 
