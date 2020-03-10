@@ -3,7 +3,7 @@ $access_token = 'rlGsU0aqqoe8RO0VgHOB46l7vcJDjSHuDf4qaLXobD1veApbbIUtgG5D0UeywJO
 // Get POST body content
 $content = file_get_contents('php://input');
 
-echo $content.'<br>';
+//echo $content.'<br>';
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
             // Build message to reply back
             $messages = [
                 'type' => 'text',
-                'text' => $content,
+                'text' => json_encode($POST),
             ];
             
         }
