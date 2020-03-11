@@ -75,7 +75,15 @@ if (!is_null($events['events'])) {
                 มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3',
             ];
 
-            $jsonMsg = '{
+            $jsonMsg = '[
+                {
+                    "type":"text",
+                    "text":" 
+                พื้นที่ใกล้ๆ '.$event['message']['address'].' 
+
+                มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3"
+                },
+                {
                 "type": "template",
                 "altText": "this is a buttons template",
                     "template": {
@@ -92,10 +100,11 @@ if (!is_null($events['events'])) {
                             "text": "PMriskAdvise"
                         }
                         ],
-                        "title": "สภาพอากาศพื้นที่ใกล้เคียง",
+                        "title": "เลือกคำแนะนำที่เหมาะกับคุณ",
                         "text": "มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3"
                     }
-                }';
+                }
+            ]';
 
                 $messages = json_decode($jsonMsg, true);
         }
