@@ -82,14 +82,16 @@ if (!is_null($events['events'])) {
                         "type": "buttons",
                         "actions": [
                         {
-                            "type": "message",
+                            "type": "postback",
                             "label": "คำแนำนำสำหรับคนปกติ",
-                            "text": "PMgeneralAdvise"
+                            "text": "PMgeneralAdvise",
+                            "data": "'.$text['pm2.5'].'"
                         },
                         {
-                            "type": "message",
+                            "type": "postback",
                             "label": "คำแนะนำคนมีความเสี่ยง",
-                            "text": "PMriskAdvise"
+                            "text": "PMriskAdvise",
+                            "data": "'.$text['pm2.5'].'"
                         }
                         ],
                         "title": "สภาพอากาศพื้นที่ใกล้เคียง",
