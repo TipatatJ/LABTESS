@@ -113,7 +113,8 @@ function getNearByCAirPM($Lat,$Long){
         'name' => 'Test'
     );
     # Create a connection
-    $url = 'http://c-air.siitgis.com/api/v1/pm25.php';
+    //$url = 'http://c-air.siitgis.com/api/v1/pm25.php';
+    $url = 'https://c-air.siitgis.com/api/v1/pm25.php';
     $content=file_get_contents($url);
     $data=json_decode($content);
 
@@ -146,6 +147,6 @@ function getNearByCAirPM($Lat,$Long){
     
 
     //return $jsonC_air;
-    return substr('*'.$curlResponse.'*', 0, 400);
+    return substr('*'.$data.'*', 0, 400);
 }
 ?>
