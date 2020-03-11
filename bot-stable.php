@@ -57,20 +57,6 @@ if (!is_null($events['events'])) {
             } */
             
         }
-        else if($event['message']['type'] == 'location'){
-            // Get text sent
-            $text = $content;
-            // Get replyToken
-            $replyToken = $event['replyToken'];
-            // Build message to reply back
-
-            $text = getNearByCAirPM($event['message']['latitude'], $event['message']['longitude']);
-
-            $messages = [
-                'type' => 'text',
-                'text' => $text,
-            ];
-        }
         else{
             // Get text sent
             $text = $content;
@@ -103,62 +89,4 @@ if (!is_null($events['events'])) {
     }
 }
 echo "OK";
-
-
-function getNearByCAirPM($Lat,$Long){
-
-    # Our new data
-    $data = array(
-        'election' => 1,
-        'name' => 'Test'
-    );
-    # Create a connection
-    $url = 'http://c-air.siitgis.com/api/v1/pm25.php';
-    $ch = curl_init($url);
-    # Form data string
-    $postString = http_build_query($data, '', '&');
-    # Setting our options
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    # Get the response
-    $curlResponse = curl_exec($ch);
-    curl_close($ch);
-
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
-	date_default_timezone_set("Asia/Bangkok");
-
-    /* $groupID = 2; //$_POST['groupLINE'];
-    switch($groupID){
-        case 1:
-            //NOTIFY GROUP Wiztech Proactive Health Notify
-            $sToken = "7wtLo2RFBGMm66XPBZi0CvtSgQG8T9hjDJtIMX03njD";
-            break;
-        case 2:
-            //NOTIFY GROUP ห้องเรียนหมอปอง
-            $sToken = "wq02YAYx6MTsdIQPLcpl3PhxygYZ0gNuCWg5khwdTzf";
-            break;
-        case 3:
-            //NOTIFY GROUP Wiztech BnB
-            $sToken = 'eunEDKajKCG5BBpwKuRJsShQZhgh9cOsVNf7gkJqPG4';
-            break;
-    } */
-
-    
-
-    $curlResponse = explode('"data": ', $curlResponse);
-    $curlResponse = substr($curlResponse[1], 0, -2);
-
-    //echo '<br>'.$curlResponse;
-    //echo '<hr>';
-
-    $jsonC_air = json_decode('['.$curlResponse.']', true);
-
-    
-
-    //return $jsonC_air;
-    return 'there are '.count($jsonC_air).' Air quality station';
-}
 ?>
