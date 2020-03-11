@@ -65,11 +65,11 @@ if (!is_null($events['events'])) {
             // Build message to reply back
 
             $text = getNearByCAirPM($event['message']['latitude'], $event['message']['longitude']);
-            echo '#'.$text.'#';
+            //echo '#'.$text.'#';
 
             $messages = [
                 'type' => 'text',
-                'text' => $text,
+                'text' => $event['message']['address'].'\n'.$text,
             ];
         }
         else{
