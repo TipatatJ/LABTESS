@@ -83,13 +83,13 @@ if (!is_null($events['events'])) {
                         "actions": [
                         {
                             "type": "message",
-                            "label": "Homeopathy",
-                            "text": "สืบจากหวัด"
+                            "label": "คำแนำนำสำหรับคนปกติ",
+                            "text": "PMgeneralAdvise"
                         },
                         {
                             "type": "message",
-                            "label": "PM2.5",
-                            "text": "เนื้อหาจะตามมาในอนาคต"
+                            "label": "คำแนะนำคนมีความเสี่ยง",
+                            "text": "PMriskAdvise"
                         }
                         ],
                         "title": "สภาพอากาศพื้นที่ใกล้เคียง",
