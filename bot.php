@@ -148,13 +148,13 @@ function getNearByCAirPM($Lat,$Long){
 
     
 
-    $curlResponse = explode('"data": ', $curlResponse);
-    $curlResponse = substr($curlResponse[1], 0, -2);
+    //$curlResponse = explode('"data": ', $curlResponse);
+    //$curlResponse = substr($curlResponse[1], 0, -2);
 
     //echo '<br>'.$curlResponse;
     //echo '<hr>';
 
-    $jsonC_air = json_decode('['.$curlResponse.']', true);
+    //$jsonC_air = json_decode('['.$curlResponse.']', true);
 
     
 
