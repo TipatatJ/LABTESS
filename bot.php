@@ -69,7 +69,9 @@ if (!is_null($events['events'])) {
 
             $messages = [
                 'type' => 'text',
-                'text' => $event['message']['address'].'\n'.$text,
+                'text' => ' 
+                พื้นที่ใกล้ๆ '.$event['message']['address'].' 
+                มีปริมาณ PM2.5 ที่ '.$text['pm2.5'],
             ];
         }
         else{
