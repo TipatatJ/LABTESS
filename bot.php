@@ -71,7 +71,8 @@ if (!is_null($events['events'])) {
                 'type' => 'text',
                 'text' => ' 
                 พื้นที่ใกล้ๆ '.$event['message']['address'].' 
-                มีปริมาณ PM2.5 ที่ '.$text['pm2.5'],
+                
+                มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3',
             ];
         }
         else{
@@ -159,7 +160,7 @@ function getNearByCAirPM($lat1,$lon1){
     }
 
     //return $jsonC_air;
-    return json_encode($closestStation);
+    return $closestStation;
 }
 
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
