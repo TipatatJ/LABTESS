@@ -57,6 +57,17 @@ if (!is_null($events['events'])) {
             } */
             
         }
+        else if($event['message']['type'] == 'location'){
+            // Get text sent
+            $text = $content;
+            // Get replyToken
+            $replyToken = $event['replyToken'];
+            // Build message to reply back
+            $messages = [
+                'type' => 'text',
+                'text' => 'Latitude '.$event['message']['latitude'].'<br>Longitude '.$event['message']['longitude'],
+            ];
+        }
         else{
             // Get text sent
             $text = $content;
