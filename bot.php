@@ -64,7 +64,7 @@ if (!is_null($events['events'])) {
             $replyToken = $event['replyToken'];
             // Build message to reply back
 
-            //getNearByCAirPM($event['message']['latitude'], $event['message']['longitude']);
+            getNearByCAirPM($event['message']['latitude'], $event['message']['longitude']);
 
             $messages = [
                 'type' => 'text',
@@ -151,7 +151,7 @@ function getNearByCAirPM($Lat,$Long){
     $curlResponse = explode('"data": ', $curlResponse);
     $curlResponse = substr($curlResponse[1], 0, -2);
 
-    //echo '<br>'.$curlResponse;
+    echo '<br>'.$curlResponse;
     //echo '<hr>';
 
     $jsonC_air = json_decode('['.$curlResponse.']', true);
