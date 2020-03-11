@@ -65,7 +65,8 @@ if (!is_null($events['events'])) {
             // Build message to reply back
             $messages = [
                 'type' => 'text',
-                'text' => 'Latitude '.$event['message']['latitude'].'<br>Longitude '.$event['message']['longitude'],
+                'text' => 'Latitude '.$event['message']['latitude'].'
+                Longitude '.$event['message']['longitude'],
             ];
         }
         else{
