@@ -116,7 +116,7 @@ function getNearByCAirPM($Lat,$Long){
     //$url = 'http://c-air.siitgis.com/api/v1/pm25.php';
     $url = 'https://c-air.siitgis.com/api/v1/pm25.php';
     $content=file_get_contents($url);
-    $data=json_decode($content);
+    //$data=json_decode($content);
 
     /* $groupID = 2; //$_POST['groupLINE'];
     switch($groupID){
@@ -147,6 +147,6 @@ function getNearByCAirPM($Lat,$Long){
     
 
     //return $jsonC_air;
-    return substr('*'.$data.'*', 0, 400);
+    return substr('*'.$content.'*', 0, 400);
 }
 ?>
