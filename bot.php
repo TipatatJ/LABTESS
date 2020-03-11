@@ -64,7 +64,7 @@ if (!is_null($events['events'])) {
             $replyToken = $event['replyToken'];
             // Build message to reply back
 
-            getNearByCAirPM($event['message']['latitude'], $event['message']['longitude']);
+            //getNearByCAirPM($event['message']['latitude'], $event['message']['longitude']);
 
             $messages = [
                 'type' => 'text',
