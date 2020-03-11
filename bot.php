@@ -159,6 +159,6 @@ function getNearByCAirPM($Lat,$Long){
     
 
     //return $jsonC_air;
-    return substr('*'.$curlResponse.'*', 0, 100);
+    return substr('*'.$curlResponse.'*', 0, 400);
 }
 ?>
