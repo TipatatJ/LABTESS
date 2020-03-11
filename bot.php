@@ -65,6 +65,7 @@ if (!is_null($events['events'])) {
             // Build message to reply back
 
             $text = getNearByCAirPM($event['message']['latitude'], $event['message']['longitude']);
+            echo '#'.$text.'#';
 
             $messages = [
                 'type' => 'text',
@@ -115,7 +116,7 @@ function getNearByCAirPM($Lat,$Long){
     # Create a connection
     //$url = 'http://c-air.siitgis.com/api/v1/pm25.php';
     $url = 'https://c-air.siitgis.com/api/v1/pm25.php';
-    $content=file_get_contents($url);
+    $curlResponse=file_get_contents($url);
     //$data=json_decode($content);
 
     /* $groupID = 2; //$_POST['groupLINE'];
@@ -136,8 +137,8 @@ function getNearByCAirPM($Lat,$Long){
 
     
 
-    //$curlResponse = explode('"data": ', $curlResponse);
-    //$curlResponse = substr($curlResponse[1], 0, -2);
+    $curlResponse = explode('"data": ', $curlResponse);
+    $curlResponse = substr($curlResponse[1], 0, -2);
 
     //echo '<br>'.$curlResponse;
     //echo '<hr>';
@@ -147,6 +148,6 @@ function getNearByCAirPM($Lat,$Long){
     
 
     //return $jsonC_air;
-    return substr('*'.$content.'*', 0, 400);
+    return substr($urlResponse, 0, 400);
 }
 ?>
