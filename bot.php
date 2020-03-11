@@ -114,21 +114,8 @@ function getNearByCAirPM($Lat,$Long){
     );
     # Create a connection
     $url = 'http://c-air.siitgis.com/api/v1/pm25.php';
-    $ch = curl_init($url);
-    # Form data string
-    $postString = http_build_query($data, '', '&');
-    # Setting our options
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    # Get the response
-    $curlResponse = curl_exec($ch);
-    curl_close($ch);
-
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
-	date_default_timezone_set("Asia/Bangkok");
+    $content=file_get_contents($url);
+    $data=json_decode($content);
 
     /* $groupID = 2; //$_POST['groupLINE'];
     switch($groupID){
