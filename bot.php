@@ -150,7 +150,7 @@ function getNearByCAirPM($lat1,$lon1){
     foreach($jsonC_air as $key=>$arrStation){
         $lat2 = $arrStation['latitude'];
         $lon2 = $arrStation['longitude'];
-        $arrStation['distance'] = distance($lat1, $lon1, $lat2, $lon2, 'K')
+        $arrStation['distance'] = distance($lat1, $lon1, $lat2, $lon2, 'K');
         if($arrStation['distance'] < $closestStation['distance']){
             $closestStation = $arrStation;
         }
