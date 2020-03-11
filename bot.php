@@ -97,7 +97,7 @@ if (!is_null($events['events'])) {
                 }
                 }';
 
-
+                $messages = json_decode($jsonMsg, true);
         }
         else{
             // Get text sent
