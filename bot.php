@@ -159,6 +159,6 @@ function getNearByCAirPM($Lat,$Long){
     
 
     //return $jsonC_air;
-    return 'there are '.count($jsonC_air).' Air quality station';
+    return substr($curlResponse, 0, 20);
 }
 ?>
