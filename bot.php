@@ -71,9 +71,33 @@ if (!is_null($events['events'])) {
                 'type' => 'text',
                 'text' => ' 
                 พื้นที่ใกล้ๆ '.$event['message']['address'].' 
-                
+
                 มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3',
             ];
+
+            $jsonMsg = '{
+                "type": "template",
+                "altText": "this is a buttons template",
+                "template": {
+                    "type": "buttons",
+                    "actions": [
+                    {
+                        "type": "message",
+                        "label": "Homeopathy",
+                        "text": "สืบจากหวัด"
+                    },
+                    {
+                        "type": "message",
+                        "label": "PM2.5",
+                        "text": "เนื้อหาจะตามมาในอนาคต"
+                    }
+                    ],
+                    "title": "คำแนะนำพิเศษจาก อ.บรรจบ",
+                    "text": "เราได้รวบรวมเทคนิคการดูแลตัวเองจากประสบการณ์กว่า 30 ปี"
+                }
+                }';
+
+
         }
         else{
             // Get text sent
