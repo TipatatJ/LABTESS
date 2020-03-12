@@ -94,13 +94,13 @@ if (!is_null($events['events'])) {
                             "type": "postback",
                             "label": "คำแนำนำสำหรับคนปกติ",
                             "text": "PMgeneralAdvise",
-                            "data": '.$text['pm2.5'].'
+                            "data": "'.$text['pm2.5'].'"
                         },
                         {
                             "type": "postback",
                             "label": "คำแนะนำคนมีความเสี่ยง",
                             "text": "PMriskAdvise",
-                            "data": '.$text['pm2.5'].'
+                            "data": "'.$text['pm2.5'].'"
                         }
                         ],
                         "title": "สภาพอากาศพื้นที่ใกล้เคียง",
@@ -116,9 +116,7 @@ if (!is_null($events['events'])) {
             // Get replyToken
             $replyToken = $event['replyToken'];
             // Build message to reply back
-
             
-
             $messages = [
                 'type' => 'text',
                 'text' => 'NON MESSAGE TYPE\n'.$content,
