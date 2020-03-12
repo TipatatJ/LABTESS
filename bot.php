@@ -94,13 +94,13 @@ if (!is_null($events['events'])) {
                             "type": "postback",
                             "label": "คำแนำนำสำหรับคนปกติ",
                             "text": "PMgeneralAdvise",
-                            "data": {"of":"PMgeneralAdvise","PM2.5":'.$text['pm2.5'].'}
+                            "data": "PMgeneralAdvise,'.$text['pm2.5'].'"
                         },
                         {
                             "type": "postback",
                             "label": "คำแนะนำคนมีความเสี่ยง",
                             "text": "PMriskAdvise",
-                            "data": {"of":"PMAdvise","PM2.5":'.$text['pm2.5'].'}
+                            "data": "PMriskAdvise,'.$text['pm2.5'].'"
                         }
                         ],
                         "title": "สภาพอากาศพื้นที่ใกล้เคียง",
