@@ -110,6 +110,24 @@ if (!is_null($events['events'])) {
 
                 $messages = json_decode($jsonMsg, true);
         }
+        else if($event['message']['type'] == 'postback'){
+            / Get text sent
+            $text = $content;
+            // Get replyToken
+            $replyToken = $event['replyToken'];
+            // Build message to reply back
+
+            $data = explode(",",$event['message']['data']);
+            
+
+
+
+            $messages = [
+                'type' => 'text',
+                'text' => $data[0].' 
+                          '.$data[1],
+            ];
+        }
         else{
             // Get text sent
             $text = $content;
