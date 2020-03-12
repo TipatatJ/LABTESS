@@ -27,7 +27,7 @@ if (!is_null($events['events'])) {
                     exit;
                     break;
                 case 'PMriskAdvise':
-                    exit;
+                    exit; 
                     break;
             }
 
