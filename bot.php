@@ -22,6 +22,15 @@ if (!is_null($events['events'])) {
                 'text' => $content,
             ];
 
+            switch($text){
+                case 'PMgeneralAdvise':
+                    exit;
+                    break;
+                case 'PMriskAdvise':
+                    exit;
+                    break;
+            }
+
             //$userMessage = $text; // เก็บค่าข้อความที่ผู้ใช้พิมพ์
              
             /* switch($userMessage){
