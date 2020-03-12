@@ -94,13 +94,13 @@ if (!is_null($events['events'])) {
                             "type": "postback",
                             "label": "คำแนำนำสำหรับคนปกติ",
                             "text": "PMgeneralAdvise",
-                            "data": "'.$text['pm2.5'].'"
+                            "data": "{"of":"PMgeneralAdvise","PM2.5":'.$text['pm2.5'].'}"
                         },
                         {
                             "type": "postback",
                             "label": "คำแนะนำคนมีความเสี่ยง",
                             "text": "PMriskAdvise",
-                            "data": "'.$text['pm2.5'].'"
+                            "data": "{"of":"PMriskAdvise","PM2.5":'.$text['pm2.5'].'}"
                         }
                         ],
                         "title": "สภาพอากาศพื้นที่ใกล้เคียง",
@@ -109,6 +109,20 @@ if (!is_null($events['events'])) {
                 }';
 
                 $messages = json_decode($jsonMsg, true);
+        }
+        else if($event['message']['type'] == 'postback'){
+            / Get text sent
+            $text = $content;
+            // Get replyToken
+            $replyToken = $event['replyToken'];
+            // Build message to reply back
+
+            
+
+            $messages = [
+                'type' => 'text',
+                'text' => 'NON MESSAGE TYPE\n'.$content,
+            ];
         }
         else{
             // Get text sent
