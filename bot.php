@@ -117,15 +117,14 @@ if (!is_null($events['events'])) {
             $replyToken = $event['replyToken'];
             // Build message to reply back
 
-            $data = explode(",",$event['message']['data']);
+            $data = $event['message']['data']);
             
 
 
 
             $messages = [
                 'type' => 'text',
-                'text' => $data[0].' 
-                          '.$data[1],
+                'text' => $data,
             ];
         }
         else{
