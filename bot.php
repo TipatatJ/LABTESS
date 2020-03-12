@@ -27,7 +27,7 @@ if (!is_null($events['events'])) {
                     exit;
                     break;
                 case 'PMriskAdvise':
-                    exit; 
+                    exit;
                     break;
             }
 
@@ -109,18 +109,6 @@ if (!is_null($events['events'])) {
                 }';
 
                 $messages = json_decode($jsonMsg, true);
-        }
-        else if($event['message']['type'] == 'postback'){
-            / Get text sent
-            $text = $content;
-            // Get replyToken
-            $replyToken = $event['replyToken'];
-            // Build message to reply back
-            
-            $messages = [
-                'type' => 'text',
-                'text' => 'NON MESSAGE TYPE\n'.$content,
-            ];
         }
         else{
             // Get text sent
