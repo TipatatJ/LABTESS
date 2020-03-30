@@ -221,8 +221,8 @@ function getUserLastMessage($userId){
     rtrim($fields_string,'&');
 
     $rtnWTH = file_get_contents($url.'?userId='.$userId);
-    $lastSMS = json_decode($rtnWTH);
-    return $lastSMS['sms_txt'];
+    //$lastSMS = json_decode($rtnWTH);
+    return $rtnWTH;
 }
 
 function getNearByCAirPM($lat1,$lon1){
