@@ -220,9 +220,9 @@ function getUserLastMessage($userId){
     foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
     rtrim($fields_string,'&');
 
-    $rtnWTH = file_get_contents($url.'?'.$fields_string);
+    $rtnWTH = file_get_contents($url.'?userId='.$userId);
 
-    return $url.'?'.$fields_string.'>>';
+    return $url.'?userId='.$userId.'>>';
 }
 
 function getNearByCAirPM($lat1,$lon1){
