@@ -9,7 +9,12 @@
                 ชื่อของท่านจะถูกระบุเป็น Anonymous
                 ',
             ];
-                
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'WTH ชื่อของท่านจะถูกระบุเป็น Anonymous', 
+            "me"=>$me);
+            post2WTH($fields);
             break;
         case $lastMsg == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน Homeopathy':
             $messages = [
@@ -18,6 +23,12 @@
                 กรุณาใส่ชื่อ นามสกุล ของท่าน 
                 ',
             ];
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'WTH กรุณาใส่ชื่อ นามสกุล ของท่าน', 
+            "me"=>$me);
+            post2WTH($fields);
             break;
         case $userId != $me:
             // Build message to reply back
