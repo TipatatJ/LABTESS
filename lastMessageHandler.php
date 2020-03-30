@@ -15,6 +15,7 @@
             "txt"=>'WTH ชื่อของท่านจะถูกระบุเป็น Anonymous', 
             "me"=>$me);
             post2WTH($fields);
+            exit;
             break;
         case $lastMsg == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน Homeopathy':
             $messages = [
@@ -29,6 +30,7 @@
             "txt"=>'WTH กรุณาใส่ชื่อ นามสกุล ของท่าน', 
             "me"=>$me);
             post2WTH($fields);
+            exit;
             break;
         case $userId != $me:
             // Build message to reply back
