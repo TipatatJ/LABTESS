@@ -150,8 +150,6 @@ if (!is_null($events['events'])) {
                 'replyToken' => $replyToken,
                 'messages' => [$messages]
             ];
-
-            $data['messages'] = $replyToken['source']['userId'];
             $post = json_encode($data);
             $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
             $ch = curl_init($url);
