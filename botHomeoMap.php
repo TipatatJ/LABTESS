@@ -227,6 +227,7 @@ function getUserLastMessage($userId){
     curl_setopt($ch,CURLOPT_URL, $url);
     curl_setopt($ch,CURLOPT_POST, count($fields));
     curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
 
     //execute post
     $rtnWTH = curl_exec($ch);
