@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
             // Get replyToken
             $replyToken = $event['replyToken'];
 
-            if("Ub3f6b90b35b51d817a89835f9afaf8c7"){
+            if($userId != "Ub3f6b90b35b51d817a89835f9afaf8c7"){
                 // Build message to reply back
                 $messages = [
                     'type' => 'text',
