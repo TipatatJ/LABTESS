@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
             // Get replyToken
             $replyToken = $event['replyToken'];
 
-            if($userId != $me){
+            /* if($userId != $me){
                 // Build message to reply back
                 $messages = [
                     'type' => 'text',
@@ -43,7 +43,7 @@ if (!is_null($events['events'])) {
                     
                     "."$text ($userId)",
                 ];
-            }
+            } */
 
             include_once('lastMessageHandler.php');
 
