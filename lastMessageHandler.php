@@ -12,7 +12,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'WTH ชื่อของท่านจะถูกระบุเป็น Anonymous', 
+            "txt"=>'WTH name as Anonymous', 
             "me"=>$me);
             post2WTH($fields);
             justMsg($messages, $replyToken);
@@ -28,7 +28,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'WTH กรุณาใส่ชื่อ นามสกุล ของท่าน', 
+            "txt"=>'WTH please input user name', 
             "me"=>$me);
             post2WTH($fields);
             justMsg($messages, $replyToken);
