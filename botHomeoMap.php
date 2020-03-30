@@ -244,7 +244,7 @@ function justMsg($messages, $replyToken, $access_token){
     "userId"=>'function debug',
     "txt"=>'justMsg '.$messages['text'], 
     "me"=>'function debug');
-    post2WTH($fields);
+    //post2WTH($fields);
 }
 
 function post2WTH($fields){
