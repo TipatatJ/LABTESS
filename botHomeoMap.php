@@ -222,7 +222,7 @@ function getUserLastMessage($userId){
 
     $rtnWTH = file_get_contents($url.'?'.$fields_string);
 
-    return $rtnWTH.'>>';
+    return $url.'?'.$fields_string.'>>';
 }
 
 function getNearByCAirPM($lat1,$lon1){
