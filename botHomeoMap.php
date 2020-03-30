@@ -210,7 +210,7 @@ if (!is_null($events['events'])) {
 }
 echo $text;
 
-function getUserLastMessage($userId);{
+function getUserLastMessage($userId){
     // Make a POST Request to Wiztech LINE sms
     $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsOfUser.php';
     $fields = array("userId"=>$userId);
