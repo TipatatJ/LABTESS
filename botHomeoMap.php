@@ -189,12 +189,12 @@ if (!is_null($events['events'])) {
 
         $arrPost = array("userID"=>$userId,"txt"=>$text, "me"=>"Ub3f6b90b35b51d817a89835f9afaf8c7");
 
-        $post = json_encode($arrPost);
+        //$post = json_encode($arrPost);
         $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $arrPost);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         $result = curl_exec($ch);
