@@ -241,7 +241,7 @@ function justMsg($messages, $replyToken, $access_token){
     curl_close($ch);
 
     $fields = array(
-    "userId"=>$userId,
+    "userId"=>'function debug',
     "txt"=>'justMsg '.$messages['text'], 
     "me"=>'function debug');
     post2WTH($fields);

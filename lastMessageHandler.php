@@ -8,6 +8,10 @@
                 'text' => ' 
                 ชื่อของท่านจะถูกระบุเป็น Anonymous
                 ',
+                'type' => 'text',
+                'text' => ' 
+                กรุณาระบุประสบการณ์ของท่านกับ Homeopathy
+                ',
             ];
 
             $fields = array(
