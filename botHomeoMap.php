@@ -9,6 +9,10 @@ $content = file_get_contents('php://input');
 @session_start();
 
 $events = json_decode($content, true);
+
+$replyToken = $event['replyToken'];
+$userId = $replyToken['source']['userId'];
+
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
     // Loop through each event
@@ -151,8 +155,8 @@ if (!is_null($events['events'])) {
                 'messages' => [$messages]
             ];
 
-            $data['message'] = $replyToken['source']['userId'];
-            $post = json_encode($data);
+            $data['messages'] = $userId;
+            $post = json_encode($data['messages']);
             $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
