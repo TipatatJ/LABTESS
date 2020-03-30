@@ -187,7 +187,7 @@ if (!is_null($events['events'])) {
             'messages' => [$messages]
         ]; */
 
-        $arrPost = array("userID"=>$userId),"txt"=>$text);
+        $arrPost = array("userId"=>$userId),"txt"=>$text, "me"=>"Ub3f6b90b35b51d817a89835f9afaf8c7");
 
         $post = json_encode($arrPost);
         $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
