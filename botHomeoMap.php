@@ -9,10 +9,6 @@ $content = file_get_contents('php://input');
 @session_start();
 
 $events = json_decode($content, true);
-
-$replyToken = $event['replyToken'];
-$userId = $replyToken['source']['userId'];
-
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
     // Loop through each event
