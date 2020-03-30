@@ -3,6 +3,14 @@
     switch($lasrMsg){
 
         case 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว':
+            $messages = [
+                'type' => 'text',
+                'text' => ' 
+                พื้นที่ใกล้ๆ '.$event['message']['address'].' 
+
+                มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3',
+            ];
+
             $jsonMsg = '{
                 "type": "template",
                 "altText": "this is a buttons template",
