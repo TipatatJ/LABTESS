@@ -22,11 +22,22 @@ if (!is_null($events['events'])) {
             $text = $event['message']['text'];
             // Get replyToken
             $replyToken = $event['replyToken'];
-            // Build message to reply back
-            $messages = [
-                'type' => 'text',
-                'text' => $text."($userId)",
-            ];
+
+            if("Ub3f6b90b35b51d817a89835f9afaf8c7"){
+                // Build message to reply back
+                $messages = [
+                    'type' => 'text',
+                    'text' => $text."($userId)",
+                ];
+            }
+            else{
+                $messages = [
+                    'type' => 'text',
+                    'text' => $content."
+                    
+                    "."$text ($userId)",
+                ];
+            }
 
             switch($text){
                 case 'PMgeneralAdvise':
