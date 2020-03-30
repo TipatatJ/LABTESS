@@ -1,6 +1,6 @@
 <?php
 
-    switch($lasrMsg){
+    switch(true){
 
         case $lastMsg == 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว':
             $messages = [
