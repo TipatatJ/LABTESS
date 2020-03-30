@@ -16,6 +16,9 @@ if (!is_null($events['events'])) {
     // Loop through each event
     foreach ($events['events'] as $event) {
         $userId = $event['source']['userId'];
+
+        $lastMsg = $_SESSION[$userId]['lastMsg'];
+
         // Reply only when message sent is in 'text' format
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
             // Get text sent
@@ -33,11 +36,13 @@ if (!is_null($events['events'])) {
             else{
                 $messages = [
                     'type' => 'text',
-                    'text' => $content."
+                    'text' => $lastMsg."
                     
                     "."$text ($userId)",
                 ];
             }
+
+            $_SESSION[$userId]['lastMsg'] = $text;
 
             switch($text){
                 case 'PMgeneralAdvise':
