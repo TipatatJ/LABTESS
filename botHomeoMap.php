@@ -239,6 +239,12 @@ function justMsg($messages, $replyToken){
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
     $result = curl_exec($ch);
     curl_close($ch);
+
+    $fields = array(
+    "userId"=>$userId,
+    "txt"=>'justMsg '.$messages['text'], 
+    "me"=>$me);
+    post2WTH($fields);
 }
 
 function post2WTH($fields){
