@@ -7,9 +7,7 @@
                 'type' => 'text',
                 'text' => ' 
                 ชื่อของท่านจะถูกระบุเป็น Anonymous
-                ',
-                'type' => 'text',
-                'text' => ' 
+
                 กรุณาระบุประสบการณ์ของท่านกับ Homeopathy
                 ',
             ];
@@ -19,6 +17,13 @@
             "txt"=>'WTH name as Anonymous', 
             "me"=>$me);
             post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('name'=>'Anonymous')), 
+            "me"=>$me);
+            post2WTH($fields);
+
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
