@@ -57,7 +57,7 @@ if (!is_null($events['events'])) {
                     break;
             }
 
-            msgToLine:
+            
 
             //$userMessage = $text; // เก็บค่าข้อความที่ผู้ใช้พิมพ์
              

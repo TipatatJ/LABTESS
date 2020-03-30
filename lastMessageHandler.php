@@ -28,7 +28,7 @@
                 }';
 
                 $messages = json_decode($jsonMsg, true);
-                goto msgToLine:
+                
             break;
         case 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน Homeopathy':
 
