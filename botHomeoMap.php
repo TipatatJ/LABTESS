@@ -220,24 +220,7 @@ function getUserLastMessage($userId){
     foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
     rtrim($fields_string,'&');
 
-    //open connection
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_POST, count($fields));
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  // RETURN THE CONTENTS OF THE CALL
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Content-Type: application/json',
-        'Content-Length: ' . strlen($fields_string))
-    );
-  $result = curl_exec($ch);
-
-  curl_close($ch);
-  
-  return $result;
-    //execute post
-    $rtnWTH = curl_exec($ch);
+    $rtnWTH = file_get_contents($url.$fields_string);
 
     return $rtnWTH.'>>';
 }
