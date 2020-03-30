@@ -163,6 +163,8 @@ if (!is_null($events['events'])) {
             //}
         }
 
+        //######################################################################################################
+
         // Make a POST Request to Messaging API to reply to sender
         $url = 'https://api.line.me/v2/bot/message/reply';
         $data = [
@@ -180,7 +182,9 @@ if (!is_null($events['events'])) {
         $result = curl_exec($ch);
         curl_close($ch);
 
-        // Make a POST Request to Wiztech LINS sms
+        //######################################################################################################
+
+        // Make a POST Request to Wiztech LINE sms
         $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsInp.php';
         /* $data = [
             'replyToken' => $replyToken,
@@ -207,7 +211,26 @@ if (!is_null($events['events'])) {
         curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
 
         //execute post
+        $rtnWTH = curl_exec($ch);
+
+        //######################################################################################################
+
+        // ECHOfrom WTH sms api 
+        $url = 'https://api.line.me/v2/bot/message/reply';
+        $data = [
+            'replyToken' => $replyToken,
+            'messages' => [$rtnWTH]
+        ];
+        $post = json_encode($data);
+        $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         $result = curl_exec($ch);
+        curl_close($ch);
 
         //close connection
         curl_close($ch);
