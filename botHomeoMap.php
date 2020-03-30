@@ -187,11 +187,11 @@ if (!is_null($events['events'])) {
             'messages' => [$messages]
         ]; */
 
-        $arrPost = array("userID"=>$userId,"txt"=>$text, "me"=>"Ub3f6b90b35b51d817a89835f9afaf8c7");
+        //$arrPost = array("userId"=>$userId,"txt"=>$text, "me"=>"Ub3f6b90b35b51d817a89835f9afaf8c7");
 
         //set POST variables
         //$url = 'http://localhost:82/Qweb/site1_Wiztech/WiztechSolution/include/smsInp.php';
-        $fields = array("userID"=>$userId,"txt"=>$text, "me"=>"Ub3f6b90b35b51d817a89835f9afaf8c7");
+        $fields = array("userId"=>$userId,"txt"=>$text, "me"=>"Ub3f6b90b35b51d817a89835f9afaf8c7");
 
 
         //url-ify the data for the POST
