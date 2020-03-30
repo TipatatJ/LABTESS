@@ -220,7 +220,7 @@ if (!is_null($events['events'])) {
     }
 }
 
-function justMsg($messages, $replyToken){
+function justMsg($messages, $replyToken, $access_token){
     
 
     // Make a POST Request to Messaging API to reply to sender
@@ -243,7 +243,7 @@ function justMsg($messages, $replyToken){
     $fields = array(
     "userId"=>$userId,
     "txt"=>'justMsg '.$messages['text'], 
-    "me"=>$me);
+    "me"=>'function debug');
     post2WTH($fields);
 }
 

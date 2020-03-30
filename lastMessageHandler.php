@@ -15,7 +15,7 @@
             "txt"=>'WTH name as Anonymous', 
             "me"=>$me);
             post2WTH($fields);
-            justMsg($messages, $replyToken);
+            justMsg($messages, $replyToken, $access_token);
             exit;
             break;
         case $lastMsg == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน Homeopathy' || $text == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน Homeopathy':
@@ -31,7 +31,7 @@
             "txt"=>'WTH please input user name', 
             "me"=>$me);
             post2WTH($fields);
-            justMsg($messages, $replyToken);
+            justMsg($messages, $replyToken, $access_token);
             exit;
             break;
         case $userId != $me:
