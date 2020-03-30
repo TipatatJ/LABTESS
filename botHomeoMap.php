@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
     foreach ($events['events'] as $event) {
         $userId = $event['source']['userId'];
 
-        $lastMsg = getUserLastMessage();
+        $lastMsg = getUserLastMessage($userId);
 
         // Reply only when message sent is in 'text' format
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
