@@ -189,15 +189,30 @@ if (!is_null($events['events'])) {
 
         $arrPost = array("userID"=>$userId,"txt"=>$text, "me"=>"Ub3f6b90b35b51d817a89835f9afaf8c7");
 
-        //$post = json_encode($arrPost);
-        $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $arrPost);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        //set POST variables
+        //$url = 'http://localhost:82/Qweb/site1_Wiztech/WiztechSolution/include/smsInp.php';
+        $fields = array(
+                            'lname'=>urlencode($last_name),
+                            'fname'=>urlencode($first_name),
+                            'email'=>urlencode($email)
+                    );
+
+        //url-ify the data for the POST
+        foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+        rtrim($fields_string,'&');
+
+        //open connection
+        $ch = curl_init();
+
+        //set the url, number of POST vars, POST data
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch,CURLOPT_POST, count($fields));
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+
+        //execute post
         $result = curl_exec($ch);
+
+        //close connection
         curl_close($ch);
 
         echo "%".$text. "%"; 
