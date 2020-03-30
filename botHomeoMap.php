@@ -220,7 +220,7 @@ if (!is_null($events['events'])) {
     }
 }
 
-function justMsg($txt, $replyToken){
+function justMsg($messages, $replyToken){
     
 
     // Make a POST Request to Messaging API to reply to sender
