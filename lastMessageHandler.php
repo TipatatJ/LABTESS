@@ -2,7 +2,7 @@
 
     switch(true){
 
-        case $lastMsg == 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว':
+        case $lastMsg == 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว' || $text == 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว':
             $messages = [
                 'type' => 'text',
                 'text' => ' 
@@ -15,9 +15,10 @@
             "txt"=>'WTH ชื่อของท่านจะถูกระบุเป็น Anonymous', 
             "me"=>$me);
             post2WTH($fields);
+            justMsg($messages, $replyToken);
             exit;
             break;
-        case $lastMsg == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน Homeopathy':
+        case $lastMsg == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน Homeopathy' || $text == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน Homeopathy':
             $messages = [
                 'type' => 'text',
                 'text' => ' 
@@ -30,6 +31,7 @@
             "txt"=>'WTH กรุณาใส่ชื่อ นามสกุล ของท่าน', 
             "me"=>$me);
             post2WTH($fields);
+            justMsg($messages, $replyToken);
             exit;
             break;
         case $userId != $me:
