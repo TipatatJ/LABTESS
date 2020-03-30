@@ -20,6 +20,8 @@ if (!is_null($events['events'])) {
 
         $lastMsg = getUserLastMessage($userId);
 
+        include_once('lastMessageHandler.php');
+
         // Reply only when message sent is in 'text' format
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
             // Get text sent
@@ -31,13 +33,13 @@ if (!is_null($events['events'])) {
                 // Build message to reply back
                 $messages = [
                     'type' => 'text',
-                    'text' => $text."($userId)",
+                    'text' => $text,
                 ];
             }
             else{
                 $messages = [
                     'type' => 'text',
-                    'text' => $lastMsg."
+                    'text' => $lastMsg." is your last message
                     
                     "."$text ($userId)",
                 ];
