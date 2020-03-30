@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 
         $lastMsg = getUserLastMessage($userId);
 
-        include_once('lastMessageHandler.php');
+        
 
         // Reply only when message sent is in 'text' format
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
@@ -45,7 +45,8 @@ if (!is_null($events['events'])) {
                 ];
             }
 
-            $_SESSION[$userId]['lastMsg'] = $text;
+            include_once('lastMessageHandler.php');
+
 
             switch($text){
                 case 'PMgeneralAdvise':
@@ -55,6 +56,8 @@ if (!is_null($events['events'])) {
                     exit;
                     break;
             }
+
+            msgToLine:
 
             //$userMessage = $text; // เก็บค่าข้อความที่ผู้ใช้พิมพ์
              
