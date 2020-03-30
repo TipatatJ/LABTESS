@@ -232,7 +232,7 @@ function getUserLastMessage($userId){
     //execute post
     $rtnWTH = curl_exec($ch);
 
-    return $rtnWTH;
+    return $rtnWTH.'>>';
 }
 
 function getNearByCAirPM($lat1,$lon1){
