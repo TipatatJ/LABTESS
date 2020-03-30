@@ -188,11 +188,45 @@ if (!is_null($events['events'])) {
         $result = curl_exec($ch);
         curl_close($ch);
 
+/*         //######################################################################################################
+
+        // Make a POST to save SMS to Wiztech LINE sms
+        $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsInp.php';
+*/
+
+        $fields = array(
+            "userId"=>$userId,
+            "txt"=>$text, 
+            "me"=>$me);
+            
+        post2WTH($fields);
+
+/*
+        //url-ify the data for the POST
+        foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+        rtrim($fields_string,'&');
+
+        //open connection
+        $ch = curl_init();
+
+        //set the url, number of POST vars, POST data
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch,CURLOPT_POST, count($fields));
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+
+        //execute post
+        $rtnWTH = curl_exec($ch);
+
+        //###################################################################################################### */
+    }
+}
+
+function post2WTH($fields){
         //######################################################################################################
 
-        // Make a POST Request to Wiztech LINE sms
+        // Make a POST to save SMS to Wiztech LINE sms
         $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsInp.php';
-        $fields = array("userId"=>$userId,"txt"=>$text, "me"=>$me);
+        //$fields = array("userId"=>$userId,"txt"=>$text, "me"=>$me);
 
 
         //url-ify the data for the POST
@@ -211,9 +245,7 @@ if (!is_null($events['events'])) {
         $rtnWTH = curl_exec($ch);
 
         //######################################################################################################
-    }
 }
-echo $text;
 
 function getUserLastMessage($userId){
     // Make a POST Request to Wiztech LINE sms
