@@ -191,11 +191,8 @@ if (!is_null($events['events'])) {
 
         //set POST variables
         //$url = 'http://localhost:82/Qweb/site1_Wiztech/WiztechSolution/include/smsInp.php';
-        $fields = array(
-                            'lname'=>urlencode($last_name),
-                            'fname'=>urlencode($first_name),
-                            'email'=>urlencode($email)
-                    );
+        $fields = array("userID"=>$userId,"txt"=>$text, "me"=>"Ub3f6b90b35b51d817a89835f9afaf8c7");
+
 
         //url-ify the data for the POST
         foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
