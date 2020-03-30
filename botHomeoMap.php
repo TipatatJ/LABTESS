@@ -1,4 +1,5 @@
 <?php
+$me = "Ub3f6b90b35b51d817a89835f9afaf8c7";
 $access_token = 'Vi36it4OCfAZRvvH1IBJfZ6F+rN1AT3GPL5j3hsz7WRawpf+rPYrjfwI5ROHFxrVFRo1TPh0w9Mb1NruinYvfudkyFFcKPLyTTcxe17nz5Ue8CW1gHP1HcYp18XRkBcJvlkaEoHy9V39QEPrC+bn2wdB04t89/1O/w1cDnyilFU=';
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -17,7 +18,7 @@ if (!is_null($events['events'])) {
     foreach ($events['events'] as $event) {
         $userId = $event['source']['userId'];
 
-        $lastMsg = $_SESSION[$userId]['lastMsg'];
+        $lastMsg = getUserLastMessage();
 
         // Reply only when message sent is in 'text' format
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
@@ -26,7 +27,7 @@ if (!is_null($events['events'])) {
             // Get replyToken
             $replyToken = $event['replyToken'];
 
-            if($userId != "Ub3f6b90b35b51d817a89835f9afaf8c7"){
+            if($userId != $me){
                 // Build message to reply back
                 $messages = [
                     'type' => 'text',
@@ -186,16 +187,7 @@ if (!is_null($events['events'])) {
 
         // Make a POST Request to Wiztech LINE sms
         $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsInp.php';
-        /* $data = [
-            'replyToken' => $replyToken,
-            'messages' => [$messages]
-        ]; */
-
-        //$arrPost = array("userId"=>$userId,"txt"=>$text, "me"=>"Ub3f6b90b35b51d817a89835f9afaf8c7");
-
-        //set POST variables
-        //$url = 'http://localhost:82/Qweb/site1_Wiztech/WiztechSolution/include/smsInp.php';
-        $fields = array("userId"=>$userId,"txt"=>$text, "me"=>"Ub3f6b90b35b51d817a89835f9afaf8c7");
+        $fields = array("userId"=>$userId,"txt"=>$text, "me"=>$me);
 
 
         //url-ify the data for the POST
@@ -214,32 +206,33 @@ if (!is_null($events['events'])) {
         $rtnWTH = curl_exec($ch);
 
         //######################################################################################################
-
-        // ECHOfrom WTH sms api 
-        $url = 'https://api.line.me/v2/bot/message/reply';
-        $data = [
-            'replyToken' => $replyToken,
-            'messages' => [$rtnWTH]
-        ];
-        $post = json_encode($data);
-        $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        $result = curl_exec($ch);
-        curl_close($ch);
-
-        //close connection
-        curl_close($ch);
-
-        echo "%".$text. "%"; 
     }
 }
 echo $text;
 
+function getUserLastMessage($userId);{
+    // Make a POST Request to Wiztech LINE sms
+    $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsOfUser.php';
+    $fields = array("userId"=>$userId);
+
+
+    //url-ify the data for the POST
+    foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+    rtrim($fields_string,'&');
+
+    //open connection
+    $ch = curl_init();
+
+    //set the url, number of POST vars, POST data
+    curl_setopt($ch,CURLOPT_URL, $url);
+    curl_setopt($ch,CURLOPT_POST, count($fields));
+    curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+
+    //execute post
+    $rtnWTH = curl_exec($ch);
+
+    return $rtnWTH;
+}
 
 function getNearByCAirPM($lat1,$lon1){
 
