@@ -1,5 +1,4 @@
 <?php
-$me = "Ub3f6b90b35b51d817a89835f9afaf8c7";
 $access_token = 'Vi36it4OCfAZRvvH1IBJfZ6F+rN1AT3GPL5j3hsz7WRawpf+rPYrjfwI5ROHFxrVFRo1TPh0w9Mb1NruinYvfudkyFFcKPLyTTcxe17nz5Ue8CW1gHP1HcYp18XRkBcJvlkaEoHy9V39QEPrC+bn2wdB04t89/1O/w1cDnyilFU=';
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -27,7 +26,7 @@ if (!is_null($events['events'])) {
             // Get replyToken
             $replyToken = $event['replyToken'];
 
-            if($userId != $me){
+            if($userId != "Ub3f6b90b35b51d817a89835f9afaf8c7"){
                 // Build message to reply back
                 $messages = [
                     'type' => 'text',
@@ -188,7 +187,7 @@ if (!is_null($events['events'])) {
             'messages' => [$messages]
         ]; */
 
-        $arrPost = array("userId"=>$userId),"txt"=>$text, "me"=>$me);
+        $arrPost = array("userID"=>$userId),"txt"=>$text);
 
         $post = json_encode($arrPost);
         $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
