@@ -12,7 +12,7 @@
                 ',
             ];
 
-            $jsonMsg = '[
+            $jsonMsg = '[{
                 "type": "template",
                 "altText": "this is a buttons template",
                     "template": {
@@ -34,7 +34,7 @@
                         "title": "สภาพอากาศพื้นที่ใกล้เคียง",
                         "text": "มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3"
                     }
-                ]';
+                }]';
 
             $messages = json_decode($jsonMsg, true);
 
