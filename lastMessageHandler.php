@@ -413,6 +413,20 @@
                 'text' => $text,
             ];
             break;
+        case $lastMsg == '{ "WTH":"LocationShare" }':
+            if($userId != $me){
+                $message = $defaultMsg;
+            }
+            else{
+        
+                $messages = [
+                    'type' => 'text',
+                    'text' => $lastMsg." is your last message
+                    
+                    "."$text ($userId)"."
+                    ".$defaultMsg,
+                ];
+            }
         default:
             if($userId != $me){
                 $message = $defaultMsg;
@@ -423,7 +437,8 @@
                     'type' => 'text',
                     'text' => $lastMsg." is your last message
                     
-                    "."$text ($userId)",
+                    "."$text ($userId)"."
+                    ".$defaultMsg,
                 ];
             }
 

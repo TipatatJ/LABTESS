@@ -6,7 +6,8 @@ $arrBreakKW = array('PMgeneralAdvise',
             'occupation,1','occupation,2','occupation,3',
             'eval,1','eval,2','eval,3','eval,X',
             'MD Prescriber','Lay Prescriber','Homeo user',
-            'Good','Neutral','Bad'
+            'Good','Neutral','Bad',
+            'Share on HomeoMap'
             );
 
 // Get POST body content
@@ -155,7 +156,7 @@ if (!is_null($events['events'])) {
                         {
                             "type": "postback",
                             "label": "แชร์ตำแหน่งบน HomeoMap",
-                            "text": "MyLocation",
+                            "text": "Share on HomeoMap",
                             "data": "MyLocation,1"
                         },
                         {
