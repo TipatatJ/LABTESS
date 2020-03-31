@@ -157,10 +157,11 @@
                 ถ้าคุณ '.$Uname.' อยากให้ทีมงานติดต่อกลับได้
                 ทาง Email
 
-                กรณีของการติดต่อกลับมีได้ 3 กรณี
+                กรณีของการติดต่อกลับมีได้ 4 กรณี
                 1) เพื่อยืนยันความน่าเชื่อถือของข้อมูลที่ท่านให้มา
                 2) เพื่อติดตามผลการใช้ยา Homeopathy เชิงการวิจัย เพื่อพัฒนา
                 3) เพื่อประสานงานเครือข่าย เช่น ให้ไปรับ Homeo ใกล้บ้าน
+                4) เพื่อแจ้งข่าวสาร ที่อาจมีมาจากสมาคม และชมรมต่างๆ ของ Homeopathy
 
                 หากไม่อยากรับการติดต่อ กรุณาพิมพ์ X
                 หากยินดีให้ติดต่อ กรุณาพิมพ์ Email ของท่าน 
@@ -176,6 +177,66 @@
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user email" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
+        case $lastMsg == '{ "WTH":"please input user email" }':
+            $jsonMsg = '{
+                "type": "template",
+                "altText": "this is a buttons template",
+                    "template": {
+                        "type": "buttons",
+                        "actions": [
+                        {
+                            "type": "postback",
+                            "label": "ดีมาก",
+                            "text": "Very good",
+                            "data": "evaluation"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "ดี",
+                            "text": "Good",
+                            "data": "evaluation"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "เฉยๆ",
+                            "text": "Neutral",
+                            "data": "evaluation"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "แย่",
+                            "text": "Bad",
+                            "data": "evaluation"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "แย่มาก",
+                            "text": "Very bad",
+                            "data": "evaluation"
+                        }
+                        ],
+                        "title": "หลังใช้ Homeo แล้ว รู้สึกอย่างไร",
+                        "text": "แขร์ประสบการณ์การใช้ Homeo ของท่าน"
+                    }
+                }';
+
+            $messages = json_decode($jsonMsg, true);
+            
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "email":"'.$text.'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"please eval Homeo" }', 
             "me"=>$me);
             post2WTH($fields);
 
