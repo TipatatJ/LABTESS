@@ -22,19 +22,19 @@
                             "type": "postback",
                             "label": "เป็น MD Prescriber",
                             "text": "MD Prescriber",
-                            "data": "occupation"
+                            "data": "{ "occupation":1}"
                         },
                         {
                             "type": "postback",
                             "label": "เป็น Lay Prescriber",
                             "text": "Lay Prescriber",
-                            "data": "occupation"
+                            "data": "{ "occupation":2}"
                         },
                         {
                             "type": "postback",
                             "label": "เป็นผู้เคยรับยา Homeo",
                             "text": "Homeo user",
-                            "data": "occupation"
+                            "data": "{ "occupation":3}"
                         }
                         ],
                         "title": "ประสบการณ์ของท่านกับ Homeopathy",
@@ -221,8 +221,8 @@
                             "data": "evaluation,1"
                         }
                         ],
-                        "title": "หลังใช้ Homeo รู้สึกอย่างไร",
-                        "text": "แขร์ประสบการณ์การใช้ของท่าน"
+                        "title": "ความรู้สึกหลังใช้ Homeo",
+                        "text": "แขร์ประสบการณ์ของท่าน"
                     }
                 }';
 
