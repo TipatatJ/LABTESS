@@ -48,7 +48,7 @@ if (!is_null($events['events'])) {
             include_once('lastMessageHandler.php');
 
 
-             switch(true){
+             /* switch(true){
                 case $text == 'PMgeneralAdvise':
                     exit;
                     break;
@@ -62,14 +62,14 @@ if (!is_null($events['events'])) {
                     "me"=>$me);
                     post2WTH($fields);
                     //$text = json_encode(json_decode($text, true)['events'][0]);
-            } 
+            }  */
 
             
-            /* $arrBreakKW = array('PMgeneralAdvise','PMriskAdvise','occupation,1','occupation,2','occupation,3','eval,1','eval,2','eval,3');
+            $arrBreakKW = array('PMgeneralAdvise','PMriskAdvise','occupation,1','occupation,2','occupation,3','eval,1','eval,2','eval,3');
 
-            if(in_array($text, $arrBreakKW){
+            if(in_array($text, $arrBreakKW)){
                 exit;
-            }) */
+            }
 
             //$userMessage = $text; // เก็บค่าข้อความที่ผู้ใช้พิมพ์
              
