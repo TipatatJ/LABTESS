@@ -212,8 +212,8 @@
                         {
                             "type": "postback",
                             "label": "ไม่เคยใช้ Homeo",
-                            "text": "eval,X",
-                            "data": "eval,4"
+                            "text": "no exp",
+                            "data": "eval,X"
                         }
                         ],
                         "title": "ความรู้สึกหลังได้ใช้ Homeo",
