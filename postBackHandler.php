@@ -57,6 +57,36 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
+        case $postData == 'occupation,3':
+            $Uname = json_decode($lastMsg,true)['name'];
+            $messages = [
+                'type' => 'text',
+                'text' => ' 
+                ถ้าคุณ '.$Uname.' เคยได้รับการรักษาด้วย Homeopathy
+                
+                ความเห็นของคุณเป็นสิ่งที่มีคุณค่ามาก
+                กรุณาบอกเราสักนิดว่า คุณได้รับ Homeopathy จากที่ไหน
+                และมีประสบการณ์การใช้ Homeopathy มาแล้วกี่ปี
+
+                ประโยชน์ที่จะได้รับในกรณีนี้ก็คือ รายชื่อของคุณ และความเห็น
+                จะขึ้นแสดงใน HomeoMap เพื่อเป็นข้อมูลให้คนที่ยังไม่รู้จัก
+                Homeopathy สามารถเห็นประสบการณ์การใช้ Homeopathy
+                ในคนไทยว่ามีมากน้อยแค่ไหน
+
+                หรือหากท่านไม่ประสงค์จะให้คนจาก Platform HomeoMap ค้นหา
+                ท่านเจอ ให้พิมพ์ X เพื่อปิดการค้นหา 
+                ',
+            ];
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('WTH'=>'use case experience'),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
         case $postData == '{ "WTH":"please input user name" }':
             $jsonMsg = '{
                 "type": "template",
