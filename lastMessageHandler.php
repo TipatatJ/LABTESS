@@ -172,6 +172,13 @@
             "txt"=>'{ "tel":"'.$text.'" }', 
             "me"=>$me);
             post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"please input user email" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
