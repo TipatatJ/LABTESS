@@ -4,7 +4,7 @@ $access_token = 'Vi36it4OCfAZRvvH1IBJfZ6F+rN1AT3GPL5j3hsz7WRawpf+rPYrjfwI5ROHFxr
 $arrBreakKW = array('PMgeneralAdvise',
             'PMriskAdvise',
             'occupation,1','occupation,2','occupation,3',
-            'eval,1','eval,2','eval,3',
+            'eval,1','eval,2','eval,3','eval,X',
             'MD Prescriber','Lay Prescriber','Homeo user',
             'Good','Neutral','Bad'
             );
@@ -177,7 +177,7 @@ if (!is_null($events['events'])) {
                 }';
 
                 $messages = json_decode($jsonMsg, true);
-                $text = json_encode($text,JSON_UNESCAPED_UNICODE);
+                $text = '{ "WTH":"LocationShare" }'; //json_encode($text,JSON_UNESCAPED_UNICODE);
         }
         else if($event['type'] == 'postback'){
             // Get text sent
