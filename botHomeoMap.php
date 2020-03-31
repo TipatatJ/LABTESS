@@ -6,8 +6,7 @@ $arrBreakKW = array('PMgeneralAdvise',
             'occupation,1','occupation,2','occupation,3',
             'eval,1','eval,2','eval,3','eval,X',
             'MD Prescriber','Lay Prescriber','Homeo user',
-            'Good','Neutral','Bad',
-            'Share on HomeoMap'
+            'Good','Neutral','Bad'
             );
 
 // Get POST body content
