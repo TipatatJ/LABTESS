@@ -86,19 +86,19 @@
                             "type": "postback",
                             "label": "เป็น MD Prescriber",
                             "text": "MD Prescriber",
-                            "data": "occupation"
+                            "data": "occupation,1"
                         },
                         {
                             "type": "postback",
                             "label": "เป็น Lay Prescriber",
                             "text": "Lay Prescriber",
-                            "data": "occupation"
+                            "data": "occupation,2"
                         },
                         {
                             "type": "postback",
                             "label": "เป็นผู้เคยรับยา Homeo",
                             "text": "Homeo user",
-                            "data": "occupation"
+                            "data": "occupation,3"
                         }
                         ],
                         "title": "ประสบการณ์ของท่านกับ Homeopathy",
@@ -194,34 +194,34 @@
                             "type": "postback",
                             "label": "ดีมาก",
                             "text": "Very good",
-                            "data": "evaluation"
+                            "data": "evaluation,5"
                         },
                         {
                             "type": "postback",
                             "label": "ดี",
                             "text": "Good",
-                            "data": "evaluation"
+                            "data": "evaluation,4"
                         },
                         {
                             "type": "postback",
                             "label": "เฉยๆ",
                             "text": "Neutral",
-                            "data": "evaluation"
+                            "data": "evaluation,3"
                         },
                         {
                             "type": "postback",
                             "label": "แย่",
                             "text": "Bad",
-                            "data": "evaluation"
+                            "data": "evaluation,2"
                         },
                         {
                             "type": "postback",
                             "label": "แย่มาก",
                             "text": "Very bad",
-                            "data": "evaluation"
+                            "data": "evaluation,1"
                         }
                         ],
-                        "title": "หลังใช้ Homeo แล้ว รู้สึกอย่างไร",
+                        "title": "หลังใช้ Homeo รู้สึกอย่างไร",
                         "text": "แขร์ประสบการณ์การใช้ของท่าน"
                     }
                 }';
