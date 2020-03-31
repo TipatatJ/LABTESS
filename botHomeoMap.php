@@ -166,11 +166,16 @@ if (!is_null($events['events'])) {
                 'type' => 'text',
                 'text' => '>>'.json_encode($event['postback']['data'], true),
             ]; */
-            
+
             include_once('postBackHandler.php');
 
             //BREAK ALL POST BACK form eventType "Postback"
-            $arrBreakKW = array('PMgeneralAdvise','PMriskAdvise','occupation,1','occupation,2','occupation,3','eval,1','eval,2','eval,3');
+            $arrBreakKW = array('PMgeneralAdvise',
+            'PMriskAdvise',
+            'occupation,1','occupation,2','occupation,3',
+            'eval,1','eval,2','eval,3',
+            'MD Prescriber','Lay Prescriber','Homeo user'
+            );
 
             if(in_array($text, $arrBreakKW)){
                 exit;
