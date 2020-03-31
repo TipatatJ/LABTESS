@@ -126,7 +126,11 @@ if (!is_null($events['events'])) {
 
             fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('my location'=>'{"lat":"'.$myLat.'","long":"'.$myLong.'"}'),JSON_UNESCAPED_UNICODE), 
+            "txt"=>json_encode(array(
+                'my location'=>array(
+                    "lat"=>$myLat,
+                    "long"=>$myLong)
+                ),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 
