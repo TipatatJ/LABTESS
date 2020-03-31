@@ -176,6 +176,7 @@ if (!is_null($events['events'])) {
                 }';
 
                 $messages = json_decode($jsonMsg, true);
+                $text = json_encode($text,JSON_UNESCAPED_UNICODE);
         }
         else if($event['type'] == 'postback'){
             // Get text sent
