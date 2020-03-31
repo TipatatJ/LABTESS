@@ -52,7 +52,7 @@ if (!is_null($events['events'])) {
                 ];
             } */
 
-            include_once('lastMessageHandler.php');
+            
 
 
              /* switch(true){
@@ -76,6 +76,8 @@ if (!is_null($events['events'])) {
             if(in_array($text, $arrBreakKW)){
                 exit;
             }
+
+            include_once('lastMessageHandler.php');
 
             //$userMessage = $text; // เก็บค่าข้อความที่ผู้ใช้พิมพ์
              
