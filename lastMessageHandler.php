@@ -150,6 +150,31 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
+        case: $lastMsg == '{ "WTH":"please input user tel" }':
+            $messages = [
+                'type' => 'text',
+                'text' => ' 
+                ถ้าคุณ '.$Uname.' อยากให้ทีมงานติดต่อกลับได้
+                ทาง Email
+
+                กรณีของการติดต่อกลับมีได้ 3 กรณี
+                1) เพื่อยืนยันความน่าเชื่อถือของข้อมูลที่ท่านให้มา
+                2) เพื่อติดตามผลการใช้ยา Homeopathy เชิงการวิจัย เพื่อพัฒนา
+                3) เพื่อประสานงานเครือข่าย เช่น ให้ไปรับ Homeo ใกล้บ้าน
+
+                หากไม่อยากรับการติดต่อ กรุณาพิมพ์ X
+                หากยินดีให้ติดต่อ กรุณาพิมพ์ Email ของท่าน 
+                ',
+            ];
+            
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "tel":"'.$text.'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
         case $userId != $me:
             // Build message to reply back
             $messages = [
