@@ -121,6 +121,15 @@ if (!is_null($events['events'])) {
             $replyToken = $event['replyToken'];
             // Build message to reply back
 
+            $myLat = $event['message']['latitude'];
+            $myLong = $event['message']['longitude'];
+
+            fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('my location'=>'{"lat":"'.$myLat.'","long":"'.$myLong.'"}'),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
             $text = getNearByCAirPM($event['message']['latitude'], $event['message']['longitude']);
             //echo '#'.$text.'#';
 
@@ -138,6 +147,12 @@ if (!is_null($events['events'])) {
                     "template": {
                         "type": "buttons",
                         "actions": [
+                        {
+                            "type": "postback",
+                            "label": "แชร์ตำแหน่งของคุณ",
+                            "text": "MyLocation",
+                            "data": "MyLocation,1"
+                        },
                         {
                             "type": "postback",
                             "label": "คำแนำนำสำหรับคนปกติ",
