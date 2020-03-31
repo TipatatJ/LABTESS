@@ -57,10 +57,8 @@ if (!is_null($events['events'])) {
                     break;
             } */
 
-            $arrBreakKW('PMgeneralAdvise','PMriskAdvise',
-                        'occupation,1','occupation,2','occupation,3',
-                        'eval,1','eval,2','eval,3'
-            )
+            
+            $arrBreakKW = array('PMgeneralAdvise','PMriskAdvise','occupation,1','occupation,2','occupation,3','eval,1','eval,2','eval,3');
 
             if(in_array($text, $arrBreakKW){
                 exit;
