@@ -154,7 +154,7 @@ if (!is_null($events['events'])) {
                         "actions": [
                         {
                             "type": "postback",
-                            "label": "แชร์ตำแหน่งของคุณ",
+                            "label": "แชร์ตำแหน่งบน HomeoMap",
                             "text": "MyLocation",
                             "data": "MyLocation,1"
                         },

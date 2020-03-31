@@ -1,5 +1,27 @@
 <?php
 
+    $defaultMsg = [
+                'type' => 'text',
+                'text' => ' 
+                ขอบคุณสำหรับข้อมูลประสบการณ์การใช้ Homeopathy ของท่าน
+
+                ท่านสามารถเปลี่ยนแปลงข้อมูลของท่านได้ตลอด ด้วยการเริ่มกรอกข้อมูลที่ ริชเมนู
+                หมายเหตุ:
+                - ระบบจะจดจำข้อมูลหลังสุดที่ท่านกรอกเท่านั้น
+                - ท่านเลือกเป็นได้แค่ MD, Lay Prescriber, User อย่างใดอย่างหนึ่ง
+                - ข้อมูลของ Anonymous จะถูกกลั่นกรองว่ามีความน่าเชื่อถือน้อยกว่าข้อมูลที่เจ้าของแสดงตัวตน
+                - ระบบจะไม่อนุญาตให้มีการติดต่อ MD ที่ไม่มีเลข ว. หรือไม่แสดงตัวตน เพื่อกันปัญฆาการแอบอ้างเป็นแพทย์
+                
+                หมายเหตุเพิมเติม:
+                - หากท่านมีข้อเสนออื่นใด ทางทีมงานยินดีรับฟัง ด้วยการพิมพ์คำว่า "ข้อเสนอแนะ" แล้วทางทีมงานจะนำข้อเสนอนั้นไปพิจารณาปรับปรุง Platform HomeoMap อย่างต่อเนื่องต่อไป
+                - หากท่านมีข้อร้องเรียน เกี่ยวกับข้อมูลที่ไม่ถูกต้อง กรุณาพิมพ์ "ร้องเรียน" เพื่อให้ทีมงานได้รับทราบ เพื่อพิจารณาแก้ไขข้อมูลให้ตรงตามความเป็นจริงต่อไป
+                - หากอยากทราบรายละเอียดเกี่ยวกับทีมงาน กรุณาพิมพ์ "About Us" เพื่อรู้จักเราให้มากขึ้น
+
+                ขอบคุณจากใจ
+                หมอปอง & ทีมงาน HomeoMap
+                ',
+            ];
+
     switch(true){
 
         case $lastMsg == 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว' || $text == 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว':
@@ -366,6 +388,24 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
+        case $text == '{"WTH":"MyLocation"}':
+            $messages = $defaultMsg;
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "user homeo caption":"'.$text.'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"please your location" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
         case $userId != $me:
             // Build message to reply back
             $messages = [
@@ -374,12 +414,21 @@
             ];
             break;
         default:
-            $messages = [
-                'type' => 'text',
-                'text' => $lastMsg." is your last message
-                
-                "."$text ($userId)",
-            ];
+            if($userId != $me){
+                $message = $defaultMsg;
+            }
+            else{
+        
+                $messages = [
+                    'type' => 'text',
+                    'text' => $lastMsg." is your last message
+                    
+                    "."$text ($userId)",
+                ];
+            }
+
+
+
             break;            
     }
 
