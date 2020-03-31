@@ -54,9 +54,14 @@ if (!is_null($events['events'])) {
                     break;
                 case $text == 'PMriskAdvise':
                     exit;
-                    break;
+                    break; 
                 default;
-                    $text = json_encode(json_decode($text, true)['events'][0]);
+                    $fields = array(
+                    "userId"=>$userId,
+                    "txt"=>'$$'.json_encode(json_decode($text, true)['events'][0]), 
+                    "me"=>$me);
+                    post2WTH($fields);
+                    //$text = json_encode(json_decode($text, true)['events'][0]);
             } 
 
             
