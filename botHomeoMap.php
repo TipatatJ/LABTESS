@@ -124,7 +124,7 @@ if (!is_null($events['events'])) {
             $myLat = $event['message']['latitude'];
             $myLong = $event['message']['longitude'];
 
-            fields = array(
+            $fields = array(
             "userId"=>$userId,
             "txt"=>json_encode(array(
                 'my location'=>array(
