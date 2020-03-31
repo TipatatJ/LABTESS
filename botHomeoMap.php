@@ -48,13 +48,15 @@ if (!is_null($events['events'])) {
             include_once('lastMessageHandler.php');
 
 
-             switch($text){
-                case 'PMgeneralAdvise':
+             switch(true){
+                case $text == 'PMgeneralAdvise':
                     exit;
                     break;
-                case 'PMriskAdvise':
+                case $text == 'PMriskAdvise':
                     exit;
                     break;
+                default;
+                    $text = json_encode(json_decode($text, true)['events'][0]);
             } 
 
             
