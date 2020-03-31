@@ -211,7 +211,7 @@
             
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "ีuser exp":"'.$text.'" }', 
+            "txt"=>'{ "user exp":"'.$text.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
@@ -333,6 +333,33 @@
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please eval Homeo" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
+        case $lastMsg == '{ "WTH":"user homeo caption" }':
+            $messages = [
+                'type' => 'text',
+                'text' => ' 
+                ขั้นตอนสุดท้ายแล้ว
+
+                ทางเราขอให้ท่านกดแชร์ตำแหน่ง Location ของท่านให้เรา เพื่อทำให้ระบบสามารถ Plot ข้อมูลที่ท่านให้มาลงบนแผนที่ และแสดงสิ่งที่ท่านได้
+
+                ท่านจำเป็นต้องแชรตำแหน่งปัจจุบันของท่าน เพื่อให้มีการแสดงผลใน platform HomeoMap
+                ',
+            ];
+            
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "user homeo caption":"'.$text.'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"please your location" }', 
             "me"=>$me);
             post2WTH($fields);
 
