@@ -12,7 +12,7 @@
                 ',
             ];
 
-            $jsonMsg = '[{
+            $jsonMsg = '{
                 "type": "template",
                 "altText": "this is a buttons template",
                     "template": {
@@ -20,21 +20,27 @@
                         "actions": [
                         {
                             "type": "postback",
-                            "label": "คำแนำนำสำหรับคนปกติ",
+                            "label": "เป็น MD Prescriber",
                             "text": "PMgeneralAdvise",
-                            "data": "PMgeneralAdvise,'.$text['pm2.5'].'"
+                            "data": "MD Prescriber"
                         },
                         {
                             "type": "postback",
-                            "label": "คำแนะนำคนมีความเสี่ยง",
+                            "label": "เป็น Lay Prescriber",
                             "text": "PMriskAdvise",
-                            "data": "PMriskAdvise,'.$text['pm2.5'].'"
+                            "data": "Lay Prescriber"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "เป็นผู้เคยรับยา Homeo",
+                            "text": "PMriskAdvise",
+                            "data": "Homeo user"
                         }
                         ],
                         "title": "สภาพอากาศพื้นที่ใกล้เคียง",
-                        "text": "มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3"
+                        "text": "ท่านจะถูกระบุเป็น Anonymous"
                     }
-                }]';
+                }';
 
             $messages = json_decode($jsonMsg, true);
 
