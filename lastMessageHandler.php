@@ -124,10 +124,12 @@
             exit;
             break;
         case array_key_exists('name', json_decode($lastMsg,true)):
+            $Uname = json_decode($lastMsg,true)['name'];
+            
             $messages = [
                 'type' => 'text',
                 'text' => ' 
-                ถ้าคุณ '.$lastMsg['name'].' อยากให้ทีมงานติดต่อกลับได้
+                ถ้าคุณ '.$Uname.' อยากให้ทีมงานติดต่อกลับได้
                 กรุณาแจ้งเบอร์โทรศัพท์
 
                 กรณีของการติดต่อกลับมีได้ 3 กรณี
