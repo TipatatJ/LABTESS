@@ -150,7 +150,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case: $lastMsg == '{ "WTH":"please input user tel" }':
+        case $lastMsg == '{ "WTH":"please input user tel" }':
             $messages = [
                 'type' => 'text',
                 'text' => ' 
