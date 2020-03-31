@@ -8,7 +8,7 @@
                 'type' => 'text',
                 'text' => ' 
                 ถ้าคุณ '.$Uname.' เป็น แพทย์, เภสัช ที่มีใบประกอบวิชาชีพ
-                กรุณากรอกเลข ว. หรือรหัสประจำตตัวตามวิชาชีพ เพื่อให้
+                กรุณากรอกเลข ว. หรือรหัสประจำตัวตามวิชาชีพ เพื่อให้
                 ทีมงานสามารถยืนยันความเป็นแพทย์ของท่านได้จริง
 
                 ประโยชน์ที่จะได้รับในกรณีนี้ก็คือ รายชื่อของท่านจะขึ้นให้
@@ -23,6 +23,34 @@
             $fields = array(
             "userId"=>$userId,
             "txt"=>json_encode(array('WTH'=>'regist medical license id'),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
+        case $postData == 'occupation,2':
+            $Uname = json_decode($lastMsg,true)['name'];
+            $messages = [
+                'type' => 'text',
+                'text' => ' 
+                ถ้าคุณ '.$Uname.' เคยเรียนและใช้ Homeopathy ดูแลผู้อื่น
+                กรุณาบอกเราสักนิดว่า คุณได้เรียน Homeopathy จากที่ไหน
+                และมีประสบการณ์การใช้ Homeopathy มาแล้วกี่ปี
+
+                ประโยชน์ที่จะได้รับในกรณีนี้ก็คือ รายชื่อของท่านจะขึ้นให้
+                ผู้ดูแล Platform Homeomap ค้นหา Homeopath ใกล้บ้านได้ เพื่อ
+                ติดต่อพูดคุยเป็นแนวร่วมกันในการพัฒนาวงการ Homeopathy
+                ให้ดียิ่งขึ้น
+
+                หรือหากท่านไม่ประสงค์จะให้คนจาก Platform HomeoMap ค้นหา
+                ท่านเจอ ให้พิมพ์ X เพื่อปิดการค้นหา 
+                ',
+            ];
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('WTH'=>'regist lay prescriber experience'),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 
