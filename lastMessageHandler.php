@@ -381,7 +381,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"please your location" }', 
+            "txt"=>'{ "WTH":"please share your location" }', 
             "me"=>$me);
             post2WTH($fields);
 
@@ -399,7 +399,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"please your location" }', 
+            "txt"=>'{ "WTH":"please share your location" }', 
             "me"=>$me);
             post2WTH($fields);
 
