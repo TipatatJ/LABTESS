@@ -116,7 +116,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('name'=>$text)), 
+            "txt"=>json_encode(array('name'=>$text),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 
