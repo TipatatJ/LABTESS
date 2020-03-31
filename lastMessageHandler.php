@@ -3,7 +3,7 @@
     switch(true){
 
         case $lastMsg == 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว' || $text == 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว':
-            $messages = [
+/*             $messages = [
                 'type' => 'text',
                 'text' => ' 
                 ชื่อของท่านจะถูกระบุเป็น Anonymous
@@ -11,7 +11,7 @@
                 กรุณาระบุประสบการณ์ของท่านกับ Homeopathy
                 ',
             ];
-
+ */
             $jsonMsg = '{
                 "type": "template",
                 "altText": "this is a buttons template",
@@ -21,23 +21,23 @@
                         {
                             "type": "postback",
                             "label": "เป็น MD Prescriber",
-                            "text": "PMgeneralAdvise",
-                            "data": "MD Prescriber"
+                            "text": "MD Prescriber",
+                            "data": "occupation"
                         },
                         {
                             "type": "postback",
                             "label": "เป็น Lay Prescriber",
-                            "text": "PMriskAdvise",
-                            "data": "Lay Prescriber"
+                            "text": "Lay Prescriber",
+                            "data": "occupation"
                         },
                         {
                             "type": "postback",
                             "label": "เป็นผู้เคยรับยา Homeo",
-                            "text": "PMriskAdvise",
-                            "data": "Homeo user"
+                            "text": "Homeo user",
+                            "data": "occupation"
                         }
                         ],
-                        "title": "สภาพอากาศพื้นที่ใกล้เคียง",
+                        "title": "ประสบการณ์ของท่านกับ Homeopathy",
                         "text": "ท่านจะถูกระบุเป็น Anonymous"
                     }
                 }';
@@ -46,7 +46,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'WTH name as Anonymous', 
+            "txt"=>'{ "WTH": "name as Anonymous" }', 
             "me"=>$me);
             post2WTH($fields);
 
@@ -69,7 +69,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'WTH please input user name', 
+            "txt"=>'{ "WTH":"please input user name" }', 
             "me"=>$me);
             post2WTH($fields);
             justMsg($messages, $replyToken, $access_token);
