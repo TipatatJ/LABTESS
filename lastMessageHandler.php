@@ -190,34 +190,23 @@
                     "template": {
                         "type": "buttons",
                         "actions": [
-                        {
-                            "type": "postback",
-                            "label": "ดีมาก",
-                            "text": "Very good",
-                            "data": "evaluation,5"
-                        },
+
                         {
                             "type": "postback",
                             "label": "ดี",
                             "text": "Good",
-                            "data": "eval,4"
+                            "data": "eval,3"
                         },
                         {
                             "type": "postback",
                             "label": "เฉยๆ",
                             "text": "Neutral",
-                            "data": "eval,3"
+                            "data": "eval,2"
                         },
                         {
                             "type": "postback",
                             "label": "แย่",
                             "text": "Bad",
-                            "data": "eval,2"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "แย่มาก",
-                            "text": "Very bad",
                             "data": "eval,1"
                         }
                         ],
