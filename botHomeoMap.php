@@ -64,7 +64,7 @@ if (!is_null($events['events'])) {
                     //$text = json_encode(json_decode($text, true)['events'][0]);
             }  */
 
-            
+            //BREAK ALL POST BACK form eventType "Postback"
             $arrBreakKW = array('PMgeneralAdvise','PMriskAdvise','occupation,1','occupation,2','occupation,3','eval,1','eval,2','eval,3');
 
             if(in_array($text, $arrBreakKW)){
