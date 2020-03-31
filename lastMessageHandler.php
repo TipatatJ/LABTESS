@@ -208,6 +208,12 @@
                             "label": "แย่",
                             "text": "Bad",
                             "data": "eval,1"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "ไม่เคยใช้ Homeo",
+                            "text": "eval,X",
+                            "data": "eval,4"
                         }
                         ],
                         "title": "ความรู้สึกหลังได้ใช้ Homeo",
