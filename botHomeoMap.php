@@ -1,6 +1,13 @@
 <?php
 $me = "Ub3f6b90b35b51d817a89835f9afaf8c7";
 $access_token = 'Vi36it4OCfAZRvvH1IBJfZ6F+rN1AT3GPL5j3hsz7WRawpf+rPYrjfwI5ROHFxrVFRo1TPh0w9Mb1NruinYvfudkyFFcKPLyTTcxe17nz5Ue8CW1gHP1HcYp18XRkBcJvlkaEoHy9V39QEPrC+bn2wdB04t89/1O/w1cDnyilFU=';
+$arrBreakKW = array('PMgeneralAdvise',
+            'PMriskAdvise',
+            'occupation,1','occupation,2','occupation,3',
+            'eval,1','eval,2','eval,3',
+            'MD Prescriber','Lay Prescriber','Homeo user'
+            );
+
 // Get POST body content
 $content = file_get_contents('php://input');
 
@@ -65,7 +72,6 @@ if (!is_null($events['events'])) {
             }  */
 
             //BREAK ALL POST BACK form eventType "Postback"
-            $arrBreakKW = array('PMgeneralAdvise','PMriskAdvise','occupation,1','occupation,2','occupation,3','eval,1','eval,2','eval,3');
 
             if(in_array($text, $arrBreakKW)){
                 exit;
@@ -170,12 +176,7 @@ if (!is_null($events['events'])) {
             include_once('postBackHandler.php');
 
             //BREAK ALL POST BACK form eventType "Postback"
-            $arrBreakKW = array('PMgeneralAdvise',
-            'PMriskAdvise',
-            'occupation,1','occupation,2','occupation,3',
-            'eval,1','eval,2','eval,3',
-            'MD Prescriber','Lay Prescriber','Homeo user'
-            );
+            
 
             if(in_array($text, $arrBreakKW)){
                 exit;
