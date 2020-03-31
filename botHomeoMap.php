@@ -58,7 +58,7 @@ if (!is_null($events['events'])) {
                 default;
                     $fields = array(
                     "userId"=>$userId,
-                    "txt"=>'$$'.json_encode(json_decode($text, true)['events']), 
+                    "txt"=>'$$'.json_encode(json_decode($lastMsg, true)['events']), 
                     "me"=>$me);
                     post2WTH($fields);
                     //$text = json_encode(json_decode($text, true)['events'][0]);
