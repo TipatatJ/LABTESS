@@ -339,7 +339,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{ "WTH":"user homeo caption" }':
+        case $lastMsg == '{"WTH":"user homeo caption" }':
             $messages = [
                 'type' => 'text',
                 'text' => ' 

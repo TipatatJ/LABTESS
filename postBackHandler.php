@@ -82,6 +82,12 @@
 
             $fields = array(
             "userId"=>$userId,
+            "txt"=>json_encode(array('eval'=>$postData),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
             "txt"=>json_encode(array('WTH'=>'user homeo caption'),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
