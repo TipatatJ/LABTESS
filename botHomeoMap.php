@@ -5,7 +5,7 @@ $arrBreakKW = array('PMgeneralAdvise',
             'PMriskAdvise',
             'occupation,1','occupation,2','occupation,3',
             'eval,1','eval,2','eval,3','eval,X',
-            'MD Prescriber','Lay Prescriber','Homeo user',
+            'MD Prescriber','Non MD user','Homeo user',
             'Good','Neutral','Bad'
             );
 
