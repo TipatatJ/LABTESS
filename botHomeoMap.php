@@ -131,7 +131,8 @@ if (!is_null($events['events'])) {
                 'my location'=>array(
                     "lat"=>$myLat,
                     "long"=>$myLong)
-                ),JSON_UNESCAPED_UNICODE), 
+                ),JSON_UNESCAPED_UNICODE),
+            "lastMsg"=>$lastMsg, 
             "me"=>$me);
             post2WTH($fields);
 
