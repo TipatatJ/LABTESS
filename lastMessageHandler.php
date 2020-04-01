@@ -304,6 +304,60 @@
             exit;
             break;
         case $lastMsg == '{ "WTH":"please input user email" }':
+        $messages = [
+                'type' => 'text',
+                'text' => ' 
+                ถ้าคุณ '.$Uname.' อยากให้ทีมงานติดต่อกลับได้
+                ทาง LINE
+
+                หากไม่อยากรับการติดต่อ กรุณาพิมพ์ X
+                หากยินดีให้ติดต่อ กรุณาพิมพ์ Line ID ของท่าน 
+                ',
+            ];
+            
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "email":"'.$text.'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"please input user Line ID" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
+        case $lastMsg == '{ "WTH":"please input user Line ID" }':
+        $messages = [
+                'type' => 'text',
+                'text' => ' 
+                ถ้าคุณ '.$Uname.' อยากให้ทีมงานติดต่อกลับได้
+                ทาง LINE
+
+                หากไม่อยากรับการติดต่อ กรุณาพิมพ์ X
+                หากยินดีให้ติดต่อ กรุณาพิมพ์ Line ID ของท่าน 
+                ',
+            ];
+            
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "Line ID":"'.$text.'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"please input user FB" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
+        case $lastMsg == '{ "WTH":"please input user FB" }':
             $jsonMsg = '{
                 "type": "template",
                 "altText": "this is a buttons template",
@@ -345,7 +399,7 @@
             
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "email":"'.$text.'" }', 
+            "txt"=>'{ "FB":"'.$text.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
