@@ -70,7 +70,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $postData == 'eval,3' || $postData == 'eval,2' || $postData == 'eval,1':
+        case $postData == 'eval,3' || $postData == 'eval,2' || $postData == 'eval,1' || $postData == 'eval,X':
             $Uname = json_decode($lastMsg,true)['name'];
             $messages = [
                 'type' => 'text',
