@@ -1,4 +1,5 @@
 <?php
+define('SECRET_KEY', 'thai_epigenomic');
 $me = "Ub3f6b90b35b51d817a89835f9afaf8c7";
 $access_token = 'Vi36it4OCfAZRvvH1IBJfZ6F+rN1AT3GPL5j3hsz7WRawpf+rPYrjfwI5ROHFxrVFRo1TPh0w9Mb1NruinYvfudkyFFcKPLyTTcxe17nz5Ue8CW1gHP1HcYp18XRkBcJvlkaEoHy9V39QEPrC+bn2wdB04t89/1O/w1cDnyilFU=';
 $arrBreakKW = array('PMgeneralAdvise',
@@ -130,7 +131,9 @@ if (!is_null($events['events'])) {
             "txt"=>json_encode(array(
                 'my location'=>array(
                     "lat"=>$myLat,
-                    "long"=>$myLong)
+                    "long"=>$myLong,
+                    "userId"=>MD5($userId.SECRET_KEY)
+                    )
                 ),JSON_UNESCAPED_UNICODE),
             "lastMsg"=>$lastMsg, 
             "me"=>$me);
