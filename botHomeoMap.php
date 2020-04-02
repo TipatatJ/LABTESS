@@ -213,10 +213,32 @@ if (!is_null($events['events'])) {
                 // Get replyToken
                 $replyToken = $event['replyToken'];
                 // Build message to reply back
-                $messages = [
+                /* $messages = [
                     'type' => 'text',
                     'text' => 'NON MESSAGE TYPE\n'.$content,
+                ]; */
+
+                //$decContent = json_decode($content, true);
+                $userMsgType = $event['message']['type'];
+
+                $messages = [
+                    'type' => 'text',
+                    'text' => '
+                    เรายังไม่สามารถเข้าใจ '.$userMsgType.' ได้
+                    ต้องรบกวนตอบคำถามด้วยการพิมพ์ตอบอีกครั้ง
+                    ',
                 ];
+
+                
+                /* $fields = array(
+                "userId"=>$userId,
+                "txt"=>json_encode(array('WTH'=>'use case experience'),JSON_UNESCAPED_UNICODE), 
+                "me"=>$me);
+                post2WTH($fields); */
+
+                justMsg($messages, $replyToken, $access_token);
+                exit;
+                break;
             //}
         }
 
