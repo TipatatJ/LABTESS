@@ -132,7 +132,7 @@ if (!is_null($events['events'])) {
                 'my location'=>array(
                     "lat"=>$myLat,
                     "long"=>$myLong,
-                    "userId"=>MD5($userId.SECRET_KEY)
+                    "mapId"=>MD5($userId.SECRET_KEY)
                     )
                 ),JSON_UNESCAPED_UNICODE),
             "lastMsg"=>$lastMsg, 
