@@ -48,8 +48,8 @@
                         },
                         {
                             "type": "postback",
-                            "label": "เป็น Lay Prescriber",
-                            "text": "Lay Prescriber",
+                            "label": "คนทั่วไปที่สั่งยา Homeo",
+                            "text": "Non MD user",
                             "data": "occupation,2"
                         },
                         {
