@@ -36,7 +36,7 @@
  */
             $jsonMsg = '{
                 "type": "template",
-                "altText": "this is a buttons template",
+                "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
                     "template": {
                         "type": "buttons",
                         "actions": [
@@ -100,7 +100,7 @@
         case $lastMsg == '{ "WTH":"please input user name" }':
             $jsonMsg = '{ 
                 "type": "template",
-                "altText": "this is a buttons template",
+                "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
                     "template": {
                         "type": "buttons",
                         "actions": [
