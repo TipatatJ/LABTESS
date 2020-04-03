@@ -346,7 +346,7 @@
         case $lastMsg == '{ "WTH":"please input user FB" }':
             $jsonMsg = '{
                 "type": "template",
-                "altText": "this is a buttons template",
+                "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
                     "template": {
                         "type": "buttons",
                         "actions": [
