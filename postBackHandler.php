@@ -111,7 +111,7 @@
                         {
                             "type": "postback",
                             "label": "คนทั่วไปที่สั่งยา Homeo",
-                            "text": "Non MD user",
+                            "text": "Non MD prescriber",
                             "data": "occupation,2"
                         },
                         {
