@@ -98,7 +98,7 @@
             exit;
             break;
         case $lastMsg == '{ "WTH":"please input user name" }':
-            $jsonMsg = '{
+            $jsonMsg = '{ 
                 "type": "template",
                 "altText": "this is a buttons template",
                     "template": {
