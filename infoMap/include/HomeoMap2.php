@@ -874,7 +874,19 @@ function popMemberDlg(rec_id, coorStr){
             mapType: 'Homeo'
         },function(data){
             console.dir($.parseJSON(data));
-            $htmlDlg = '\nReturn ' + data;
+
+			var jData = $.parseJSON(data);
+			var uData = {};
+
+			$.each(jData, function(key, value){
+				uData[key] = value;
+			})
+
+			$.each(uData, function(key, value){
+				$htmlDlg += value + '<br>';
+			})
+
+            //$htmlDlg = '\nReturn ' + data;
         })
 
 		$("#AlertHeader").text('MEMBER INFO');
