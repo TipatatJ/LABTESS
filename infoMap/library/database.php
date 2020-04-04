@@ -43,7 +43,7 @@ if (!DBi::$conn->set_charset("utf8")) {
 }
 
 
-function dbQuery($sql, $errDesc)
+function dbQuery($sql, $errDesc = '')
 {
 	//$result = mysql_query($sql) or die(mysql_error());
 	try {
