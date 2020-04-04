@@ -51,6 +51,11 @@ if (!function_exists('isMobile2')) {
    word-wrap: break-word;      /* IE */
 }
 
+.modal-ku {
+  width: 750px;
+  margin: auto;
+}
+
 </style>
 
 <link href="../include/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
@@ -848,6 +853,8 @@ function moveToLocation(lat, lng){
 	window.map.panTo(center);
 }
 
+var $htmlDlg = undefined;
+
 function popMemberDlg(rec_id, coorStr){
 
 		//alert('coorStr = ' + coorStr)
@@ -864,27 +871,65 @@ function popMemberDlg(rec_id, coorStr){
 			moveToLocation(<?php echo $userMark['Lat']; ?>, <?php echo $userMark['Lng']; ?>);
 		}
 
-        $htmlDlg = 'REC ID: ' + rec_id;
+		<?php 
+		
+			if(isMobile2()){
+				$fontEm2 = 'font-size:4em;';
+			}
+			else{
+				$fontEm2 = 'font-size:2.5em;';
+			}
+		
+		
+		?>
 
-        $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecId.php';
-        //$url = 'http://localhost:82/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecID.php';
+        $htmlDlg = $('<div>',{
+			id: rec_id,
+			style: '<?php echo $fontEm2; ?>'
+		})
+
+		/* $htmlDlg = $htmlDlg + '<br>License ID : <data id="license"> - </dat><br>';
+		$htmlDlg = $htmlDlg + '<br><dat id="eval"></dat><br>';
+		$htmlDlg = $htmlDlg + '<br>Experience : <dat id="share_exp"> - </dat><br>';
+		$htmlDlg = $htmlDlg + '<br>Comment : <dat id="user homeo caption"> - </dat><br>';
+		 */
+
+        //$url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecId.php';
+        $url = 'http://localhost:82/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecID.php';
         
         $.post($url,{
             RecId: rec_id,
             mapType: 'Homeo'
         },function(data){
-            console.dir($.parseJSON(data));
+            //console.dir($.parseJSON(data));
 
 			var jData = $.parseJSON(data);
 			var uData = {};
 
+			$htmlDlg = $htmlDlg.append('<table><tr><td></td><td></td></tr>');
+
 			$.each(jData, function(key, value){
-				uData[key] = value;
+				console.log(key + '=>' + value);
+
+				
+
+				//$.each(arrValue, function(key, value){
+					uData = {
+						'name': 'ชื่อสมาชิก',
+						'share exp': 'Sharing',
+						'email': 'E mail',
+						'tel': 'โทร',
+						'eval': 'ความรู้สึก',
+						'user homeo caption': 'สิ่งที่อยากบอก',
+						'license id': 'รหัสเวชกรรม'
+					};
+				//});
+				//console.log (value);
+
+				$htmlDlg = $htmlDlg.append('<tr><td><b>' + uData[key] + '</b></td><td>' + value + '</td></tr>');
 			})
 
-			$.each(uData, function(key, value){
-				$htmlDlg += value + '<br>';
-			})
+			
 
             //$htmlDlg = '\nReturn ' + data;
         })
@@ -921,7 +966,7 @@ function popMemberDlg(rec_id, coorStr){
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg modal-ku">
     
       <!-- Modal content-->
       <div class="modal-content">
