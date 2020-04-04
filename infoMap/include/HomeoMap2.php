@@ -894,8 +894,8 @@ function popMemberDlg(rec_id, coorStr){
 		$htmlDlg = $htmlDlg + '<br>Comment : <dat id="user homeo caption"> - </dat><br>';
 		 */
 
-        //$url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecId.php';
-        $url = 'http://localhost:82/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecID.php';
+        $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecId.php';
+        //$url = 'http://localhost:82/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecID.php';
         
         $.post($url,{
             RecId: rec_id,
