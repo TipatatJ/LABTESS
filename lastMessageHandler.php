@@ -386,7 +386,7 @@
             
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "FB":"'.$text.'" }', 
+            "txt"=>'{ "email":"'.$text.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
