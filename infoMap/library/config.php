@@ -221,7 +221,7 @@ if (!get_magic_quotes_gpc()) {
 //$upDir = str_replace('include', '', $script_name);
 require_once 'database.php';
 //echo 'gonna require common';
-if(isset($GLOBALS['doNotRequireCommon'])){
+/* if(isset($GLOBALS['doNotRequireCommon'])){
     if(!$doNotRequireCommon){
         //echo 'require common<br>';
         include_once 'common.php';
@@ -237,7 +237,7 @@ else
     //echo 'require common<br>';
     include_once 'common.php';
     $shopConfig = getShopConfig();
-}
+} */
 
 function formatHN($HN){
     return str_pad($HN,6,'0',STR_PAD_LEFT);
