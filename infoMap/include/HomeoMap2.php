@@ -10,6 +10,8 @@
 //header('X-Frame-Options: GOFORIT'); 
 error_reporting(E_ERROR | E_PARSE);
 ob_start(); // ensures anything dumped out will be caught
+
+$GLOBALS['doNotRequireCommon'];
 include_once '../library/config.php';
 include_once '../library/database.php';
 include_once '../library/common.php';
