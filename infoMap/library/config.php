@@ -79,8 +79,8 @@ $docRoot = $_SERVER['DOCUMENT_ROOT'];
 //UNDER FOLDER siteN_Wiztech to make everything work correctly
 $siteStr = explode('_Wiztech',$thisFile);
 
-$webRoot  = str_replace(array($docRoot, 'library/config.php'), '', $siteStr[1]);
-$srvRoot  = $siteStr[0].'_Wiztech';//str_replace('library/config.php', '', $siteStr[1]);
+//$webRoot  = str_replace(array($docRoot, 'library/config.php'), '', $siteStr[1]);
+//$srvRoot  = $siteStr[0].'_Wiztech';//str_replace('library/config.php', '', $siteStr[1]);
 
 
 
