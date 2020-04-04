@@ -161,7 +161,7 @@ if (!function_exists('isMobile2')) {
 
 						
 
-						echo '<div class="btn '.$btnColor.' btn-block memberBtn" rec_id="'.$record_id.'" style="padding:10px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$memIcon.'" width="30px"> NAME : '.$value.'</div><br>';
+						echo '<div class="btn '.$btnColor.' btn-block memberBtn" rec_id="'.$record_id.'" style="padding:10px;">&nbsp;&nbsp;&nbsp;&nbsp;'.$fontEm.'<img src="'.$memIcon.'" width="30px"> NAME : '.$value.'</div><br>';
 						
 						break;
 					case $key == 'user homeo caption' && !is_numeric($key):
@@ -170,7 +170,7 @@ if (!function_exists('isMobile2')) {
 						//if($rtnArr['name'] != 'Anonymous'){
 							echo '<div class="user_caption wordwrap">';
 							echo '<br>สิ่งที่คุณอยากบอกเกี่ยวกับ HOMEOPATHY:<br>';
-							echo '<div class="ui-state-highlight wordwrap" style="padding:10px;">'.$value.'</div><br>';
+							echo '<div class="ui-state-highlight wordwrap" style="padding:10px;'.$fontEm.'">'.$value.'</div><br>';
 							echo '</div>';
 						//}
 
@@ -190,7 +190,7 @@ if (!function_exists('isMobile2')) {
 
 						//if($rtnArr['name'] != 'Anonymous'){
 						if($key.strtolower == 'x'){
-							echo '<br>ประสบการณ์ในฐานะ PRESCRIBER:<br><div class="ui-state-highlight wordwrap" style="padding:10px;">'.$value.'</div><br>';
+							echo '<br>ประสบการณ์ในฐานะ PRESCRIBER:<br><div class="ui-state-highlight wordwrap" style="padding:10px;'.$fontEm.'">'.$value.'</div><br>';
 						}
 						//}
 
