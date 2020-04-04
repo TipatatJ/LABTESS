@@ -291,7 +291,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{ "WTH":"please input user email" }':
+        case $lastMsg == '{ "WTH":"please input user email xxx" }':
         $messages = [
                 'type' => 'text',
                 'text' => ' 
@@ -317,7 +317,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{ "WTH":"please input user Line ID" }':
+        case $lastMsg == '{ "WTH":"please input user Line ID xxx" }':
         $messages = [
                 'type' => 'text',
                 'text' => ' 
@@ -343,7 +343,8 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{ "WTH":"please input user FB" }':
+        //LONG INPUT case $lastMsg == '{ "WTH":"please input user FB" }':
+        case $lastMsg == '{ "WTH":"please input user email" }':
             $jsonMsg = '{
                 "type": "template",
                 "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
