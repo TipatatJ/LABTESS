@@ -1,5 +1,5 @@
 <?php
 
-    header('Location: http://www.venitaclinic.com/Qweb/site1_Wiztech/WiztechSolution/include/HomeoMap.php?mapId='.$_GET['mapId']);
+    header('Location: https://homeo-map.herokuapp.com/infoMap/include/HomeoMap2.php?mapId='.$_GET['mapId']);
 
 ?>
