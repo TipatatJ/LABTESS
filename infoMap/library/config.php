@@ -148,8 +148,8 @@ function sessionX($rtnLocation, $reset){
 //echo 'docRoot = '.$docRoot.'<br>';
 //echo 'webRoot = '.$webRoot.'<br>';
 
-define('WEB_ROOT', $webRoot);
-define('SRV_ROOT', $srvRoot);
+//define('WEB_ROOT', $webRoot);
+//define('SRV_ROOT', $srvRoot);
 
 define('SEARCH_OLD_PLAT_DB', true);
 define('CUSTOMER_TB', 'tbl_cust');
