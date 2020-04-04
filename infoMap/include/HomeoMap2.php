@@ -866,8 +866,8 @@ function popMemberDlg(rec_id, coorStr){
 
         $htmlDlg = 'REC ID: ' + rec_id;
 
-        //$url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecId.php';
-        $url = 'http://localhost:82/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecID.php';
+        $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecId.php';
+        //$url = 'http://localhost:82/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecID.php';
         
         $.post($url,{
             RecId: rec_id,
