@@ -20,7 +20,11 @@ set_error_handler("myErrorHandler");
 
 session_start();
 
-
+if (!function_exists('isMobile2')) {
+            function isMobile2() {
+            return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
+    }
+}
 
 
 	
@@ -111,7 +115,16 @@ session_start();
 			$arrLookup = array('name','tel');
 			$rtnArr = getUser($arrLookup,$record_id,$userId);
 			//$rtnArr = 'Hi';
-			echo '<pre style="align:center">';
+
+			if(isMobile2()){
+				$fontEm = ' font-size:2em;';
+			}
+			else{
+				$fontEm = '';
+			}
+
+
+			echo '<pre style="align:center'.$fontEm.'">';
 			
 			foreach($rtnArr as $key=>$value){
 
@@ -307,7 +320,15 @@ session_start();
 		  window.map = undefined;
 
 		  window.map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 11,
+			<?php 
+				if(isMobile2()){
+					echo "zoom : 14";
+				}
+				else{
+					echo "zoom : 11";
+				}
+			
+			?>,
 			center: {lat: <?php echo $userMark['Lat']; ?>, lng: <?php echo $userMark['Lng']; ?>},
 			//mapTypeId: google.maps.MapTypeId.TERRAIN,
 			position: google.maps.ControlPosition.TOP_CENTER
