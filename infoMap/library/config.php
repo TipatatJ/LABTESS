@@ -24,7 +24,7 @@ define("clinicTell",'088-6540274');
 // database connection config
 $dbHost = '203.151.4.117';
 $dbUser = 'remote';
-$dbPass = 'hfbn';
+$dbPass = 'GT@ui22BNw@55ff';
 $dbName = 'demosite';
 
 // database connection config REMOTE
