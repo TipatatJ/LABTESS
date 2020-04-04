@@ -43,13 +43,13 @@ if (!DBi::$conn->set_charset("utf8")) {
 }
 
 
-function dbQuery($sql, $errDesc = '')
+function dbQuery($sql, $errDesc = 'n/a')
 {
 	//$result = mysql_query($sql) or die(mysql_error());
 	try {
         if (!$result = DBi::$conn->query($sql)) {
             
-            if(!$errDesc){
+            if($errDesc != 'n/a'){
                 // Oh no! The query failed. 
                 echo "Sorry, the website is experiencing problems.";
 
