@@ -332,7 +332,7 @@ function post2WTH($fields){
 
 
         //url-ify the data for the POST
-        foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+        foreach($fields as $key=>$value) { $fields_string .= $key.'='.urlencode($value).'&'; }
         rtrim($fields_string,'&');
 
         //open connection
