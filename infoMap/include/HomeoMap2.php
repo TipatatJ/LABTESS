@@ -298,7 +298,9 @@ if (!function_exists('isMobile2')) {
 
 		
 		</div>
+		
 </member>
+
 <div id="addressInfo" class="" style="min-height:400px; padding:15px;">
 
         <br />
@@ -928,9 +930,7 @@ function popMemberDlg(rec_id, coorStr){
 				if(typeof(uData[key]) == 'undefines'){
 				}
 				else{
-
 					$htmlDlg = $htmlDlg.append('<tr><td><b>' + uData[key] + '</b></td><td>' + value + '</td></tr>');
-				
 				}
 			})
 
@@ -945,7 +945,6 @@ function popMemberDlg(rec_id, coorStr){
 }
 
 </script>
-
 
 
 <detail class="col-md-12 col-lg-12" style="padding:15px;">
@@ -1002,6 +1001,17 @@ function popMemberDlg(rec_id, coorStr){
         
 		</div> <!--CurrentBill-->
 </detail>
+
+<pre style="width:100%; padding:15px; <?php echo $fontEm; ?>">
+		<div id="shareYourThought">
+		SHARE YOUR THOUGHT WITH HOMEOPATHY FRIENDS<br>
+		<div style="<?php echo $fontEm2; ?>">BY ADDING LINE "Homeo Map"</div>
+		<img src="https://qr-official.line.me/sid/M/762xwdng.png"><br><Br>
+		OR CLICK<br>
+		<a src="https://lin.ee/vRvkG2Y">https://lin.ee/vRvkG2Y</a>
+		</div>
+<br><br>
+</pre>
 
 	<br />
     <br />
