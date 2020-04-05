@@ -1,7 +1,7 @@
 <?php
 define('SECRET_KEY', 'thai_epigenomic');
 $me = "Ub3f6b90b35b51d817a89835f9afaf8c7";
-$access_token = 'Vi36it4OCfAZRvvH1IBJfZ6F+rN1AT3GPL5j3hsz7WRawpf+rPYrjfwI5ROHFxrVFRo1TPh0w9Mb1NruinYvfudkyFFcKPLyTTcxe17nz5Ue8CW1gHP1HcYp18XRkBcJvlkaEoHy9V39QEPrC+bn2wdB04t89/1O/w1cDnyilFU=';
+$access_token = 'NR+w60sxm8/qG/oo1pwQ9tOg93GAEvhXGBJrk/jLfsO+GaLN3eJy7Gm5kVk8sYFFNv1Va/lz/28d9+TNJqShe9oWS2OEzAQusLeVtAsmvM8AjKzDe9YxVE5Z0D8PlZaTV7NA00Vwd9802Cvnx1reYwdB04t89/1O/w1cDnyilFU=';
 $arrBreakKW = array('PMgeneralAdvise',
             'PMriskAdvise',
             'occupation,1','occupation,2','occupation,3',
