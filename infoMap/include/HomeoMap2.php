@@ -1008,7 +1008,7 @@ function popMemberDlg(rec_id, coorStr){
 		<div style="<?php echo $fontEm2; ?>">BY ADDING LINE "Homeo Map"</div>
 		<img src="https://qr-official.line.me/sid/M/762xwdng.png"><br><Br>
 		OR CLICK<br>
-		<a src="https://lin.ee/vRvkG2Y">https://lin.ee/vRvkG2Y</a>
+		<a href="https://lin.ee/vRvkG2Y"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อน" height="36" border="0"></a>
 		</div>
 <br><br>
 </pre>
