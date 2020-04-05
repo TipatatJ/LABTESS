@@ -928,7 +928,9 @@ function popMemberDlg(rec_id, coorStr){
 				if(typeof(uData[key]) == 'undefines'){
 				}
 				else{
+
 					$htmlDlg = $htmlDlg.append('<tr><td><b>' + uData[key] + '</b></td><td>' + value + '</td></tr>');
+				
 				}
 			})
 
