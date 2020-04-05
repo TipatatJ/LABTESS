@@ -82,11 +82,11 @@ if (!function_exists('isMobile2')) {
 
 	<div id="CurrentBillWrap" class="brown_round_rect" style="min-height:100px;">
 
-		<div id="CurrentBill" style="padding:5px;" width="75%">About Homeopathy in Thailand
+		<div id="CurrentBill" style="padding:5px;" width="75%">All about TCM in Thailand
         </div>
 
         <div style="font-size:5em; white-space:nowrap">
-        Homeo Map
+        TCM Map
         </div>
 
         
@@ -103,7 +103,7 @@ if (!function_exists('isMobile2')) {
 <?php
 
 	$sql = "SELECT DISTINCT(userId), record_id FROM line_sms
-		WHERE sms_txt='NEW INPUT' ORDER BY record_id DESC;";   
+		WHERE sms_txt='NEW INPUT' AND mapType=\"TCM\" ORDER BY record_id DESC;";   
 	//echo '$sql = '.$sql.'<hr>';
 	$result = dbQuery($sql);
 

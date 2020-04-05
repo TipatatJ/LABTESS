@@ -1,10 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
-/*
+
 body {
-    background-color: lightblue;
+    background-color: rgb(207, 0, 35);
 }
-*/
+
 /*
 h1 {
     color: navy;
@@ -24,6 +24,7 @@ app, .bkgTheme {
 	min-height: 200px;
 	padding: 5px;
 	z-index:0;
+    color: yellow;
 }
 
 input[type='checkbox'] {

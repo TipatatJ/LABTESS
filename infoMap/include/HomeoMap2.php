@@ -103,7 +103,7 @@ if (!function_exists('isMobile2')) {
 <?php
 
 	$sql = "SELECT DISTINCT(userId), record_id FROM line_sms
-		WHERE sms_txt='NEW INPUT' ORDER BY record_id DESC;";   
+		WHERE sms_txt='NEW INPUT' AND mapType=\"Homeo\" ORDER BY record_id DESC;";   
 	//echo '$sql = '.$sql.'<hr>';
 	$result = dbQuery($sql);
 
