@@ -894,8 +894,8 @@ function popMemberDlg(rec_id, coorStr){
 		$htmlDlg = $htmlDlg + '<br>Comment : <dat id="user homeo caption"> - </dat><br>';
 		 */
 
-        $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecId.php';
-        //$url = 'http://localhost:82/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecID.php';
+        //$url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecId.php';
+        $url = 'http://localhost:82/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecID.php';
         
         $.post($url,{
             RecId: rec_id,
@@ -906,7 +906,7 @@ function popMemberDlg(rec_id, coorStr){
 			var jData = $.parseJSON(data);
 			var uData = {};
 
-			$htmlDlg = $htmlDlg.append('<table><tr><td></td><td></td></tr>');
+			$htmlDlg = $htmlDlg.append('<table class="table table-striped" boarder="1"><tr><td></td><td></td></tr>');
 
 			$.each(jData, function(key, value){
 				console.log(key + '=>' + value);
@@ -925,8 +925,11 @@ function popMemberDlg(rec_id, coorStr){
 					};
 				//});
 				//console.log (value);
-
-				$htmlDlg = $htmlDlg.append('<tr><td><b>' + uData[key] + '</b></td><td>' + value + '</td></tr>');
+				if(typeof(uData[key]) == 'undefines'){
+				}
+				else{
+					$htmlDlg = $htmlDlg.append('<tr><td><b>' + uData[key] + '</b></td><td>' + value + '</td></tr>');
+				}
 			})
 
 			
