@@ -146,17 +146,19 @@
                 "type": "template",
                 "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
                     "template": {
-                        "type": "confirm",
+                        "type": "buttons",
                         "actions": [
                         {
                             "type": "text",
                             "label": "ฝังเข็มได้",
-                            "text": "serve acup"
+                            "text": "serve acup",
+                            "data": "acup,1"
                         },
                         {
                             "type": "text",
                             "label": "ไม่มีบริการฝังเข็ม",
-                            "text": "no acup"
+                            "text": "no acup",
+                            "data": "acup,2"
                         }
                         ],
                         "title": "บริการฝังเข็มหรือไม่",
