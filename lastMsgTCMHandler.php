@@ -184,12 +184,12 @@
             post2WTH($fields, $lastMsg.'
             '.$text);
 
-            /* $fields = array(
+            $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"please input user tel" }', 
+            "txt"=>'{ "WTH":"serve acup" }', 
             "me"=>$me);
             post2WTH($fields, $lastMsg.'
-            '.$text); */
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -238,7 +238,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case array_key(json_decode($lastMsg,true)) == 'acup':
+        case $lastMsg == '{ "WTH":"serve acup" }':
             $jsonMsg = '{ 
                 "type": "template",
                 "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
@@ -265,12 +265,12 @@
 
             $messages = json_decode($jsonMsg, true);
 
-            /* $fields = array(
+            $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "tcm id":"'.$text.'" }', 
+            "txt"=>'{ "acup":"'.$text.'" }', 
             "me"=>$me);
             post2WTH($fields, $lastMsg.'
-            '.$text); */
+            '.$text);
 
             $fields = array(
             "userId"=>$userId,
