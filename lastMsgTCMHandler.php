@@ -69,13 +69,15 @@
             "userId"=>$userId,
             "txt"=>'{ "WTH": "name as Anonymous" }', 
             "me"=>$me);
-            post2WTH($fields, $text); */
+            post2WTH($fields, $lastMsg.'
+            '.$text); */
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>json_encode(array('name'=>'Anonymous')), 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -92,7 +94,8 @@
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user name" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
@@ -133,13 +136,15 @@
             "userId"=>$userId,
             "txt"=>'{ "WTH": "name as Anonymous" }', 
             "me"=>$me);
-            post2WTH($fields, $text); */
+            post2WTH($fields, $lastMsg.'
+            '.$text); */
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>json_encode(array('name'=>$text),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -191,13 +196,15 @@
             "userId"=>$userId,
             "txt"=>'{ "WTH": "name as Anonymous" }', 
             "me"=>$me);
-            post2WTH($fields, $text); */
+            post2WTH($fields, $lastMsg.'
+            '.$text); */
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>json_encode(array('name'=>'Anonymous')), 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -214,7 +221,8 @@
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user name" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
@@ -255,13 +263,15 @@
             "userId"=>$userId,
             "txt"=>'{ "WTH": "name as Anonymous" }', 
             "me"=>$me);
-            post2WTH($fields, $text); */
+            post2WTH($fields, $lastMsg.'
+            '.$text); */
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>json_encode(array('name'=>$text),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -297,13 +307,15 @@
             "userId"=>$userId,
             "txt"=>'{ "license id":"'.$text.'" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             /* $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user tel" }', 
             "me"=>$me);
-            post2WTH($fields, $text); */
+            post2WTH($fields, $lastMsg.'
+            '.$text); */
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -339,13 +351,15 @@
             "userId"=>$userId,
             "txt"=>'{ "tcm id":"'.$text.'" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             /* $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user tel" }', 
             "me"=>$me);
-            post2WTH($fields, $text); */
+            post2WTH($fields, $lastMsg.'
+            '.$text); */
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -381,13 +395,15 @@
             "userId"=>$userId,
             "txt"=>'{ "tcm id":"'.$text.'" }', 
             "me"=>$me);
-            post2WTH($fields, $text); */
+            post2WTH($fields, $lastMsg.'
+            '.$text); */
 
             /* $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user tel" }', 
             "me"=>$me);
-            post2WTH($fields, $text); */
+            post2WTH($fields, $lastMsg.'
+            '.$text); */
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -423,13 +439,15 @@
             "userId"=>$userId,
             "txt"=>'{ "tcm id":"'.$text.'" }', 
             "me"=>$me);
-            post2WTH($fields, $text); */
+            post2WTH($fields, $lastMsg.'
+            '.$text); */
 
             /* $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user tel" }', 
             "me"=>$me);
-            post2WTH($fields, $text); */
+            post2WTH($fields, $lastMsg.'
+            '.$text); */
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -451,13 +469,15 @@
             "userId"=>$userId,
             "txt"=>'{ "license id":"'.$text.'" }', 
             "me"=>$me);
-            post2WTH($fields, $text); */
+            post2WTH($fields, $lastMsg.'
+            '.$text); */
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user tel" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -494,13 +514,15 @@
             "userId"=>$userId,
             "txt"=>'{ "user exp":"'.$text.'" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user tel" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -522,7 +544,8 @@
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user tel" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
@@ -541,13 +564,15 @@
             "userId"=>$userId,
             "txt"=>'{ "tel":"'.$text.'" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user email" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -567,13 +592,15 @@
             "userId"=>$userId,
             "txt"=>'{ "email":"'.$text.'" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user Line ID" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -593,13 +620,15 @@
             "userId"=>$userId,
             "txt"=>'{ "Line ID":"'.$text.'" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user FB" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -649,13 +678,15 @@
             "userId"=>$userId,
             "txt"=>'{ "email":"'.$text.'" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please eval Homeo" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -676,13 +707,15 @@
             "userId"=>$userId,
             "txt"=>'{ "user homeo caption":"'.$text.'" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please share your location" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -694,13 +727,15 @@
             "userId"=>$userId,
             "txt"=>'{ "user homeo caption":"'.$text.'" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please share your location" }', 
             "me"=>$me);
-            post2WTH($fields, $text);
+            post2WTH($fields, $lastMsg.'
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
