@@ -91,7 +91,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $postData == 'herb,1' || $postData == 'herb,2':
+        case $postData == 'CHherb,1' || $postData == 'CHherb,2':
             $Uname = json_decode($lastMsg,true)['name'];
             
 
