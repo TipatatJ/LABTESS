@@ -9,9 +9,9 @@
                 'text' => ' 
                 ถ้าคุณ '.$Uname.' เป็น แพทย์, เภสัช ที่มีใบประกอบวิชาชีพ กรุณากรอกเลข ว. หรือรหัสประจำตัวตามวิชาชีพ เพื่อให้ทีมงานสามารถยืนยันความเป็นแพทย์ของท่านได้จริง
 
-                ประโยชน์ที่จะได้รับในกรณีนี้ก็คือ รายชื่อของท่านจะขึ้นให้ ผู้ใช้ Platform ค้นหา Homeopath ใกล้บ้านได้ เพื่อไปรับบริการจากท่าน
+                ประโยชน์ที่จะได้รับในกรณีนี้ก็คือ รายชื่อของท่านจะขึ้นให้ ผู้ใช้ Platform ค้นหา TCM ใกล้บ้านได้ เพื่อไปรับบริการจากท่าน
 
-                หรือหากท่านไม่ประสงค์จะให้คนจาก Platform HomeoMap ค้นหาท่านเจอ ให้พิมพ์ X เพื่อปิดการค้นหา 
+                พิมพ์ X เพื่อซ่อนค่า 
                 ',
             ];
 
@@ -29,17 +29,17 @@
             $messages = [
                 'type' => 'text',
                 'text' => ' 
-                ถ้าคุณ '.$Uname.' เคยเรียนและใช้ Homeopathy ดูแลผู้อื่น กรุณาบอกเราสักนิดว่า คุณได้เรียน Homeopathy จากที่ไหน และมีประสบการณ์การใช้ Homeopathy มาแล้วกี่ปี
+                ถ้าคุณ '.$Uname.' เป็น แพทย์แผนจีน ที่มีใบประกอบวิชาชีพ กรุณากรอกเลข พจ. หรือรหัสประจำตัวตามวิชาชีพ เพื่อให้ทีมงานสามารถยืนยันความเป็นแพทย์ของท่านได้จริง
 
-                ประโยชน์ที่จะได้รับในกรณีนี้ก็คือ รายชื่อของท่านจะขึ้นให้ผู้ดูแล Platform Homeomap ค้นหา Homeopath ใกล้บ้านได้ เพื่อติดต่อพูดคุยเป็นแนวร่วมกันในการพัฒนาวงการ Homeopathy ให้ดียิ่งขึ้น
+                ประโยชน์ที่จะได้รับในกรณีนี้ก็คือ รายชื่อของท่านจะขึ้นให้ ผู้ใช้ Platform ค้นหา TCM ใกล้บ้านได้ เพื่อไปรับบริการจากท่าน
 
-                หรือหากท่านไม่ประสงค์จะให้คนจาก Platform HomeoMap ค้นหา ท่านเจอ ให้พิมพ์ X เพื่อปิดการค้นหา 
+                พิมพ์ X เพื่อซ่อนค่า
                 ',
             ];
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('WTH'=>'regist lay prescriber experience'),JSON_UNESCAPED_UNICODE), 
+            "txt"=>json_encode(array('WTH'=>'regist TCM doctor id'),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 
@@ -51,19 +51,78 @@
             $messages = [
                 'type' => 'text',
                 'text' => ' 
-                ถ้าคุณ '.$Uname.' เคยได้รับการรักษาด้วย Homeopathy
+                ถ้าคุณ '.$Uname.' เคยได้รับการรักษาด้วย TCM
                 
-                ความเห็นของคุณเป็นสิ่งที่มีคุณค่ามาก กรุณาบอกเราสักนิดว่า คุณได้รับ Homeopathy จากที่ไหน และมีประสบการณ์การใช้ Homeopathy มาแล้วกี่ปี
+                ความเห็นของคุณเป็นสิ่งที่มีคุณค่ามาก กรุณาบอกเราสักนิดว่า คุณได้รับการรักษา TCM จากที่ไหน และมีประสบการณ์การใช้ TCM มาแล้วกี่ปี
 
-                ประโยชน์ที่จะได้รับในกรณีนี้ก็คือ รายชื่อของคุณ และความเห็นจะขึ้นแสดงใน HomeoMap เพื่อเป็นข้อมูลให้คนที่ยังไม่รู้จัก Homeopathy สามารถเห็นประสบการณ์การใช้ Homeopathy ในคนไทยว่ามีมากน้อยแค่ไหน
+                ประโยชน์ที่จะได้รับในกรณีนี้ก็คือ รายชื่อของคุณ และความเห็นจะขึ้นแสดงใน TCM Map เพื่อเป็นข้อมูลให้คนที่ยังไม่รู้จัก TCM สามารถเห็นประสบการณ์การใช้ TCM ในคนไทยว่ามีมากน้อยแค่ไหน
 
-                หรือหากท่านไม่ประสงค์จะให้คนจาก Platform HomeoMap ค้นหาท่านเจอ ให้พิมพ์ X เพื่อปิดการค้นหา 
+                หรือหากท่านไม่ประสงค์จะให้คนจาก Platform TCM Map ค้นหาท่านเจอ
+                
+                พิมพ์ X เพื่อปิดการค้นหา 
                 ',
             ];
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>json_encode(array('WTH'=>'use case experience'),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
+        case $postData == 'acup,1' || $postData == 'acup,2':
+            $Uname = json_decode($lastMsg,true)['name'];
+            
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('acup'=>$postData),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('WTH'=>'serve acup'),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
+        case $postData == 'herb,1' || $postData == 'herb,2':
+            $Uname = json_decode($lastMsg,true)['name'];
+            
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('herb'=>$postData),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('WTH'=>'serve herb'),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
+        case $postData == 'tuina,1' || $postData == 'tuina,2':
+            $Uname = json_decode($lastMsg,true)['name'];
+            
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('tuina'=>$postData),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('WTH'=>'serve tuina'),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 
