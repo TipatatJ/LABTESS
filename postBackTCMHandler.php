@@ -204,54 +204,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $postData == '{ "WTH":"please input user name" }':
-            $jsonMsg = '{
-                "type": "template",
-                "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
-                    "template": {
-                        "type": "buttons",
-                        "actions": [
-                        {
-                            "type": "postback",
-                            "label": "เป็น MD Prescriber",
-                            "text": "MD Prescriber",
-                            "data": "occupation,1"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "คนทั่วไปที่สั่งยา Homeo",
-                            "text": "Non MD prescriber",
-                            "data": "occupation,2"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "เป็นผู้เคยรับยา Homeo",
-                            "text": "Homeo user",
-                            "data": "occupation,3"
-                        }
-                        ],
-                        "title": "ประสบการณ์ของท่านกับ Homeopathy",
-                        "text": "ท่านจะถูกระบุเป็น '.$text.'"
-                    }
-                }';
-
-            $messages = json_decode($jsonMsg, true);
-
-            /* $fields = array(
-            "userId"=>$userId,
-            "txt"=>'{ "WTH": "name as Anonymous" }', 
-            "me"=>$me);
-            post2WTH($fields); */
-
-            $fields = array(
-            "userId"=>$userId,
-            "txt"=>json_encode(array('name'=>$text),JSON_UNESCAPED_UNICODE), 
-            "me"=>$me);
-            post2WTH($fields);
-
-            justMsg($messages, $replyToken, $access_token);
-            exit;
-            break;
+        
         case array_key_exists('name', json_decode($postData,true)):
             $Uname = json_decode($lastMsg,true)['name'];
             
