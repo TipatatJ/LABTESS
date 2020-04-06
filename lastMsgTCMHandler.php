@@ -184,12 +184,12 @@
             post2WTH($fields, $lastMsg.'
             '.$text);
 
-            $fields = array(
+            /* $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"serve acup" }', 
             "me"=>$me);
             post2WTH($fields, $lastMsg.'
-            '.$text);
+            '.$text); */
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -227,11 +227,11 @@
             "me"=>$me);
             post2WTH($fields);
 
-            $fields = array(
+            /* $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"serve acup" }', 
             "me"=>$me);
-            post2WTH($fields);
+            post2WTH($fields); */
 
             justMsg($messages, $replyToken, $access_token);
             exit;
