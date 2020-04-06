@@ -256,7 +256,7 @@ if (!is_null($events['events'])) {
         //######################################################################################################
 
         // Make a POST Request to Messaging API to reply to sender
-        $url = 'https://api.line.me/v2/bot/message/reply';
+/*         $url = 'https://api.line.me/v2/bot/message/reply';
         $data = [
             'replyToken' => $replyToken,
             'messages' => [$messages]
@@ -270,7 +270,7 @@ if (!is_null($events['events'])) {
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         $result = curl_exec($ch);
-        curl_close($ch);
+        curl_close($ch); */
 
 /*         //######################################################################################################
 
@@ -278,11 +278,11 @@ if (!is_null($events['events'])) {
         $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsInp.php';
 */
 
-        $fields = array(
+/*         $fields = array(
             "userId"=>$userId,
             "txt"=>$text.' :-)', 
             "me"=>$me);
-        post2WTH($fields);
+        post2WTH($fields); */
 
 /*
         //url-ify the data for the POST
