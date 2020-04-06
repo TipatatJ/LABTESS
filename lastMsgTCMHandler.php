@@ -269,11 +269,11 @@
             "me"=>$me);
             post2WTH($fields);
 
-            $fields = array(
+            /* $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"serve herb" }', 
             "me"=>$me);
-            post2WTH($fields);
+            post2WTH($fields); */
 
             justMsg($messages, $replyToken, $access_token);
             exit;
