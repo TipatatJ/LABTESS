@@ -238,7 +238,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{"WTH":"serve acup"}':
+        case array_key(json_decode($lastMsg,true)) == 'acup':
             $jsonMsg = '{ 
                 "type": "template",
                 "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
