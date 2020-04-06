@@ -194,6 +194,34 @@
             exit;
             break;
 
+        case $lastMsg == '{"WTH":"please input user tel"}':
+            $Uname = json_decode($lastMsg,true)['name'];
+            
+            $messages = [
+                'type' => 'text',
+                'text' => ' 
+                ถ้าคุณ '.$Uname.' อยากให้ทีมงานติดต่อกลับได้
+                ทาง Email
+
+                หากไม่อยากรับการติดต่อ กรุณาพิมพ์ X
+                ',
+            ];
+            
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "tel":"'.$lastMsg.'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"please input user email" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
         case $lastMsg == '{"WTH":"use case experience"}':
             $Uname = json_decode($lastMsg,true)['name'];
             
