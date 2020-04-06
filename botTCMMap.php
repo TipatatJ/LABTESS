@@ -81,7 +81,7 @@ if (!is_null($events['events'])) {
                 exit;
             }
 
-            include_once('lastMessageHandler.php');
+            include_once('lastMsgTCMHandler.php');
 
             //$userMessage = $text; // เก็บค่าข้อความที่ผู้ใช้พิมพ์
              
@@ -202,7 +202,7 @@ if (!is_null($events['events'])) {
                 'text' => '>>'.json_encode($event['postback']['data'], true),
             ]; */
 
-            include_once('postBackHandler.php');
+            include_once('postBackTCMHandler.php');
 
             //BREAK ALL POST BACK form eventType "Postback"
             
