@@ -83,18 +83,18 @@
                         "actions": [
                         {
                             "type": "postback",
-                            "label": "มีสมุนไพรจีน",
-                            "text": "serve herb"
-                            "data": "CHherb,1"
+                            "label": "ฝังเข็มได้",
+                            "text": "serve acup",
+                            "data": "acup,1"
                         },
                         {
                             "type": "postback",
-                            "label": "ไม่มีสมุนไพรจีน",
-                            "text": "no herb"
-                            "data": "CHherb,2"
+                            "label": "ไม่มีบริการฝังเข็ม",
+                            "text": "no acup",
+                            "data": "acup,2"
                         }
                         ],
-                        "title": "มียาสมุนไพร?",
+                        "title": "บริการฝังเข็มหรือไม่",
                         "text": "เป็นการระบุบริการของท่าน"
                     }
                 }';
