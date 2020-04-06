@@ -332,7 +332,7 @@ function post2WTH($fields){
         $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsInp.php';
         //$fields = array("userId"=>$userId,"txt"=>$text, "me"=>$me);
 
-        $fields['mapType'] = 'Homeo';
+        $fields['mapType'] = 'TCM';
 
         //url-ify the data for the POST
         foreach($fields as $key=>$value) { $fields_string .= $key.'='.urlencode($value).'&'; }
