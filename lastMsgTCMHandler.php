@@ -202,14 +202,16 @@
                         "type": "buttons",
                         "actions": [
                         {
-                            "type": "text",
-                            "label": "สั่งสมุนไพรจีนได้",
+                            "type": "postback",
+                            "label": "มีสมุนไพรจีน",
                             "text": "serve herb"
+                            "data": "CHherb,1"
                         },
                         {
-                            "type": "text",
+                            "type": "postback",
                             "label": "ไม่มีสมุนไพรจีน",
                             "text": "no herb"
+                            "data": "CHherb,2"
                         }
                         ],
                         "title": "มียาสมุนไพรหรือไม่",
@@ -242,17 +244,19 @@
                         "type": "buttons",
                         "actions": [
                         {
-                            "type": "text",
+                            "type": "postback",
                             "label": "ให้บริการนวดได้",
-                            "text": "serve tuina"
+                            "text": "serve tuina",
+                            "data": "tuina,1"
                         },
                         {
                             "type": "text",
                             "label": "ไม่มีบริการนวด",
-                            "text": "no tuina"
+                            "text": "no tuina",
+                            "data": "tuina,2"
                         }
                         ],
-                        "title": "บริการ Tuina หรือไม่",
+                        "title": "มี Tuina หรือไม่",
                         "text": "เป็นการระบุบริการของท่าน"
                     }
                 }';
