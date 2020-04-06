@@ -42,7 +42,7 @@
                         "actions": [
                         {
                             "type": "postback",
-                            "label": "เป็น MD ที่ Train TCM",
+                            "label": "MD Trained TCM",
                             "text": "MD Prescriber",
                             "data": "occupation,1"
                         },
@@ -54,12 +54,12 @@
                         },
                         {
                             "type": "postback",
-                            "label": "เป็นผู้เคยรับการรักษา TCM",
+                            "label": "เคยรับการรักษา TCM",
                             "text": "TCM user",
                             "data": "occupation,3"
                         }
                         ],
-                        "title": "ประสบการณ์ของท่านกับ TCM",
+                        "title": "ประสบการณ์กับ TCM",
                         "text": "ท่านจะถูกระบุเป็น Anonymous"
                     }
                 }';
@@ -106,24 +106,24 @@
                         "actions": [
                         {
                             "type": "postback",
-                            "label": "เป็น MD Prescriber",
+                            "label": "MD Trained TCM",
                             "text": "MD Prescriber",
                             "data": "occupation,1"
                         },
                         {
                             "type": "postback",
-                            "label": "คนทั่วไปที่สั่งยา Homeo",
+                            "label": "พจ. TCM doctor",
                             "text": "TCM doctor",
                             "data": "occupation,2"
                         },
                         {
                             "type": "postback",
-                            "label": "เป็นผู้เคยรับการรักษา TCM",
+                            "label": "เคยรับการรักษา TCM",
                             "text": "TCM user",
                             "data": "occupation,3"
                         }
                         ],
-                        "title": "ประสบการณ์ของท่านกับ TCM",
+                        "title": "ประสบการณ์กับ TCM",
                         "text": "ท่านจะถูกระบุเป็น '.$text.'"
                     }
                 }';
