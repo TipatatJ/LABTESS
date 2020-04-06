@@ -228,12 +228,12 @@
             post2WTH($fields, $lastMsg.'
             '.$text);
 
-            /* $fields = array(
+            $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"please input user tel" }', 
+            "txt"=>'{ "WTH":"serve acup" }', 
             "me"=>$me);
             post2WTH($fields, $lastMsg.'
-            '.$text); */
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -272,12 +272,12 @@
             post2WTH($fields, $lastMsg.'
             '.$text); */
 
-            /* $fields = array(
+            $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"please input user tel" }', 
+            "txt"=>'{ "WTH":"serve herb" }', 
             "me"=>$me);
             post2WTH($fields, $lastMsg.'
-            '.$text); */
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -316,12 +316,12 @@
             post2WTH($fields, $lastMsg.'
             '.$text); */
 
-            /* $fields = array(
+            $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"please input user tel" }', 
+            "txt"=>'{ "WTH":"serve tuina" }', 
             "me"=>$me);
             post2WTH($fields, $lastMsg.'
-            '.$text); */
+            '.$text);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
