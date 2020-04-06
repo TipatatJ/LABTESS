@@ -7,7 +7,7 @@ $arrBreakKW = array(
             'PMgeneralAdvise',
             'PMriskAdvise',
             'occupation,1','occupation,2','occupation,3',
-            'acup,1','acup,2',
+            //'acup,1','acup,2',
             'serve acup','no acup',
             'CHherb,1','CHherb,2',
             'tuina,1','tuina,2',

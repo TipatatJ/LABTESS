@@ -77,8 +77,7 @@
             "userId"=>$userId,
             "txt"=>json_encode(array('name'=>'Anonymous')), 
             "me"=>$me);
-            post2WTH($fields, $lastMsg.'
-            '.$text);
+            post2WTH($fields);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -95,8 +94,7 @@
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user name" }', 
             "me"=>$me);
-            post2WTH($fields, $lastMsg.'
-            '.$text);
+            post2WTH($fields);
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
@@ -133,13 +131,6 @@
 
             $messages = json_decode($jsonMsg, true);
 
-            /* $fields = array(
-            "userId"=>$userId,
-            "txt"=>'{ "WTH": "name as Anonymous" }', 
-            "me"=>$me);
-            post2WTH($fields, $lastMsg.'
-            '.$text); */
-
             $fields = array(
             "userId"=>$userId,
             "txt"=>json_encode(array('name'=>$text),JSON_UNESCAPED_UNICODE), 
@@ -150,7 +141,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{"WTH":"regist medical license id"}':
+        case $lastMsg == '{"WTH":"regist medical license id"}' || $lastMsg == '{"WTH":"regist TCM doctor id"}':
             $jsonMsg = '{ 
                 "type": "template",
                 "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
@@ -177,12 +168,21 @@
 
             $messages = json_decode($jsonMsg, true);
 
-            $fields = array(
-            "userId"=>$userId,
-            "txt"=>'{ "license id":"'.$text.'" }', 
-            "me"=>$me);
-            post2WTH($fields, $lastMsg.'
-            '.$text);
+            if($lastMsg == '{"WTH":"regist medical license id"}'){
+                $fields = array(
+                "userId"=>$userId,
+                "txt"=>'{ "license id":"'.$text.'" }', 
+                "me"=>$me);
+                post2WTH($fields, $lastMsg.'
+                '.$text);
+            }
+            else{
+                $fields = array(
+                "userId"=>$userId,
+                "txt"=>'{ "tcm id":"'.$text.'" }', 
+                "me"=>$me);
+                post2WTH($fields);
+            }
 
             $fields = array(
             "userId"=>$userId,
@@ -194,48 +194,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{"WTH":"regist TCM doctor id"}':
-            $jsonMsg = '{ 
-                "type": "template",
-                "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
-                    "template": {
-                        "type": "buttons",
-                        "actions": [
-                        {
-                            "type": "postback",
-                            "label": "ฝังเข็มได้",
-                            "text": "serve acup",
-                            "data": "acup,1"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "ไม่มีบริการฝังเข็ม",
-                            "text": "no acup",
-                            "data": "acup,2"
-                        }
-                        ],
-                        "title": "บริการฝังเข็มหรือไม่",
-                        "text": "เป็นการระบุบริการของท่าน"
-                    }
-                }';
-
-            $messages = json_decode($jsonMsg, true);
-
-            $fields = array(
-            "userId"=>$userId,
-            "txt"=>'{ "tcm id":"'.$text.'" }', 
-            "me"=>$me);
-            post2WTH($fields);
-
-            $fields = array(
-            "userId"=>$userId,
-            "txt"=>'{ "WTH":"serve acup*" }', 
-            "me"=>$me);
-            post2WTH($fields);
-
-            justMsg($messages, $replyToken, $access_token);
-            exit;
-            break;
+        
         case $lastMsg == '{ "WTH":"serve herb" }':
             $jsonMsg = '{ 
                 "type": "template",
