@@ -149,16 +149,14 @@
                         "type": "buttons",
                         "actions": [
                         {
-                            "type": "postback",
+                            "type": "text",
                             "label": "ฝังเข็มได้",
-                            "text": "serve acup",
-                            "data": "acup,1"
+                            "text": "serve acup"
                         },
                         {
-                            "type": "postback",
+                            "type": "text",
                             "label": "ไม่มีบริการฝังเข็ม",
-                            "text": "no acup",
-                            "data": "acup,2"
+                            "text": "no acup"
                         }
                         ],
                         "title": "บริการฝังเข็มหรือไม่",
@@ -186,7 +184,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"serve acup*" }', 
+            "txt"=>'{ "WTH":"serve acup" }', 
             "me"=>$me);
             post2WTH($fields, $lastMsg.'
             '.$text);
@@ -195,7 +193,7 @@
             exit;
             break;
         
-        case $lastMsg == '{ "WTH":"serve herb" }':
+        case $lastMsg == 'serve acup' || $lastMsg == 'no acup':
             $jsonMsg = '{ 
                 "type": "template",
                 "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
@@ -203,16 +201,14 @@
                         "type": "buttons",
                         "actions": [
                         {
-                            "type": "postback",
+                            "type": "text",
                             "label": "สั่งสมุนไพรจีนได้",
-                            "text": "serve herb",
-                            "data": "CHherb,1"
+                            "text": "serve herb"
                         },
                         {
-                            "type": "postback",
+                            "type": "text",
                             "label": "ไม่มีสมุนไพรจีน",
-                            "text": "no herb",
-                            "data": "CHherb,2"
+                            "text": "no herb"
                         }
                         ],
                         "title": "มียาสมุนไพรหรือไม่",
@@ -222,22 +218,22 @@
 
             $messages = json_decode($jsonMsg, true);
 
-            /* $fields = array(
+            $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "acup":"'.$lastMsg.'" }', 
             "me"=>$me);
-            post2WTH($fields); */
+            post2WTH($fields);
 
-            /* $fields = array(
+            $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"serve herb" }', 
             "me"=>$me);
-            post2WTH($fields); */
+            post2WTH($fields);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{"WTH":"serve herb"}':
+        case $lastMsg == 'serve herb' || $lastMsg == 'no herb':
             $jsonMsg = '{ 
                 "type": "template",
                 "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
@@ -245,16 +241,14 @@
                         "type": "buttons",
                         "actions": [
                         {
-                            "type": "postback",
+                            "type": "text",
                             "label": "ให้บริการนวดได้",
-                            "text": "serve herb",
-                            "data": "tuina,1"
+                            "text": "serve tuina"
                         },
                         {
-                            "type": "postback",
+                            "type": "text",
                             "label": "ไม่มีบริการนวด",
-                            "text": "no herb",
-                            "data": "tuina,2"
+                            "text": "no tuina"
                         }
                         ],
                         "title": "บริการ Tuina หรือไม่",
@@ -279,7 +273,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{"WTH":"serve tuina"}':
+        case $lastMsg == 'serve tuina' || $lastMsg == 'no tuina':
             $Uname = json_decode($lastMsg,true)['name'];
             
             $messages = [
@@ -292,19 +286,17 @@
                 ',
             ];
             
-            /* $fields = array(
+            $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "license id":"'.$text.'" }', 
+            "txt"=>'{ "tuina":"'.$lastMsg.'" }', 
             "me"=>$me);
-            post2WTH($fields, $lastMsg.'
-            '.$text); */
+            post2WTH($fields);
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user tel" }', 
             "me"=>$me);
-            post2WTH($fields, $lastMsg.'
-            '.$text);
+            post2WTH($fields);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
