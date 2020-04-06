@@ -190,6 +190,15 @@ if (!is_null($events['events'])) {
 
                 $messages = json_decode($jsonMsg, true);
                 $text = '{ "WTH":"LocationShare" }'; //json_encode($text,JSON_UNESCAPED_UNICODE);
+        
+                $fields = array(
+                "userId"=>$userId,
+                "txt"=>$text, 
+                "me"=>$me);
+                post2WTH($fields);
+
+                justMsg($messages, $replyToken, $access_token);
+
         }
         else if($event['type'] == 'postback'){
             // Get text sent
