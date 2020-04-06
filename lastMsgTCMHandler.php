@@ -728,7 +728,7 @@
             }
         default:
             if($userId != $me){
-                $message = $defaultMsg;
+                $message = $defaultMsg.'<<';
             }
             else{
         
