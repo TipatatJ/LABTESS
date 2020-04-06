@@ -194,7 +194,7 @@
             exit;
             break;
         
-        case $lastMsg == 'serve acup' || $lastMsg == 'no acup':
+        case $lastMsg == '{"WTH":"serve herb"}':
             $jsonMsg = '{ 
                 "type": "template",
                 "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
@@ -219,17 +219,17 @@
 
             $messages = json_decode($jsonMsg, true);
 
-            $fields = array(
+            /* $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "acupLastMsg":"'.$lastMsg.'" }', 
             "me"=>$me);
-            post2WTH($fields);
+            post2WTH($fields); */
 
-            $fields = array(
+            /* $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"serve herb" }', 
             "me"=>$me);
-            post2WTH($fields);
+            post2WTH($fields); */
 
             justMsg($messages, $replyToken, $access_token);
             exit;
