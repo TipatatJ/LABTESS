@@ -362,7 +362,7 @@ function getUserLastMessage($userId){
     foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
     rtrim($fields_string,'&');
 
-    $rtnWTH = file_get_contents($url.'?userId='.$userId);
+    $rtnWTH = file_get_contents($url.'?userId='.$userId.'&mapType=TCM');
     //$lastSMS = json_decode($rtnWTH);
     return $rtnWTH;
 }
