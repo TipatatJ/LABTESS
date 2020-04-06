@@ -24,7 +24,7 @@
 
     switch(true){
         case $lastMsg == 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว' || $text == 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว':
-/*             $messages = [
+            $messages = [
                 'type' => 'text',
                 'text' => ' 
                 ชื่อของท่านจะถูกระบุเป็น Anonymous
@@ -32,8 +32,8 @@
                 กรุณาระบุประสบการณ์ของท่านกับ Homeopathy
                 ',
             ];
- */
-            $jsonMsg = '{
+
+            /* $jsonMsg = '{
                 "type": "template",
                 "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
                     "template": {
@@ -61,7 +61,7 @@
                         "title": "ประสบการณ์ของท่านกับ Homeopathy",
                         "text": "ท่านจะถูกระบุเป็น Anonymous"
                     }
-                }';
+                }'; */
 
             $messages = json_decode($jsonMsg, true);
 
