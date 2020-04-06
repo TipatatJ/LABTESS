@@ -194,7 +194,7 @@
             exit;
             break;
 
-        case $lastMsg == '{"WTH":"serve tuina"}':
+        case $lastMsg == '{"WTH":"please input user tel"}':
             $Uname = json_decode($lastMsg,true)['name'];
             
             $messages = [
@@ -209,13 +209,13 @@
             
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "tuina":"'.$lastMsg.'" }', 
+            "txt"=>'{ "tel":"'.$lastMsg.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"please input user tel" }', 
+            "txt"=>'{ "WTH":"please input user email" }', 
             "me"=>$me);
             post2WTH($fields);
 
