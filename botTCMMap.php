@@ -280,7 +280,7 @@ if (!is_null($events['events'])) {
 
         $fields = array(
             "userId"=>$userId,
-            "txt"=>$text, 
+            "txt"=>$text.' :-)', 
             "me"=>$me);
         post2WTH($fields);
 
