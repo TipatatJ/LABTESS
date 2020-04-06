@@ -75,10 +75,31 @@
         case $postData == 'acup,1' || $postData == 'acup,2':
             $Uname = json_decode($lastMsg,true)['name'];
             
-            $messages = [
-                'type' => 'text',
-                'text' => 'serve herb'
-            ];
+            $jsonMsg = '{ 
+                "type": "template",
+                "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
+                    "template": {
+                        "type": "buttons",
+                        "actions": [
+                        {
+                            "type": "postback",
+                            "label": "มีสมุนไพรจีน",
+                            "text": "serve herb"
+                            "data": "CHherb,1"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "ไม่มีสมุนไพรจีน",
+                            "text": "no herb"
+                            "data": "CHherb,2"
+                        }
+                        ],
+                        "title": "มียาสมุนไพรหรือไม่",
+                        "text": "เป็นการระบุบริการของท่าน"
+                    }
+                }';
+
+            $messages = json_decode($jsonMsg, true);
  
             $fields = array(
             "userId"=>$userId,
