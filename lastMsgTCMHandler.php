@@ -253,7 +253,7 @@
                         },
                         {
                             "type": "postback",
-                            "label": "ไม่มีบริการสมุนไพรจีน",
+                            "label": "ไม่มีสมุนไพรจีน",
                             "text": "no herb",
                             "data": "CHherb,2"
                         }
