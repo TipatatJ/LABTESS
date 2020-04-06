@@ -166,7 +166,7 @@ if (!is_null($events['events'])) {
                         "actions": [
                         {
                             "type": "postback",
-                            "label": "แชร์ตำแหน่งบน HomeoMap",
+                            "label": "แชร์ตำแหน่งบน TCM Map",
                             "text": "Share on HomeoMap",
                             "data": "MyLocation,1"
                         },
