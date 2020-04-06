@@ -146,7 +146,7 @@
                 "type": "template",
                 "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
                     "template": {
-                        "type": "buttons",
+                        "type": "confirm",
                         "actions": [
                         {
                             "type": "text",
