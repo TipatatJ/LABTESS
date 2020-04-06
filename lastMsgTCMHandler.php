@@ -263,11 +263,11 @@
 
             $messages = json_decode($jsonMsg, true);
 
-            $fields = array(
+            /* $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "acup":"'.$lastMsg.'" }', 
             "me"=>$me);
-            post2WTH($fields);
+            post2WTH($fields); */
 
             $fields = array(
             "userId"=>$userId,

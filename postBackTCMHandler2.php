@@ -84,7 +84,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('WTH'=>'serve herb'),JSON_UNESCAPED_UNICODE), 
+            "txt"=>json_encode(array('WTH'=>'serve herb *'),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 
