@@ -225,15 +225,13 @@
             "userId"=>$userId,
             "txt"=>'{ "tcm id":"'.$text.'" }', 
             "me"=>$me);
-            post2WTH($fields, $lastMsg.'
-            '.$text);
+            post2WTH($fields);
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"serve acup" }', 
             "me"=>$me);
-            post2WTH($fields, $lastMsg.'
-            '.$text);
+            post2WTH($fields);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -267,17 +265,15 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "acup":"'.$text.'" }', 
+            "txt"=>'{ "acup":"'.$lastMsg.'" }', 
             "me"=>$me);
-            post2WTH($fields, $lastMsg.'
-            '.$text);
+            post2WTH($fields);
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"serve herb" }', 
             "me"=>$me);
-            post2WTH($fields, $lastMsg.'
-            '.$text);
+            post2WTH($fields);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
@@ -309,19 +305,17 @@
 
             $messages = json_decode($jsonMsg, true);
 
-            /* $fields = array(
+            $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "tcm id":"'.$text.'" }', 
+            "txt"=>'{ "CHherb":"'.$lastMsg.'" }', 
             "me"=>$me);
-            post2WTH($fields, $lastMsg.'
-            '.$text); */
+            post2WTH($fields);
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"serve tuina" }', 
             "me"=>$me);
-            post2WTH($fields, $lastMsg.'
-            '.$text);
+            post2WTH($fields);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
