@@ -169,18 +169,18 @@
                         },
                         {
                             "type": "postback",
-                            "label": "คนทั่วไปที่สั่งยา Homeo",
-                            "text": "Non MD prescriber",
+                            "label": "พจ. TCM doctor",
+                            "text": "TCM doctor",
                             "data": "occupation,2"
                         },
                         {
                             "type": "postback",
-                            "label": "เป็นผู้เคยรับยา Homeo",
-                            "text": "Homeo user",
+                            "label": "เคยรับการรักษา TCM",
+                            "text": "TCM user",
                             "data": "occupation,3"
                         }
                         ],
-                        "title": "ประสบการณ์ของท่านกับ Homeopathy",
+                        "title": "ประสบการณ์กับ TCM",
                         "text": "ท่านจะถูกระบุเป็น '.$text.'"
                     }
                 }';
