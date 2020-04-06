@@ -2,7 +2,9 @@
 define('SECRET_KEY', 'thai_epigenomic');
 $me = "Ub3f6b90b35b51d817a89835f9afaf8c7";
 $access_token = 'NR+w60sxm8/qG/oo1pwQ9tOg93GAEvhXGBJrk/jLfsO+GaLN3eJy7Gm5kVk8sYFFNv1Va/lz/28d9+TNJqShe9oWS2OEzAQusLeVtAsmvM8AjKzDe9YxVE5Z0D8PlZaTV7NA00Vwd9802Cvnx1reYwdB04t89/1O/w1cDnyilFU=';
-$arrBreakKW = array('PMgeneralAdvise',
+$arrBreakKW = array(
+            'ขอบคุณที่สนใจเป็นส่วนหนึ่งของ TCM MAP เริ่มต้นกรอกข้อมูลโดยการเลือกที่ Rich menu ด้านล่าง',
+            'PMgeneralAdvise',
             'PMriskAdvise',
             'occupation,1','occupation,2','occupation,3',
             'eval,1','eval,2','eval,3','eval,X',
@@ -221,8 +223,8 @@ if (!is_null($events['events'])) {
                     'text' => 'NON MESSAGE TYPE\n'.$content,
                 ]; */
 
-                $userMsgType = json_decode($content, true);
-                //$userMsgType = $event['message']['type'];
+                //$userMsgType = json_decode($content, true);
+                $userMsgType = $event['message']['type'];
 
                 $messages = [
                     'type' => 'text',
