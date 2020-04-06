@@ -206,7 +206,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('WTH'=>'user homeo caption'),JSON_UNESCAPED_UNICODE), 
+            "txt"=>json_encode(array('WTH'=>'user TCM caption'),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 

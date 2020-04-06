@@ -395,12 +395,12 @@
                         },
                         {
                             "type": "postback",
-                            "label": "ไม่เคยใช้ Homeo",
+                            "label": "ไม่เคยใช้ TCM",
                             "text": "no exp",
                             "data": "eval,X"
                         }
                         ],
-                        "title": "ความรู้สึกหลังได้ใช้ Homeo",
+                        "title": "ความรู้สึกหลังได้ใช้ TCM",
                         "text": "แขร์ประสบการณ์ของท่าน"
                     }
                 }';
@@ -415,14 +415,14 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"please eval Homeo" }', 
+            "txt"=>'{ "WTH":"please eval TCM" }', 
             "me"=>$me);
             post2WTH($fields);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{"WTH":"user homeo caption"}':
+        case $lastMsg == '{"WTH":"user TCM caption"}':
             $messages = [
                 'type' => 'text',
                 'text' => ' 
