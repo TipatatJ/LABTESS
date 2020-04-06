@@ -75,11 +75,11 @@
         case $postData == 'acup,1' || $postData == 'acup,2':
             $Uname = json_decode($lastMsg,true)['name'];
             
-            /* $messages = [
+            $messages = [
                 'type' => 'text',
-                'text' => '{"WTH":"serve herb"}'
+                'text' => 'serve herb'
             ];
- */
+ 
             $fields = array(
             "userId"=>$userId,
             "txt"=>json_encode(array('acup'=>$postData),JSON_UNESCAPED_UNICODE), 
