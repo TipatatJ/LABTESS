@@ -328,7 +328,7 @@ function justMsg($messages, $replyToken, $access_token){
     //post2WTH($fields);
 }
 
-function post2WTH($fields){
+function post2WTH($fields, $conditionn = 'n/a'){
         //######################################################################################################
 
         // Make a POST to save SMS to Wiztech LINE sms
@@ -336,6 +336,9 @@ function post2WTH($fields){
         //$fields = array("userId"=>$userId,"txt"=>$text, "me"=>$me);
 
         $fields['mapType'] = 'TCM';
+        if($condition != 'n/a'){
+            $fields['mapType'] = $condition;
+        }
 
         //url-ify the data for the POST
         foreach($fields as $key=>$value) { $fields_string .= $key.'='.urlencode($value).'&'; }
