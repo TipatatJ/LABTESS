@@ -3,18 +3,21 @@ define('SECRET_KEY', 'thai_epigenomic');
 $me = "Ub3f6b90b35b51d817a89835f9afaf8c7";
 $access_token = 'NR+w60sxm8/qG/oo1pwQ9tOg93GAEvhXGBJrk/jLfsO+GaLN3eJy7Gm5kVk8sYFFNv1Va/lz/28d9+TNJqShe9oWS2OEzAQusLeVtAsmvM8AjKzDe9YxVE5Z0D8PlZaTV7NA00Vwd9802Cvnx1reYwdB04t89/1O/w1cDnyilFU=';
 $arrBreakKW = array(
-            'ขอบคุณที่สนใจเป็นส่วนหนึ่งของ HOMEO MAP เริ่มต้นกรอกข้อมูลโดยการเลือกที่ Rich menu ด้านล่าง',
+            'ขอบคุณที่สนใจเป็นส่วนหนึ่งของ TCM MAP เริ่มต้นกรอกข้อมูลโดยการเลือกที่ Rich menu ด้านล่าง',
             'PMgeneralAdvise',
             'PMriskAdvise',
             'occupation,1','occupation,2','occupation,3',
+            'acup,1','acup,2',
+            'herb,1','herb,2',
+            'tuina,1','tuina,2',
             'eval,1','eval,2','eval,3','eval,X',
-            'MD Prescriber','Non MD prescriber','Homeo user',
+            'MD practice TCM','TCM doctor','TCM user',
             'Good','Neutral','Bad', 'no exp'
             );
 
 // Get POST body content
 $content = file_get_contents('php://input');
-
+ 
 //echo $content.'<br>';
 // Parse JSON
 
@@ -31,7 +34,7 @@ if (!is_null($events['events'])) {
 
         $lastMsg = getUserLastMessage($userId);
 
-        
+         
 
         // Reply only when message sent is in 'text' format
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
@@ -81,7 +84,7 @@ if (!is_null($events['events'])) {
                 exit;
             }
 
-            include_once('lastMessageHandler.php');
+            include_once('lastTCMsgHandler.php');
 
             //$userMessage = $text; // เก็บค่าข้อความที่ผู้ใช้พิมพ์
              
@@ -160,8 +163,8 @@ if (!is_null($events['events'])) {
                         "actions": [
                         {
                             "type": "postback",
-                            "label": "แชร์ตำแหน่งบน HomeoMap",
-                            "text": "Share on HomeoMap",
+                            "label": "แชร์ตำแหน่งบน TCM Map",
+                            "text": "Share on TCM Map",
                             "data": "MyLocation,1"
                         },
                         {
@@ -202,7 +205,7 @@ if (!is_null($events['events'])) {
                 'text' => '>>'.json_encode($event['postback']['data'], true),
             ]; */
 
-            include_once('postBackHandler.php');
+            include_once('postBackTCMHandler.php');
 
             //BREAK ALL POST BACK form eventType "Postback"
             
@@ -223,7 +226,7 @@ if (!is_null($events['events'])) {
                     'text' => 'NON MESSAGE TYPE\n'.$content,
                 ]; */
 
-                //$decContent = json_decode($content, true);
+                //$userMsgType = json_decode($content, true);
                 $userMsgType = $event['message']['type'];
 
                 $messages = [
@@ -332,7 +335,7 @@ function post2WTH($fields){
         $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsInp.php';
         //$fields = array("userId"=>$userId,"txt"=>$text, "me"=>$me);
 
-        $fields['mapType'] = 'Homeo';
+        $fields['mapType'] = 'TCM';
 
         //url-ify the data for the POST
         foreach($fields as $key=>$value) { $fields_string .= $key.'='.urlencode($value).'&'; }
