@@ -221,8 +221,8 @@ if (!is_null($events['events'])) {
                     'text' => 'NON MESSAGE TYPE\n'.$content,
                 ]; */
 
-                //$decContent = json_decode($content, true);
-                $userMsgType = $event['message']['type'];
+                $userMsgType = json_decode($content, true);
+                //$userMsgType = $event['message']['type'];
 
                 $messages = [
                     'type' => 'text',
