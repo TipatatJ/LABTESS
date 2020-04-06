@@ -249,13 +249,13 @@
                             "type": "postback",
                             "label": "สั่งสมุนไพรจีนได้",
                             "text": "serve herb",
-                            "data": "herb,1"
+                            "data": "CHherb,1"
                         },
                         {
                             "type": "postback",
                             "label": "ไม่มีบริการสมุนไพรจีน",
                             "text": "no herb",
-                            "data": "herb,2"
+                            "data": "CHherb,2"
                         }
                         ],
                         "title": "สั่งยาสมุนไพรได้หรือไม่",
