@@ -163,15 +163,15 @@
         case $postData == 'tuina,1' || $postData == 'tuina,2':
             $Uname = json_decode($lastMsg,true)['name'];
             
-            $messages = [
-                'type' => 'text',
-                'text' => ' 
-                ถ้าคุณ '.$Uname.' อยากให้ทีมงานติดต่อกลับได้
-                กรุณาแจ้งเบอร์โทรศัพท์
+             $messages = [
+                 'type' => 'text',
+                 'text' => ' 
+                 ถ้าคุณ '.$Uname.' อยากให้ทีมงานติดต่อกลับได้
+                 กรุณาแจ้งเบอร์โทรศัพท์
 
-                หากไม่อยากรับการติดต่อ กรุณาพิมพ์ X
-                ',
-            ];
+                 หากไม่อยากรับการติดต่อ กรุณาพิมพ์ X
+                 ',
+             ];
 
             $fields = array(
             "userId"=>$userId,

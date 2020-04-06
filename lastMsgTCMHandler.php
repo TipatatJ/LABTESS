@@ -194,7 +194,7 @@
             exit;
             break;
 
-        case $lastMsg == 'serve tuina' || $lastMsg == 'no tuina':
+        case $lastMsg == '{"WTH":"serve tuina"}':
             $Uname = json_decode($lastMsg,true)['name'];
             
             $messages = [
