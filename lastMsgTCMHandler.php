@@ -149,13 +149,13 @@
                         "type": "buttons",
                         "actions": [
                         {
-                            "type": "text",
+                            "type": "postback",
                             "label": "ฝังเข็มได้",
                             "text": "serve acup",
                             "data": "acup,1"
                         },
                         {
-                            "type": "text",
+                            "type": "postback",
                             "label": "ไม่มีบริการฝังเข็ม",
                             "text": "no acup",
                             "data": "acup,2"
