@@ -42,24 +42,24 @@
                         "actions": [
                         {
                             "type": "postback",
-                            "label": "เป็น MD Prescriber",
-                            "text": "MD Prescriber",
+                            "label": "เป็น MD + TCM",
+                            "text": "MD TCM",
                             "data": "occupation,1"
                         },
                         {
                             "type": "postback",
-                            "label": "คนทั่วไปที่สั่งยา Homeo",
-                            "text": "Non MD prescriber",
+                            "label": "แพทย์แผนจีน",
+                            "text": "TCM doc",
                             "data": "occupation,2"
                         },
                         {
                             "type": "postback",
-                            "label": "เป็นผู้เคยรับยา Homeo",
+                            "label": "เป็นผู้เคยรับ TCM",
                             "text": "Homeo user",
                             "data": "occupation,3"
                         }
                         ],
-                        "title": "ประสบการณ์ของท่านกับ Homeopathy",
+                        "title": "ประสบการณ์ของท่านกับ TCM",
                         "text": "ท่านจะถูกระบุเป็น Anonymous"
                     }
                 }';
@@ -81,7 +81,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน Homeopathy' || $text == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน Homeopathy':
+        case $lastMsg == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน TCM' || $text == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน TCM':
             $messages = [
                 'type' => 'text',
                 'text' => ' 
