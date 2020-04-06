@@ -222,7 +222,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "acup":"'.$lastMsg.'" }', 
+            "txt"=>'{ "acup?":"'.$lastMsg.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
