@@ -337,7 +337,7 @@ function post2WTH($fields, $conditionn = 'n/a'){
 
         $fields['mapType'] = 'TCM';
         if($condition != 'n/a'){
-            $fields['mapType'] = $condition;
+            $fields['condition'] = $condition;
         }
 
         //url-ify the data for the POST
