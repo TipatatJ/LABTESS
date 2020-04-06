@@ -181,7 +181,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('WTH'=>'serve tuina'),JSON_UNESCAPED_UNICODE), 
+            "txt"=>json_encode(array('WTH'=>'please input user tel'),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 
