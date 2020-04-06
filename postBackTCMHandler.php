@@ -127,18 +127,18 @@
                         "actions": [
                         {
                             "type": "postback",
-                            "label": "มีสมุนไพรจีน",
-                            "text": "serve herb",
-                            "data": "herb,1"
+                            "label": "มี Tuina",
+                            "text": "serve tuina",
+                            "data": "tuina,1"
                         },
                         {
                             "type": "postback",
                             "label": "ไม่มี",
-                            "text": "no herb",
-                            "data": "herb,2"
+                            "text": "no tuina",
+                            "data": "tuina,2"
                         }
                         ],
-                        "title": "มีสมุนไพรจีน?",
+                        "title": "มีนวด Tuina?",
                         "text": "เป็นการระบุบริการของท่าน"
                     }
                 }';
