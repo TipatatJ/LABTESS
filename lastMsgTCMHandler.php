@@ -186,7 +186,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"serve acup" }', 
+            "txt"=>'{ "WTH":"serve acup*" }', 
             "me"=>$me);
             post2WTH($fields, $lastMsg.'
             '.$text);
@@ -229,14 +229,14 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"serve acup" }', 
+            "txt"=>'{ "WTH":"serve acup*" }', 
             "me"=>$me);
             post2WTH($fields);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{ "WTH":"serve acup" }':
+        case $lastMsg == '{ "WTH":"serve herb" }':
             $jsonMsg = '{ 
                 "type": "template",
                 "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
