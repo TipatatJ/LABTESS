@@ -969,7 +969,7 @@ function popMemberDlg(rec_id, coorStr){
 	</div>
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal fade" id="myModal" role="dialog" style="font-color:black;">
     <div class="modal-dialog modal-lg modal-ku">
     
       <!-- Modal content-->
