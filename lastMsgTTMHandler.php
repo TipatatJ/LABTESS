@@ -4,22 +4,22 @@
                 ขอบคุณสำหรับข้อมูลประสบการณ์การใช้ การรักษแพทย์แผนจีนของท่าน
 
                 ไปดูความเห็นของท่านบนแผนที่กันเลยที่ Link นี้
-                https://homeo-map.herokuapp.com/infoMap/include/TCMmap.php?mapId='.$mapId.'
+                https://homeo-map.herokuapp.com/infoMap/include/TTMmap.php?mapId='.$mapId.'
 
                 ท่านสามารถเปลี่ยนแปลงข้อมูลของท่านได้ตลอด ด้วยการเริ่มกรอกข้อมูลใหม่ตั้งแต่ต้นที่ ริชเมนู
                 หมายเหตุ:
                 - ระบบจะจดจำข้อมูลหลังสุดที่ท่านกรอกเท่านั้น
-                - ท่านเลือกเป็นได้แค่ MD trained TCM, TCM doctor, User อย่างใดอย่างหนึ่ง
+                - ท่านเลือกเป็นได้แค่ MD trained TTM, TTM doctor, User อย่างใดอย่างหนึ่ง
                 - ข้อมูลของ Anonymous จะถูกกลั่นกรองว่ามีความน่าเชื่อถือน้อยกว่าข้อมูลที่เจ้าของแสดงตัวตน
                 - ด้วยเหตุผลทางกฏหมาย ระบบจะไม่อนุญาตให้มีการติดต่อ MD ที่ไม่มีเลข ว. หรือไม่แสดงตัวตน เพื่อกันปัญหาการแอบอ้างเป็นแพทย์
                 
                 หมายเหตุเพิมเติม:
-                - หากท่านมีข้อเสนออื่นใด ทางทีมงานยินดีรับฟัง ด้วยการพิมพ์คำว่า "ข้อเสนอแนะ" แล้วทางทีมงานจะนำข้อเสนอนั้นไปพิจารณาปรับปรุง Platform TCM Map อย่างต่อเนื่องต่อไป
+                - หากท่านมีข้อเสนออื่นใด ทางทีมงานยินดีรับฟัง ด้วยการพิมพ์คำว่า "ข้อเสนอแนะ" แล้วทางทีมงานจะนำข้อเสนอนั้นไปพิจารณาปรับปรุง Platform TTM Map อย่างต่อเนื่องต่อไป
                 - หากท่านมีข้อร้องเรียน เกี่ยวกับข้อมูลที่ไม่ถูกต้อง กรุณาพิมพ์ "ร้องเรียน" เพื่อให้ทีมงานได้รับทราบ เพื่อพิจารณาแก้ไขข้อมูลให้ตรงตามความเป็นจริงต่อไป
                 - หากอยากทราบรายละเอียดเกี่ยวกับทีมงาน กรุณาพิมพ์ "About Us" เพื่อรู้จักเราให้มากขึ้น
 
                 ขอบคุณจากใจ
-                หมอปอง & ทีมงาน TCM Map
+                หมอปอง & ทีมงาน TTM Map
                 ';
 
     switch(true){
@@ -29,7 +29,7 @@
                 'text' => ' 
                 ชื่อของท่านจะถูกระบุเป็น Anonymous
 
-                กรุณาระบุประสบการณ์ของท่านกับ TCM
+                กรุณาระบุประสบการณ์ของท่านกับ TTM
                 ',
             ];
  */
@@ -41,24 +41,24 @@
                         "actions": [
                         {
                             "type": "postback",
-                            "label": "MD Trained TCM",
+                            "label": "MD Trained TTM",
                             "text": "MD Prescriber",
                             "data": "occupation,1"
                         },
                         {
                             "type": "postback",
-                            "label": "พจ. TCM doctor",
-                            "text": "TCM doctor",
+                            "label": "แพทย์แผนไทย",
+                            "text": "TTM doctor",
                             "data": "occupation,2"
                         },
                         {
                             "type": "postback",
-                            "label": "เคยรับการรักษา TCM",
-                            "text": "TCM user",
+                            "label": "เคยรักษาแผนไทย",
+                            "text": "TTM user",
                             "data": "occupation,3"
                         }
                         ],
-                        "title": "ประสบการณ์กับ TCM",
+                        "title": "ประสบการณ์กับแผนไทย",
                         "text": "ท่านจะถูกระบุเป็น Anonymous"
                     }
                 }';
@@ -140,7 +140,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{"WTH":"regist medical license id"}' || $lastMsg == '{"WTH":"regist TCM doctor id"}':
+        case $lastMsg == '{"WTH":"regist medical license id"}' || $lastMsg == '{"WTH":"regist TTM doctor id"}':
             $jsonMsg = '{ 
                 "type": "template",
                 "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
@@ -178,7 +178,7 @@
             else{
                 $fields = array(
                 "userId"=>$userId,
-                "txt"=>'{ "tcm id":"'.$text.'" }', 
+                "txt"=>'{ "ttm id":"'.$text.'" }', 
                 "me"=>$me);
                 post2WTH($fields);
             }
@@ -394,12 +394,12 @@
                         },
                         {
                             "type": "postback",
-                            "label": "ไม่เคยใช้ TCM",
+                            "label": "ไม่เคยใช้ TTM",
                             "text": "no exp",
                             "data": "eval,X"
                         }
                         ],
-                        "title": "ความรู้สึกหลังได้ใช้ TCM",
+                        "title": "ความรู้สึกหลังได้ใช้ TTM",
                         "text": "แขร์ประสบการณ์ของท่าน"
                     }
                 }';
@@ -414,14 +414,14 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"please eval TCM" }', 
+            "txt"=>'{ "WTH":"please eval TTM" }', 
             "me"=>$me);
             post2WTH($fields);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{"WTH":"user TCM caption"}':
+        case $lastMsg == '{"WTH":"user TTM caption"}':
             $messages = [
                 'type' => 'text',
                 'text' => ' 
