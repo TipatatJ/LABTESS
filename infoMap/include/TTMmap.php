@@ -957,7 +957,7 @@ function popMemberDlg(rec_id, coorStr){
 		<b>MEMBER TYPE</b><br>
 		<br>
 		<img src="../images/DocIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่เป็นหมอ เภสัชกร หรือผู้มีใบประกอบโรคศิลป์ ที่ใช้การรักษาแผนไทย<br>
-		<img src="../images/NonMDicon.png" width="40px">&nbsp;&nbsp;คือแพทย์แผนไทย ที่มีใบประกอบโรคศิลป์ แผนไทย (พท.)<br>
+		<img src="../images/TTMdocIcon.png" width="40px">&nbsp;&nbsp;คือแพทย์แผนไทย ที่มีใบประกอบโรคศิลป์ แผนไทย (พท.)<br>
 		<img src="../images/UserIcon.png" width="40px">&nbsp;&nbsp;คือผู้รับบริการที่ใช้การแพทย์แผนไทย และร่วมแชร์ความคิดเห็น<br>
 		<hr>
 		<b>EVALUATION TYPE</b><br>
