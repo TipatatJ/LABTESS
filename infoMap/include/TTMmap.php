@@ -148,7 +148,7 @@ if (!function_exists('isMobile2')) {
 								$btnColor = 'btn-success';
 								$occupation = 'MD';
 								break;
-							case isset($rtnArr['lay exp']):
+							case isset($rtnArr['ttm id']):
 								$memIcon = "../images/NonMDicon.png";
 								$btnColor = 'btn-primary';
 								$occupation = 'Lay';
