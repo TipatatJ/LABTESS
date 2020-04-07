@@ -195,7 +195,7 @@ if (!function_exists('isMobile2')) {
 
 						//if($rtnArr['name'] != 'Anonymous'){
 						if($key.strtolower == 'x'){
-							echo '<br>ประสบการณ์ในฐานะแพทย์แผนจีน:<br><div class="ui-state-highlight wordwrap" style="padding:10px;'.$fontEm.'">'.$value.'</div><br>';
+							echo '<br>ประสบการณ์ในฐานะแพทย์แผนไทย:<br><div class="ui-state-highlight wordwrap" style="padding:10px;'.$fontEm.'">'.$value.'</div><br>';
 						}
 						//}
 
@@ -245,7 +245,7 @@ if (!function_exists('isMobile2')) {
 								$face = "../images/Qface.png";
 								break;
 						}
-						echo 'I FEEL &nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$face.'" width="30px"> FOR TCM<br>';
+						echo 'I FEEL &nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$face.'" width="30px"> FOR TTM<br>';
 						break;
 					case $key == 'my location':
 						if($value['my location']['lat'] != 'N'){

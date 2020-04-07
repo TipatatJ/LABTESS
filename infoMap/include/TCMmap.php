@@ -956,7 +956,7 @@ function popMemberDlg(rec_id, coorStr){
 	<div class="col-md-12 col-lg-12" style="padding:15px">
 		<b>MEMBER TYPE</b><br>
 		<br>
-		<img src="../images/DocIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่เป็นหมอ เภสัชกร หรือผู้มีใบประกอบโรคศิลป์ (ว.) ที่ใช้ TCM<br>
+		<img src="../images/DocIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่เป็นหมอ ผู้มีใบประกอบโรคศิลป์ (ว.) ที่ใช้ TCM<br>
 		<img src="../images/TCMdocIcon.png" width="40px">&nbsp;&nbsp;คือแพทย์แผนจีน ผู้มีใบประกอบโรคศิลป์ (พจ.)<br>
 		<img src="../images/UserIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่ได้รับการรักษาแบบแพทย์แผนจีน และร่วมแชร์ความคิดเห็น<br>
 		<hr>
