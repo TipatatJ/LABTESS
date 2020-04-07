@@ -149,18 +149,18 @@
                         "actions": [
                         {
                             "type": "postback",
-                            "label": "ฝังเข็มได้",
-                            "text": "serve acup",
-                            "data": "acup,1"
+                            "label": "มีใบเวชกรรม",
+                            "text": "wechagum",
+                            "data": "wechagum,1"
                         },
                         {
                             "type": "postback",
-                            "label": "ไม่มีบริการฝังเข็ม",
-                            "text": "no acup",
-                            "data": "acup,2"
+                            "label": "ไม่มีใบเวช",
+                            "text": "no wechagum",
+                            "data": "wechagum,2"
                         }
                         ],
-                        "title": "บริการฝังเข็มหรือไม่",
+                        "title": "มีใบเวชกรรมหรือไม่",
                         "text": "เป็นการระบุบริการของท่าน"
                     }
                 }';
@@ -185,7 +185,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"serve acup" }', 
+            "txt"=>'{ "WTH":"serve wechagum" }', 
             "me"=>$me);
             post2WTH($fields);
 

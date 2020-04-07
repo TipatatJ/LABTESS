@@ -72,7 +72,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $postData == 'acup,1' || $postData == 'acup,2':
+        case $postData == 'wechagum,1' || $postData == 'wechagum,2':
             $Uname = json_decode($lastMsg,true)['name'];
             
             $jsonMsg = '{ 
@@ -83,18 +83,18 @@
                         "actions": [
                         {
                             "type": "postback",
-                            "label": "มีสมุนไพรจีน",
+                            "label": "มีใบเภสัชกรรม",
                             "text": "serve herb",
-                            "data": "herb,1"
+                            "data": "pecahagum,1"
                         },
                         {
                             "type": "postback",
                             "label": "ไม่มี",
                             "text": "no herb",
-                            "data": "herb,2"
+                            "data": "pecahagum,2"
                         }
                         ],
-                        "title": "มีสมุนไพรจีน?",
+                        "title": "มีใบเภสัชกรรม แผนไทย?",
                         "text": "เป็นการระบุบริการของท่าน"
                     }
                 }';
@@ -103,7 +103,7 @@
  
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('acup'=>$postData),JSON_UNESCAPED_UNICODE), 
+            "txt"=>json_encode(array('wechagum'=>$postData),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 
@@ -116,7 +116,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $postData == 'herb,1' || $postData == 'herb,2':
+        case $postData == 'pecahagum,1' || $postData == 'pecahagum,2':
             $Uname = json_decode($lastMsg,true)['name'];
             
             $jsonMsg = '{ 
@@ -127,15 +127,15 @@
                         "actions": [
                         {
                             "type": "postback",
-                            "label": "มี Tuina",
-                            "text": "serve tuina",
-                            "data": "tuina,1"
+                            "label": "มีใบผดุงครรภ์",
+                            "text": "serve labour",
+                            "data": "labour,1"
                         },
                         {
                             "type": "postback",
                             "label": "ไม่มี",
-                            "text": "no tuina",
-                            "data": "tuina,2"
+                            "text": "no labour",
+                            "data": "labour,2"
                         }
                         ],
                         "title": "มีนวด Tuina?",
@@ -147,20 +147,64 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('herb'=>$postData),JSON_UNESCAPED_UNICODE), 
+            "txt"=>json_encode(array('pechagum'=>$postData),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('WTH'=>'serve tuina'),JSON_UNESCAPED_UNICODE), 
+            "txt"=>json_encode(array('WTH'=>'serve labour'),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $postData == 'tuina,1' || $postData == 'tuina,2':
+        case $postData == 'labour,1' || $postData == 'labour,2':
+            $Uname = json_decode($lastMsg,true)['name'];
+            
+            $jsonMsg = '{ 
+                "type": "template",
+                "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
+                    "template": {
+                        "type": "buttons",
+                        "actions": [
+                        {
+                            "type": "postback",
+                            "label": "มีใบนวดไทย",
+                            "text": "serve massage",
+                            "data": "massage,1"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "ไม่มี",
+                            "text": "no massage",
+                            "data": "massage,2"
+                        }
+                        ],
+                        "title": "มีใบนวดแผนไทย?",
+                        "text": "เป็นการระบุบริการของท่าน"
+                    }
+                }';
+
+            $messages = json_decode($jsonMsg, true);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('THlabour'=>$postData),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('WTH'=>'serve massage'),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
+        case $postData == 'massage,1' || $postData == 'massage,2':
             $Uname = json_decode($lastMsg,true)['name'];
             
              $messages = [
@@ -175,7 +219,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('tuina'=>$postData),JSON_UNESCAPED_UNICODE), 
+            "txt"=>json_encode(array('THmassage'=>$postData),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 
@@ -193,7 +237,9 @@
             $messages = [
                 'type' => 'text',
                 'text' => ' 
-                ประโยคสั้นๆ ที่ท่านอยากบอกเกี่ยวกับการแพทย์แผนไทย (ซึ่งจะเห็นได้ชัด เป็น Caption บน Graphic แผนที่ของเรา)
+                ประโยคสั้นๆ เกี่ยวกับบทบาทแพทย์แผนไทยของท่าน 
+                ในการทำงานด่านหน้า COVID 
+                (ซึ่งจะเห็นได้ชัด เป็น Caption บน Graphic แผนที่ของเรา)
                 ไม่เกิน 50 ตัวอักษร
                 ',
             ];
