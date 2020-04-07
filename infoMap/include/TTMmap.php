@@ -103,7 +103,7 @@ if (!function_exists('isMobile2')) {
 <?php
 
 	$sql = "SELECT DISTINCT(userId), record_id FROM line_sms
-		WHERE sms_txt='NEW INPUT' AND mapType=\"TTM\" ORDER BY record_id DESC;";   
+		WHERE sms_txt='NEW INPUT' AND mapType=\"็Homeo\" ORDER BY record_id DESC;";   
 	//echo '$sql = '.$sql.'<hr>';
 	$result = dbQuery($sql);
 
@@ -957,7 +957,7 @@ function popMemberDlg(rec_id, coorStr){
 		<b>MEMBER TYPE</b><br>
 		<br>
 		<img src="../images/DocIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่เป็นหมอ เภสัชกร หรือผู้มีใบประกอบโรคศิลป์ (ว.) ที่ใช้แพทย์แผนไทย<br>
-		<img src="../images/TTMdocIcon.png" width="40px">&nbsp;&nbsp;คือแพทย์แผนไทย ผู้มีใบประกอบโรคศิลป์ (พจ.)<br>
+		<img src="../images/TTMdocIcon.png" width="40px">&nbsp;&nbsp;คือแพทย์แผนไทย ผู้มีใบประกอบโรคศิลป์ (พท.)<br>
 		<img src="../images/UserIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่ได้รับการรักษาแบบแพทย์แผนไทย และร่วมแชร์ความคิดเห็น<br>
 		<hr>
 		<b>EVALUATION TYPE</b><br>
