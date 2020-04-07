@@ -82,11 +82,11 @@ if (!function_exists('isMobile2')) {
 
 	<div id="CurrentBillWrap" class="brown_round_rect" style="min-height:100px;">
 
-		<div id="CurrentBill" style="padding:5px;" width="75%">All about TCM in Thailand
+		<div id="CurrentBill" style="padding:5px;" width="75%">All about Thai Traditional Medicine in Thailand
         </div>
 
         <div style="font-size:5em; white-space:nowrap">
-        TCM Map
+        TTM Map
         </div>
 
         
@@ -103,7 +103,7 @@ if (!function_exists('isMobile2')) {
 <?php
 
 	$sql = "SELECT DISTINCT(userId), record_id FROM line_sms
-		WHERE sms_txt='NEW INPUT' AND mapType=\"TCM\" ORDER BY record_id DESC;";   
+		WHERE sms_txt='NEW INPUT' AND mapType=\"TTM\" ORDER BY record_id DESC;";   
 	//echo '$sql = '.$sql.'<hr>';
 	$result = dbQuery($sql);
 
@@ -956,16 +956,16 @@ function popMemberDlg(rec_id, coorStr){
 	<div class="col-md-12 col-lg-12" style="padding:15px">
 		<b>MEMBER TYPE</b><br>
 		<br>
-		<img src="../images/DocIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่เป็นหมอ เภสัชกร หรือผู้มีใบประกอบโรคศิลป์ (ว.) ที่ใช้ TCM<br>
-		<img src="../images/TCMdocIcon.png" width="40px">&nbsp;&nbsp;คือแพทย์แผนจีน ผู้มีใบประกอบโรคศิลป์ (พจ.)<br>
-		<img src="../images/UserIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่ได้รับการรักษาแบบแพทย์แผนจีน และร่วมแชร์ความคิดเห็น<br>
+		<img src="../images/DocIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่เป็นหมอ เภสัชกร หรือผู้มีใบประกอบโรคศิลป์ (ว.) ที่ใช้แพทย์แผนไทย<br>
+		<img src="../images/TTMdocIcon.png" width="40px">&nbsp;&nbsp;คือแพทย์แผนไทย ผู้มีใบประกอบโรคศิลป์ (พจ.)<br>
+		<img src="../images/UserIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่ได้รับการรักษาแบบแพทย์แผนไทย และร่วมแชร์ความคิดเห็น<br>
 		<hr>
 		<b>EVALUATION TYPE</b><br>
 		<br>
-		<img src="../images/Good.png" width="40px">&nbsp;&nbsp;รู้สึกประทับใจกับ แพทย์แผนจีน<br>
-		<img src="../images/Neutral.png" width="40px">&nbsp;&nbsp;รู้สึกกลางๆ กับ แพทย์แผนจีน<br>
-		<img src="../images/Bad.png" width="40px">&nbsp;&nbsp;รู้สึกแย่ กับ แพทย์แผนจีน<br>
-		<img src="../images/Qface.png" width="40px">&nbsp;&nbsp;ยังไม่มีข้อมูล หรือยังไม่เข้าใจ แพทย์แผนจีน<br>
+		<img src="../images/Good.png" width="40px">&nbsp;&nbsp;รู้สึกประทับใจกับ แพทย์แผนไทย<br>
+		<img src="../images/Neutral.png" width="40px">&nbsp;&nbsp;รู้สึกกลางๆ กับ แพทย์แผนไทย<br>
+		<img src="../images/Bad.png" width="40px">&nbsp;&nbsp;รู้สึกแย่ กับ แพทย์แผนไทย<br>
+		<img src="../images/Qface.png" width="40px">&nbsp;&nbsp;ยังไม่มีข้อมูล หรือยังไม่เข้าใจ แพทย์แผนไทย<br>
 	</div>
 
   <!-- Modal -->
@@ -1005,7 +1005,7 @@ function popMemberDlg(rec_id, coorStr){
 <pre style="width:100%; padding:15px; <?php echo $fontEm; ?>">
 		<div id="shareYourThought">
 		SHARE YOUR THOUGHT WITH HOMEOPATHY FRIENDS<br>
-		<div style="<?php echo $fontEm2; ?>">BY ADDING LINE "TCM Map"</div>
+		<div style="<?php echo $fontEm2; ?>">BY ADDING LINE "TTM Map"</div>
 		<img src="https://qr-official.line.me/sid/M/253bqzkr.png"><br><Br>
 		OR CLICK<br>
 		<a href="https://lin.ee/wH4Lpuh"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อน" height="36" border="0"></a>
