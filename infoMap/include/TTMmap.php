@@ -63,7 +63,7 @@ if (!function_exists('isMobile2')) {
 <link href="../include/bootstrap/css/shop.css" rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" type="text/css" href="../include/bootstrap/jquery-ui-1.11.4.custom/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="../include/bootstrap/css/TTM.css" />
+<link rel="stylesheet" type="text/css" href="../include/bootstrap/css/This.css" />
 <script src="../include/bootstrap/js/jquery-1.11.0.min.js"></script>
 <script src="../include/bootstrap/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
 <script language="JavaScript" type="text/javascript" src="../include/bootstrap/js/bootstrap.min.js"></script>
@@ -82,11 +82,11 @@ if (!function_exists('isMobile2')) {
 
 	<div id="CurrentBillWrap" class="brown_round_rect" style="min-height:100px;">
 
-		<div id="CurrentBill" style="padding:5px;" width="75%">All about Thai Traditional Medicine in Thailand
+		<div id="CurrentBill" style="padding:5px;" width="75%">All about Thai Traditional Medicine
         </div>
 
         <div style="font-size:5em; white-space:nowrap">
-        TTM Map
+        แผนที่ แผนไทยด่านหน้าสู้ COVID
         </div>
 
         
@@ -174,7 +174,7 @@ if (!function_exists('isMobile2')) {
 
 						//if($rtnArr['name'] != 'Anonymous'){
 							echo '<div class="user_caption wordwrap">';
-							echo '<br>สิ่งที่คุณอยากบอกเกี่ยวกับการแพทย์แผนจีน:<br>';
+							echo '<br>สิ่งที่คุณอยากบอกเกี่ยวกับ แพทย์แผนไทย:<br>';
 							echo '<div class="ui-state-highlight wordwrap" style="padding:10px;'.$fontEm.'">'.$value.'</div><br>';
 							echo '</div>';
 						//}
@@ -195,7 +195,7 @@ if (!function_exists('isMobile2')) {
 
 						//if($rtnArr['name'] != 'Anonymous'){
 						if($key.strtolower == 'x'){
-							echo '<br>ประสบการณ์ในฐานะแพทย์แผนไทย:<br><div class="ui-state-highlight wordwrap" style="padding:10px;'.$fontEm.'">'.$value.'</div><br>';
+							echo '<br>ประสบการณ์ในฐานะ PRESCRIBER:<br><div class="ui-state-highlight wordwrap" style="padding:10px;'.$fontEm.'">'.$value.'</div><br>';
 						}
 						//}
 
@@ -245,7 +245,7 @@ if (!function_exists('isMobile2')) {
 								$face = "../images/Qface.png";
 								break;
 						}
-						echo 'I FEEL &nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$face.'" width="30px"> FOR TTM<br>';
+						echo 'I FEEL &nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$face.'" width="30px"> FOR แพทย์แผนไทย<br>';
 						break;
 					case $key == 'my location':
 						if($value['my location']['lat'] != 'N'){
@@ -956,9 +956,9 @@ function popMemberDlg(rec_id, coorStr){
 	<div class="col-md-12 col-lg-12" style="padding:15px">
 		<b>MEMBER TYPE</b><br>
 		<br>
-		<img src="../images/DocIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่เป็นหมอ เภสัชกร หรือผู้มีใบประกอบโรคศิลป์ (ว.) ที่ใช้แพทย์แผนไทย<br>
-		<img src="../images/TTMdocIcon.png" width="40px">&nbsp;&nbsp;คือแพทย์แผนไทย ผู้มีใบประกอบโรคศิลป์ (พท.)<br>
-		<img src="../images/UserIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่ได้รับการรักษาแบบแพทย์แผนไทย และร่วมแชร์ความคิดเห็น<br>
+		<img src="../images/DocIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่เป็นหมอ เภสัชกร หรือผู้มีใบประกอบโรคศิลป์ ที่ใช้การรักษาแผนไทย<br>
+		<img src="../images/NonMDicon.png" width="40px">&nbsp;&nbsp;คือแพทย์แผนไทย ที่มีใบประกอบโรคศิลป์ แผนไทย (พท.)<br>
+		<img src="../images/UserIcon.png" width="40px">&nbsp;&nbsp;คือผู้รับบริการที่ใช้การแพทย์แผนไทย และร่วมแชร์ความคิดเห็น<br>
 		<hr>
 		<b>EVALUATION TYPE</b><br>
 		<br>
@@ -969,7 +969,7 @@ function popMemberDlg(rec_id, coorStr){
 	</div>
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog" style="font-color:black;">
+  <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-lg modal-ku">
     
       <!-- Modal content-->
@@ -1004,11 +1004,11 @@ function popMemberDlg(rec_id, coorStr){
 
 <pre style="width:100%; padding:15px; <?php echo $fontEm; ?>">
 		<div id="shareYourThought">
-		SHARE YOUR THOUGHT WITH HOMEOPATHY FRIENDS<br>
+		SHARE YOUR THOUGHT WITH THAI TRADITIONAL MEDICINE FRIENDS<br>
 		<div style="<?php echo $fontEm2; ?>">BY ADDING LINE "TTM Map"</div>
-		<img src="https://qr-official.line.me/sid/M/253bqzkr.png"><br><Br>
+		<img src="https://qr-official.line.me/sid/M/762xwdng.png"><br><Br>
 		OR CLICK<br>
-		<a href="https://lin.ee/wH4Lpuh"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อน" height="36" border="0"></a>
+		<a href="https://lin.ee/vRvkG2Y"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อน" height="36" border="0"></a>
 		</div>
 <br><br>
 </pre>
