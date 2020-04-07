@@ -174,7 +174,7 @@ if (!function_exists('isMobile2')) {
 
 						//if($rtnArr['name'] != 'Anonymous'){
 							echo '<div class="user_caption wordwrap">';
-							echo '<br>สิ่งที่คุณอยากบอกเกี่ยวกับ HOMEOPATHY:<br>';
+							echo '<br>สิ่งที่คุณอยากบอกเกี่ยวกับการแพทย์แผนจีน:<br>';
 							echo '<div class="ui-state-highlight wordwrap" style="padding:10px;'.$fontEm.'">'.$value.'</div><br>';
 							echo '</div>';
 						//}
@@ -195,7 +195,7 @@ if (!function_exists('isMobile2')) {
 
 						//if($rtnArr['name'] != 'Anonymous'){
 						if($key.strtolower == 'x'){
-							echo '<br>ประสบการณ์ในฐานะ PRESCRIBER:<br><div class="ui-state-highlight wordwrap" style="padding:10px;'.$fontEm.'">'.$value.'</div><br>';
+							echo '<br>ประสบการณ์ในฐานะแพทย์แผนจีน:<br><div class="ui-state-highlight wordwrap" style="padding:10px;'.$fontEm.'">'.$value.'</div><br>';
 						}
 						//}
 
@@ -245,7 +245,7 @@ if (!function_exists('isMobile2')) {
 								$face = "../images/Qface.png";
 								break;
 						}
-						echo 'I FEEL &nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$face.'" width="30px"> FOR HOMEOPATHY<br>';
+						echo 'I FEEL &nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$face.'" width="30px"> FOR TCM<br>';
 						break;
 					case $key == 'my location':
 						if($value['my location']['lat'] != 'N'){
@@ -956,16 +956,16 @@ function popMemberDlg(rec_id, coorStr){
 	<div class="col-md-12 col-lg-12" style="padding:15px">
 		<b>MEMBER TYPE</b><br>
 		<br>
-		<img src="../images/DocIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่เป็นหมอ เภสัชกร หรือผู้มีใบประกอบโรคศิลป์<br>
-		<img src="../images/NonMDicon.png" width="40px">&nbsp;&nbsp;คือผู้ผ่านการอบรม Homeopathy และมีการสั่งใช้ยารักษาคนใกล้ตัว<br>
-		<img src="../images/UserIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่รู้จัก Homeopathy และร่วมแชร์ความคิดเห็น<br>
+		<img src="../images/DocIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่เป็นหมอ เภสัชกร หรือผู้มีใบประกอบโรคศิลป์ (ว.) ที่ใช้ TCM<br>
+		<img src="../images/NonMDicon.png" width="40px">&nbsp;&nbsp;คือแพทย์แผนจีน ผู้มีใบประกอบโรคศิลป์ (พจ.)<br>
+		<img src="../images/UserIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่ได้รับการรักษาแบบแพทย์แผนจีน และร่วมแชร์ความคิดเห็น<br>
 		<hr>
 		<b>EVALUATION TYPE</b><br>
 		<br>
-		<img src="../images/Good.png" width="40px">&nbsp;&nbsp;รู้สึกประทับใจกับ Homeopathy<br>
-		<img src="../images/Neutral.png" width="40px">&nbsp;&nbsp;รู้สึกกลางๆ กับ Homeopathy<br>
-		<img src="../images/Bad.png" width="40px">&nbsp;&nbsp;รู้สึกแย่ กับ Homeopathy<br>
-		<img src="../images/Qface.png" width="40px">&nbsp;&nbsp;ยังไม่มีข้อมูล หรือยังไม่เข้าใจ Homeopathy<br>
+		<img src="../images/Good.png" width="40px">&nbsp;&nbsp;รู้สึกประทับใจกับ แพทย์แผนจีน<br>
+		<img src="../images/Neutral.png" width="40px">&nbsp;&nbsp;รู้สึกกลางๆ กับ แพทย์แผนจีน<br>
+		<img src="../images/Bad.png" width="40px">&nbsp;&nbsp;รู้สึกแย่ กับ แพทย์แผนจีน<br>
+		<img src="../images/Qface.png" width="40px">&nbsp;&nbsp;ยังไม่มีข้อมูล หรือยังไม่เข้าใจ แพทย์แผนจีน<br>
 	</div>
 
   <!-- Modal -->
@@ -1005,10 +1005,10 @@ function popMemberDlg(rec_id, coorStr){
 <pre style="width:100%; padding:15px; <?php echo $fontEm; ?>">
 		<div id="shareYourThought">
 		SHARE YOUR THOUGHT WITH HOMEOPATHY FRIENDS<br>
-		<div style="<?php echo $fontEm2; ?>">BY ADDING LINE "Homeo Map"</div>
-		<img src="https://qr-official.line.me/sid/M/762xwdng.png"><br><Br>
+		<div style="<?php echo $fontEm2; ?>">BY ADDING LINE "TCM Map"</div>
+		<img src="https://qr-official.line.me/sid/M/253bqzkr.png"><br><Br>
 		OR CLICK<br>
-		<a href="https://lin.ee/vRvkG2Y"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อน" height="36" border="0"></a>
+		<a href="https://lin.ee/wH4Lpuh"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อน" height="36" border="0"></a>
 		</div>
 <br><br>
 </pre>
