@@ -149,7 +149,7 @@ if (!function_exists('isMobile2')) {
 								$occupation = 'MD';
 								break;
 							case isset($rtnArr['ttm id']):
-								$memIcon = "../images/NonMDicon.png";
+								$memIcon = "../images/TTMdocIcon.png";
 								$btnColor = 'btn-primary';
 								$occupation = 'Lay';
 								break;
