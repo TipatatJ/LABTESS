@@ -23,7 +23,6 @@
                 ';
 
     switch(true){
-
         case $lastMsg == 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว' || $text == 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว':
 /*             $messages = [
                 'type' => 'text',
@@ -82,7 +81,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน TCM' || $text == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน TCM':
+        case $lastMsg == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน TCM' || $text == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน TCM' || $text == 'ฉันเป็นแพทย์แผนไทย ที่พร้อมแสดงตัว':
             $messages = [
                 'type' => 'text',
                 'text' => ' 
@@ -107,24 +106,24 @@
                         "actions": [
                         {
                             "type": "postback",
-                            "label": "MD Trained TCM",
+                            "label": "MD Trained TTM",
                             "text": "MD Prescriber",
                             "data": "occupation,1"
                         },
                         {
                             "type": "postback",
-                            "label": "พจ. TCM doctor",
-                            "text": "TCM doctor",
+                            "label": "แพทย์แผนไทย",
+                            "text": "TTM doctor",
                             "data": "occupation,2"
                         },
                         {
                             "type": "postback",
-                            "label": "เคยรับการรักษา TCM",
-                            "text": "TCM user",
+                            "label": "เคยรักษาแผนไทย",
+                            "text": "TTM user",
                             "data": "occupation,3"
                         }
                         ],
-                        "title": "ประสบการณ์กับ TCM",
+                        "title": "ประสบการณ์กับแผนไทย",
                         "text": "ท่านจะถูกระบุเป็น '.$text.'"
                     }
                 }';
