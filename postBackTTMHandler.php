@@ -127,6 +127,50 @@
                         "actions": [
                         {
                             "type": "postback",
+                            "label": "มีใบแผนไทยประยุกต์",
+                            "text": "serve apply ttm",
+                            "data": "apply ttm,1"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "ไม่มี",
+                            "text": "no apply ttm",
+                            "data": "apply ttm,2"
+                        }
+                        ],
+                        "title": "มีใบผดุงครรภ์?",
+                        "text": "เป็นการระบุบริการของท่าน"
+                    }
+                }';
+
+            $messages = json_decode($jsonMsg, true);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('pechagum'=>$postData),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('WTH'=>'serve apply ttm'),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
+        case $postData == 'apply ttm,1' || $postData == 'apply ttm,2':
+            $Uname = json_decode($lastMsg,true)['name'];
+            
+            $jsonMsg = '{ 
+                "type": "template",
+                "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
+                    "template": {
+                        "type": "buttons",
+                        "actions": [
+                        {
+                            "type": "postback",
                             "label": "มีใบผดุงครรภ์",
                             "text": "serve labour",
                             "data": "labour,1"
@@ -147,7 +191,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('pechagum'=>$postData),JSON_UNESCAPED_UNICODE), 
+            "txt"=>json_encode(array('apply ttm'=>$postData),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 

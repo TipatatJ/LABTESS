@@ -190,7 +190,7 @@ if (!function_exists('isMobile2')) {
 
 						
 						break;
-					case $key == 'lay exp' && !is_numeric($key):
+					case $key == 'ttm id' && !is_numeric($key):
 						//echo "I'M A LAY PRESCRIBER<br>";
 
 						//if($rtnArr['name'] != 'Anonymous'){
