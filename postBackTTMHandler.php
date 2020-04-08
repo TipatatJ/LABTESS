@@ -133,7 +133,7 @@
                         },
                         {
                             "type": "postback",
-                            "label": "ไม่มี",
+                            "label": "ไม่มี", 
                             "text": "no apply ttm",
                             "data": "apply ttm,2"
                         }
