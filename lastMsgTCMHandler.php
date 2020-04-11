@@ -78,7 +78,7 @@
                         },
                         {
                             "type": "postback",
-                            "label": "เคยรับการรักษา TCM",
+                            "label": "งานร้านแผนจีน",
                             "text": "TCM user",
                             "data": "occupation,3"
                         }
