@@ -233,7 +233,7 @@ if (!function_exists('isMobile2')) {
 					case $key == 'eval':
 						switch($value){
 							case 'eval,3':
-								$face = "../images/Good.png";
+								$face = "../images/10.png";
 								break;
 							case 'eval,2':
 								$face = "../images/Neutral.png";
@@ -962,7 +962,7 @@ function popMemberDlg(rec_id, coorStr){
 		<hr>
 		<b>EVALUATION TYPE</b><br>
 		<br>
-		<img src="../images/Good.png" width="40px">&nbsp;&nbsp;รู้สึกประทับใจกับ แพทย์แผนจีน<br>
+		<img src="../images/Good.png" width="40px">&nbsp;&nbsp;ประสบการณ์มากกว่า 10 ปี<br>
 		<img src="../images/Neutral.png" width="40px">&nbsp;&nbsp;รู้สึกกลางๆ กับ แพทย์แผนจีน<br>
 		<img src="../images/Bad.png" width="40px">&nbsp;&nbsp;รู้สึกแย่ กับ แพทย์แผนจีน<br>
 		<img src="../images/Qface.png" width="40px">&nbsp;&nbsp;ยังไม่มีข้อมูล หรือยังไม่เข้าใจ แพทย์แผนจีน<br>
