@@ -233,19 +233,19 @@ if (!function_exists('isMobile2')) {
 					case $key == 'eval':
 						switch($value){
 							case 'eval,3':
-								$face = "../images/10.png";
+								$face = "../images/10Medal.png";
 								break;
 							case 'eval,2':
-								$face = "../images/Neutral.png";
+								$face = "../images/5Medal.png";
 								break;
 							case 'eval,1':
-								$face = "../images/Bad.png";
+								$face = "../images/1Medal.png";
 								break;
 							case 'eval,X':
-								$face = "../images/Qface.png";
+								$face = "../images/NewMedal.png";
 								break;
 						}
-						echo 'I FEEL &nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$face.'" width="30px"> FOR TCM<br>';
+						echo 'I HAS &nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$face.'" width="30px"> EXPERIENCE FOR TCM<br>';
 						break;
 					case $key == 'my location':
 						if($value['my location']['lat'] != 'N'){
@@ -956,16 +956,18 @@ function popMemberDlg(rec_id, coorStr){
 	<div class="col-md-12 col-lg-12" style="padding:15px">
 		<b>MEMBER TYPE</b><br>
 		<br>
-		<img src="../images/DocIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่เป็นหมอ ผู้มีใบประกอบโรคศิลป์ (ว.) ที่ใช้ TCM<br>
-		<img src="../images/TCMdocIcon.png" width="40px">&nbsp;&nbsp;คือแพทย์แผนจีน ผู้มีใบประกอบโรคศิลป์ (พจ.)<br>
+		
+		<img src="../images/TCMdocIcon.png" width="40px"><doc>&nbsp;&nbsp;คือแพทย์แผนจีน ผู้มีใบประกอบโรคศิลป์ (พจ.) หรือ<br>ผู้ที่เป็นหมอ ผู้มีใบประกอบโรคศิลป์ (ว.) ที่ใช้ TCM</doc>
+		<img src="../images/TCMphramIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่เป็นเภสัชกรแผนจีน หรือ ร้านยาจีน<br>
 		<img src="../images/UserIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่ได้รับการรักษาแบบแพทย์แผนจีน และร่วมแชร์ความคิดเห็น<br>
+		
 		<hr>
 		<b>EVALUATION TYPE</b><br>
 		<br>
-		<img src="../images/Good.png" width="40px">&nbsp;&nbsp;ประสบการณ์มากกว่า 10 ปี<br>
-		<img src="../images/Neutral.png" width="40px">&nbsp;&nbsp;รู้สึกกลางๆ กับ แพทย์แผนจีน<br>
-		<img src="../images/Bad.png" width="40px">&nbsp;&nbsp;รู้สึกแย่ กับ แพทย์แผนจีน<br>
-		<img src="../images/Qface.png" width="40px">&nbsp;&nbsp;ยังไม่มีข้อมูล หรือยังไม่เข้าใจ แพทย์แผนจีน<br>
+		<img src="../images/10Medal.png" width="40px">&nbsp;&nbsp;ประสบการณ์มากกว่า 10 ปี<br>
+		<img src="../images/5Medal.png" width="40px">&nbsp;&nbsp;ประสบการณ์ 5 - 10 ปี<br>
+		<img src="../images/1Medal.png" width="40px">&nbsp;&nbsp;ประสบการณ์น้อยกว่า 5 ปี<br>
+		<img src="../images/NewMedal.png" width="40px">&nbsp;&nbsp;เพิ่งจบ<br>
 	</div>
 
   <!-- Modal -->

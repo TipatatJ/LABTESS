@@ -65,7 +65,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('WTH'=>'use case experience'),JSON_UNESCAPED_UNICODE), 
+            "txt"=>json_encode(array('WTH'=>'TCM pharmacist'),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 

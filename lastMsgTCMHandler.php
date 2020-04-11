@@ -181,7 +181,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{"WTH":"use case experience"}':
+        case $lastMsg == '{"WTH":"TCM pharmacist"}':
             $Uname = json_decode($lastMsg,true)['name'];
             
             /* $messages = [
@@ -211,7 +211,7 @@
             
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "user exp":"'.$text.'" }', 
+            "txt"=>'{ "TCM pharmacist":"'.$text.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
