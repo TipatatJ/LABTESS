@@ -343,7 +343,7 @@
                         {
                             "type": "postback",
                             "label": "5-10 ปี",
-                            "text": "5-1o Yr exp",
+                            "text": "5-10 Yr exp",
                             "data": "eval,2"
                         },
                         {
