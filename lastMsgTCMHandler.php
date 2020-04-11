@@ -67,7 +67,7 @@
                         {
                             "type": "postback",
                             "label": "MD Trained TCM",
-                            "text": "MD Prescriber",
+                            "text": "MD TCM",
                             "data": "occupation,1"
                         },
                         {
@@ -79,7 +79,7 @@
                         {
                             "type": "postback",
                             "label": "งานร้านแผนจีน",
-                            "text": "TCM user",
+                            "text": "TCM pharmacist",
                             "data": "occupation,3"
                         }
                         ],
