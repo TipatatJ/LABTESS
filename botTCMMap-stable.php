@@ -158,7 +158,7 @@ if (!is_null($events['events'])) {
                 มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3',
             ];
 
-            /* $jsonMsg = '{
+            $jsonMsg = '{
                 "type": "template",
                 "altText": "this is a buttons template",
                     "template": {
@@ -186,36 +186,18 @@ if (!is_null($events['events'])) {
                         "title": "สภาพอากาศพื้นที่ใกล้เคียง",
                         "text": "มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3"
                     }
-                }'; */
-
-            $jsonMsg = '{
-                "type": "template",
-                "altText": "this is a buttons template",
-                    "template": {
-                        "type": "buttons",
-                        "actions": [
-                        {
-                            "type": "postback",
-                            "label": "แชร์ตำแหน่งบน TCM Map",
-                            "text": "Share on TCM Map",
-                            "data": "MyLocation,1"
-                        }
-                        ],
-                        "title": "กดปุ่มยืนยัน",
-                        "text": "ยืนยันการแชร์ Location บน TCM map"
-                    }
                 }';
 
-            $messages = json_decode($jsonMsg, true);
-            $text = '{ "WTH":"LocationShare" }'; //json_encode($text,JSON_UNESCAPED_UNICODE);
-    
-            $fields = array(
-            "userId"=>$userId,
-            "txt"=>$text, 
-            "me"=>$me);
-            post2WTH($fields);
+                $messages = json_decode($jsonMsg, true);
+                $text = '{ "WTH":"LocationShare" }'; //json_encode($text,JSON_UNESCAPED_UNICODE);
+        
+                $fields = array(
+                "userId"=>$userId,
+                "txt"=>$text, 
+                "me"=>$me);
+                post2WTH($fields);
 
-            justMsg($messages, $replyToken, $access_token);
+                justMsg($messages, $replyToken, $access_token);
 
         }
         else if($event['type'] == 'postback'){

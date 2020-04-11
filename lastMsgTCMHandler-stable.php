@@ -377,30 +377,30 @@
 
                         {
                             "type": "postback",
-                            "label": "มากกว่า 10 ปี",
-                            "text": "More than 10 Yr",
+                            "label": "ดี",
+                            "text": "Good",
                             "data": "eval,3"
                         },
                         {
                             "type": "postback",
-                            "label": "5-10 ปี",
-                            "text": "5-1o Yr exp",
+                            "label": "เฉยๆ",
+                            "text": "Neutral",
                             "data": "eval,2"
                         },
                         {
                             "type": "postback",
-                            "label": "น้อยกว่า 5 ปี",
-                            "text": "Less than 5 Yr",
+                            "label": "แย่",
+                            "text": "Bad",
                             "data": "eval,1"
                         },
                         {
                             "type": "postback",
-                            "label": "เพิ่งจบใหม่",
+                            "label": "ไม่เคยใช้ TCM",
                             "text": "no exp",
                             "data": "eval,X"
                         }
                         ],
-                        "title": "ประสบการณ์ในวงการ TCM",
+                        "title": "ความรู้สึกหลังได้ใช้ TCM",
                         "text": "แขร์ประสบการณ์ของท่าน"
                     }
                 }';
@@ -422,7 +422,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{"WTH":"user TCM clinic"}':
+        case $lastMsg == '{"WTH":"user TCM caption"}':
             $messages = [
                 'type' => 'text',
                 'text' => ' 
@@ -436,7 +436,7 @@
             
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "user TCM clinic":"'.$text.'" }', 
+            "txt"=>'{ "user homeo caption":"'.$text.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
@@ -454,7 +454,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "user TCM clinic":"'.$text.'" }', 
+            "txt"=>'{ "user homeo caption":"'.$text.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
