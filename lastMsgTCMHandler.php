@@ -24,65 +24,24 @@
 
     switch(true){
 
-        case $lastMsg == 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว' || $text == 'ซ่อนตัวตนของฉัน เพื่อความเป็นส่วนตัว':
-/*             $messages = [
+        case $lastMsg == 'ฉันทำงานร้านยาจีน' || $text == 'ฉันทำงานร้านยาจีน':
+
+            $messages = [
                 'type' => 'text',
                 'text' => ' 
-                ชื่อของท่านจะถูกระบุเป็น Anonymous
-
-                กรุณาระบุประสบการณ์ของท่านกับ TCM
+                กรุณาใส่ชื่อ นามสกุล ของท่าน 
                 ',
             ];
- */
-            $jsonMsg = '{
-                "type": "template",
-                "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
-                    "template": {
-                        "type": "buttons",
-                        "actions": [
-                        {
-                            "type": "postback",
-                            "label": "MD Trained TCM",
-                            "text": "MD Prescriber",
-                            "data": "occupation,1"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "พจ. TCM doctor",
-                            "text": "TCM doctor",
-                            "data": "occupation,2"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "เคยรับการรักษา TCM",
-                            "text": "TCM user",
-                            "data": "occupation,3"
-                        }
-                        ],
-                        "title": "ประสบการณ์กับ TCM",
-                        "text": "ท่านจะถูกระบุเป็น Anonymous"
-                    }
-                }';
-
-            $messages = json_decode($jsonMsg, true);
-
-            /* $fields = array(
-            "userId"=>$userId,
-            "txt"=>'{ "WTH": "name as Anonymous" }', 
-            "me"=>$me);
-            post2WTH($fields, $lastMsg.'
-            '.$text); */
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('name'=>'Anonymous')), 
+            "txt"=>'{ "WTH":"please input user name" }', 
             "me"=>$me);
             post2WTH($fields);
-
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน TCM' || $text == 'ฉันพร้อมแสดงตัว เพื่อสนับสนุน TCM':
+        case $lastMsg == 'ฉันเป็นหมอจีน หรือหมอผู้รักษาด้วย TCM' || $text == 'ฉันเป็นหมอจีน หรือหมอผู้รักษาด้วย TCM':
             $messages = [
                 'type' => 'text',
                 'text' => ' 
