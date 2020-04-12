@@ -1,6 +1,7 @@
 <?php
 
-  $strAccessToken = "+t5E3u2f0eW3JKhGPyKqGX4M1M6uuvErtuexSZn6D3017/ONS2n+Nqc3KjF37A0K4tv3QZ0BD6kyrzoCXmKa+L2ys817BnmeTwqXPujiaX9+yEpjMBxT2OH60T4W41rZXsUqJ6QidfaesO3AOAb93wdB04t89/1O/w1cDnyilFU=";
+  // /$strAccessToken = "+t5E3u2f0eW3JKhGPyKqGX4M1M6uuvErtuexSZn6D3017/ONS2n+Nqc3KjF37A0K4tv3QZ0BD6kyrzoCXmKa+L2ys817BnmeTwqXPujiaX9+yEpjMBxT2OH60T4W41rZXsUqJ6QidfaesO3AOAb93wdB04t89/1O/w1cDnyilFU=";
+  $strAccessToken = "PU9uufmJe508EhejtcuRyn68hzOFqG20rdhTCMqDxxarz+JpVfblWt+me5E7WuBo/n4nNeUwpoiw6TyZDwvfpTglp24CVLJOCC4fFV6ylYRxSpwTg7HqjC/J6K38+WUDWdXhbiQGJX8eYfNPvTqUBgdB04t89/1O/w1cDnyilFU=";
   
   $content = file_get_contents('php://input');
   $arrJson = json_decode($content, true);
@@ -46,7 +47,7 @@
       $arrPostData = array();
       $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
       $arrPostData['messages'][0]['type'] = "text";
-      $arrPostData['messages'][0]['text'] = 'Thank you.';
+      $arrPostData['messages'][0]['text'] = 'สวัสดีค่ำ ฉันชื่อ H.E.L.E.N คุณเรียกฉันหรือคะ?';
     }
   }
   else

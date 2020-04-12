@@ -1,130 +1,19 @@
 <?php
-define('SECRET_KEY', 'thai_epigenomic');
-$me = "Ub3f6b90b35b51d817a89835f9afaf8c7";
-$access_token = 'PU9uufmJe508EhejtcuRyn68hzOFqG20rdhTCMqDxxarz+JpVfblWt+me5E7WuBo/n4nNeUwpoiw6TyZDwvfpTglp24CVLJOCC4fFV6ylYRxSpwTg7HqjC/J6K38+WUDWdXhbiQGJX8eYfNPvTqUBgdB04t89/1O/w1cDnyilFU=';
-$arrBreakKW = array(
-            'ขอบคุณที่สนใจเป็นส่วนหนึ่งของ HOMEO MAP เริ่มต้นกรอกข้อมูลโดยการเลือกที่ Rich menu ด้านล่าง',
-            'PMgeneralAdvise',
-            'PMriskAdvise',
-            //'occupation,1','occupation,2','occupation,3',
-            //'acup,1','acup,2',
-            'serve acup','no acup',
-            //'CHherb,1','CHherb,2',
-            //'serve herb','no herb',
-            //'tuina,1','tuina,2',
-            'serve tuina','no tuina',
-            'eval,1','eval,2','eval,3','eval,X',
-            'MD TCM','TCM doctor','TCM pharmacist',
-            'Good','Neutral','Bad', 'no exp'
-            );
 
-// Get POST body content
-$content = file_get_contents('php://input');
+  // /$strAccessToken = "+t5E3u2f0eW3JKhGPyKqGX4M1M6uuvErtuexSZn6D3017/ONS2n+Nqc3KjF37A0K4tv3QZ0BD6kyrzoCXmKa+L2ys817BnmeTwqXPujiaX9+yEpjMBxT2OH60T4W41rZXsUqJ6QidfaesO3AOAb93wdB04t89/1O/w1cDnyilFU=";
+  $strAccessToken = "PU9uufmJe508EhejtcuRyn68hzOFqG20rdhTCMqDxxarz+JpVfblWt+me5E7WuBo/n4nNeUwpoiw6TyZDwvfpTglp24CVLJOCC4fFV6ylYRxSpwTg7HqjC/J6K38+WUDWdXhbiQGJX8eYfNPvTqUBgdB04t89/1O/w1cDnyilFU=";
+  
+  $content = file_get_contents('php://input');
+  $arrJson = json_decode($content, true);
 
-//echo $content.'<br>';
-// Parse JSON
+  $strUrl = "https://api.line.me/v2/bot/message/reply";
 
-@session_start();
-$userId = 'n/a';
+  $arrHeader = array();
+  $arrHeader[] = "Content-Type: application/json";
+  $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
+  $_msg = $arrJson['events'][0]['message']['text'];
 
-$events = json_decode($content, true);
-
-// Validate parsed JSON data
-if (!is_null($events['events'])) {
-    // Loop through each event
-    foreach ($events['events'] as $event) {
-        $userId = $event['source']['userId'];
-
-        $lastMsg = getUserLastMessage($userId);
-
-        
-
-        // Reply only when message sent is in 'text' format
-        if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-            // Get text sent
-            $text = $event['message']['text'];
-            // Get replyToken
-            $replyToken = $event['replyToken'];
-
-            /* if($userId != $me){
-                // Build message to reply back
-                $messages = [
-                    'type' => 'text',
-                    'text' => $text,
-                ];
-            }
-            else{
-                $messages = [
-                    'type' => 'text',
-                    'text' => $lastMsg." is your last message
-                    
-                    "."$text ($userId)",
-                ];
-            } */
-
-            
-
-
-             /* switch(true){
-                case $text == 'PMgeneralAdvise':
-                    exit;
-                    break;
-                case $text == 'PMriskAdvise':
-                    exit;
-                    break; 
-                default;
-                    $fields = array(
-                    "userId"=>$userId,
-                    "txt"=>'$$'.json_encode(json_decode($lastMsg, true)['events']), 
-                    "me"=>$me);
-                    post2WTH($fields);
-                    //$text = json_encode(json_decode($text, true)['events'][0]);
-            }  */
-
-            //BREAK ALL POST BACK form eventType "Postback"
-
-            if(in_array($text, $arrBreakKW)){
-                exit;
-            }
-
-            include_once('lastMsgTCMHandler.php');
-
-            //$userMessage = $text; // เก็บค่าข้อความที่ผู้ใช้พิมพ์
-             
-            /* switch($userMessage){
-                case     "test":
-                    $textReplyMessage = " คุณไม่ได้พิมพ์ ค่า ตามที่กำหนด";
-                    
-                default:
-                    $url = "https://bots.dialogflow.com/line/<Agent-ID>/webhook";
-                    $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-        //          file_put_contents('headers.txt',json_encode($headers, JSON_PRETTY_PRINT));          
-        //          file_put_contents('body.txt',file_get_contents('php://input'));
-                    $headers['Host'] = "bots.dialogflow.com";
-                    $json_headers = array();
-                    foreach($headers as $k=>$v){
-                        $json_headers[]=$k.":".$v;
-                    }
-                    $inputJSON = file_get_contents('php://input');
-                    // ส่วนของการส่งการแจ้งเตือนผ่านฟังก์ชั่น cURL
-                    $ch = curl_init();
-                    curl_setopt( $ch, CURLOPT_URL, $url);
-                    curl_setopt( $ch, CURLOPT_POST, 1);
-                    curl_setopt( $ch, CURLOPT_BINARYTRANSFER, true);
-                    curl_setopt( $ch, CURLOPT_POSTFIELDS, $inputJSON);
-                    curl_setopt( $ch, CURLOPT_HTTPHEADER, $json_headers);
-                    curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 2); // 0 | 2 ถ้าเว็บเรามี ssl สามารถเปลี่ยนเป้น 2
-                    curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 1); // 0 | 1 ถ้าเว็บเรามี ssl สามารถเปลี่ยนเป้น 1
-                    curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
-                    curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
-                    $result = curl_exec( $ch );
-                    curl_close( $ch );
-                    exit;               
-                    break;
-            } */
-            
-        }
-        else if($event['message']['type'] == 'location'){
+/*   if($arrJson['events'][0]['message']['type'] == 'location'){
             // Get text sent
             $text = $content;
             // Get replyToken
@@ -158,36 +47,6 @@ if (!is_null($events['events'])) {
                 มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3',
             ];
 
-            /* $jsonMsg = '{
-                "type": "template",
-                "altText": "this is a buttons template",
-                    "template": {
-                        "type": "buttons",
-                        "actions": [
-                        {
-                            "type": "postback",
-                            "label": "แชร์ตำแหน่งบน TCM Map",
-                            "text": "Share on TCM Map",
-                            "data": "MyLocation,1"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "คำแนำนำสำหรับคนปกติ",
-                            "text": "PMgeneralAdvise",
-                            "data": "PMgeneralAdvise,'.$text['pm2.5'].'"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "คำแนะนำคนมีความเสี่ยง",
-                            "text": "PMriskAdvise",
-                            "data": "PMriskAdvise,'.$text['pm2.5'].'"
-                        }
-                        ],
-                        "title": "สภาพอากาศพื้นที่ใกล้เคียง",
-                        "text": "มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3"
-                    }
-                }'; */
-
             $jsonMsg = '{
                 "type": "template",
                 "altText": "this is a buttons template",
@@ -216,120 +75,77 @@ if (!is_null($events['events'])) {
             post2WTH($fields);
 
             justMsg($messages, $replyToken, $access_token);
-
-        }
-        else if($event['type'] == 'postback'){
-            // Get text sent
-            $text = $content;
-            // Get replyToken
-            $replyToken = $event['replyToken'];
-            // Build message to reply back
-
-            $data = $event['data'];
-            
+            die;
+        } */
 
 
+  $api_key="xX3Bhqg9gp1ds9yfrPfgzaa8BlYS2igP";
+  $url = 'https://api.mongolab.com/api/1/databases/data/collections/datas?apiKey='.$api_key.'';
+  $json = file_get_contents('https://api.mongolab.com/api/1/databases/data/collections/datas?apiKey='.$api_key.'&q={"question":"'.$_msg.'"}');
+  $data = json_decode($json);
+  $isData=sizeof($data);
 
-            /* $messages = [
-                'type' => 'text',
-                'text' => '>>'.json_encode($event['postback']['data'], true),
-            ]; */
-
-            include_once('postBackTCMHandler.php');
-
-            //BREAK ALL POST BACK form eventType "Postback"
-            
-
-            if(in_array($text, $arrBreakKW)){
-                exit;
-            }
-        }
-        else{
-            //if("Ub3f6b90b35b51d817a89835f9afaf8c7"){
-                // Get text sent
-                $text = $content;
-                // Get replyToken
-                $replyToken = $event['replyToken'];
-                // Build message to reply back
-                /* $messages = [
-                    'type' => 'text',
-                    'text' => 'NON MESSAGE TYPE\n'.$content,
-                ]; */
-
-                //$decContent = json_decode($content, true);
-                $userMsgType = $event['message']['type'];
-
-                $messages = [
-                    'type' => 'text',
-                    'text' => '
-                    เรายังไม่สามารถเข้าใจ '.$userMsgType.' ได้
-                    ต้องรบกวนตอบคำถามด้วยการพิมพ์ตอบอีกครั้ง
-                    ',
-                ];
-
-                
-                /* $fields = array(
-                "userId"=>$userId,
-                "txt"=>json_encode(array('WTH'=>'use case experience'),JSON_UNESCAPED_UNICODE), 
-                "me"=>$me);
-                post2WTH($fields); */
-
-                justMsg($messages, $replyToken, $access_token);
-                exit;
-                break;
-            //}
-        }
-
-        //######################################################################################################
-
-        // Make a POST Request to Messaging API to reply to sender
-/*         $url = 'https://api.line.me/v2/bot/message/reply';
-        $data = [
-            'replyToken' => $replyToken,
-            'messages' => [$messages]
-        ];
-        $post = json_encode($data);
-        $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        $result = curl_exec($ch);
-        curl_close($ch); */
-
-/*         //######################################################################################################
-
-        // Make a POST to save SMS to Wiztech LINE sms
-        $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsInp.php';
-*/
-
-/*         $fields = array(
-            "userId"=>$userId,
-            "txt"=>$text.' :-)', 
-            "me"=>$me);
-        post2WTH($fields); */
-
-/*
-        //url-ify the data for the POST
-        foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
-        rtrim($fields_string,'&');
-
-        //open connection
-        $ch = curl_init();
-
-        //set the url, number of POST vars, POST data
-        curl_setopt($ch,CURLOPT_URL, $url);
-        curl_setopt($ch,CURLOPT_POST, count($fields));
-        curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
-
-        //execute post
-        $rtnWTH = curl_exec($ch);
-
-        //###################################################################################################### */
+  if (strpos($_msg, 'H.E.L.E.N') !== false) 
+  {
+    if (strpos($_msg, 'H.E.L.E.N') !== false) 
+    {
+      $x_tra = str_replace("H.E.L.E.N","", $_msg);
+      $pieces = explode("|", $x_tra);
+      $_question=str_replace("[","",$pieces[0]);
+      $_answer=str_replace("]","",$pieces[1]);
+      //Post New Data
+      $newData = json_encode(
+        array(
+          'question' => $_question,
+          'answer'=> $_answer
+        )
+      );
+      $opts = array(
+        'http' => array(
+            'method' => "POST",
+            'header' => "Content-type: application/json",
+            'content' => $newData
+         )
+      );
+      $context = stream_context_create($opts);
+      $returnValue = file_get_contents($url,false,$context);
+      $arrPostData = array();
+      $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+      $arrPostData['messages'][0]['type'] = "text";
+      $arrPostData['messages'][0]['text'] = 'สวัสดีค่ำ ฉันชื่อ H.E.L.E.N คุณเรียกฉันหรือคะ?';
     }
-}
+  }
+  else
+  {
+    if($isData >0){
+       foreach($data as $rec){
+        $arrPostData = array();
+        $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+        $arrPostData['messages'][0]['type'] = "text";
+        $arrPostData['messages'][0]['text'] = $rec->answer;
+       }
+    }
+    else
+    {
+        $arrPostData = array();
+        $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+        $arrPostData['messages'][0]['type'] = "text";
+        $arrPostData['messages'][0]['text'] = 'H.E.L.E.N คุณสามารถสอนให้ฉันฉลาดได้เพียงพิมพ์: H.E.L.E.N[คำถาม|คำตอบ]';
+    }
+  }
+
+  $channel = curl_init();
+  curl_setopt($channel, CURLOPT_URL,$strUrl);
+  curl_setopt($channel, CURLOPT_HEADER, false);
+  curl_setopt($channel, CURLOPT_POST, true);
+  curl_setopt($channel, CURLOPT_HTTPHEADER, $arrHeader);
+  curl_setopt($channel, CURLOPT_POSTFIELDS, json_encode($arrPostData));
+  curl_setopt($channel, CURLOPT_RETURNTRANSFER,true);
+  curl_setopt($channel, CURLOPT_SSL_VERIFYPEER, false);
+  $result = curl_exec($channel);
+  curl_close ($channel);
+  echo "sucess full";
+
 
 function justMsg($messages, $replyToken, $access_token){
     
@@ -365,7 +181,7 @@ function post2WTH($fields){
         $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsInp.php';
         //$fields = array("userId"=>$userId,"txt"=>$text, "me"=>$me);
 
-        $fields['mapType'] = 'PHHC';
+        $fields['mapType'] = 'TCM';
 
         //url-ify the data for the POST
         foreach($fields as $key=>$value) { $fields_string .= $key.'='.urlencode($value).'&'; }
