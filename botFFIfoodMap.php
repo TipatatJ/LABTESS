@@ -232,24 +232,24 @@ if (!is_null($events['events'])) {
                             {
                                 "type": "postback",
                                 "label": "หาของกิน",
-                                "text": "Find food & drink",
+                                "text": "Find food",
                                 "data": "Find food"
                             },
                             {
                                 "type": "postback",
                                 "label": "หา Food Supply",
-                                "text": "Find food supply",
+                                "text": "Food supply",
                                 "data": "Find supplier"
                             },
                             {
                                 "type": "postback",
                                 "label": "หา ทีมก่อสร้างร้าน",
-                                "text": "Find construction",
-                                "data": "Shop construction"
+                                "text": "Find construct",
+                                "data": "Shop construct"
                             },
                             ],
                             "title": "คุณต้องการหาใคร",
-                            "text": "ยืนยันการแชร์ Location บน TCM map"
+                            "text": "เลือก Net Work ที่ต้องการหา"
                         }
                     }';
             
