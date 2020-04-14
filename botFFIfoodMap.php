@@ -367,18 +367,18 @@ if (!is_null($events['events'])) {
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Food R&D",
-                        "label": "Food R&D"
+                        "text": "Seasoning",
+                        "label": "Seasoning"
                         },
                         {
                         "type": "message",
-                        "text": "Meat supply",
-                        "label": "Meat supply"
+                        "text": "Bakery",
+                        "label": "Bakery"
                         },
                         {
                         "type": "message",
-                        "text": "Veg&Fruit",
-                        "label": "Veg&Fruit"
+                        "text": "Equipment",
+                        "label": "Equipment"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.jinwellbeing.com/wp-content/uploads/2019/11/living_at_jin2.jpg"
