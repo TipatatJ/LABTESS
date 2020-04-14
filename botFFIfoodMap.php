@@ -300,34 +300,103 @@ if (!is_null($events['events'])) {
             $msg1 = json_decode($jsonMsg, true); 
 
             $jsonMsg = '{
-                "type": "template",
-                "altText": "this is a buttons template",
-                    "template": {
-                        "type": "buttons",
-                        "actions": [
+                "template": {
+                "type": "carousel",
+                "actions": [],
+                "columns": [
+                    {
+                    "title": "Integrative Treatment",
+                    "text": "Integrative Treatment",
+                    "actions": [
                         {
-                            "type": "postback",
-                            "label": "หาของกิน",
-                            "text": "Share on TCM Map",
-                            "data": "MyLocation,1"
+                        "type": "message",
+                        "text": "NK Cell Treatment",
+                        "label": "NK Cell Treatment"
                         },
                         {
-                            "type": "postback",
-                            "label": "หา Supplier",
-                            "text": "PMgeneralAdvise",
-                            "data": "PMgeneralAdvise,'.$text['pm2.5'].'"
+                        "label": "CA Recovery Support",
+                        "type": "message",
+                        "text": "CA Recovery Support"
                         },
                         {
-                            "type": "postback",
-                            "label": "จะสร้างร้านอาหาร",
-                            "text": "PMriskAdvise",
-                            "data": "PMriskAdvise,'.$text['pm2.5'].'"
+                        "type": "message",
+                        "text": "CA Phytonutrient",
+                        "label": "CA Phytonutrient"
                         }
-                        ],
-                        "title": "FFI Network",
-                        "text": "คุณหาอะไร? (ต่อ)"
+                    ],
+                    "thumbnailImageUrl": "https://www.jinwellbeing.com/wp-content/uploads/2019/11/living_at_jin2.jpg"
+                    },
+                    {
+                    "text": "Gene & Phenotype Screening",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Nutrigenomic",
+                        "label": "Nutrigenomic"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Cancer Gene Screen",
+                        "label": "Cancer Gene Screen"
+                        },
+                        {
+                        "type": "message",
+                        "text": "6 Step Analysis",
+                        "label": "6 Step Analysis"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/images/GeneScreening.jpg",
+                    "title": "Gene & Phenotype Screening"
+                    },
+                    {
+                    "title": "Cancer Advance Screening",
+                    "text": "Advance CA screening",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Cancer Gene Screen",
+                        "label": "Cancer Gene Screen"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Pantum Cancer Screen",
+                        "label": "Pantum Cancer Screen"
+                        },
+                        {
+                        "type": "message",
+                        "text": "NK Cell Activity",
+                        "label": "NK Cell Activity"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/images/CancerRibbon.jpg"
+                    },
+                    {
+                    "text": "Standerd Immune screening",
+                    "actions": [
+                        {
+                        "label": "ANNUAL WELLNESS",
+                        "type": "message",
+                        "text": "ภูมิ"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Check up",
+                        "label": "other check up"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Check up",
+                        "label": "other check up"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/images/ANNUAL-WELLNESS-IMMUNE.jpg",
+                    "title": "Standerd Immune screening for Every one"
                     }
-                }';
+                ]
+                },
+                "altText": "this is a carousel template",
+                "type": "template"
+            }';
 
             $msg2 = json_decode($jsonMsg, true); 
 
