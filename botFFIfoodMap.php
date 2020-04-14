@@ -253,35 +253,6 @@ if (!is_null($events['events'])) {
                         "title": "FFI Network",
                         "text": "ต้องการหา?"
                     }
-                },
-                {
-                "type": "template",
-                "altText": "this is a buttons template",
-                    "template": {
-                        "type": "buttons",
-                        "actions": [
-                        {
-                            "type": "postback",
-                            "label": "หาของกิน",
-                            "text": "Share on TCM Map",
-                            "data": "MyLocation,1"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "หา Supplier",
-                            "text": "PMgeneralAdvise",
-                            "data": "PMgeneralAdvise,'.$text['pm2.5'].'"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "จะสร้างร้าน",
-                            "text": "PMriskAdvise",
-                            "data": "PMriskAdvise,'.$text['pm2.5'].'"
-                        }
-                        ],
-                        "title": "FFI Network",
-                        "text": "ต้องการหา?"
-                    }
                 }';
 
 
