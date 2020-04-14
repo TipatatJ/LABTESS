@@ -382,6 +382,28 @@ if (!is_null($events['events'])) {
                         }
                     ],
                     "thumbnailImageUrl": "https://www.jinwellbeing.com/wp-content/uploads/2019/11/living_at_jin2.jpg"
+                    },
+                    {
+                    "title": "หา Supply chain"
+                    "text": "หน้าที่ (3)",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Packaging",
+                        "label": "Packaging"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Logistic",
+                        "label": "Logistic"
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/images/GeneScreening.jpg",
                     }
                 ]
                 },
