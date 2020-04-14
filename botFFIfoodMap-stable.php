@@ -251,7 +251,7 @@ if (!is_null($events['events'])) {
                         }
                         ],
                         "title": "FFI Network",
-                        "text": "คุณหาอะไร?"
+                        "text": "มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3"
                     }
                 }';
 
