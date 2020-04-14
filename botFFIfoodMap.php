@@ -223,6 +223,8 @@ if (!is_null($events['events'])) {
                 exit;
             }
             
+            
+            
             $jsonMsg = '{
                 "type": "template",
                 "altText": "this is a buttons template",
@@ -232,37 +234,18 @@ if (!is_null($events['events'])) {
                         {
                             "type": "postback",
                             "label": "หาของกิน",
-                            "text": "Find food",
-                            "data": "Find food"
-                        }
-                        
-                        ],
-                        "title": "คุณต้องการหาใคร",
-                        "text": "Net Work ที่หา"
-                    }
-                }';
-            
-            /* $jsonMsg = '{
-                "type": "template",
-                "altText": "this is a buttons template",
-                    "template": {
-                        "type": "buttons",
-                        "actions": [
-                        {
-                            "type": "postback",
-                            "label": "แชร์ตำแหน่งบน TCM Map",
                             "text": "Share on TCM Map",
                             "data": "MyLocation,1"
                         },
                         {
                             "type": "postback",
-                            "label": "คำแนำนำสำหรับคนปกติ",
+                            "label": "หา Supplier",
                             "text": "PMgeneralAdvise",
                             "data": "PMgeneralAdvise,'.$text['pm2.5'].'"
                         },
                         {
                             "type": "postback",
-                            "label": "คำแนะนำคนมีความเสี่ยง",
+                            "label": "จะสร้างร้าน",
                             "text": "PMriskAdvise",
                             "data": "PMriskAdvise,'.$text['pm2.5'].'"
                         }
@@ -270,7 +253,7 @@ if (!is_null($events['events'])) {
                         "title": "สภาพอากาศพื้นที่ใกล้เคียง",
                         "text": "มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3"
                     }
-                }'; */
+                }';
 
 
             $messages = json_decode($jsonMsg, true);
