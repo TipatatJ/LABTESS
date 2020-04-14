@@ -223,7 +223,7 @@ if (!is_null($events['events'])) {
                 exit;
             }
             
-            /* $jsonMsg = '{
+            $jsonMsg = '{
                 "type": "template",
                 "altText": "this is a buttons template",
                     "template": {
@@ -251,9 +251,9 @@ if (!is_null($events['events'])) {
                         "title": "คุณต้องการหาใคร",
                         "text": "เลือก Net Work ที่ต้องการหา"
                     }
-                }'; */
+                }';
             
-            $jsonMsg = '{
+            /* $jsonMsg = '{
                 "type": "template",
                 "altText": "this is a buttons template",
                     "template": {
@@ -281,11 +281,11 @@ if (!is_null($events['events'])) {
                         "title": "สภาพอากาศพื้นที่ใกล้เคียง",
                         "text": "มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3"
                     }
-                }';
+                }'; */
 
 
             $messages = json_decode($jsonMsg, true);
-            $text = '{ "WTH":"LocationShare" }'; //json_encode($text,JSON_UNESCAPED_UNICODE);
+            $text = '{ "WTH":"Ask location" }'; //json_encode($text,JSON_UNESCAPED_UNICODE);
     
             $fields = array(
             "userId"=>$userId,
