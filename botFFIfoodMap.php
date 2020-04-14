@@ -234,7 +234,7 @@ if (!is_null($events['events'])) {
                             "label": "หาของกิน",
                             "text": "Find food",
                             "data": "Find food"
-                        },
+                        }
                         
                         ],
                         "title": "คุณต้องการหาใคร",
