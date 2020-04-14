@@ -385,17 +385,17 @@ if (!is_null($events['events'])) {
                     },
                     {
                     "title": "หา Supply chain",
-                    "text": "หน้าที่ (2)",
+                    "text": "หน้าที่ (3)",
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Seasoning",
-                        "label": "Seasoning"
+                        "text": "Packaging",
+                        "label": "Packaging"
                         },
                         {
                         "type": "message",
-                        "text": "Bakery",
-                        "label": "Bakery"
+                        "text": "Logistic",
+                        "label": "Logistic"
                         },
                         {
                         "type": "message",
