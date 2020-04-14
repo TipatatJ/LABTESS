@@ -410,7 +410,7 @@ if (!is_null($events['events'])) {
                 "altText": "this is a carousel template",
                 "type": "template"
             }';
-            $msg1 = json_decode($jsonMsg, true);
+            $msg2 = json_decode($jsonMsg, true);
             //##########################################
             
 
