@@ -302,7 +302,7 @@ if (!is_null($events['events'])) {
             $arrPostData['messages'][0]['type'] = "text";
             $arrPostData['messages'][0]['text'] = '$messages';
 
-            multiMsg($replyToken, $arrPostData);
+            multiMsg($access_token, $replyToken, $arrPostData);
 
             //justMsg($messages, $replyToken, $access_token);
 
@@ -465,7 +465,7 @@ function justMsg($messages, $replyToken, $access_token){
     //post2WTH($fields);
 }
 
-function multiMsg($strAccessToken, $arrPostData){
+function multiMsg($strAccessToken, $replyToken, $arrPostData){
 
     
       //DATA PATTERN
