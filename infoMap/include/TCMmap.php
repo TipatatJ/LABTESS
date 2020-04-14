@@ -958,6 +958,7 @@ function popMemberDlg(rec_id, coorStr){
         //$url = 'http://localhost:82/Qweb/site1_wiztech/WiztechSolution/include/smsOfTCMByRecID.php';
 		$url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsOfTCMByRecID.php';
          
+		
         $.post($url,{
             RecId: rec_id,
             mapType: 'TCM'
