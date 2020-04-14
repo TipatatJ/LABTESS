@@ -224,7 +224,7 @@ if (!is_null($events['events'])) {
             }
             
             
-            
+            /*
             $jsonMsg = '{
                 "type": "template",
                 "altText": "this is a buttons template",
@@ -256,7 +256,7 @@ if (!is_null($events['events'])) {
                 }';
 
 
-            $messages = json_decode($jsonMsg, true);
+            $messages = json_decode($jsonMsg, true); */
             $text = '{ "WTH":"Ask location" }'; //json_encode($text,JSON_UNESCAPED_UNICODE);
     
             $fields = array(
@@ -265,7 +265,45 @@ if (!is_null($events['events'])) {
             "me"=>$me);
             post2WTH($fields);
 
-            justMsg($messages, $replyToken, $access_token);
+            $jsonMsg = '{
+                "type": "template",
+                "altText": "this is a buttons template",
+                    "template": {
+                        "type": "buttons",
+                        "actions": [
+                        {
+                            "type": "postback",
+                            "label": "หาของกิน",
+                            "text": "Share on TCM Map",
+                            "data": "MyLocation,1"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "หา Supplier",
+                            "text": "PMgeneralAdvise",
+                            "data": "PMgeneralAdvise,'.$text['pm2.5'].'"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "จะสร้างร้านอาหาร",
+                            "text": "PMriskAdvise",
+                            "data": "PMriskAdvise,'.$text['pm2.5'].'"
+                        }
+                        ],
+                        "title": "FFI Network",
+                        "text": "คุณหาอะไร?"
+                    }
+                }'
+            $messages = json_decode($jsonMsg, true); 
+
+            $arrPostData = array();
+            $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+            $arrPostData['messages'][0]['type'] = "text";
+            $arrPostData['messages'][0]['text'] = $messages;
+
+            multiMsg($replyToken, $arrHeader, $arrPostData){
+
+            //justMsg($messages, $replyToken, $access_token);
 
         }
         else if($event['type'] == 'postback'){
@@ -424,6 +462,39 @@ function justMsg($messages, $replyToken, $access_token){
     "txt"=>'justMsg '.$messages['text'], 
     "me"=>'function debug');
     //post2WTH($fields);
+}
+
+function multiMsg($strAccessToken, $arrHeader, $arrPostData){
+
+    /*
+      DATA PATTERN
+
+      $arrPostData = array();
+      $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+      $arrPostData['messages'][0]['type'] = "text";
+      $arrPostData['messages'][0]['text'] = 'สวัสดีค่ำ ฉันชื่อ PHHC คุณเรียกฉันหรือคะ?';
+      $arrPostData['messages'][1]['type'] = "text";
+      $arrPostData['messages'][1]['text'] = 'NEAREST OFFICER
+        '.$officerName;
+    */
+
+    $strUrl = "https://api.line.me/v2/bot/message/reply";
+
+    $arrHeader = array();
+    $arrHeader[] = "Content-Type: application/json";
+    $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
+
+    $channel = curl_init();
+    curl_setopt($channel, CURLOPT_URL,$strUrl);
+    curl_setopt($channel, CURLOPT_HEADER, false);
+    curl_setopt($channel, CURLOPT_POST, true);
+    curl_setopt($channel, CURLOPT_HTTPHEADER, $arrHeader);
+    curl_setopt($channel, CURLOPT_POSTFIELDS, json_encode($arrPostData));
+    curl_setopt($channel, CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($channel, CURLOPT_SSL_VERIFYPEER, false);
+    $result = curl_exec($channel);
+    curl_close ($channel);
+
 }
 
 function post2WTH($fields){
