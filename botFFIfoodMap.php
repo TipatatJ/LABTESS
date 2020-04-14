@@ -294,13 +294,13 @@ if (!is_null($events['events'])) {
                         "text": "คุณหาอะไร?"
                     }
                 }';
-                
+
             $messages = json_decode($jsonMsg, true); 
 
             $arrPostData = array();
             $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
             $arrPostData['messages'][0]['type'] = "text";
-            $arrPostData['messages'][0]['text'] = $messages;
+            $arrPostData['messages'][0]['text'] = '$messages';
 
             multiMsg($replyToken, $arrHeader, $arrPostData){
 
