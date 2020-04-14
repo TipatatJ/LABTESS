@@ -243,7 +243,7 @@ if (!is_null($events['events'])) {
                             },
                             {
                                 "type": "postback",
-                                "label": "หา ทีมก่อสร้างร้าน",
+                                "label": "หาทีมสร้างร้าน",
                                 "text": "Find construct",
                                 "data": "Shop construct"
                             },
