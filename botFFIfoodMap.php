@@ -355,8 +355,8 @@ if (!is_null($events['events'])) {
                         },
                         {
                         "type": "message",
-                        "text": "Fine dining",
-                        "label": "Fine dining"
+                        "text": "Veg&Fruit",
+                        "label": "Veg&Fruit"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.jinwellbeing.com/wp-content/uploads/2019/11/living_at_jin2.jpg"
