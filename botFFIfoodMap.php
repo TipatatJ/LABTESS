@@ -360,50 +360,6 @@ if (!is_null($events['events'])) {
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/images/GeneScreening.jpg",
-                    },
-                    {
-                    "title": "หา Supply chain"
-                    "text": "หน้าที่ (2)",
-                    "actions": [
-                        {
-                        "type": "message",
-                        "text": "Seasoning",
-                        "label": "Seasoning"
-                        },
-                        {
-                        "type": "message",
-                        "text": "Bakery",
-                        "label": "Bakery"
-                        },
-                        {
-                        "type": "message",
-                        "text": "Kitchen equip",
-                        "label": "Kitchen equip"
-                        }
-                    ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/images/GeneScreening.jpg",
-                    },
-                    {
-                    "title": "หา Supply chain"
-                    "text": "หน้าที่ (3)",
-                    "actions": [
-                        {
-                        "type": "message",
-                        "text": "Packaging",
-                        "label": "Packaging"
-                        },
-                        {
-                        "type": "message",
-                        "text": "Logistic",
-                        "label": "Logistic"
-                        },
-                        {
-                        "type": "message",
-                        "text": "...",
-                        "label": "..."
-                        }
-                    ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/images/GeneScreening.jpg",
                     }
                 ]
                 },
