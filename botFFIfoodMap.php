@@ -245,7 +245,7 @@ if (!is_null($events['events'])) {
                         },
                         {
                             "type": "postback",
-                            "label": "จะสร้างร้าน",
+                            "label": "จะสร้างร้านอาหาร",
                             "text": "PMriskAdvise",
                             "data": "PMriskAdvise,'.$text['pm2.5'].'"
                         }
