@@ -249,7 +249,7 @@ if (!is_null($events['events'])) {
                         },
                         ],
                         "title": "คุณต้องการหาใคร",
-                        "text": "Net Work ที่ต้องการหา"
+                        "text": "Net Work ที่หา"
                     }
                 }';
             
