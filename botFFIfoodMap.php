@@ -298,7 +298,7 @@ if (!is_null($events['events'])) {
             $messages = json_decode($jsonMsg, true); 
 
             $arrPostData = array();
-            $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+            $arrPostData['replyToken'] = $replyToken;
             $arrPostData['messages'][0]['type'] = "text";
             $arrPostData['messages'][0]['text'] = '$messages';
 
