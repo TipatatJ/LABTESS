@@ -210,6 +210,15 @@ if (!is_null($events['events'])) {
                             "text": "ยืนยันการแชร์ Location บน TCM map"
                         }
                     }';
+                
+                $messages = json_decode($jsonMsg, true);
+                $text = '{ "WTH":"LocationShare" }'; //json_encode($text,JSON_UNESCAPED_UNICODE);
+        
+                $fields = array(
+                "userId"=>$userId,
+                "txt"=>$text, 
+                "me"=>$me);
+                post2WTH($fields);
             }
             else{
                 $jsonMsg = '{
@@ -226,13 +235,13 @@ if (!is_null($events['events'])) {
                             },
                             {
                                 "type": "postback",
-                                "label": "หา Food Supply chain",
-                                "text": "Find food supply chain",
+                                "label": "หา Food Supply",
+                                "text": "Find food supply",
                                 "data": "Find supplier"
                             },
                             {
                                 "type": "postback",
-                                "label": "หา สถาปนิก ก่อสร้างร้าน",
+                                "label": "หา ทีมก่อสร้างร้าน",
                                 "text": "Find construction",
                                 "data": "Shop construction"
                             },
@@ -244,14 +253,14 @@ if (!is_null($events['events'])) {
             }
 
 
-            $messages = json_decode($jsonMsg, true);
+            /* $messages = json_decode($jsonMsg, true);
             $text = '{ "WTH":"LocationShare" }'; //json_encode($text,JSON_UNESCAPED_UNICODE);
     
             $fields = array(
             "userId"=>$userId,
             "txt"=>$text, 
             "me"=>$me);
-            post2WTH($fields);
+            post2WTH($fields); */
 
             justMsg($messages, $replyToken, $access_token);
 
