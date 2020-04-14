@@ -267,7 +267,7 @@ if (!is_null($events['events'])) {
 
 
 
-            $jsonMsg = '{
+            /* $jsonMsg = '{
                 "type": "template",
                 "altText": "this is a buttons template",
                     "template": {
@@ -297,7 +297,7 @@ if (!is_null($events['events'])) {
                     }
                 }';
 
-            $msg1 = json_decode($jsonMsg, true); 
+            $msg1 = json_decode($jsonMsg, true);  */
 
             $jsonMsg = '{
                 "template": {
@@ -305,100 +305,114 @@ if (!is_null($events['events'])) {
                 "actions": [],
                 "columns": [
                     {
-                    "title": "Integrative Treatment",
-                    "text": "Integrative Treatment",
+                    "title": "หาของกิน",
+                    "text": "Food style search",
                     "actions": [
                         {
                         "type": "message",
-                        "text": "NK Cell Treatment",
-                        "label": "NK Cell Treatment"
-                        },
-                        {
-                        "label": "CA Recovery Support",
-                        "type": "message",
-                        "text": "CA Recovery Support"
+                        "text": "Street food",
+                        "label": "Street food"
                         },
                         {
                         "type": "message",
-                        "text": "CA Phytonutrient",
-                        "label": "CA Phytonutrient"
+                        "text": "Restaurant",
+                        "label": "Restaurant"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Fine dining",
+                        "label": "Fine dining"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.jinwellbeing.com/wp-content/uploads/2019/11/living_at_jin2.jpg"
-                    },
-                    {
-                    "text": "Gene & Phenotype Screening",
-                    "actions": [
-                        {
-                        "type": "message",
-                        "text": "Nutrigenomic",
-                        "label": "Nutrigenomic"
-                        },
-                        {
-                        "type": "message",
-                        "text": "Cancer Gene Screen",
-                        "label": "Cancer Gene Screen"
-                        },
-                        {
-                        "type": "message",
-                        "text": "6 Step Analysis",
-                        "label": "6 Step Analysis"
-                        }
-                    ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/images/GeneScreening.jpg",
-                    "title": "Gene & Phenotype Screening"
-                    },
-                    {
-                    "title": "Cancer Advance Screening",
-                    "text": "Advance CA screening",
-                    "actions": [
-                        {
-                        "type": "message",
-                        "text": "Cancer Gene Screen",
-                        "label": "Cancer Gene Screen"
-                        },
-                        {
-                        "type": "message",
-                        "text": "Pantum Cancer Screen",
-                        "label": "Pantum Cancer Screen"
-                        },
-                        {
-                        "type": "message",
-                        "text": "NK Cell Activity",
-                        "label": "NK Cell Activity"
-                        }
-                    ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/images/CancerRibbon.jpg"
-                    },
-                    {
-                    "text": "Standerd Immune screening",
-                    "actions": [
-                        {
-                        "label": "ANNUAL WELLNESS",
-                        "type": "message",
-                        "text": "ภูมิ"
-                        },
-                        {
-                        "type": "message",
-                        "text": "Check up",
-                        "label": "other check up"
-                        },
-                        {
-                        "type": "message",
-                        "text": "Check up",
-                        "label": "other check up"
-                        }
-                    ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/images/ANNUAL-WELLNESS-IMMUNE.jpg",
-                    "title": "Standerd Immune screening for Every one"
                     }
                 ]
                 },
                 "altText": "this is a carousel template",
                 "type": "template"
             }';
+            $msg1 = json_decode($jsonMsg, true);
+            //##########################################
 
-            $msg2 = json_decode($jsonMsg, true); 
+            $jsonMsg = '{
+                "template": {
+                "type": "carousel",
+                "actions": [],
+                "columns": [
+                    {
+                    "title": "หา Supply chain"
+                    "text": "หน้าที่ (1)",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Food science R&D",
+                        "label": "Food science R&D"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Meat supply",
+                        "label": "Meat supply"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Veg./Fruit supply",
+                        "label": "Veg./Fruit supply"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/images/GeneScreening.jpg",
+                    },
+                    {
+                    "title": "หา Supply chain"
+                    "text": "หน้าที่ (2)",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Seasoning supply",
+                        "label": "Seasoning supply"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Bakery supply",
+                        "label": "Bakery supply"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Kitchen equipment",
+                        "label": "Kitchen equipment"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/images/GeneScreening.jpg",
+                    },
+                    {
+                    "title": "หา Supply chain"
+                    "text": "หน้าที่ (3)",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Packaging supply",
+                        "label": "Packaging supply"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Logistic",
+                        "label": "Logistic"
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/images/GeneScreening.jpg",
+                    }
+                ]
+                },
+                "altText": "this is a carousel template",
+                "type": "template"
+            }';
+            $msg1 = json_decode($jsonMsg, true);
+            //##########################################
+            
 
             $arrPostData = array();
             $arrPostData['replyToken'] = $replyToken;
