@@ -359,7 +359,7 @@ if (!is_null($events['events'])) {
                         "label": "Veg&Fruit"
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.mediyaasia.com/LABTESS/infoMap/images/chain.png"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/chain.png"
                     },
                     {
                     "title": "หา Supply chain",
@@ -381,7 +381,7 @@ if (!is_null($events['events'])) {
                         "label": "Equipment"
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.mediyaasia.com/LABTESS/infoMap/images/chain.png"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/chain.png"
                     },
                     {
                     "title": "หา Supply chain",
@@ -403,7 +403,7 @@ if (!is_null($events['events'])) {
                         "label": "..."
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.mediyaasia.com/LABTESS/infoMap/images/chain.png"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/chain.png"
                     }
                 ]
                 },
