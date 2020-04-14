@@ -340,8 +340,8 @@ if (!is_null($events['events'])) {
                 "actions": [],
                 "columns": [
                     {
-                    "title": "หาของกิน",
-                    "text": "Food style search",
+                    "title": "หา Supply chain",
+                    "text": "หน้าที่ (1)",
                     "actions": [
                         {
                         "type": "message",
