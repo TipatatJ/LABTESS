@@ -360,6 +360,28 @@ if (!is_null($events['events'])) {
                         }
                     ],
                     "thumbnailImageUrl": "https://www.jinwellbeing.com/wp-content/uploads/2019/11/living_at_jin2.jpg"
+                    },
+                    {
+                    "title": "หา Supply chain",
+                    "text": "หน้าที่ (2)",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Food R&D",
+                        "label": "Food R&D"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Meat supply",
+                        "label": "Meat supply"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Veg&Fruit",
+                        "label": "Veg&Fruit"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.jinwellbeing.com/wp-content/uploads/2019/11/living_at_jin2.jpg"
                     }
                 ]
                 },
