@@ -334,7 +334,7 @@ if (!is_null($events['events'])) {
             $msg1 = json_decode($jsonMsg, true);
             //##########################################
 
-            /* $jsonMsg = '{
+             $jsonMsg = '{
                 "template": {
                 "type": "carousel",
                 "actions": [],
@@ -345,8 +345,8 @@ if (!is_null($events['events'])) {
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Food science R&D",
-                        "label": "Food science R&D"
+                        "text": "Food sc. R&D",
+                        "label": "Food sc. R&D"
                         },
                         {
                         "type": "message",
@@ -355,8 +355,8 @@ if (!is_null($events['events'])) {
                         },
                         {
                         "type": "message",
-                        "text": "Veg./Fruit supply",
-                        "label": "Veg./Fruit supply"
+                        "text": "Veg./Fruit",
+                        "label": "Veg./Fruit"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/images/GeneScreening.jpg",
@@ -367,18 +367,18 @@ if (!is_null($events['events'])) {
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Seasoning supply",
-                        "label": "Seasoning supply"
+                        "text": "Seasoning",
+                        "label": "Seasoning"
                         },
                         {
                         "type": "message",
-                        "text": "Bakery supply",
-                        "label": "Bakery supply"
+                        "text": "Bakery",
+                        "label": "Bakery"
                         },
                         {
                         "type": "message",
-                        "text": "Kitchen equipment",
-                        "label": "Kitchen equipment"
+                        "text": "Kitchen equip",
+                        "label": "Kitchen equip"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/images/GeneScreening.jpg",
@@ -389,8 +389,8 @@ if (!is_null($events['events'])) {
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Packaging supply",
-                        "label": "Packaging supply"
+                        "text": "Packaging",
+                        "label": "Packaging"
                         },
                         {
                         "type": "message",
@@ -412,7 +412,7 @@ if (!is_null($events['events'])) {
             }';
             $msg2 = json_decode($jsonMsg, true);
             //##########################################
-             */
+             
 
             $arrPostData = array();
             $arrPostData['replyToken'] = $replyToken;
