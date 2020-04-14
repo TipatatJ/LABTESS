@@ -384,26 +384,26 @@ if (!is_null($events['events'])) {
                     "thumbnailImageUrl": "https://www.jinwellbeing.com/wp-content/uploads/2019/11/living_at_jin2.jpg"
                     },
                     {
-                    "title": "หา Supply chain"
-                    "text": "หน้าที่ (3)",
+                    "title": "หา Supply chain",
+                    "text": "หน้าที่ (2)",
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Packaging",
-                        "label": "Packaging"
+                        "text": "Seasoning",
+                        "label": "Seasoning"
                         },
                         {
                         "type": "message",
-                        "text": "Logistic",
-                        "label": "Logistic"
+                        "text": "Bakery",
+                        "label": "Bakery"
                         },
                         {
                         "type": "message",
-                        "text": "...",
-                        "label": "..."
+                        "text": "Equipment",
+                        "label": "Equipment"
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/images/GeneScreening.jpg",
+                    "thumbnailImageUrl": "https://www.jinwellbeing.com/wp-content/uploads/2019/11/living_at_jin2.jpg"
                     }
                 ]
                 },
