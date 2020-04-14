@@ -106,6 +106,7 @@ if (!function_exists('isMobile2')) {
 		WHERE sms_txt='NEW INPUT' AND mapType=\"TCM\" ORDER BY record_id DESC;";   
 	//echo '$sql = '.$sql.'<hr>';
 	$result = dbQuery($sql);
+	$totalUID = dbNumrows($result);
 
 	$arrExistedRec = array();
 	$arrMapID2Locale = array();
@@ -120,6 +121,8 @@ if (!function_exists('isMobile2')) {
 			$arrLookup = array('name','tel');
 			$rtnArr = getUser($arrLookup,$record_id,$userId);
 			//$rtnArr = 'Hi';
+
+			//echo var_dump($rtnArr['my location']).'<hr>';
 
 			if(isMobile2()){
 				$fontEm = ' font-size:2em;';
@@ -148,13 +151,13 @@ if (!function_exists('isMobile2')) {
 								$btnColor = 'btn-success';
 								$occupation = 'MD';
 								break;
-							case isset($rtnArr['lay exp']):
-								$memIcon = "../images/NonMDicon.png";
+							case isset($rtnArr['tcm id']):
+								$memIcon = "../images/TCMdocIcon.png";
 								$btnColor = 'btn-primary';
 								$occupation = 'Lay';
 								break;
-							case isset($rtnArr['user exp']):
-								$memIcon = "../images/UserIcon.png";
+							case isset($rtnArr['TCM pharmacist']):
+								$memIcon = "../images/TCMpharmIcon.png";
 								$btnColor = 'btn-default';
 								$occupation = 'User';
 								break;
@@ -169,12 +172,12 @@ if (!function_exists('isMobile2')) {
 						echo '<div class="btn '.$btnColor.' btn-block memberBtn" rec_id="'.$record_id.'" style="padding:10px;'.$fontEm.'">&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$memIcon.'" width="30px">&nbsp; '.$value.'</div><br>';
 						
 						break;
-					case $key == 'user homeo caption' && !is_numeric($key):
+					case $key == 'user TCM clinic' && !is_numeric($key):
 						//echo "I'M A LAY PRESCRIBER<br>";
 
 						//if($rtnArr['name'] != 'Anonymous'){
 							echo '<div class="user_caption wordwrap">';
-							echo '<br>สิ่งที่คุณอยากบอกเกี่ยวกับการแพทย์แผนจีน:<br>';
+							echo '<br>สถานที่ทำงาน:<br>';
 							echo '<div class="ui-state-highlight wordwrap" style="padding:10px;'.$fontEm.'">'.$value.'</div><br>';
 							echo '</div>';
 						//}
@@ -245,24 +248,60 @@ if (!function_exists('isMobile2')) {
 								$face = "../images/NewMedal.png";
 								break;
 						}
-						echo 'I HAS &nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$face.'" width="30px"> EXPERIENCE FOR TCM<br>';
+						echo 'I HAS &nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$face.'" width="80px">YEARS <br>EXPERIENCE FOR TCM<br>';
+						break;
+					case $key == 'user TCM clinic':
+
+						echo '<br><div class="ui-state-highlight wordwrap" style="width:100%; padding:10px;">'.$value.'</div>';
+
 						break;
 					case $key == 'my location':
-						if($value['my location']['lat'] != 'N'){
+						//if($value['my location']['lat'] != '' && $value['my location']['lat'] != 'N'){
+
+						//echo '>>>'.var_dump($value['my location']).'<<<<hr>';
+
+						if($value['my location']['note'] == 'found'){
+						
 							$mapId = $value['my location']['mapId'];
 							$lat = $value['my location']['lat'];
 							$long = $value['my location']['long'];
 
+							echo 'Location <div class="Location" mapId="'.$mapId.'"> <lat>'.$lat.'</lat>,<long>'.$long.'</div></long><br>';
+						}
+						else if($value['my location']['note'] == 'not match'){
+							//THERE IS NO CLUE IN user TCM clinic TO ASSUME LOCATION
+							echo 'Unable to determine Location';
+						}
+						else {
+							//echo '<font color="red">assume location</font> <div class="Location" mapId="'.$mapId.'"> <lat>'.$lat.'</lat>,<long>'.$long.'</div></long><br>';
 							
+							//if($value['my location']['lat'] != ''){
+								$mapId = $value['my location']['mapId'];
+								$lat = $value['my location']['lat'];
+								$long = $value['my location']['long'];
 
-							echo 'location <div class="Location" mapId="'.$mapId.'"> <lat>'.$lat.'</lat>,<long>'.$long.'</div></long><br>';
+								echo 'location <div class="Location" mapId="'.$mapId.'"> <lat>'.$lat.'</lat>,<long>'.$long.'</div></long><br>';
+							//}
+							//else if($value['my location']['lat'] == 'N'){
+								//echo 'UNDETERMINED LOCATION<br>';
+							//}
+							//else{
+								//echo 'UNDETERMINED LOCATION<br>';
+							//}
+						
+						}
+						
+
+							//echo 'getUser location '.print_r($value);
+
+							//echo 'location <div class="Location" mapId="'.$mapId.'"> <lat>'.$lat.'</lat>,<long>'.$long.'</div></long><br>';
 							$arrMapID2Locale[] = array(
 								'mapId'=>$mapId,
 								'coor'=>($lat.','.$long),
 								'memIcon'=>$memIcon,
 								'face'=>$face,
 								'occupation'=>$occupation,
-								'caption'=>$rtnArr['user homeo caption'],
+								'user TCM clinic'=>$rtnArr['user TCM clinic'],
 								'name'=>$rtnArr['name'],
 								'rec_id'=>$record_id
 							);
@@ -271,9 +310,9 @@ if (!function_exists('isMobile2')) {
 								$userMark = array("Lat"=>$lat,"Lng"=>$long);
 							}
 							else{
-								//$userMark = array("Lat"=>"13.881210","Lng"=>"100.643804");
+								$userMark = array("Lat"=>"13.881210","Lng"=>"100.643804");
 							}
-						}
+						
 						//echo var_dump($value).'<br>';
 						break;
 					default:
@@ -293,11 +332,27 @@ if (!function_exists('isMobile2')) {
 		}
 	}
 
+	
+
 ?>
 		
 
 		
 		</div>
+		<br>
+
+<?php
+
+	if(isMobile2()){
+		$fontEm = ' font-size:3em;';
+	}
+	else{
+		$fontEm = ' font-size:1.5em;';
+	}
+
+	echo '<div class="ui-state-error ui-corner-all" style="'.$fontEm.' padding:15px;">SHOW UP '.$totalUID.' PEOPLE</div><br><br>';
+
+?>
 		
 </member>
 
@@ -610,26 +665,29 @@ if (!function_exists('isMobile2')) {
 					$icon = $locale['memIcon'];
 				}
 				
-				echo "var myLatlng$mKey = new google.maps.LatLng({$locale['coor']});"; //Venita clinic
-				echo "var mark$mKey = new google.maps.Marker({";
-				echo "position: myLatlng$mKey,";
-				echo "title:'{$locale['name']}',";
-				echo "icon: {";
-						echo "url: '$icon',";
-						echo "scaledSize: new google.maps.Size(35, 35)";
-				echo "}";
-				echo "});";
-				echo "mark$mKey.setMap(window.map); marker['$mKey']=mark$mKey;"; //mark2.addListener('click', toggleBounce());";
-				echo "google.maps.event.addListener(mark$mKey, 'click', function(event) {";
-				//echo "//removeMarker(mark$mKey);";
-				//echo "//poly.setMap(null);";
-				//echo "//toggleBounce(mark$mKey)";
-					echo "$('#AlertMsg').text('RECORD ID {$locale['rec_id']}: {$locale['name']}');";
-					echo "popMemberDlg({$locale['rec_id']}, {$locale['coor']});";
-					echo "$('#myModal').modal();";
-				echo "});";
+				if($locale['coor'] != ','){
+					echo "
+						var myLatlng$mKey = new google.maps.LatLng({$locale['coor']});"; //Venita clinic
+					echo "var mark$mKey = new google.maps.Marker({";
+					echo "position: myLatlng$mKey,";
+					echo "title:'{$locale['name']}',";
+					echo "icon: {";
+							echo "url: '$icon',";
+							echo "scaledSize: new google.maps.Size(35, 35)";
+					echo "}";
+					echo "});";
+					echo "mark$mKey.setMap(window.map); marker['$mKey']=mark$mKey;"; //mark2.addListener('click', toggleBounce());";
+					echo "google.maps.event.addListener(mark$mKey, 'click', function(event) {";
+					//echo "//removeMarker(mark$mKey);";
+					//echo "//poly.setMap(null);";
+					//echo "//toggleBounce(mark$mKey)";
+						echo "$('#AlertMsg').text('RECORD ID {$locale['rec_id']}: {$locale['name']}');";
+						echo "popMemberDlg({$locale['rec_id']}, {$locale['coor']});";
+						echo "$('#myModal').modal();";
+					echo "});";
 
-				echo "marker['{$locale['rec_id']}'] = mark$mKey;";
+					echo "marker['{$locale['rec_id']}'] = mark$mKey;";
+				}
 			}
 		?>
 
@@ -897,18 +955,18 @@ function popMemberDlg(rec_id, coorStr){
 		 */
 
         //$url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecId.php';
-        $url = 'http://localhost:82/Qweb/site1_wiztech/WiztechSolution/include/smsOfUserByRecID.php';
+        $url = 'http://localhost:82/Qweb/site1_wiztech/WiztechSolution/include/smsOfTCMByRecID.php';
         
         $.post($url,{
             RecId: rec_id,
-            mapType: 'Homeo'
+            mapType: 'TCM'
         },function(data){
             //console.dir($.parseJSON(data));
 
 			var jData = $.parseJSON(data);
 			var uData = {};
 
-			$htmlDlg = $htmlDlg.append('<table class="table table-striped" boarder="1"><tr><td></td><td></td></tr>');
+			$htmlDlg = $htmlDlg.append('<table class="table table-striped" boarder="1" style="color:black"><tr><td></td><td></td></tr>');
 
 			$.each(jData, function(key, value){
 				console.log(key + '=>' + value);
@@ -921,15 +979,33 @@ function popMemberDlg(rec_id, coorStr){
 						'share exp': 'Sharing',
 						'email': 'E mail',
 						'tel': 'โทร',
-						'eval': 'ความรู้สึก',
-						'user homeo caption': 'สิ่งที่อยากบอก',
-						'license id': 'รหัสเวชกรรม'
+						'eval': 'ประสบการณ์การทำงาน',
+						'user TCM caption': 'สถานที่ทำงาน',
+						'license id': 'รหัสเวชกรรม',
+						'tcm id': 'รหัสแพทย์จีน',
+						'acup': 'บริการฝังเข็ม',
+						'herb': 'บริการสั่งยาสมุนไพรจีน',
+						'tuina': 'บริการนวด Tuina',
+						
 					};
 				//});
 				//console.log (value);
 				if(typeof(uData[key]) == 'undefines'){
 				}
 				else{
+
+					$arrValue = value.split(',');
+
+					if($arrValue[1] == 2){
+						value = '-'
+					}
+					else if($arrValue[1] == 1){
+						value = 'มี'
+					}
+					else{
+						//regular
+					}
+
 					$htmlDlg = $htmlDlg.append('<tr><td><b>' + uData[key] + '</b></td><td>' + value + '</td></tr>');
 				}
 			})
@@ -957,8 +1033,9 @@ function popMemberDlg(rec_id, coorStr){
 		<b>MEMBER TYPE</b><br>
 		<br>
 		
-		<img src="../images/TCMdocIcon.png" width="40px"><doc>&nbsp;&nbsp;คือแพทย์แผนจีน ผู้มีใบประกอบโรคศิลป์ (พจ.) หรือ<br>ผู้ที่เป็นหมอ ผู้มีใบประกอบโรคศิลป์ (ว.) ที่ใช้ TCM</doc>
-		<img src="../images/TCMphramIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่เป็นเภสัชกรแผนจีน หรือ ร้านยาจีน<br>
+		<img src="../images/TCMdocIcon.png" width="40px"><doc>&nbsp;&nbsp;คือแพทย์แผนจีน ผู้มีใบประกอบโรคศิลป์ (พจ.) หรือ<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ผู้ที่เป็นหมอ ผู้มีใบประกอบโรคศิลป์ (ว.) ที่ใช้ TCM</doc><br><br>
+		<img src="../images/TCMpharmIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่เป็นเภสัชกรแผนจีน หรือ ร้านยาจีน<br>
 		<img src="../images/UserIcon.png" width="40px">&nbsp;&nbsp;คือผู้ที่ได้รับการรักษาแบบแพทย์แผนจีน และร่วมแชร์ความคิดเห็น<br>
 		
 		<hr>
@@ -971,7 +1048,7 @@ function popMemberDlg(rec_id, coorStr){
 	</div>
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog" style="font-color:black;">
+  <div class="modal fade" id="myModal" role="dialog" style="color:black;">
     <div class="modal-dialog modal-lg modal-ku">
     
       <!-- Modal content-->
@@ -980,7 +1057,7 @@ function popMemberDlg(rec_id, coorStr){
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title" id="AlertHeader">Modal Header</h4>
         </div>
-        <div class="modal-body" id="AlertMsg">
+        <div class="modal-body" style="text-color:black;" id="AlertMsg">
           <p>Some text in the modal.</p>
         </div>
         <div class="modal-footer">
@@ -1006,7 +1083,7 @@ function popMemberDlg(rec_id, coorStr){
 
 <pre style="width:100%; padding:15px; <?php echo $fontEm; ?>">
 		<div id="shareYourThought">
-		SHARE YOUR THOUGHT WITH HOMEOPATHY FRIENDS<br>
+		SHARE YOUR THOUGHT WITH TCM FRIENDS<br>
 		<div style="<?php echo $fontEm2; ?>">BY ADDING LINE "TCM Map"</div>
 		<img src="https://qr-official.line.me/sid/M/253bqzkr.png"><br><Br>
 		OR CLICK<br>
@@ -1066,6 +1143,7 @@ function popMemberDlg(rec_id, coorStr){
 				$latLong = json_decode($sms_txt,true);
 				//echo var_dump($latLong);
 				$rtnArr['my location'] = $latLong;
+				$rtnArr['my location']['note'] = 'found';
 			}
 			else {
 				//Extra code for json that escape detection
@@ -1148,12 +1226,166 @@ function popMemberDlg(rec_id, coorStr){
 
 EndQuery:
 		//$rtnArr['sql'] = $sql;
+		//echo '<font color="blue">'.var_dump($rtnArr['my location']).'</font><hr>';
+
+		if($rtnArr['my location']['note'] == 'found'){
+		
+		
+			$rtnArr['my location']['found'] = 'location of '.$rtn['name'].' found';
+			//$rtnArr['my location']['note'] = 'found';
+		
+			//echo 'location of '.$rtnArr['name'].' found<br>';
+		
+		}
+		else{
+		
+			$rtnArr['my location'] = guessLocation($rtnArr['name'],$rtnArr['user TCM clinic']);
+			//echo 'Assume location '.var_dump($rtnArr['my location']);
+		}
+
+
 		return $rtnArr;
+	}
+
+	function guessLocation($userName,$userTxt){
+	
+		//echo 'guess by user text '.$userTxt.'<hr>';
+		/* if($value['my location']['lat'] != 'N'){
+			$mapId = $value['my location']['mapId'];
+			$lat = $value['my location']['lat'];
+			$long = $value['my location']['long'];
+
+			
+
+			echo 'location <div class="Location" mapId="'.$mapId.'"> <lat>'.$lat.'</lat>,<long>'.$long.'</div></long><br>';
+			$arrMapID2Locale[] = array(
+				'mapId'=>$mapId,
+				'coor'=>($lat.','.$long),
+				'memIcon'=>$memIcon,
+				'face'=>$face,
+				'occupation'=>$occupation,
+				'caption'=>$rtnArr['user homeo caption'],
+				'name'=>$rtnArr['name'],
+				'rec_id'=>$record_id
+			);
+
+			if($mapId == $_GET['mapId']){
+				$userMark = array("Lat"=>$lat,"Lng"=>$long);
+			}
+			else{
+				//$userMark = array("Lat"=>"13.881210","Lng"=>"100.643804");
+			}
+		}
+		//echo var_dump($value).'<br>';
+		break; */
+
+		//echo 'search KW = '.$userTxt.'<hr>';
+
+		$sql = "SELECT name_in_thai AS tumbol, latitude AS lat, longitude AS lng FROM subdistricts
+			WHERE INSTR('$userTxt', name_in_thai) ORDER BY id ASC;";   
+		
+		$result = dbQuery($sql);
+
+		//echo 'SQL ตำบล / Subdistrict '.$sql.'<hr>';
+
+		if($row = dbFetchAssoc($result)){
+			extract($row);
+
+			//echo 'found ตำบล '.$tumbol.' ('.$lat.','.$lng.')';
+			return array('lat'=>$lat,'long'=>$lng,'note'=>'Assume '.$userName.' location from ตำบล');
+		}
+		else{
+			//go check districts table
+		}
+		
+		$sql2 = "SELECT name_in_thai AS umphur, id AS dist_id FROM districts
+			WHERE INSTR('$userTxt', name_in_thai) ORDER BY id ASC;";   
+		
+		$result2 = dbQuery($sql2);
+
+		//echo 'SQL อำเภอ / District '.$sql2.'<hr>';
+
+		if($row2 = dbFetchAssoc($result2)){
+			extract($row);
+
+			$sql = "SELECT name_in_thai, latitude AS lat, longitude AS lng FROM subdistricts
+			WHERE (name_in_thai LIKE '%ในเมือง%' OR name_in_thai = 'เมือง') AND district_id = $dist_id ORDER BY id ASC;";   
+		
+			//echo $sql.'<hr>';
+
+			$result = dbQuery($sql);
+
+			if($row = dbFetchAssoc($result)){
+				extract($row);
+
+				//echo 'found อำเภอ '.$umphur;
+				return array('lat'=>$lat,'long'=>$lng,'note'=>'Assume '.$userName.' location from ตำบล');
+			}
+			else{
+				//return array('lat'=>'N','long'=>'N','note'=>'not match');
+			}
+
+		}
+		else{
+		
+			//go check province table
+			//return array('lat'=>'N','long'=>'N','note'=>'not match');
+		}
+
+		$sql3 = "SELECT name_in_thai AS jungwad, id AS province_id FROM provinces
+			WHERE INSTR('$userTxt', name_in_thai) ORDER BY id ASC;";
+		$result3 = dbQuery($sql3);
+
+		//echo 'GONNA SERACH จังหวัด '.$userTxt;
+
+		if($row3 = dbFetchAssoc($result3)){
+
+			$sql2 = "SELECT name_in_thai AS umphur, id AS dist_id FROM districts
+			WHERE id=$province_id ORDER BY id ASC;";   
+		
+			$result2 = dbQuery($sql2);
+
+			//echo 'found จังหวัด / Province ';
+
+			if($row2 = dbFetchAssoc($result2)){
+				extract($row);
+
+				$sql = "SELECT name_in_thai, latitude AS lat, longitude AS lng FROM subdistricts
+				WHERE (name_in_thai LIKE '%ในเมือง%' OR name_in_thai = 'เมือง') AND district_id = $dist_id ORDER BY id ASC;";   
+			
+				//echo $sql.'<hr>';
+
+				$result = dbQuery($sql);
+
+				if($row = dbFetchAssoc($result)){
+					extract($row);
+
+					//echo 'found อำเภอ '.$umphur;
+					return array('lat'=>$lat,'long'=>$lng,'note'=>'Assume '.$userName.' location from ตำบล');
+				}
+				else{
+					return array('lat'=>'N','long'=>'N','note'=>'not match');
+				}
+
+			}
+			else{
+			
+				//go check province table
+				return array('lat'=>'N','long'=>'N','note'=>'not match');
+			}
+
+		}
+		else{
+			//RETURN "NOT MATCH"
+			return array('lat'=>'N','long'=>'N','note'=>'not match');
+		}
 	}
 
 	function isJson($string) {
 		json_decode($string);
 		return (json_last_error() === JSON_ERROR_NONE);
 	}
+
+
 
 ?>

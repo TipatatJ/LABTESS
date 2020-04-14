@@ -1,5 +1,7 @@
 <?php
-
+  session_start();
+  define('SECRET_KEY', 'thai_epigenomic');
+  $me = "Ub3f6b90b35b51d817a89835f9afaf8c7";
   // /$strAccessToken = "+t5E3u2f0eW3JKhGPyKqGX4M1M6uuvErtuexSZn6D3017/ONS2n+Nqc3KjF37A0K4tv3QZ0BD6kyrzoCXmKa+L2ys817BnmeTwqXPujiaX9+yEpjMBxT2OH60T4W41rZXsUqJ6QidfaesO3AOAb93wdB04t89/1O/w1cDnyilFU=";
   $strAccessToken = "PU9uufmJe508EhejtcuRyn68hzOFqG20rdhTCMqDxxarz+JpVfblWt+me5E7WuBo/n4nNeUwpoiw6TyZDwvfpTglp24CVLJOCC4fFV6ylYRxSpwTg7HqjC/J6K38+WUDWdXhbiQGJX8eYfNPvTqUBgdB04t89/1O/w1cDnyilFU=";
   
@@ -13,7 +15,8 @@
   $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
   $_msg = $arrJson['events'][0]['message']['text'];
   $_msg_type = $arrJson['events'][0]['message']['type'];
-
+  $userId = $arrJson['events'][0]['source']['userId'];
+  $lastMsg = getUserLastMessage($userId);
 /*         if($arrJson['events'][0]['message']['type'] == 'location'){
         
             $fields = array(
@@ -127,12 +130,12 @@
       $arrPostData = array();
       $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
       $arrPostData['messages'][0]['type'] = "text";
-      $arrPostData['messages'][0]['text'] = 'สวัสดีค่ำ ฉันชื่อ PHHC คุณเรียกฉันหรือคะ?';
+      $arrPostData['messages'][0]['text'] = 'สวัสดีค่ำ ฉันชื่อ H.E.L.E.N คุณเรียกฉันหรือคะ?';
     }
   }
   else
   {
-    if($isData >0){
+    if($isData >0){ //record from https://api.mongolab.com/api/1/databases/data/collections/datas?
        foreach($data as $rec){
         $arrPostData = array();
         $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -140,29 +143,24 @@
         $arrPostData['messages'][0]['text'] = $rec->answer;
        }
     }
-    else if($_msg_type == 'location'){
-        $lat = $arrJson['events'][0]['message']['latitude'];
-        $lng = $arrJson['events'][0]['message']['longitude'];
+    /* else if($_msg_type == 'location'){
 
-        $arrPostData = array();
-        $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-        $arrPostData['messages'][0]['type'] = "text";
-        $arrPostData['messages'][0]['text'] = 'LOCATION
-        '.$lat.','.$lng;
+        getNearestPHHC($lat,$lng);
 
-        $officerId = getNearestPHHC($lat,$lng);
-        $arrPostData['messages'][1]['type'] = "text";
-        $arrPostData['messages'][1]['text'] = 'NEAREST OFFICER
-        '.$officerId;
-    }
+
+    } */
     else
     {
         $arrPostData = array();
         $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
         $arrPostData['messages'][0]['type'] = "text";
-        //$arrPostData['messages'][0]['text'] = 'H.E.L.E.N คุณสามารถสอนให้ฉันฉลาดได้เพียงพิมพ์: H.E.L.E.N[คำถาม|คำตอบ]
-        //'.$content;
-        $arrPostData['messages'][0]['text'] = 'HPPC ไม่เข้าใจคำถาม ลองพิมพ์คำถามใหม่สิคะ';
+        $arrPostData['messages'][0]['text'] = 'H.E.L.E.N คุณสามารถสอนให้ฉันฉลาดได้เพียงพิมพ์: H.E.L.E.N[คำถาม|คำตอบ]
+        '.$content.' 
+        last msg = '.$lastMsg;
+
+        $_SESSION['lastMsg'] = $_msg;
+        //$arrPostData['messages'][1]['type'] = "text";
+        //$arrPostData['messages'][1]['text'] = 'additional text';
     }
   }
 

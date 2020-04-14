@@ -127,7 +127,7 @@
       $arrPostData = array();
       $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
       $arrPostData['messages'][0]['type'] = "text";
-      $arrPostData['messages'][0]['text'] = 'สวัสดีค่ำ ฉันชื่อ PHHC คุณเรียกฉันหรือคะ?';
+      $arrPostData['messages'][0]['text'] = 'สวัสดีค่ำ ฉันชื่อ H.E.L.E.N คุณเรียกฉันหรือคะ?';
     }
   }
   else
@@ -140,29 +140,13 @@
         $arrPostData['messages'][0]['text'] = $rec->answer;
        }
     }
-    else if($_msg_type == 'location'){
-        $lat = $arrJson['events'][0]['message']['latitude'];
-        $lng = $arrJson['events'][0]['message']['longitude'];
-
-        $arrPostData = array();
-        $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-        $arrPostData['messages'][0]['type'] = "text";
-        $arrPostData['messages'][0]['text'] = 'LOCATION
-        '.$lat.','.$lng;
-
-        $officerId = getNearestPHHC($lat,$lng);
-        $arrPostData['messages'][1]['type'] = "text";
-        $arrPostData['messages'][1]['text'] = 'NEAREST OFFICER
-        '.$officerId;
-    }
     else
     {
         $arrPostData = array();
         $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
         $arrPostData['messages'][0]['type'] = "text";
-        //$arrPostData['messages'][0]['text'] = 'H.E.L.E.N คุณสามารถสอนให้ฉันฉลาดได้เพียงพิมพ์: H.E.L.E.N[คำถาม|คำตอบ]
-        //'.$content;
-        $arrPostData['messages'][0]['text'] = 'HPPC ไม่เข้าใจคำถาม ลองพิมพ์คำถามใหม่สิคะ';
+        $arrPostData['messages'][0]['text'] = 'H.E.L.E.N คุณสามารถสอนให้ฉันฉลาดได้เพียงพิมพ์: H.E.L.E.N[คำถาม|คำตอบ]
+        '.$content;
     }
   }
 
@@ -246,21 +230,6 @@ function getUserLastMessage($userId){
     rtrim($fields_string,'&');
 
     $rtnWTH = file_get_contents($url.'?userId='.$userId.'&mapType=TCM');
-    //$lastSMS = json_decode($rtnWTH);
-    return $rtnWTH;
-}
-
-function getNearestPHHC($lat,$lng){
-    // Make a POST Request to Wiztech LINE sms
-    $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/nearestOfficer.php';
-    $fields = array("lat"=>$lat,"lng"=>$lng);
-
-
-    //url-ify the data for the POST
-    foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
-    rtrim($fields_string,'&');
-
-    $rtnWTH = file_get_contents($url.'?lat='.$lat.'&lng='.$lng.'&mapType=TTM');
     //$lastSMS = json_decode($rtnWTH);
     return $rtnWTH;
 }
