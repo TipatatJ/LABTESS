@@ -293,7 +293,8 @@ if (!is_null($events['events'])) {
                         "title": "FFI Network",
                         "text": "คุณหาอะไร?"
                     }
-                }'
+                }';
+                
             $messages = json_decode($jsonMsg, true); 
 
             $arrPostData = array();
