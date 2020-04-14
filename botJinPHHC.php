@@ -150,10 +150,10 @@
         $arrPostData['messages'][0]['text'] = 'LOCATION
         '.$lat.','.$lng;
 
-        $officerId = getNearestPHHC($lat,$lng);
+        $officerName = getNearestPHHC($lat,$lng);
         $arrPostData['messages'][1]['type'] = "text";
         $arrPostData['messages'][1]['text'] = 'NEAREST OFFICER
-        '.$officerId;
+        '.$officerName;
     }
     else
     {

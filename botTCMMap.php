@@ -400,6 +400,21 @@ function getUserLastMessage($userId){
     return $rtnWTH;
 }
 
+function getNearestPHHC($lat,$lng){
+    // Make a POST Request to Wiztech LINE sms
+    $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/nearestOfficer.php';
+    $fields = array("lat"=>$lat,"lng"=>$lng);
+
+
+    //url-ify the data for the POST
+    foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+    rtrim($fields_string,'&');
+
+    $rtnWTH = file_get_contents($url.'?lat='.$lat.'&lng='.$lng.'&mapType=TTM');
+    //$lastSMS = json_decode($rtnWTH);
+    return $rtnWTH;
+}
+
 function getNearByCAirPM($lat1,$lon1){
 
     # Our new data
