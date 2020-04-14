@@ -451,7 +451,7 @@ function getUserLastMessage($userId){
     foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
     rtrim($fields_string,'&');
 
-    $rtnWTH = file_get_contents($url.'?userId='.$userId.'&mapType=TCM');
+    $rtnWTH = file_get_contents($url.'?userId='.$userId.'&mapType=FFI');
     //$lastSMS = json_decode($rtnWTH);
     return $rtnWTH;
 }
@@ -466,7 +466,7 @@ function getNearestPHHC($lat,$lng){
     foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
     rtrim($fields_string,'&');
 
-    $rtnWTH = file_get_contents($url.'?lat='.$lat.'&lng='.$lng.'&mapType=TTM');
+    $rtnWTH = file_get_contents($url.'?lat='.$lat.'&lng='.$lng.'&mapType=FFI');
     //$lastSMS = json_decode($rtnWTH);
     return $rtnWTH;
 }
