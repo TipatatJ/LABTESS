@@ -299,7 +299,7 @@ if (!is_null($events['events'])) {
 
             $arrPostData = array();
             $arrPostData['replyToken'] = $replyToken;
-            $arrPostData['messages'] = $messages;
+            $arrPostData['messages'] = [$messages];
             //$arrPostData['messages'][0]['type'] = "text";
             //$arrPostData['messages'][0]['text'] = '$messages';
 
