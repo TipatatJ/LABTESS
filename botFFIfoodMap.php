@@ -265,6 +265,8 @@ if (!is_null($events['events'])) {
             "me"=>$me);
             post2WTH($fields);
 
+            $arrMsg = array();
+
             $jsonMsg = '{
                 "type": "template",
                 "altText": "this is a buttons template",
@@ -295,11 +297,11 @@ if (!is_null($events['events'])) {
                     }
                 }';
 
-            $messages = json_decode($jsonMsg, true); 
+            $arrMsg[] = json_decode($jsonMsg, true); 
 
             $arrPostData = array();
             $arrPostData['replyToken'] = $replyToken;
-            $arrPostData['messages'] = [$messages];
+            $arrPostData['messages'] = $arrMSg;
             //$arrPostData['messages'][0]['type'] = "text";
             //$arrPostData['messages'][0]['text'] = '$messages';
 
