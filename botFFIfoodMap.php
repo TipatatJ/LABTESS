@@ -297,11 +297,11 @@ if (!is_null($events['events'])) {
                     }
                 }';
 
-            $arrMsg[] = json_decode($jsonMsg, true); 
+            $arrMsg = json_decode($jsonMsg, true); 
 
             $arrPostData = array();
             $arrPostData['replyToken'] = $replyToken;
-            $arrPostData['messages'] = $arrMSg;
+            $arrPostData['messages'][] = $arrMSg;
             //$arrPostData['messages'][0]['type'] = "text";
             //$arrPostData['messages'][0]['text'] = '$messages';
 
