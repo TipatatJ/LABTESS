@@ -345,8 +345,8 @@ if (!is_null($events['events'])) {
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Street food",
-                        "label": "Street food"
+                        "text": "Food R&D",
+                        "label": "Food R&D"
                         },
                         {
                         "type": "message",
