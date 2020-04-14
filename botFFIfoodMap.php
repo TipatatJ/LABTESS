@@ -251,7 +251,7 @@ if (!is_null($events['events'])) {
                         }
                         ],
                         "title": "FFI Network",
-                        "text": "คุณต้องการหา?"
+                        "text": "ต้องการหา?"
                     }
                 },
                 {
@@ -280,7 +280,7 @@ if (!is_null($events['events'])) {
                         }
                         ],
                         "title": "FFI Network",
-                        "text": "คุณต้องการหา?"
+                        "text": "ต้องการหา?"
                     }
                 }';
 
