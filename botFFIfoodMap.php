@@ -154,13 +154,13 @@ if (!is_null($events['events'])) {
             $text = getNearByCAirPM($event['message']['latitude'], $event['message']['longitude']);
             //echo '#'.$text.'#';
 
-            $messages = [
+            /* $messages = [
                 'type' => 'text',
                 'text' => ' 
                 พื้นที่ใกล้ๆ '.$event['message']['address'].' 
 
                 มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3',
-            ];
+            ]; */
 
             /* $jsonMsg = '{
                 "type": "template",
@@ -219,8 +219,10 @@ if (!is_null($events['events'])) {
                 "txt"=>$text, 
                 "me"=>$me);
                 post2WTH($fields);
+
+                die;
             }
-            else{
+            
                 $jsonMsg = '{
                     "type": "template",
                     "altText": "this is a buttons template",
@@ -250,7 +252,7 @@ if (!is_null($events['events'])) {
                             "text": "ยืนยันการแชร์ Location บน TCM map"
                         }
                     }';
-            }
+            
 
 
             /* $messages = json_decode($jsonMsg, true);
