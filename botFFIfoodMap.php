@@ -340,26 +340,26 @@ if (!is_null($events['events'])) {
                 "actions": [],
                 "columns": [
                     {
-                    "title": "หา Supply chain"
-                    "text": "หน้าที่ (1)",
+                    "title": "หาของกิน",
+                    "text": "Food style search",
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Food R&D",
-                        "label": "Food R&D"
+                        "text": "Street food",
+                        "label": "Street food"
                         },
                         {
                         "type": "message",
-                        "text": "Meat supply",
-                        "label": "Meat supply"
+                        "text": "Restaurant",
+                        "label": "Restaurant"
                         },
                         {
                         "type": "message",
-                        "text": "Veg&Fruit",
-                        "label": "Veg&Fruit"
+                        "text": "Fine dining",
+                        "label": "Fine dining"
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/images/GeneScreening.jpg",
+                    "thumbnailImageUrl": "https://www.jinwellbeing.com/wp-content/uploads/2019/11/living_at_jin2.jpg"
                     }
                 ]
                 },
