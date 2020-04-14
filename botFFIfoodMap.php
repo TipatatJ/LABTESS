@@ -334,7 +334,7 @@ if (!is_null($events['events'])) {
             $msg1 = json_decode($jsonMsg, true);
             //##########################################
 
-            $jsonMsg = '{
+            /* $jsonMsg = '{
                 "template": {
                 "type": "carousel",
                 "actions": [],
@@ -412,11 +412,11 @@ if (!is_null($events['events'])) {
             }';
             $msg2 = json_decode($jsonMsg, true);
             //##########################################
-            
+             */
 
             $arrPostData = array();
             $arrPostData['replyToken'] = $replyToken;
-            $arrPostData['messages'] = [$msg1,$msg2];
+            $arrPostData['messages'] = [$msg1];
             //$arrPostData['messages'][0]['type'] = "text";
             //$arrPostData['messages'][0]['text'] = '$messages';
 
