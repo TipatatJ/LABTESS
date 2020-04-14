@@ -471,7 +471,7 @@ function multiMsg($strAccessToken, $replyToken, $arrPostData){
       //DATA PATTERN
 
       $arrPostData = array();
-      $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+      $arrPostData['replyToken'] = $replyToken;
       $arrPostData['messages'][0]['type'] = "text";
       $arrPostData['messages'][0]['text'] = 'สวัสดีค่ำ ฉันชื่อ PHHC คุณเรียกฉันหรือคะ?';
       $arrPostData['messages'][1]['type'] = "text";
