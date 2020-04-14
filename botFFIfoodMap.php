@@ -399,8 +399,8 @@ if (!is_null($events['events'])) {
                         },
                         {
                         "type": "message",
-                        "text": "Equipment",
-                        "label": "Equipment"
+                        "text": "...",
+                        "label": "..."
                         }
                     ],
                     "thumbnailImageUrl": "https://www.jinwellbeing.com/wp-content/uploads/2019/11/living_at_jin2.jpg"
