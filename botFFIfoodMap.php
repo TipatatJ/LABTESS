@@ -467,7 +467,7 @@ function justMsg($messages, $replyToken, $access_token){
 
 function multiMsg($strAccessToken, $replyToken, $arrPostData){
 
-    
+        /* 
       //DATA PATTERN
 
       $arrPostData = array();
@@ -476,7 +476,9 @@ function multiMsg($strAccessToken, $replyToken, $arrPostData){
       $arrPostData['messages'][0]['text'] = 'สวัสดีค่ำ ฉันชื่อ PHHC คุณเรียกฉันหรือคะ?';
       $arrPostData['messages'][1]['type'] = "text";
       $arrPostData['messages'][1]['text'] = 'NEAREST OFFICER
-        ';
+        '; */
+
+    $arrPostData['replyToken'] = $replyToken;
    
 
     $strUrl = "https://api.line.me/v2/bot/message/reply";
