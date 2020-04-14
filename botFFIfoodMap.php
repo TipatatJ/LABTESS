@@ -345,8 +345,8 @@ if (!is_null($events['events'])) {
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Food sc. R&D",
-                        "label": "Food sc. R&D"
+                        "text": "Food R&D",
+                        "label": "Food R&D"
                         },
                         {
                         "type": "message",
@@ -355,8 +355,8 @@ if (!is_null($events['events'])) {
                         },
                         {
                         "type": "message",
-                        "text": "Veg./Fruit",
-                        "label": "Veg./Fruit"
+                        "text": "Veg&Fruit",
+                        "label": "Veg&Fruit"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/images/GeneScreening.jpg",
