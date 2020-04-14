@@ -223,36 +223,65 @@ if (!is_null($events['events'])) {
                 exit;
             }
             
-                $jsonMsg = '{
-                    "type": "template",
-                    "altText": "this is a buttons template",
-                        "template": {
-                            "type": "buttons",
-                            "actions": [
-                            {
-                                "type": "postback",
-                                "label": "หาของกิน",
-                                "text": "Find food",
-                                "data": "Find food"
-                            },
-                            {
-                                "type": "postback",
-                                "label": "หา Food Supply",
-                                "text": "Food supply",
-                                "data": "Find supplier"
-                            },
-                            {
-                                "type": "postback",
-                                "label": "จะสร้างร้าน",
-                                "text": "Find construct",
-                                "data": "Shop construct"
-                            },
-                            ],
-                            "title": "คุณต้องการหาใคร",
-                            "text": "เลือก Net Work ที่ต้องการหา"
-                        }
-                    }';
+            /* $jsonMsg = '{
+                "type": "template",
+                "altText": "this is a buttons template",
+                    "template": {
+                        "type": "buttons",
+                        "actions": [
+                        {
+                            "type": "postback",
+                            "label": "หาของกิน",
+                            "text": "Find food",
+                            "data": "Find food"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "หา Food Supply",
+                            "text": "Food supply",
+                            "data": "Find supplier"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "จะสร้างร้าน",
+                            "text": "Find construct",
+                            "data": "Shop construct"
+                        },
+                        ],
+                        "title": "คุณต้องการหาใคร",
+                        "text": "เลือก Net Work ที่ต้องการหา"
+                    }
+                }'; */
             
+            $jsonMsg = '{
+                "type": "template",
+                "altText": "this is a buttons template",
+                    "template": {
+                        "type": "buttons",
+                        "actions": [
+                        {
+                            "type": "postback",
+                            "label": "แชร์ตำแหน่งบน TCM Map",
+                            "text": "Share on TCM Map",
+                            "data": "MyLocation,1"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "คำแนำนำสำหรับคนปกติ",
+                            "text": "PMgeneralAdvise",
+                            "data": "PMgeneralAdvise,'.$text['pm2.5'].'"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "คำแนะนำคนมีความเสี่ยง",
+                            "text": "PMriskAdvise",
+                            "data": "PMriskAdvise,'.$text['pm2.5'].'"
+                        }
+                        ],
+                        "title": "สภาพอากาศพื้นที่ใกล้เคียง",
+                        "text": "มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3"
+                    }
+                }';
 
 
             $messages = json_decode($jsonMsg, true);
