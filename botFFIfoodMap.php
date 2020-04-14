@@ -244,12 +244,12 @@ if (!is_null($events['events'])) {
                         {
                             "type": "postback",
                             "label": "จะสร้างร้าน",
-                            "text": "Find construct",
+                            "text": "Shop construct",
                             "data": "Shop construct"
                         },
                         ],
                         "title": "คุณต้องการหาใคร",
-                        "text": "เลือก Net Work ที่ต้องการหา"
+                        "text": "Net Work ที่ต้องการหา"
                     }
                 }';
             
