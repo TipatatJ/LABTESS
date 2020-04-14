@@ -235,18 +235,7 @@ if (!is_null($events['events'])) {
                             "text": "Find food",
                             "data": "Find food"
                         },
-                        {
-                            "type": "postback",
-                            "label": "หา Food Supply",
-                            "text": "Food supply",
-                            "data": "Find supplier"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "จะสร้างร้าน",
-                            "text": "Shop construct",
-                            "data": "Shop construct"
-                        },
+                        
                         ],
                         "title": "คุณต้องการหาใคร",
                         "text": "Net Work ที่หา"
