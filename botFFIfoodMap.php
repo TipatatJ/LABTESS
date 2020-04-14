@@ -350,8 +350,8 @@ if (!is_null($events['events'])) {
                         },
                         {
                         "type": "message",
-                        "text": "Restaurant",
-                        "label": "Restaurant"
+                        "text": "Meat supply",
+                        "label": "Meat supply"
                         },
                         {
                         "type": "message",
