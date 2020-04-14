@@ -299,9 +299,41 @@ if (!is_null($events['events'])) {
 
             $msg1 = json_decode($jsonMsg, true); 
 
+            $jsonMsg = '{
+                "type": "template",
+                "altText": "this is a buttons template",
+                    "template": {
+                        "type": "buttons",
+                        "actions": [
+                        {
+                            "type": "postback",
+                            "label": "หาของกิน",
+                            "text": "Share on TCM Map",
+                            "data": "MyLocation,1"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "หา Supplier",
+                            "text": "PMgeneralAdvise",
+                            "data": "PMgeneralAdvise,'.$text['pm2.5'].'"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "จะสร้างร้านอาหาร",
+                            "text": "PMriskAdvise",
+                            "data": "PMriskAdvise,'.$text['pm2.5'].'"
+                        }
+                        ],
+                        "title": "FFI Network",
+                        "text": "คุณหาอะไร? (ต่อ)"
+                    }
+                }';
+
+            $msg2 = json_decode($jsonMsg, true); 
+
             $arrPostData = array();
             $arrPostData['replyToken'] = $replyToken;
-            $arrPostData['messages'] = [$msg1];
+            $arrPostData['messages'] = [$msg1,$msg2];
             //$arrPostData['messages'][0]['type'] = "text";
             //$arrPostData['messages'][0]['text'] = '$messages';
 
