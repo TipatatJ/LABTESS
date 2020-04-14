@@ -220,7 +220,7 @@ if (!is_null($events['events'])) {
                 "me"=>$me);
                 post2WTH($fields);
 
-                die;
+                exit;
             }
             
                 $jsonMsg = '{
@@ -255,14 +255,14 @@ if (!is_null($events['events'])) {
             
 
 
-            /* $messages = json_decode($jsonMsg, true);
+            $messages = json_decode($jsonMsg, true);
             $text = '{ "WTH":"LocationShare" }'; //json_encode($text,JSON_UNESCAPED_UNICODE);
     
             $fields = array(
             "userId"=>$userId,
             "txt"=>$text, 
             "me"=>$me);
-            post2WTH($fields); */
+            post2WTH($fields);
 
             justMsg($messages, $replyToken, $access_token);
 
