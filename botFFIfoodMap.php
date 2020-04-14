@@ -1,9 +1,9 @@
 <?php
 define('SECRET_KEY', 'thai_epigenomic');
 $me = "Ub3f6b90b35b51d817a89835f9afaf8c7";
-$access_token = 'NR+w60sxm8/qG/oo1pwQ9tOg93GAEvhXGBJrk/jLfsO+GaLN3eJy7Gm5kVk8sYFFNv1Va/lz/28d9+TNJqShe9oWS2OEzAQusLeVtAsmvM8AjKzDe9YxVE5Z0D8PlZaTV7NA00Vwd9802Cvnx1reYwdB04t89/1O/w1cDnyilFU=';
+$access_token = 'WdFEC8WzJ/umA4WYcx0QQLwDpxARdBQEPmwx589EUHPI5XmVKOUPS1nLNol353ywi3Z0aZ5fvl0Yygdo0tkGvnaPq4u1wog1QIghtB2WdaviPMu+LuzTzXNuqU4W+DW2Ds/LK1PnzRyThwYF8FtJ3QdB04t89/1O/w1cDnyilFU=';
 $arrBreakKW = array(
-            'ขอบคุณที่สนใจเป็นส่วนหนึ่งของ HOMEO MAP เริ่มต้นกรอกข้อมูลโดยการเลือกที่ Rich menu ด้านล่าง',
+            'ขอบคุณที่สนใจเป็นส่วนหนึ่งของ FFI FOOD MAP เริ่มต้นกรอกข้อมูลโดยการเลือกที่ Rich menu ด้านล่าง',
             'PMgeneralAdvise',
             'PMriskAdvise',
             //'occupation,1','occupation,2','occupation,3',
@@ -256,8 +256,26 @@ if (!is_null($events['events'])) {
                     'text' => 'NON MESSAGE TYPE\n'.$content,
                 ]; */
 
+
+
                 //$decContent = json_decode($content, true);
                 $userMsgType = $event['message']['type'];
+
+
+                if($userMsgType == 'memberJoined'){
+                    $messages = [
+                        'type' => 'text',
+                        'text' => '
+                        เริ่มต้นด้วยการเลือก Click Rich Menu ด้านล่าง
+                        หรือพิมพ์
+
+                        ?
+                        ',
+                    ];
+
+                    justMsg($messages, $replyToken, $access_token);
+                    die;
+                }
 
                 $messages = [
                     'type' => 'text',
