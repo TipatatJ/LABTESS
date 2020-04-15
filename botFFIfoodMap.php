@@ -340,7 +340,7 @@ if (!is_null($events['events'])) {
                 "actions": [],
                 "columns": [
                     {
-                    "title": "หาวงการอาหาร",
+                    "title": "หาคนวงการอาหาร",
                     "text": "เลือกประเภท",
                     "actions": [
                         {
@@ -383,7 +383,7 @@ if (!is_null($events['events'])) {
             "txt"=>'{ "WTH":"choose Food Vs Supplier" }', 
             "me"=>$me);
             post2WTH($fields);
-            exit
+            exit;
             //justMsg($messages, $replyToken, $access_token);
 
         }
