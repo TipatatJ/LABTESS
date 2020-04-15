@@ -324,7 +324,7 @@ if (!is_null($events['events'])) {
                         "label": "Fine dining"
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.jinwellbeing.com/wp-content/uploads/2019/11/living_at_jin2.jpg"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FindFood.jpg"
                     }
                 ]
                 },
