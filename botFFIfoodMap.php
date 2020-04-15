@@ -340,7 +340,7 @@ if (!is_null($events['events'])) {
                 "actions": [],
                 "columns": [
                     {
-                    "title": "หาคน วงการอาหาร",
+                    "title": "หาวงการอาหาร",
                     "text": "เลือกประเภท",
                     "actions": [
                         {
@@ -377,6 +377,7 @@ if (!is_null($events['events'])) {
             //$arrPostData['messages'][0]['text'] = '$messages';
 
             multiMsg($access_token, $replyToken, $arrPostData);
+
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"choose Food Vs Supplier" }', 
