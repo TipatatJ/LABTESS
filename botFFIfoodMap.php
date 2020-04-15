@@ -334,73 +334,29 @@ if (!is_null($events['events'])) {
             $msg1 = json_decode($jsonMsg, true);
             //##########################################
 
-             $jsonMsg = '{
+            $jsonMsg = '{
                 "template": {
                 "type": "carousel",
                 "actions": [],
                 "columns": [
                     {
-                    "title": "หา Supply chain",
-                    "text": "หน้าที่ (1)",
+                    "title": "หาคน วงการอาหาร",
+                    "text": "เลือกประเภท",
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Food R&D",
-                        "label": "Food R&D"
+                        "text": "Supplier",
+                        "label": "Supplier"
                         },
                         {
                         "type": "message",
-                        "text": "Meat supply",
-                        "label": "Meat supply"
+                        "text": "Media",
+                        "label": "Media"
                         },
                         {
                         "type": "message",
-                        "text": "Veg&Fruit",
-                        "label": "Veg&Fruit"
-                        }
-                    ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/chain.png"
-                    },
-                    {
-                    "title": "หา Supply chain",
-                    "text": "หน้าที่ (2)",
-                    "actions": [
-                        {
-                        "type": "message",
-                        "text": "Seasoning",
-                        "label": "Seasoning"
-                        },
-                        {
-                        "type": "message",
-                        "text": "Bakery",
-                        "label": "Bakery"
-                        },
-                        {
-                        "type": "message",
-                        "text": "Equipment",
-                        "label": "Equipment"
-                        }
-                    ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/chain.png"
-                    },
-                    {
-                    "title": "หา Supply chain",
-                    "text": "หน้าที่ (3)",
-                    "actions": [
-                        {
-                        "type": "message",
-                        "text": "Packaging",
-                        "label": "Packaging"
-                        },
-                        {
-                        "type": "message",
-                        "text": "Logistic",
-                        "label": "Logistic"
-                        },
-                        {
-                        "type": "message",
-                        "text": "...",
-                        "label": "..."
+                        "text": "Reviewer",
+                        "label": "Reviewer"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/chain.png"
@@ -421,7 +377,12 @@ if (!is_null($events['events'])) {
             //$arrPostData['messages'][0]['text'] = '$messages';
 
             multiMsg($access_token, $replyToken, $arrPostData);
-
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"choose Food Vs Supplier" }', 
+            "me"=>$me);
+            post2WTH($fields);
+            exit
             //justMsg($messages, $replyToken, $access_token);
 
         }
