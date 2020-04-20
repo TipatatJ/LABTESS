@@ -170,12 +170,14 @@
             exit;
             break;
         case substr($postData,0,7) == 'supply,':
-            $jsonMsg = '{
+            $messages = [
+                'type' => 'text',
+                'text' => ' 
+                ใส่ชื่อกิจการ ห้างร้าน หรือบริษัทของคุณ
 
-                "type": "text",
-                "text": "อาชีพ "'.$postData.'
-            }';
-            $msg0 = json_decode($jsonMsg, true);
+                พิมพ์ X เพื่อซ่อนค่า
+                ',
+            ];
             //####################################################
 
             $arrPostData = array();
@@ -194,7 +196,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('WTH'=>'regist company name'),JSON_UNESCAPED_UNICODE), 
+            "txt"=>'{ "WTH":"regist company name" }', 
             "me"=>$me);
             post2WTH($fields);
 

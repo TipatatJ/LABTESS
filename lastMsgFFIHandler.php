@@ -558,7 +558,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case array_key_exists('name', json_decode($lastMsg,true)):
+        case $lastMsg == '{ "WTH":"regist company name" }' || substr($lastMsg,0,15) == '{"supply_type":':
             $Uname = json_decode($lastMsg,true)['name'];
             
             $messages = [
@@ -693,7 +693,7 @@
                             "data": "eval,X"
                         }
                         ],
-                        "title": "ประสบการณ์ในวงการ TCM",
+                        "title": "ประสบการณ์ในวงการอาหาร",
                         "text": "แขร์ประสบการณ์ของท่าน"
                     }
                 }';
