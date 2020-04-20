@@ -26,7 +26,7 @@
         case $text == 'Share location ของคุณเพื่อปักหมุดว่าคุณคือใคร':
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'NEW INPUT', 
+            "txt"=>'NEW INPUT2', 
             "me"=>$me);
             post2WTH($fields);
             exit;

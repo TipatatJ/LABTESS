@@ -191,7 +191,7 @@ if (!is_null($events['events'])) {
                         "text": "มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3"
                     }
                 }'; */
-            if($lastMsg == 'NEW INPUT'){
+            if($lastMsg == 'NEW INPUT2'){
                 $messages = [
                     'type' => 'text',
                     'text' => ' 
