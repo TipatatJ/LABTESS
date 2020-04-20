@@ -183,7 +183,7 @@
                 "actions": [],
                 "columns": [
                     {
-                    "title": "Media",
+                    "title": "Marketing",
                     "text": "consultant",
                     "actions": [
                         {
@@ -198,8 +198,30 @@
                         },
                         {
                         "type": "message",
-                        "text": "Photo",
-                        "label": "Photo"
+                        "text": "Photograph",
+                        "label": "Photograph"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
+                    },
+                    {
+                    "title": "Marketing",
+                    "text": "consultant",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Graphic",
+                        "label": "Graphic"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Video man",
+                        "label": "Video man"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Media plan",
+                        "label": "Media plan"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
@@ -215,7 +237,7 @@
 
             $arrPostData = array();
             $arrPostData['replyToken'] = $replyToken;
-            $arrPostData['messages'] = [$msg1, $msg2];
+            $arrPostData['messages'] = [$msg1];
             //$arrPostData['messages'][0]['type'] = "text";
             //$arrPostData['messages'][0]['text'] = '$messages';
 
