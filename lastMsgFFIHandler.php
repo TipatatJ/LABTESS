@@ -380,23 +380,26 @@
                 "actions": [],
                 "columns": [
                     {
-                    "title": "หาคนวงการอาหาร",
+                    "title": "คุณทำอะไร",
                     "text": "เลือกประเภท",
                     "actions": [
                         {
-                        "type": "message",
-                        "text": "Supplier",
-                        "label": "Supplier"
+                        "type": "postback",
+                        "text": "I Supply",
+                        "label": "I Supply",
+                        "data": "I Supply"
+                        },
+                        {
+                        "type": "postback",
+                        "text": "I Media",
+                        "label": "I Media",
+                        "data": "I Media"
                         },
                         {
                         "type": "message",
-                        "text": "Media",
-                        "label": "Media"
-                        },
-                        {
-                        "type": "message",
-                        "text": "Reviewer",
-                        "label": "Reviewer"
+                        "text": "I Review",
+                        "label": "I Review",
+                        "data": "I Review"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/chain.png"
