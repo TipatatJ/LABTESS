@@ -568,6 +568,8 @@
                 กรุณาแจ้งเบอร์โทรศัพท์
 
                 หากไม่อยากรับการติดต่อ กรุณาพิมพ์ X
+
+                (แต่ถ้าท่านมี Supply อย่างอื่น ท่านสามารถกดเลือกจากเมนูข้างบนเพิ่มอีกได้ ก่อนที่จะมากรอกเบอร์โทรศัพท์เพื่อไปยังขั้นตอนถัดไป)
                 ',
             ];
 
@@ -708,34 +710,38 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"please eval TCM" }', 
+            "txt"=>'{ "WTH":"please eval your exp" }', 
             "me"=>$me);
             post2WTH($fields);
 
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{"WTH":"user TCM clinic"}':
+        case $lastMsg == '{"WTH":"user caption"}':
             $messages = [
                 'type' => 'text',
                 'text' => ' 
-                ขั้นตอนสุดท้ายแล้ว
+                ขอบคุณที่มาร่วมเป็น่ส่วนหนึ่งในเครือข่าย FFI MAP
 
-                ทางเราขอให้ท่านกดแชร์ตำแหน่ง Location ของท่านให้เรา เพื่อทำให้ระบบสามารถ Plot ข้อมูลที่ท่านให้มาลงบนแผนที่ และแสดงสิ่งที่ท่านได้
+                 ไปดูความเห็นของท่านบนแผนที่กันเลยที่ Link นี้
+                https://www.venitaclinic.com/infoMap/include/FFImap.php?mapId='.$mapId.'
 
-                ท่านจำเป็นต้องแชร์ตำแหน่งปัจจุบันของท่าน เพื่อให้มีการแสดงผลใน platform HomeoMap
+                ท่านสามารถเปลี่ยนแปลงข้อมูลของท่านได้ตลอด ด้วยการเริ่มกรอกข้อมูลใหม่ตั้งแต่ต้นที่ ริชเมนู
+                หมายเหตุ:
+                - ระบบจะจดจำข้อมูลหลังสุดที่ท่านกรอกเท่านั้น
+
                 ',
             ];
             
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "user TCM clinic":"'.$text.'" }', 
+            "txt"=>'{ "user caption":"'.$text.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"please share your location" }', 
+            "txt"=>'SUM DATA', 
             "me"=>$me);
             post2WTH($fields);
 

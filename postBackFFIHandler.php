@@ -394,7 +394,7 @@
             $messages = [
                 'type' => 'text',
                 'text' => ' 
-                ชื่อสถานที่ประกอบการ ( โรงพยาบาล คลินิก ร้านขายยา )
+                คำบรรยายสั้นๆ
                 ซึ่งจะเห็นได้ชัด เป็น Caption บน Graphic แผนที่ของเรา
                 ไม่เกิน 50 ตัวอักษร
                 ',
@@ -408,7 +408,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('WTH'=>'user TCM clinic'),JSON_UNESCAPED_UNICODE), 
+            "txt"=>json_encode(array('WTH'=>'user caption'),JSON_UNESCAPED_UNICODE), 
             "me"=>$me);
             post2WTH($fields);
 
