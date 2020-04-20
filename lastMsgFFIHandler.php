@@ -245,7 +245,80 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"choose Food Vs Supplier" }', 
+            "txt"=>'{ "WTH":"choose Marketing consultant" }', 
+            "me"=>$me);
+            post2WTH($fields);
+            exit;
+        case $text == 'Reviewer':
+            $jsonMsg = '{
+                "template": {
+                "type": "carousel",
+                "actions": [],
+                "columns": [
+                    {
+                    "title": "Reviewer",
+                    "text": "on media",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Blogger",
+                        "label": "Blogger"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Youtuber",
+                        "label": "Youtuber"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Live video",
+                        "label": "Live video"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Review.jpg"
+                    },
+                    {
+                    "title": "Marketing",
+                    "text": "consultant",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Commercial",
+                        "label": "Commercial"
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Review.jpg"
+                    }
+                ]
+                },
+                "altText": "this is a carousel template",
+                "type": "template"
+            }';
+            $msg1 = json_decode($jsonMsg, true);
+            //##########################################
+             
+
+            $arrPostData = array();
+            $arrPostData['replyToken'] = $replyToken;
+            $arrPostData['messages'] = [$msg1];
+            //$arrPostData['messages'][0]['type'] = "text";
+            //$arrPostData['messages'][0]['text'] = '$messages';
+
+            multiMsg($access_token, $replyToken, $arrPostData);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"choose Reviewer type" }', 
             "me"=>$me);
             post2WTH($fields);
             exit;
