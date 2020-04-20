@@ -167,15 +167,21 @@
             exit;
             break;
         case substring($postData,0,7) == 'supply,':
-            $Uname = json_decode($lastMsg,true)['name'];
-            $messages = [
-                'type' => 'text',
-                'text' => ' 
-                ชื่อบริษํท ห้างร้าน หรือชื่อกิจการ
+            $jsonMsg = '{
 
-                พิมพ์ X เพื่อซ่อนค่า 
-                ',
-            ];
+                "type": "text",
+                "text": "อาชีพ "'.$postData.'
+            }';
+            $msg0 = json_decode($jsonMsg, true);
+            //####################################################
+
+            $arrPostData = array();
+            $arrPostData['replyToken'] = $replyToken;
+            $arrPostData['messages'] = [$msg0];
+            //$arrPostData['messages'][0]['type'] = "text";
+            //$arrPostData['messages'][0]['text'] = '$messages';
+
+            multiMsg($access_token, $replyToken, $arrPostData);
 
             $fields = array(
             "userId"=>$userId,
