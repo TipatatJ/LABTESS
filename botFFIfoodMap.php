@@ -191,8 +191,24 @@ if (!is_null($events['events'])) {
                         "text": "มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3"
                     }
                 }'; */
+            if($lastMsg == '{ "WTH":"mark my location" }'){
+                $messages = [
+                    'type' => 'text',
+                    'text' => ' 
+                    กรุณาใส่ชื่อ นามสกุล ของท่าน 
+                    ',
+                ];
 
-            if($lastMsg == 'SUM DATA' || $lastMsg == '{ "WTH":"LocationShare" }'){
+                $fields = array(
+                "userId"=>$userId,
+                "txt"=>'{ "WTH":"please input user name" }', 
+                "me"=>$me);
+                post2WTH($fields);
+                justMsg($messages, $replyToken, $access_token);
+                exit;
+                break;
+            }
+            else if($lastMsg == 'SUM DATA' || $lastMsg == '{ "WTH":"LocationShare" }'){
                 $jsonMsg = '{
                     "type": "template",
                     "altText": "this is a buttons template",
