@@ -191,7 +191,7 @@ if (!is_null($events['events'])) {
                         "text": "มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3"
                     }
                 }'; */
-            if($lastMsg == '{ "WTH":"mark my location" }'){
+            if($lastMsg == '{ "WTH":"regist FFI member" }'){
                 $messages = [
                     'type' => 'text',
                     'text' => ' 

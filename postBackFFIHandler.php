@@ -2,6 +2,170 @@
     $postData = $event['postback']['data'];
 
     switch(true){
+        case $postData == 'I Supply':
+            $jsonMsg = '{
+                "template": {
+                "type": "carousel",
+                "actions": [],
+                "columns": [
+                    {
+                    "title": "ขายวัตถุดิบ(1)",
+                    "text": "Raw material",
+                    "actions": [
+                        {
+                        "type": "postback",
+                        "text": "supply Meat",
+                        "label": "ขายเนื้อสัตว์",
+                        "data": "supply,1"
+                        },
+                        {
+                        "type": "postback",
+                        "text": "VegFruitSell",
+                        "label": "ขายผัก ผลไม้",
+                        "data": "supply,2"
+                        },
+                        {
+                        "type": "postback",
+                        "text": "SeasonSell",
+                        "label": "มีเครื่องเทศ",
+                        "data": "supply,3"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/RawMaterial.jpg"
+                    },
+                    {
+                    "title": "ขายวัตถุดิบ(2)",
+                    "text": "Raw material",
+                    "actions": [
+                        {
+                        "type": "postback",
+                        "text": "ทำ Bakery",
+                        "label": "ทำ Bakery",
+                        "data": "supply,4"
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/RawMaterial.jpg"
+                    }
+                ]
+                },
+                "altText": "this is a carousel template",
+                "type": "template"
+            }';
+            $msg1 = json_decode($jsonMsg, true);
+            //##########################################
+
+            $jsonMsg = '{
+                "template": {
+                "type": "carousel",
+                "actions": [],
+                "columns": [
+                    {
+                    "title": "Pre - Post processing",
+                    "text": "equipment",
+                    "actions": [
+                        {
+                        "type": "postback",
+                        "text": "SellEquip",
+                        "label": "เครื่องครัว",
+                        "data": "supply,5"
+                        },
+                        {
+                        "type": "postback",
+                        "text": "Packaging",
+                        "label": "SellPackage",
+                        "data": "supply,6"
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Equipment.jpg"
+                    },
+                    {
+                    "title": "Support team",
+                    "text": "teams",
+                    "actions": [
+                        {
+                        "type": "postback",
+                        "text": "รับ Food R&D",
+                        "label": "รับ Food R&D",
+                        "data": "supply,7"
+                        },
+                        {
+                        "type": "postback",
+                        "text": "รับ Logistic",
+                        "label": "รับ Logistic",
+                        "data": "supply,8"
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Delivery.jpg"
+                    },
+                    {
+                    "title": "Construction",
+                    "text": "teams",
+                    "actions": [
+                        {
+                        "type": "postback",
+                        "text": "มี Architect",
+                        "label": "มี Architect",
+                        "data": "supply,9"
+                        },
+                        {
+                        "type": "postback",
+                        "text": "มี Interior",
+                        "label": "มี Interior",
+                        "data": "supply,10"
+                        },
+                        {
+                        "type": "postback",
+                        "text": "เป็นรับเหมา",
+                        "label": "เป็นรับเหมา",
+                        "data": "supply,11"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Contractor.jpg"
+                    }
+                ]
+                },
+                "altText": "this is a carousel template",
+                "type": "template"
+            }';
+            $msg2 = json_decode($jsonMsg, true);
+            //##########################################
+             
+
+            $arrPostData = array();
+            $arrPostData['replyToken'] = $replyToken;
+            $arrPostData['messages'] = [$msg1,$msg2];
+            //$arrPostData['messages'][0]['type'] = "text";
+            //$arrPostData['messages'][0]['text'] = '$messages';
+
+            multiMsg($access_token, $replyToken, $arrPostData);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"my Supplier type" }', 
+            "me"=>$me);
+            post2WTH($fields);
+            exit;
+            break;
         case $postData == 'occupation,1':
             $Uname = json_decode($lastMsg,true)['name'];
             $messages = [
