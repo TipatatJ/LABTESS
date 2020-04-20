@@ -129,6 +129,28 @@
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Delivery.jpg"
+                    },
+                    {
+                    "title": "Construction",
+                    "text": "teams",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Architect",
+                        "label": "Architect"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Interior",
+                        "label": "Interior"
+                        },
+                        {
+                        "type": "message",
+                        "text": "บ.รับเหมา",
+                        "label": "Contractor"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Contractor.jpg"
                     }
                 ]
                 },
