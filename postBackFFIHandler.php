@@ -169,7 +169,7 @@
             post2WTH($fields);
             exit;
             break;
-        case substring($postData,0,7) == 'supply,':
+        case substr($postData,0,7) == 'supply,':
             $jsonMsg = '{
 
                 "type": "text",
