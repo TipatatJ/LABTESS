@@ -364,48 +364,66 @@
             exit;
             break;
         case $lastMsg == '{ "WTH":"please input user name" }':
-            $jsonMsg = '{ 
-                "type": "template",
-                "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
-                    "template": {
-                        "type": "buttons",
-                        "actions": [
-                        {
-                            "type": "postback",
-                            "label": "MD Trained TCM",
-                            "text": "MD TCM",
-                            "data": "occupation,1"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "พจ. TCM doctor",
-                            "text": "TCM doctor",
-                            "data": "occupation,2"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "งานร้านแผนจีน",
-                            "text": "TCM pharmacist",
-                            "data": "occupation,3"
-                        }
-                        ],
-                        "title": "ประสบการณ์กับ TCM",
-                        "text": "ท่านจะถูกระบุเป็น '.$text.'"
-                    }
-                }';
+            $jsonMsg = '{
 
-            $messages = json_decode($jsonMsg, true);
+                "type": "text",
+                "text": "โปรดเลือกว่าคุณทำอะไรในวงการอาหาร"
+            }';
+            $msg0 = json_decode($jsonMsg, true);
+            //##########################################
+
+            
+
+            $jsonMsg = '{
+                "template": {
+                "type": "carousel",
+                "actions": [],
+                "columns": [
+                    {
+                    "title": "หาคนวงการอาหาร",
+                    "text": "เลือกประเภท",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Supplier",
+                        "label": "Supplier"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Media",
+                        "label": "Media"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Reviewer",
+                        "label": "Reviewer"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/chain.png"
+                    }
+                ]
+                },
+                "altText": "this is a carousel template",
+                "type": "template"
+            }';
+            $msg2 = json_decode($jsonMsg, true);
+            //##########################################
+             
+
+            $arrPostData = array();
+            $arrPostData['replyToken'] = $replyToken;
+            $arrPostData['messages'] = [$msg0, $msg2];
+            //$arrPostData['messages'][0]['type'] = "text";
+            //$arrPostData['messages'][0]['text'] = '$messages';
+
+            multiMsg($access_token, $replyToken, $arrPostData);
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('name'=>$text),JSON_UNESCAPED_UNICODE), 
+            "txt"=>'{ "WTH":"tell who I am (1)" }', 
             "me"=>$me);
-            post2WTH($fields, $lastMsg.'
-            '.$text);
-
-            justMsg($messages, $replyToken, $access_token);
+            post2WTH($fields);
             exit;
-            break;
         case $lastMsg == '{"WTH":"regist medical license id"}' || $lastMsg == '{"WTH":"regist TCM doctor id"}':
             $jsonMsg = '{ 
                 "type": "template",
