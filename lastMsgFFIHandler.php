@@ -176,6 +176,79 @@
             post2WTH($fields);
             exit;
             break;
+        case $text == 'Marketing':
+            $jsonMsg = '{
+                "template": {
+                "type": "carousel",
+                "actions": [],
+                "columns": [
+                    {
+                    "title": "Marketing",
+                    "text": "consultant",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Branding",
+                        "label": "Branding"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Creative",
+                        "label": "Creative"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Photograph",
+                        "label": "Photograph"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
+                    },
+                    {
+                    "title": "Marketing",
+                    "text": "consultant",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Graphic",
+                        "label": "Graphinc"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Video man",
+                        "label": "Video man"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Media plan",
+                        "label": "Media plan"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
+                    }
+                ]
+                },
+                "altText": "this is a carousel template",
+                "type": "template"
+            }';
+            $msg1 = json_decode($jsonMsg, true);
+            //##########################################
+             
+
+            $arrPostData = array();
+            $arrPostData['replyToken'] = $replyToken;
+            $arrPostData['messages'] = [$msg1, $msg2];
+            //$arrPostData['messages'][0]['type'] = "text";
+            //$arrPostData['messages'][0]['text'] = '$messages';
+
+            multiMsg($access_token, $replyToken, $arrPostData);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"choose Food Vs Supplier" }', 
+            "me"=>$me);
+            post2WTH($fields);
+            exit;
         case $lastMsg == 'ฉันทำงานร้านยาจีน' || $text == 'ฉันทำงานร้านยาจีน':
 
             $messages = [
