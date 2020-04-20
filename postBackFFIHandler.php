@@ -82,7 +82,7 @@
                         },
                         {
                         "type": "postback",
-                        "text": "Packaging",
+                        "text": "SellPackage",
                         "label": "SellPackage",
                         "data": "supply,6"
                         },
@@ -176,6 +176,8 @@
                 ใส่ชื่อกิจการ ห้างร้าน หรือบริษัทของคุณ
 
                 พิมพ์ X เพื่อซ่อนค่า
+
+                (แต่ถ้าท่านมี Supply อย่างอื่น ท่านสามารถกดเลือกจากเมนูข้างบนเพิ่มอีกได้ ก่อนที่จะมากรอกชื่อกิจการเพื่อไปยังขั้นตอนถัดไป)
                 ',
             ];
             //####################################################
@@ -408,7 +410,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>json_encode(array('WTH'=>'user caption'),JSON_UNESCAPED_UNICODE), 
+            "txt"=>'{"WTH":"user caption"}', 
             "me"=>$me);
             post2WTH($fields);
 
