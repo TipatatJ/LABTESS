@@ -183,7 +183,7 @@
                 "actions": [],
                 "columns": [
                     {
-                    "title": "Marketing",
+                    "title": "Media",
                     "text": "consultant",
                     "actions": [
                         {
@@ -198,8 +198,8 @@
                         },
                         {
                         "type": "message",
-                        "text": "Photograph",
-                        "label": "Photograph"
+                        "text": "Photo",
+                        "label": "Photo"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
