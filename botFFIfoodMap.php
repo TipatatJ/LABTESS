@@ -191,7 +191,7 @@ if (!is_null($events['events'])) {
                         "text": "มีปริมาณ PM2.5 ที่ระดับ '.$text['pm2.5'].' mcg/m3"
                     }
                 }'; */
-            if($lastMsg == '{ "WTH":"regist FFI member" }'){
+            if($lastMsg == 'NEW INPUT'){
                 $messages = [
                     'type' => 'text',
                     'text' => ' 

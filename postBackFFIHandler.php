@@ -425,6 +425,21 @@
             post2WTH($fields);
             justMsg($messages, $replyToken, $access_token);
             exit;
+            break;
+        default:
+            $messages = [
+                'type' => 'text',
+                'text' => ' 
+                ???
+                '.$postData,
+            ];
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "???":"'.$postData.'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+            exit;
             break;           
     }
 
