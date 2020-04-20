@@ -176,7 +176,7 @@
             post2WTH($fields);
             exit;
             break;
-        case $text == 'Marketing':
+        case $text == 'Media':
             $jsonMsg = '{
                 "template": {
                 "type": "carousel",

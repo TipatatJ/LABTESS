@@ -350,8 +350,8 @@ if (!is_null($events['events'])) {
                         },
                         {
                         "type": "message",
-                        "text": "Marketing",
-                        "label": "Marketing"
+                        "text": "Media",
+                        "label": "Media"
                         },
                         {
                         "type": "message",
