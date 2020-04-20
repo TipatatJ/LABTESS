@@ -49,7 +49,7 @@
                         "label": "Seasoning"
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FindFood.jpg"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/RawMaterial.jpg"
                     },
                     {
                     "title": "หาวัตถุดิบ(2)",
@@ -71,7 +71,7 @@
                         "label": "..."
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FindFood.jpg"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/RawMaterial.jpg"
                     }
                 ]
                 },
@@ -81,39 +81,61 @@
             $msg1 = json_decode($jsonMsg, true);
             //##########################################
 
-            /* $jsonMsg = '{
+            $jsonMsg = '{
                 "template": {
                 "type": "carousel",
                 "actions": [],
                 "columns": [
                     {
-                    "title": "หาคนวงการอาหาร",
-                    "text": "เลือกประเภท",
+                    "title": "Pre - Post processing",
+                    "text": "equipment",
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Supplier",
-                        "label": "Supplier"
+                        "text": "Equipment",
+                        "label": "Equipmnet"
                         },
                         {
                         "type": "message",
-                        "text": "Media",
-                        "label": "Media"
+                        "text": "Packaging",
+                        "label": "Packaging"
                         },
                         {
                         "type": "message",
-                        "text": "Reviewer",
-                        "label": "Reviewer"
+                        "text": "...",
+                        "label": "..."
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/chain.png"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Equiment.jpg"
+                    },
+                    {
+                    "title": "Support team",
+                    "text": "teams",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Food R&D",
+                        "label": "Food R&D"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Logistic",
+                        "label": "Logistic"
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Delivery.jpg"
                     }
                 ]
                 },
                 "altText": "this is a carousel template",
                 "type": "template"
             }';
-            $msg2 = json_decode($jsonMsg, true); */
+            $msg2 = json_decode($jsonMsg, true);
             //##########################################
              
 
@@ -127,7 +149,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"choose Food Vs Supplier" }', 
+            "txt"=>'{ "WTH":"choose Supplier type" }', 
             "me"=>$me);
             post2WTH($fields);
             exit;
