@@ -382,6 +382,7 @@
                     {
                     "title": "คุณทำอะไร",
                     "text": "เลือกประเภท",
+                    "type": "buttons",
                     "actions": [
                         {
                         "type": "postback",

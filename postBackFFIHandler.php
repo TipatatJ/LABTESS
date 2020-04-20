@@ -72,6 +72,7 @@
                     {
                     "title": "Pre - Post processing",
                     "text": "equipment",
+                    "type": "buttons",
                     "actions": [
                         {
                         "type": "postback",
@@ -96,6 +97,7 @@
                     {
                     "title": "Support team",
                     "text": "teams",
+                    "type": "buttons",
                     "actions": [
                         {
                         "type": "postback",
@@ -120,6 +122,7 @@
                     {
                     "title": "Construction",
                     "text": "teams",
+                    "type": "buttons",
                     "actions": [
                         {
                         "type": "postback",
