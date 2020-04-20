@@ -203,28 +203,6 @@
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
-                    },
-                    {
-                    "title": "Marketing",
-                    "text": "consultant",
-                    "actions": [
-                        {
-                        "type": "message",
-                        "text": "Graphic",
-                        "label": "Graphinc"
-                        },
-                        {
-                        "type": "message",
-                        "text": "Video man",
-                        "label": "Video man"
-                        },
-                        {
-                        "type": "message",
-                        "text": "Media plan",
-                        "label": "Media plan"
-                        }
-                    ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
                     }
                 ]
                 },
