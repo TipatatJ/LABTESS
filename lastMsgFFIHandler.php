@@ -423,6 +423,12 @@
 
             $fields = array(
             "userId"=>$userId,
+            "txt"=>'{ "name":"'.$text.'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
             "txt"=>'{ "WTH":"tell who I am (1)" }', 
             "me"=>$me);
             post2WTH($fields);

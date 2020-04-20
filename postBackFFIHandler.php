@@ -166,6 +166,32 @@
             post2WTH($fields);
             exit;
             break;
+        case substring($postData,0,7) == 'supply,':
+            $Uname = json_decode($lastMsg,true)['name'];
+            $messages = [
+                'type' => 'text',
+                'text' => ' 
+                ชื่อบริษํท ห้างร้าน หรือชื่อกิจการ
+
+                พิมพ์ X เพื่อซ่อนค่า 
+                ',
+            ];
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('supply_type'=>$postData),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>json_encode(array('WTH'=>'regist company name'),JSON_UNESCAPED_UNICODE), 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
         case $postData == 'occupation,1':
             $Uname = json_decode($lastMsg,true)['name'];
             $messages = [
