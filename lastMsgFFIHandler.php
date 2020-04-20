@@ -26,7 +26,7 @@
         case $text == 'Share location ของคุณเพื่อปักหมุดว่าคุณคือใคร':
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"regist FFI member" }', 
+            "txt"=>'NEW INPUT', 
             "me"=>$me);
             post2WTH($fields);
             exit;
