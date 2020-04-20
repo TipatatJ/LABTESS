@@ -106,7 +106,7 @@
                         "label": "..."
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Equiment.jpg"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Equipment.jpg"
                     },
                     {
                     "title": "Support team",
