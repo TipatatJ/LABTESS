@@ -23,7 +23,115 @@
                 ';
 
     switch(true){
+        case $text == 'Supplier':
+            $jsonMsg = '{
+                "template": {
+                "type": "carousel",
+                "actions": [],
+                "columns": [
+                    {
+                    "title": "หาวัตถุดิบ(1)",
+                    "text": "Raw material",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Meat supply",
+                        "label": "Meat supply"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Veg & Fruit",
+                        "label": "Veg & Fruit"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Seasoning",
+                        "label": "Seasoning"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FindFood.jpg"
+                    },
+                    {
+                    "title": "หาวัตถุดิบ(2)",
+                    "text": "Raw material",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Bakery supply",
+                        "label": "Bakery supply"
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FindFood.jpg"
+                    }
+                ]
+                },
+                "altText": "this is a carousel template",
+                "type": "template"
+            }';
+            $msg1 = json_decode($jsonMsg, true);
+            //##########################################
 
+            /* $jsonMsg = '{
+                "template": {
+                "type": "carousel",
+                "actions": [],
+                "columns": [
+                    {
+                    "title": "หาคนวงการอาหาร",
+                    "text": "เลือกประเภท",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Supplier",
+                        "label": "Supplier"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Media",
+                        "label": "Media"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Reviewer",
+                        "label": "Reviewer"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/chain.png"
+                    }
+                ]
+                },
+                "altText": "this is a carousel template",
+                "type": "template"
+            }';
+            $msg2 = json_decode($jsonMsg, true); */
+            //##########################################
+             
+
+            $arrPostData = array();
+            $arrPostData['replyToken'] = $replyToken;
+            $arrPostData['messages'] = [$msg1];
+            //$arrPostData['messages'][0]['type'] = "text";
+            //$arrPostData['messages'][0]['text'] = '$messages';
+
+            multiMsg($access_token, $replyToken, $arrPostData);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"choose Food Vs Supplier" }', 
+            "me"=>$me);
+            post2WTH($fields);
+            exit;
+            break;
         case $lastMsg == 'ฉันทำงานร้านยาจีน' || $text == 'ฉันทำงานร้านยาจีน':
 
             $messages = [
