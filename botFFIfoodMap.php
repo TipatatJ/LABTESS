@@ -21,7 +21,8 @@ $arrBreakKW = array(
             'MD TCM','TCM doctor','TCM pharmacist',
             'Good','Neutral','Bad', 'no exp',
 
-            'supply Meat','VegFruitSell','SeasonSell','ทำ Bakery','SellEquip','SellPackage','รับ Food R&D','รับ Logistic','มี Architect','มี Interior','เป็นรับเหมา'
+            'supply Meat','VegFruitSell','SeasonSell','ทำ Bakery','SellEquip','SellPackage','รับ Food R&D','รับ Logistic',
+            'มี Architect','มี Interior','เป็นรับเหมา'
             );
 
 // Get POST body content

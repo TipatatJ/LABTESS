@@ -398,8 +398,8 @@
                         },
                         {
                         "type": "message",
-                        "text": "Restaurant",
-                        "label": "Restaurant",
+                        "text": "I Serve",
+                        "label": "I Serve",
                         "data": "I Serve"
                         }
                     ],
