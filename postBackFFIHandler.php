@@ -335,7 +335,7 @@
             "me"=>$me);
             post2WTH($fields);
             exit;
-        
+            break;
         case $postData == 'I Serve':
             //$Uname = json_decode($lastMsg,true)['name'];
             
