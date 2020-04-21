@@ -205,7 +205,7 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $postData == 'Serve':
+        case $postData == 'ณ Serve':
             $Uname = json_decode($lastMsg,true)['name'];
             
             $jsonMsg = '{ 
