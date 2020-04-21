@@ -205,7 +205,138 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $postData == 'ณ Serve':
+        case $postData == 'I Media':
+            $jsonMsg = '{
+                "template": {
+                "type": "carousel",
+                "actions": [],
+                "columns": [
+                    {
+                    "title": "Marketing",
+                    "text": "consultant",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "I Brand",
+                        "label": "I Brand"
+                        },
+                        {
+                        "type": "message",
+                        "text": "I Creat",
+                        "label": "I Creat"
+                        },
+                        {
+                        "type": "message",
+                        "text": "I Photo",
+                        "label": "I Photo"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
+                    },
+                    {
+                    "title": "Marketing",
+                    "text": "consultant",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "I Graphic",
+                        "label": "I Graphic"
+                        },
+                        {
+                        "type": "message",
+                        "text": "I Rec VDO",
+                        "label": "I Rec VDO"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Media plan",
+                        "label": "Media plan"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
+                    }
+                ]
+                },
+                "altText": "this is a carousel template",
+                "type": "template"
+            }';
+            $msg1 = json_decode($jsonMsg, true);
+            //##########################################
+
+            $jsonMsg = '{
+                "template": {
+                "type": "carousel",
+                "actions": [],
+                "columns": [
+                    {
+                    "title": "Reviewer",
+                    "text": "on media",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "I Blogger",
+                        "label": "I Blogger"
+                        },
+                        {
+                        "type": "message",
+                        "text": "I Youtube",
+                        "label": "I Youtube"
+                        },
+                        {
+                        "type": "message",
+                        "text": "I Live",
+                        "label": "I Live"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Review.jpg"
+                    },
+                    {
+                    "title": "Marketing",
+                    "text": "consultant",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "I Commerc",
+                        "label": "I Commerc"
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Review.jpg"
+                    }
+                ]
+                },
+                "altText": "this is a carousel template",
+                "type": "template"
+            }';
+            $msg2 = json_decode($jsonMsg, true);
+            //##########################################
+             
+
+            $arrPostData = array();
+            $arrPostData['replyToken'] = $replyToken;
+            $arrPostData['messages'] = [$msg1, $msg2];
+            //$arrPostData['messages'][0]['type'] = "text";
+            //$arrPostData['messages'][0]['text'] = '$messages';
+
+            multiMsg($access_token, $replyToken, $arrPostData);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"my Media specialist" }', 
+            "me"=>$me);
+            post2WTH($fields);
+            exit;
+        
+        case $postData == 'I Serve':
             $Uname = json_decode($lastMsg,true)['name'];
             
             $jsonMsg = '{ 
