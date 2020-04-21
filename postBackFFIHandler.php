@@ -345,48 +345,26 @@
                 "actions": [],
                 "columns": [
                     {
-                    "title": "Cook & Serve",
-                    "text": "style",
+                    "title": "หาของกิน",
+                    "text": "Food style search",
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Blogger",
-                        "label": "Blogger"
+                        "text": "Street food",
+                        "label": "Street food"
                         },
                         {
                         "type": "message",
-                        "text": "Youtuber",
-                        "label": "Youtuber"
+                        "text": "Restaurant",
+                        "label": "Restaurant"
                         },
                         {
                         "type": "message",
-                        "text": "Live video",
-                        "label": "Live video"
+                        "text": "Fine dining",
+                        "label": "Fine dining"
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Review.jpg"
-                    },
-                    {
-                    "title": "Marketing",
-                    "text": "consultant",
-                    "actions": [
-                        {
-                        "type": "message",
-                        "text": "Commercial",
-                        "label": "Commercial"
-                        },
-                        {
-                        "type": "message",
-                        "text": "...",
-                        "label": "..."
-                        },
-                        {
-                        "type": "message",
-                        "text": "...",
-                        "label": "..."
-                        }
-                    ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Review.jpg"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FindFood.jpg"
                     }
                 ]
                 },
