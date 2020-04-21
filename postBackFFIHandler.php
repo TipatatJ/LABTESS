@@ -262,11 +262,68 @@
             }';
             $msg1 = json_decode($jsonMsg, true);
             //##########################################
+
+            $jsonMsg = '{
+                "template": {
+                "type": "carousel",
+                "actions": [],
+                "columns": [
+                    {
+                    "title": "Reviewer",
+                    "text": "on media",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "I Blog",
+                        "label": "I Blog"
+                        },
+                        {
+                        "type": "message",
+                        "text": "I Youtube",
+                        "label": "I Youtube"
+                        },
+                        {
+                        "type": "message",
+                        "text": "I Live",
+                        "label": "I Live"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Review.jpg"
+                    },
+                    {
+                    "title": "Marketing",
+                    "text": "consultant",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "I Commerc",
+                        "label": "I Commerc"
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Review.jpg"
+                    }
+                ]
+                },
+                "altText": "this is a carousel template",
+                "type": "template"
+            }';
+            $msg2 = json_decode($jsonMsg, true);
+            //##########################################
              
 
             $arrPostData = array();
             $arrPostData['replyToken'] = $replyToken;
-            $arrPostData['messages'] = [$msg1];
+            $arrPostData['messages'] = [$msg1, $msg2];
             //$arrPostData['messages'][0]['type'] = "text";
             //$arrPostData['messages'][0]['text'] = '$messages';
 
@@ -280,7 +337,7 @@
             exit;
         
         case $postData == 'I Serve':
-            $Uname = json_decode($lastMsg,true)['name'];
+            //$Uname = json_decode($lastMsg,true)['name'];
             
             $jsonMsg = '{
                 "template": {
@@ -288,38 +345,64 @@
                 "actions": [],
                 "columns": [
                     {
-                    "title": "เลือกประเภทร้านอาหาร",
-                    "text": "Choose your food style",
-                    "type": "buttons",
+                    "title": "Cook & Serve",
+                    "text": "style",
                     "actions": [
                         {
-                        "type": "postback",
-                        "text": "I Street F",
-                        "label": "I Street F",
-                        "data": "Shop,1"
+                        "type": "message",
+                        "text": "Blogger",
+                        "label": "Blogger"
                         },
                         {
-                        "type": "postback",
-                        "text": "I Restau.",
-                        "label": "I Restau.",
-                        "data": "Shop,2"
+                        "type": "message",
+                        "text": "Youtuber",
+                        "label": "Youtuber"
                         },
                         {
-                        "type": "postback",
-                        "text": "I FineDine",
-                        "label": "I FineDine",
-                        "dat": "Shop,3"
+                        "type": "message",
+                        "text": "Live video",
+                        "label": "Live video"
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FindFood.jpg"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Review.jpg"
+                    },
+                    {
+                    "title": "Marketing",
+                    "text": "consultant",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Commercial",
+                        "label": "Commercial"
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        },
+                        {
+                        "type": "message",
+                        "text": "...",
+                        "label": "..."
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Review.jpg"
                     }
                 ]
                 },
                 "altText": "this is a carousel template",
                 "type": "template"
             }';
+            $msg1 = json_decode($jsonMsg, true);
+            //##########################################
 
-            $messages = json_decode($jsonMsg, true);
+            $arrPostData = array();
+            $arrPostData['replyToken'] = $replyToken;
+            $arrPostData['messages'] = [$msg1];
+            //$arrPostData['messages'][0]['type'] = "text";
+            //$arrPostData['messages'][0]['text'] = '$messages';
+
+            multiMsg($access_token, $replyToken, $arrPostData);
  
             $fields = array(
             "userId"=>$userId,
