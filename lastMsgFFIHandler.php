@@ -434,6 +434,67 @@
             "me"=>$me);
             post2WTH($fields);
             exit;
+        case $lastMsg == '{ "WTH":"tell who I am (1)" }':
+            //$Uname = json_decode($lastMsg,true)['name'];
+            
+            $jsonMsg = '{
+                "template": {
+                "type": "carousel",
+                "actions": [],
+                "columns": [
+                    {
+                    "title": "หาของกิน",
+                    "text": "Food style search",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Street food",
+                        "label": "Street food"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Restaurant",
+                        "label": "Restaurant"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Fine dining",
+                        "label": "Fine dining"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FindFood.jpg"
+                    }
+                ]
+                },
+                "altText": "this is a carousel template",
+                "type": "template"
+            }';
+            $msg1 = json_decode($jsonMsg, true);
+            //##########################################
+
+            $arrPostData = array();
+            $arrPostData['replyToken'] = $replyToken;
+            $arrPostData['messages'] = [$msg1];
+            //$arrPostData['messages'][0]['type'] = "text";
+            //$arrPostData['messages'][0]['text'] = '$messages';
+
+            multiMsg($access_token, $replyToken, $arrPostData);
+ 
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"I cook & serve" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"Reastautant type" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
         case $lastMsg == '{"WTH":"regist medical license id"}' || $lastMsg == '{"WTH":"regist TCM doctor id"}':
             $jsonMsg = '{ 
                 "type": "template",

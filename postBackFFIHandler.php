@@ -336,7 +336,7 @@
             post2WTH($fields);
             exit;
             break;
-        case $postData == 'I Serve':
+        /* case $postData == 'I Serve':
             //$Uname = json_decode($lastMsg,true)['name'];
             
             $jsonMsg = '{
@@ -396,7 +396,7 @@
 
             justMsg($messages, $replyToken, $access_token);
             exit;
-            break;
+            break; */
         case $postData == 'occupation,1':
             $Uname = json_decode($lastMsg,true)['name'];
             $messages = [
