@@ -212,55 +212,47 @@
                 "actions": [],
                 "columns": [
                     {
-                        "title": "Marketing",
-                        "text": "consultant",
-                        "type": "buttons",
-                        "actions": [
-                                        {
-                                        "type": "postback",
-                                        "text": "I Brand",
-                                        "label": "I Brand",
-                                        "data": "Media,1"
-                                        },
-                                        {
-                                        "type": "postback",
-                                        "text": "I Creat",
-                                        "label": "I Creat"
-                                        "data": "Media,2"
-                                        },
-                                        {
-                                        "type": "postback",
-                                        "text": "I Photo",
-                                        "label": "I Photo",
-                                        "data": "Media,3"
-                                        }
-                                    ],
-                        "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
+                    "title": "Marketing",
+                    "text": "consultant",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "Branding",
+                        "label": "Branding"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Creative",
+                        "label": "Creative"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Photograph",
+                        "label": "Photograph"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
                     },
                     {
                     "title": "Marketing",
                     "text": "consultant",
-                    "type": "buttons",
                     "actions": [
-                                    {
-                                    "type": "postback",
-                                    "text": "I Graphic",
-                                    "label": "I Graphic",
-                                    "data": "Media,4"
-                                    },
-                                    {
-                                    "type": "postback",
-                                    "text": "I Rec VDO",
-                                    "label": "I Rec VDO",
-                                    "data": "Media,5"
-                                    },
-                                    {
-                                    "type": "postback",
-                                    "text": "I Planer",
-                                    "label": "I Planer",
-                                    "data": "Media,6"
-                                    }
-                                ],
+                        {
+                        "type": "message",
+                        "text": "Graphic",
+                        "label": "Graphic"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Video man",
+                        "label": "Video man"
+                        },
+                        {
+                        "type": "message",
+                        "text": "Media plan",
+                        "label": "Media plan"
+                        }
+                    ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
                     }
                 ]
@@ -270,76 +262,11 @@
             }';
             $msg1 = json_decode($jsonMsg, true);
             //##########################################
-
-            $jsonMsg = '{
-                "template": {
-                "type": "carousel",
-                "actions": [],
-                "columns": [
-                    {
-                    "title": "Reviewer",
-                    "text": "on media",
-                    "type": "buttons",
-                    "actions": [
-                        {
-                        "type": "postback",
-                        "text": "I Blogger",
-                        "label": "I Blogger",
-                        "data": "Media,7"
-                        },
-                        {
-                        "type": "postback",
-                        "text": "I Youtube",
-                        "label": "I Youtube",
-                        "data": "Media,8"
-                        },
-                        {
-                        "type": "postback",
-                        "text": "I Live",
-                        "label": "I Live",
-                        "dat": "Media,9"
-                        }
-                    ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Review.jpg"
-                    },
-                    {
-                    "title": "Marketing",
-                    "text": "consultant",
-                    "type": "buttons",
-                    "actions": [
-                        {
-                        "type": "postback",
-                        "text": "I Commerc",
-                        "label": "I Commerc",
-                        "data": "Media,10"
-                        },
-                        {
-                        "type": "postback",
-                        "text": "...",
-                        "label": "...",
-                        "data": "..."
-                        },
-                        {
-                        "type": "postback",
-                        "text": "...",
-                        "label": "...",
-                        "data": "..."
-                        }
-                    ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Review.jpg"
-                    }
-                ]
-                },
-                "altText": "this is a carousel template",
-                "type": "template"
-            }';
-            $msg2 = json_decode($jsonMsg, true);
-            //##########################################
              
 
             $arrPostData = array();
             $arrPostData['replyToken'] = $replyToken;
-            $arrPostData['messages'] = [$msg1, $msg2];
+            $arrPostData['messages'] = [$msg1];
             //$arrPostData['messages'][0]['type'] = "text";
             //$arrPostData['messages'][0]['text'] = '$messages';
 
