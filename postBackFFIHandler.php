@@ -217,18 +217,18 @@
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Branding",
-                        "label": "Branding"
+                        "text": "I Brand",
+                        "label": "I Brand"
                         },
                         {
                         "type": "message",
-                        "text": "Creative",
-                        "label": "Creative"
+                        "text": "I Creat",
+                        "label": "I Creat"
                         },
                         {
                         "type": "message",
-                        "text": "Photograph",
-                        "label": "Photograph"
+                        "text": "I Photo",
+                        "label": "I Photo"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
@@ -239,18 +239,18 @@
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Graphic",
-                        "label": "Graphic"
+                        "text": "I Graphic",
+                        "label": "I Graphic"
                         },
                         {
                         "type": "message",
-                        "text": "Video man",
-                        "label": "Video man"
+                        "text": "I Video",
+                        "label": "I Video"
                         },
                         {
                         "type": "message",
-                        "text": "Media plan",
-                        "label": "Media plan"
+                        "text": "I Plan",
+                        "label": "I Plan"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
