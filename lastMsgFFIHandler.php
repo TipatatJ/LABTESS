@@ -434,7 +434,7 @@
             "me"=>$me);
             post2WTH($fields);
             exit;
-        case $lastMsg == '{ "WTH":"tell who I am (1)" }':
+        case $text == 'I Serve':
             //$Uname = json_decode($lastMsg,true)['name'];
             
             $jsonMsg = '{
