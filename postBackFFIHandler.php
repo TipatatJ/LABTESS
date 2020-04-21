@@ -249,8 +249,8 @@
                         },
                         {
                         "type": "message",
-                        "text": "Media plan",
-                        "label": "Media plan"
+                        "text": "I Planer",
+                        "label": "I Planer"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
