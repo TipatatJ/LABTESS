@@ -400,7 +400,7 @@
                         "type": "message",
                         "text": "Restaurant",
                         "label": "Restaurant",
-                        "data": "Cook&Serve"
+                        "data": "Cook+Serve"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/chain.png"
