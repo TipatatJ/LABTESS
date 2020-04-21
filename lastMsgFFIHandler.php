@@ -445,24 +445,28 @@
                     {
                     "title": "หาของกิน",
                     "text": "Food style search",
+                    "type": "buttons",
                     "actions": [
                         {
                         "type": "message",
-                        "text": "Street food",
-                        "label": "Street food"
+                        "text": "I Street",
+                        "label": "I Street",
+                        "data": "Shop,1"
                         },
                         {
                         "type": "message",
-                        "text": "Restaurant",
-                        "label": "Restaurant"
+                        "text": "I Restaur.",
+                        "label": "I Restaur."
+                        "data": "Shop,2"
                         },
                         {
                         "type": "message",
-                        "text": "Fine dining",
-                        "label": "Fine dining"
+                        "text": "I FineDine",
+                        "label": "I FineDine"
+                        "data": "Shop,3"
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FindFood.jpg"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/I_cook_serve.jpg"
                     }
                 ]
                 },
@@ -488,7 +492,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"Reastautant type" }', 
+            "txt"=>'{ "WTH":"Restautant type" }', 
             "me"=>$me);
             post2WTH($fields);
 
