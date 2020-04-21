@@ -212,55 +212,55 @@
                 "actions": [],
                 "columns": [
                     {
-                    "title": "Marketing",
-                    "text": "consultant",
-                    "type": "buttons",
-                    "actions": [
-                        {
-                        "type": "postback",
-                        "text": "I Brand",
-                        "label": "I Brand",
-                        "data": "Media,1"
-                        },
-                        {
-                        "type": "postback",
-                        "text": "I Creat",
-                        "label": "I Creat"
-                        "data": "Media,2"
-                        },
-                        {
-                        "type": "postback",
-                        "text": "I Photo",
-                        "label": "I Photo",
-                        "data": "Media,3"
-                        }
-                    ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
+                        "title": "Marketing",
+                        "text": "consultant",
+                        "type": "buttons",
+                        "actions": [
+                                        {
+                                        "type": "postback",
+                                        "text": "I Brand",
+                                        "label": "I Brand",
+                                        "data": "Media,1"
+                                        },
+                                        {
+                                        "type": "postback",
+                                        "text": "I Creat",
+                                        "label": "I Creat"
+                                        "data": "Media,2"
+                                        },
+                                        {
+                                        "type": "postback",
+                                        "text": "I Photo",
+                                        "label": "I Photo",
+                                        "data": "Media,3"
+                                        }
+                                    ],
+                        "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
                     },
                     {
                     "title": "Marketing",
                     "text": "consultant",
                     "type": "buttons",
                     "actions": [
-                        {
-                        "type": "postback",
-                        "text": "I Graphic",
-                        "label": "I Graphic",
-                        "data": "Media,4"
-                        },
-                        {
-                        "type": "postback",
-                        "text": "I Rec VDO",
-                        "label": "I Rec VDO",
-                        "data": "Media,5"
-                        },
-                        {
-                        "type": "message",
-                        "text": "I Planer",
-                        "label": "I Planer",
-                        "data": "Media,6"
-                        }
-                    ],
+                                    {
+                                    "type": "postback",
+                                    "text": "I Graphic",
+                                    "label": "I Graphic",
+                                    "data": "Media,4"
+                                    },
+                                    {
+                                    "type": "postback",
+                                    "text": "I Rec VDO",
+                                    "label": "I Rec VDO",
+                                    "data": "Media,5"
+                                    },
+                                    {
+                                    "type": "message",
+                                    "text": "I Planer",
+                                    "label": "I Planer",
+                                    "data": "Media,6"
+                                    }
+                                ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
                     }
                 ]
