@@ -398,9 +398,9 @@
                         },
                         {
                         "type": "message",
-                        "text": "I Review",
-                        "label": "I Review",
-                        "data": "I Review"
+                        "text": "Restaurant",
+                        "label": "Restaurant",
+                        "data": "Restaurant"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/chain.png"

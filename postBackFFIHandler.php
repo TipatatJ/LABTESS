@@ -205,6 +205,56 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
+        case $postData == 'Restaurant':
+            $Uname = json_decode($lastMsg,true)['name'];
+            
+            $jsonMsg = '{ 
+                "type": "template",
+                "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
+                    "template": {
+                        "type": "buttons",
+                        "actions": [
+                        {
+                            "type": "postback",
+                            "label": "I Street F",
+                            "text": "I Street F",
+                            "data": "ShopType,1"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "I Restaur.",
+                            "text": "I Restaur.",
+                            "data": "ShopType,2"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "I FineDine",
+                            "text": "I FindDine",
+                            "data": "ShopType,3"
+                        }
+                        ],
+                        "title": "ประเภทร้านอาหาร?",
+                        "text": "คุณทำร้านอาหารประเภทไหน"
+                    }
+                }';
+
+            $messages = json_decode($jsonMsg, true);
+ 
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"I cook & serve" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"Reastautant type" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
         case $postData == 'occupation,1':
             $Uname = json_decode($lastMsg,true)['name'];
             $messages = [
