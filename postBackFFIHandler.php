@@ -214,21 +214,25 @@
                     {
                     "title": "Marketing",
                     "text": "consultant",
+                    "type": "buttons",
                     "actions": [
                         {
-                        "type": "message",
+                        "type": "postback",
                         "text": "I Brand",
-                        "label": "I Brand"
+                        "label": "I Brand",
+                        "data": "Media,1"
                         },
                         {
-                        "type": "message",
+                        "type": "postback",
                         "text": "I Creat",
                         "label": "I Creat"
+                        "data": "Media,2"
                         },
                         {
-                        "type": "message",
+                        "type": "postback",
                         "text": "I Photo",
-                        "label": "I Photo"
+                        "label": "I Photo",
+                        "data": "Media,3"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
@@ -236,21 +240,25 @@
                     {
                     "title": "Marketing",
                     "text": "consultant",
+                    "type": "buttons",
                     "actions": [
                         {
-                        "type": "message",
+                        "type": "postback",
                         "text": "I Graphic",
-                        "label": "I Graphic"
+                        "label": "I Graphic",
+                        "data": "Media,4"
                         },
                         {
-                        "type": "message",
+                        "type": "postback",
                         "text": "I Rec VDO",
-                        "label": "I Rec VDO"
+                        "label": "I Rec VDO",
+                        "data": "Media,5"
                         },
                         {
                         "type": "message",
                         "text": "I Planer",
-                        "label": "I Planer"
+                        "label": "I Planer",
+                        "data": "Media,6"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FoodShot.jpg"
@@ -271,21 +279,25 @@
                     {
                     "title": "Reviewer",
                     "text": "on media",
+                    "type": "buttons",
                     "actions": [
                         {
-                        "type": "message",
+                        "type": "postback",
                         "text": "I Blogger",
-                        "label": "I Blogger"
+                        "label": "I Blogger",
+                        "data": "Media,7"
                         },
                         {
-                        "type": "message",
+                        "type": "postback",
                         "text": "I Youtube",
-                        "label": "I Youtube"
+                        "label": "I Youtube",
+                        "data": "Media,8"
                         },
                         {
-                        "type": "message",
+                        "type": "postback",
                         "text": "I Live",
-                        "label": "I Live"
+                        "label": "I Live",
+                        "dat": "Media,9"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Review.jpg"
@@ -293,11 +305,13 @@
                     {
                     "title": "Marketing",
                     "text": "consultant",
+                    "type": "buttons",
                     "actions": [
                         {
-                        "type": "message",
+                        "type": "postback",
                         "text": "I Commerc",
-                        "label": "I Commerc"
+                        "label": "I Commerc",
+                        "data": "Media,10"
                         },
                         {
                         "type": "message",
@@ -339,35 +353,42 @@
         case $postData == 'I Serve':
             $Uname = json_decode($lastMsg,true)['name'];
             
-            $jsonMsg = '{ 
-                "type": "template",
-                "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
-                    "template": {
-                        "type": "buttons",
-                        "actions": [
+            $jsonMsg = '{
+                "template": {
+                "type": "carousel",
+                "actions": [],
+                "columns": [
+                    {
+                    "title": "เลือกประเภทร้านอาหาร",
+                    "text": "Choose your food style",
+                    "type": "buttons",
+                    "actions": [
                         {
-                            "type": "postback",
-                            "label": "I Street F",
-                            "text": "I Street F",
-                            "data": "Shop,1"
+                        "type": "postback",
+                        "text": "I Street F",
+                        "label": "I Street F",
+                        "data": "Shop,1"
                         },
                         {
-                            "type": "postback",
-                            "label": "I Restaur.",
-                            "text": "I Restaur.",
-                            "data": "Shop,2"
+                        "type": "postback",
+                        "text": "I Restau.",
+                        "label": "I Restau.",
+                        "data": "Shop,2"
                         },
                         {
-                            "type": "postback",
-                            "label": "I FineDine",
-                            "text": "I FindDine",
-                            "data": "Shop,3"
+                        "type": "postback",
+                        "text": "I FineDine",
+                        "label": "I FineDine",
+                        "dat": "Shop,3"
                         }
-                        ],
-                        "title": "ประเภทร้านอาหาร?",
-                        "text": "choose style"
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FindFood.jpg"
                     }
-                }';
+                ]
+                },
+                "altText": "this is a carousel template",
+                "type": "template"
+            }';
 
             $messages = json_decode($jsonMsg, true);
  
