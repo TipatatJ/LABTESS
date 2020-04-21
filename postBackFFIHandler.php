@@ -349,23 +349,23 @@
                             "type": "postback",
                             "label": "I Street F",
                             "text": "I Street F",
-                            "data": "ShopType,1"
+                            "data": "Shop,1"
                         },
                         {
                             "type": "postback",
                             "label": "I Restaur.",
                             "text": "I Restaur.",
-                            "data": "ShopType,2"
+                            "data": "Shop,2"
                         },
                         {
                             "type": "postback",
                             "label": "I FineDine",
                             "text": "I FindDine",
-                            "data": "ShopType,3"
+                            "data": "Shop,3"
                         }
                         ],
                         "title": "ประเภทร้านอาหาร?",
-                        "text": "คุณทำร้านอาหารประเภทไหน"
+                        "text": "ร้านอาหารประเภทไหน"
                     }
                 }';
 
