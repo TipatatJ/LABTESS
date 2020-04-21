@@ -255,7 +255,7 @@
                                     "data": "Media,5"
                                     },
                                     {
-                                    "type": "message",
+                                    "type": "postback",
                                     "text": "I Planer",
                                     "label": "I Planer",
                                     "data": "Media,6"
@@ -314,14 +314,16 @@
                         "data": "Media,10"
                         },
                         {
-                        "type": "message",
+                        "type": "postback",
                         "text": "...",
-                        "label": "..."
+                        "label": "...",
+                        "data": "..."
                         },
                         {
-                        "type": "message",
+                        "type": "postback",
                         "text": "...",
-                        "label": "..."
+                        "label": "...",
+                        "data": "..."
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Review.jpg"
