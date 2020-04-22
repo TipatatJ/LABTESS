@@ -35,7 +35,7 @@
 
             $arrPostData = array();
             $arrPostData['replyToken'] = $replyToken;
-            $arrPostData['messages'] = [$msg1,$msg2];
+            $arrPostData['messages'] = [$msg1];
             //$arrPostData['messages'][0]['type'] = "text";
             //$arrPostData['messages'][0]['text'] = '$messages';
 
