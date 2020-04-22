@@ -521,8 +521,64 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
+        case $lastMsg == '{ "WTH":"my Media specialist" }':
+            $messages = [
+                'type' => 'text',
+                'text' => ' 
+                ชื่อบริษัท, Agency หรือชื่อติดต่องานโฆษณาประชาสัมพันธ์ของคุณคือ?
+                ',
+            ];
+
+            switch($text){
+                case 'I Brand':
+                    $mediaType = 'Media,1';
+                    break;
+                case 'I Creat':
+                    $mediaType = 'Media,2';
+                    break;
+                case 'I Photo':
+                    $mediaType = 'Media,3';
+                    break;
+                case 'I Graphic':
+                    $mediaType = 'Media,4';
+                    break;
+                case 'I Video':
+                    $mediaType = 'Media,5';
+                    break;
+                case 'I Plan':
+                    $mediaType = 'Media,6';
+                    break;
+                case 'I Blog':
+                    $mediaType = 'Media,7';
+                    break;
+                case 'I Youtube':
+                    $mediaType = 'Media,8';
+                    break;
+                case 'I Live':
+                    $mediaType = 'Media,9';
+                    break;
+                case 'I Commerc':
+                    $mediaType = 'Media,10';
+                    break;
+            }
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "MediaType":"'.$mediaType.'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"please input agency name" }', 
+            "me"=>$me);
+            post2WTH($fields);
+            justMsg($messages, $replyToken, $access_token);
+            exit:
+            break;
         case $lastMsg == '{ "WTH":"Restautant type" }':
-            $Uname = json_decode($lastMsg,true)['name'];
+            //$Uname = json_decode($lastMsg,true)['name'];
             
             $messages = [
                 'type' => 'text',
@@ -552,13 +608,13 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"please input shopname" }', 
+            "txt"=>'{ "WTH":"please input shop name" }', 
             "me"=>$me);
             post2WTH($fields);
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{ "WTH":"please input shopname" }':
+        case $lastMsg == '{ "WTH":"please input shop name" }':
             $Uname = json_decode($lastMsg,true)['name'];
             
             $messages = [
@@ -575,6 +631,35 @@
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "ShopName":"'.$text.'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"please input user tel" }', 
+            "me"=>$me);
+            post2WTH($fields);
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
+        case $lastMsg == '{ "WTH":"please input agency name" }':
+            $Uname = json_decode($lastMsg,true)['name'];
+            
+            $messages = [
+                'type' => 'text',
+                'text' => ' 
+                ถ้าคุณ '.$Uname.' อยากให้ทีมงานติดต่อกลับได้
+                กรุณาแจ้งเบอร์โทรศัพท์
+
+                หากไม่อยากรับการติดต่อ กรุณาพิมพ์ X
+
+                ',
+            ];
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "AgencyName":"'.$text.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
