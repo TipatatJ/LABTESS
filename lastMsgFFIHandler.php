@@ -460,7 +460,7 @@
                         "label": "I FineDine"
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/StreetFood.jpg"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FineDining.jpg"
                     }
                 ]
                 },
@@ -493,59 +493,6 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{"WTH":"regist medical license id"}' || $lastMsg == '{"WTH":"regist TCM doctor id"}':
-            $jsonMsg = '{ 
-                "type": "template",
-                "altText": "ระบบยังไม่รองรับ LINE DESKTOP กรุณาใช้ LINE APP บนมือถือ",
-                    "template": {
-                        "type": "buttons",
-                        "actions": [
-                        {
-                            "type": "postback",
-                            "label": "ฝังเข็มได้",
-                            "text": "serve acup",
-                            "data": "acup,1"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "ไม่มีบริการฝังเข็ม",
-                            "text": "no acup",
-                            "data": "acup,2"
-                        }
-                        ],
-                        "title": "บริการฝังเข็มหรือไม่",
-                        "text": "เป็นการระบุบริการของท่าน"
-                    }
-                }';
-
-            $messages = json_decode($jsonMsg, true);
-
-            if($lastMsg == '{"WTH":"regist medical license id"}'){
-                $fields = array(
-                "userId"=>$userId,
-                "txt"=>'{ "license id":"'.$text.'" }', 
-                "me"=>$me);
-                post2WTH($fields, $lastMsg.'
-                '.$text);
-            }
-            else{
-                $fields = array(
-                "userId"=>$userId,
-                "txt"=>'{ "tcm id":"'.$text.'" }', 
-                "me"=>$me);
-                post2WTH($fields);
-            }
-
-            $fields = array(
-            "userId"=>$userId,
-            "txt"=>'{ "WTH":"serve acup" }', 
-            "me"=>$me);
-            post2WTH($fields);
-
-            justMsg($messages, $replyToken, $access_token);
-            exit;
-            break;
-
         case $lastMsg == '{"WTH":"please input user tel"}':
             $Uname = json_decode($lastMsg,true)['name'];
             
@@ -574,24 +521,46 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $lastMsg == '{"WTH":"TCM pharmacist"}':
+        case $lastMsg == '{ "WTH":"Restautant type" }':
             $Uname = json_decode($lastMsg,true)['name'];
             
-            /* $messages = [
+            $messages = [
                 'type' => 'text',
                 'text' => ' 
-                ถ้าคุณ '.$Uname.' อยากให้ทีมงานติดต่อกลับได้
-                กรุณาแจ้งเบอร์โทรศัพท์
-
-                กรณีของการติดต่อกลับมีได้ 2 กรณี
-                1) เพื่อยืนยันความน่าเชื่อถือของข้อมูลที่ท่านให้มา
-                2) เพื่อติดตามผลการใช้ยา Homeopathy เชิงการวิจัย เพื่อพัฒนา
-
-                หากไม่อยากรับการติดต่อ กรุณาพิมพ์ X
-                หากยินดีให้ติดต่อ กรุณาพิมพ์เบอร์โทรศํพท์ของท่าน 
+                ชื่อร้านอาหรของคุณคือ?
                 ',
-            ]; */
+            ];
 
+            switch($text){
+                case 'I Street':
+                    $foodType = 'Shop,1';
+                    break;
+                case 'I Rest.':
+                    $foodType = 'Shop,2';
+                    break;
+                case 'I FineDine':
+                    $foodType = 'Shop,3';
+                    break;
+            }
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "FoodType":"'.$foodType.'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"please input shopname" }', 
+            "me"=>$me);
+            post2WTH($fields);
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
+        case $lastMsg == '{ "WTH":"please input shopname" }':
+            $Uname = json_decode($lastMsg,true)['name'];
+            
             $messages = [
                 'type' => 'text',
                 'text' => ' 
@@ -599,21 +568,22 @@
                 กรุณาแจ้งเบอร์โทรศัพท์
 
                 หากไม่อยากรับการติดต่อ กรุณาพิมพ์ X
+
                 ',
             ];
-            
+
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "TCM pharmacist":"'.$text.'" }', 
+            "txt"=>'{ "ShopName":"'.$text.'" }', 
             "me"=>$me);
             post2WTH($fields);
+
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user tel" }', 
             "me"=>$me);
             post2WTH($fields);
-
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
