@@ -24,6 +24,23 @@
 
     switch(true){
         case $text == 'Share location ของคุณเพื่อปักหมุดว่าคุณคือใคร':
+            $jsonMsg = '{
+            "type": "image",
+            "originalContentUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/ShareLocate.jpg",
+            "previewImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/ShareLocate.jpg",
+            "animated": false
+            }';
+
+            $msg1 = json_decode($jsonMsg, true);
+
+            $arrPostData = array();
+            $arrPostData['replyToken'] = $replyToken;
+            $arrPostData['messages'] = [$msg1,$msg2];
+            //$arrPostData['messages'][0]['type'] = "text";
+            //$arrPostData['messages'][0]['text'] = '$messages';
+
+            multiMsg($access_token, $replyToken, $arrPostData);
+
             $fields = array(
             "userId"=>$userId,
             "txt"=>'NEW INPUT2', 
