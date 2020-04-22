@@ -575,7 +575,7 @@
             "me"=>$me);
             post2WTH($fields);
             justMsg($messages, $replyToken, $access_token);
-            exit:
+            exit;
             break;
         case $lastMsg == '{ "WTH":"Restautant type" }':
             //$Uname = json_decode($lastMsg,true)['name'];
