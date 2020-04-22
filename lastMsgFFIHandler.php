@@ -448,19 +448,19 @@
                     "type": "buttons",
                     "actions": [
                         {
-                        "type": "message",
+                        "type": "postback",
                         "text": "I Street",
                         "label": "I Street",
                         "data": "Shop,1"
                         },
                         {
-                        "type": "message",
+                        "type": "postback",
                         "text": "I Restaur.",
                         "label": "I Restaur."
                         "data": "Shop,2"
                         },
                         {
-                        "type": "message",
+                        "type": "postback",
                         "text": "I FineDine",
                         "label": "I FineDine"
                         "data": "Shop,3"
