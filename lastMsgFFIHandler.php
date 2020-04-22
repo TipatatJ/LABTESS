@@ -347,39 +347,6 @@
             "me"=>$me);
             post2WTH($fields);
             exit;
-        case $lastMsg == 'ฉันทำงานร้านยาจีน' || $text == 'ฉันทำงานร้านยาจีน':
-
-            $messages = [
-                'type' => 'text',
-                'text' => ' 
-                กรุณาใส่ชื่อ นามสกุล ของท่าน 
-                ',
-            ];
-
-            $fields = array(
-            "userId"=>$userId,
-            "txt"=>'{ "WTH":"please input user name" }', 
-            "me"=>$me);
-            post2WTH($fields);
-            justMsg($messages, $replyToken, $access_token);
-            exit;
-            break;
-        case $lastMsg == 'ฉันเป็นหมอจีน หรือหมอผู้รักษาด้วย TCM' || $text == 'ฉันเป็นหมอจีน หรือหมอผู้รักษาด้วย TCM':
-            $messages = [
-                'type' => 'text',
-                'text' => ' 
-                กรุณาใส่ชื่อ นามสกุล ของท่าน 
-                ',
-            ];
-
-            $fields = array(
-            "userId"=>$userId,
-            "txt"=>'{ "WTH":"please input user name" }', 
-            "me"=>$me);
-            post2WTH($fields);
-            justMsg($messages, $replyToken, $access_token);
-            exit;
-            break;
         case $lastMsg == '{ "WTH":"please input user name" }':
             $jsonMsg = '{
 
@@ -462,28 +429,24 @@
                     {
                     "title": "หาของกิน",
                     "text": "Food style search",
-                    "type": "buttons",
                     "actions": [
                         {
-                        "type": "postback",
+                        "type": "message",
                         "text": "I Street",
                         "label": "I Street",
-                        "data": "Shop,1"
                         },
                         {
-                        "type": "postback",
+                        "type": "message",
                         "text": "I Restaur.",
                         "label": "I Restaur."
-                        "data": "Shop,2"
                         },
                         {
-                        "type": "postback",
+                        "type": "message",
                         "text": "I FineDine",
                         "label": "I FineDine"
-                        "data": "Shop,3"
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FindFood.jpg"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/I_cook_serve.jpg"
                     }
                 ]
                 },
