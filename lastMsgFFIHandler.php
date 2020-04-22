@@ -466,7 +466,7 @@
                         "data": "Shop,3"
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/I_cook_serve.jpg"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/FindFood.jpg"
                     }
                 ]
                 },
