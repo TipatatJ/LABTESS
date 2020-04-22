@@ -837,7 +837,7 @@
                 ขอบคุณที่มาร่วมเป็น่ส่วนหนึ่งในเครือข่าย FFI MAP
 
                  ไปดูความเห็นของท่านบนแผนที่กันเลยที่ Link นี้
-                https://www.mediyaasia.com/LABTESS/infoMap/include/FFImap.php?mapId='.$mapId.'
+                http://www.mediyaasia.com/LABTESS/infoMap/include/FFImap.php?mapId='.$mapId.'
 
                 ท่านสามารถเปลี่ยนแปลงข้อมูลของท่านได้ตลอด ด้วยการเริ่มกรอกข้อมูลใหม่ตั้งแต่ต้นที่ ริชเมนู
                 หมายเหตุ:
