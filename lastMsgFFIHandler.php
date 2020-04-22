@@ -427,8 +427,8 @@
                 "actions": [],
                 "columns": [
                     {
-                    "title": "Reviewer",
-                    "text": "on media",
+                    "title": "STREET FOOD",
+                    "text": "shop representative",
                     "actions": [
                         {
                         "type": "message",
@@ -436,7 +436,31 @@
                         "label": "I Street"
                         }
                     ],
-                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/I_cook_serve.jpg"
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/StreetFood.jpg"
+                    },
+                    {
+                    "title": "RESTAURANT",
+                    "text": "shop representative",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "I Rest.",
+                        "label": "I Rest."
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Restaurant.jpg"
+                    },
+                    {
+                    "title": "FINE DINING",
+                    "text": "shop representative",
+                    "actions": [
+                        {
+                        "type": "message",
+                        "text": "I FineDine",
+                        "label": "I FineDine"
+                        }
+                    ],
+                    "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/StreetFood.jpg"
                     }
                 ]
                 },
