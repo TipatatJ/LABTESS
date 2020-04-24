@@ -925,11 +925,20 @@
             "me"=>$me);
             post2WTH($fields);
 
-            justMsg($messages, $replyToken, $access_token);
+            
             
 
             $officerName = getNearestFFI($lat,$lng);
 
+            $messages = [
+                'type' => 'text',
+                'text' => ' 
+                 FOOD NETWORK ที่อยู่ใกล้คุณที่สุดคือ
+                 '.$officerName.'
+                ',
+            ];
+
+            justMsg($messages, $replyToken, $access_token);
 
             $fields = array(
             "userId"=>$userId,
