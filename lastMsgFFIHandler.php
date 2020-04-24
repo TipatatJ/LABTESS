@@ -917,14 +917,16 @@
 
             $userLL = getLastUserLocation($userId);
 
+            $lat = json_decode($userLL,true)['lat']; 
+            $lng = json_decode($userLL,true)['long'];
+
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "Lat Lng MapId":"'.$userLL.'" }', 
+            "txt"=>'{ "Lat Lng MapId":"'.$lat.','.$lng.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
-            $lat = json_decode($userLL,true)['lat']; 
-            $lng = json_decode($userLL,true)['lng'];
+            
             
 
             $officerName = getNearestFFI($lat,$lng);
