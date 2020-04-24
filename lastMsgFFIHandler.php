@@ -915,6 +915,14 @@
             "me"=>$me);
             post2WTH($fields);
 
+            $userLL = getLastUserLocation($userId);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "Lat Lng MapId":"Lat='.$userLL['lat'].',Lng='.$userLL['long'].'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
             /* $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "WTH":"please share your location" }', 

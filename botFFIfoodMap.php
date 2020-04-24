@@ -643,6 +643,21 @@ function getUserLastMessage($userId){
     return $rtnWTH;
 }
 
+function getLastUserLocation($userId){
+    // Make a POST Request to Wiztech LINE sms
+    $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/smsUserLoc.php';
+    $fields = array("userId"=>$userId);
+
+
+    //url-ify the data for the POST
+    foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+    rtrim($fields_string,'&');
+
+    $rtnWTH = file_get_contents($url.'?userId='.$userId.'&mapType=FFI');
+    $lastSMS = json_decode($rtnWTH, true);
+    return $lastSMS['my location'];
+}
+
 function getNearestPHHC($lat,$lng){
     // Make a POST Request to Wiztech LINE sms
     $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/nearestOfficer.php';
