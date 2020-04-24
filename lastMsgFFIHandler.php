@@ -928,9 +928,15 @@
             
 
             $officerName = getNearestFFI($lat,$lng);
-            $arrPostData['messages'][1]['type'] = "text";
-            $arrPostData['messages'][1]['text'] = 'NEAREST OFFICER
+
+            $arrPostData = array();
+            $arrPostData['replyToken'] = $replyToken;
+            $arrPostData['messages'] = [$msg1];
+            $arrPostData['messages'][0]['type'] = "text";
+            $arrPostData['messages'][0]['text'] = 'NEAREST FOOD NETWORK
             '.$officerName;
+
+            multiMsg($access_token, $replyToken, $arrPostData);
 
 
             /* $fields = array(
@@ -939,7 +945,7 @@
             "me"=>$me);
             post2WTH($fields); */
 
-            justMsg($messages, $replyToken, $access_token);
+            //justMsg($messages, $replyToken, $access_token);
             exit;
             break;
         case $userId != $me:
