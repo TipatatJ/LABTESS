@@ -904,6 +904,24 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
+        case $text == '{ "WTH":"choose Supplier type" }':
+            $messages = $defaultMsg;
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "Query for Closseset Network Member":"'.$text.'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            /* $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "WTH":"please share your location" }', 
+            "me"=>$me);
+            post2WTH($fields); */
+
+            justMsg($messages, $replyToken, $access_token);
+            exit;
+            break;
         case $userId != $me:
             // Build message to reply back
             $messages = [
