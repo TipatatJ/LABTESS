@@ -922,14 +922,14 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "Lat Lng MapId":"'.$lat.','.$lng.'" }', 
+            "txt"=>'{ "Lat Lng MapId":"'.$lat.','.$lng.','.$text.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
             
             
 
-            $officerName = getNearestFFI($lat,$lng);
+            $officerName = getNearestFFI($lat,$lng, $text);
 
             $messages = [
                 'type' => 'text',

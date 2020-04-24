@@ -658,10 +658,10 @@ function getLastUserLocation($userId){
     return $rtnWTH;
 }
 
-function getNearestFFI($lat,$lng){
+function getNearestFFI($lat,$lng, $lookFor){
     // Make a POST Request to Wiztech LINE sms
     $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/nearestNetwork.php';
-    $fields = array("lat"=>$lat,"lng"=>$lng);
+    $fields = array("lat"=>$lat,"lng"=>$lng,"lookFor"=>$lookFor);
 
 
     //url-ify the data for the POST
