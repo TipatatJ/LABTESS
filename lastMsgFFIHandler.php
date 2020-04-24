@@ -952,8 +952,9 @@
             $messages = [
                 'type' => 'text',
                 'text' => ' 
-                 FOOD NETWORK 
-                 '.$text.' ที่อยู่ใกล้คุณที่สุดคือ
+                 FOOD NETWORK ('.$text.') 
+                 
+                 ที่อยู่ใกล้คุณที่สุดคือ
                  '.$officerName.'
                 ',
             ];
@@ -962,7 +963,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "Nearest Network is":"'.$officerName.'", "KW":"'.$search.'" }', 
+            "txt"=>'{ "Nearest Network is":"'.$officerName.'", "KW":"'.$text.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
