@@ -947,7 +947,7 @@
                     break;
             }
 
-            $officerName = getNearestFFI($lat,$lng, $search);
+            $officerName = getNearestFFI($lat,$lng, $search, $text);
 
             $messages = [
                 'type' => 'text',
