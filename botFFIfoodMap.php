@@ -668,7 +668,7 @@ function getNearestFFI($lat,$lng){
     foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
     rtrim($fields_string,'&');
 
-    $rtnWTH = file_get_contents($url.'?lat='.$lat.'&lng='.$lng.'&mapType=FFI');
+    $rtnWTH = file_get_contents($url.'?lat='.$lat.'&lng='.$lng.'&mapType=TTM');
     //$lastSMS = json_decode($rtnWTH);
     return $rtnWTH;
 }
