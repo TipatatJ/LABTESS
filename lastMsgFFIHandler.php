@@ -773,7 +773,7 @@
             exit;
             break;
         case $lastMsg == '{ "WTH":"please input user Line ID xxx" }':
-        $messages = [
+            $messages = [
                 'type' => 'text',
                 'text' => ' 
                 ถ้าคุณ '.$Uname.' อยากให้ทีมงานติดต่อกลับได้
@@ -929,23 +929,23 @@
 
             $officerName = getNearestFFI($lat,$lng);
 
-            $arrPostData = array();
-            $arrPostData['replyToken'] = $replyToken;
-            $arrPostData['messages'] = [$msg1];
-            $arrPostData['messages'][0]['type'] = "text";
-            $arrPostData['messages'][0]['text'] = 'NEAREST FOOD NETWORK
-            '.$officerName;
+            $messages = [
+                'type' => 'text',
+                'text' => ' 
+                 FOOD NETWORK ที่อยู่ใกล้คุณที่สุดคือ
+                 '.$officerName.'
+                ',
+            ];
 
-            multiMsg($access_token, $replyToken, $arrPostData);
+            justMsg($messages, $replyToken, $access_token);
 
-
-            /* $fields = array(
+            $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "WTH":"please share your location" }', 
+            "txt"=>'{ "Nearest Network is":"'.$officerName.'" }', 
             "me"=>$me);
-            post2WTH($fields); */
+            post2WTH($fields);
 
-            //justMsg($messages, $replyToken, $access_token);
+            
             exit;
             break;
         case $userId != $me:
