@@ -904,7 +904,9 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
-        case $text == '{ "WTH":"choose Supplier type" }':
+        case $lastMsg == '{ "WTH":"choose Supplier type" }' ||
+            $lastMsg == '{ "WTH":"choose Marketing consultant" }' ||
+            $lastMsg == '{ "WTH":"choose Reviewer type" }':
             $messages = $defaultMsg;
 
             $fields = array(
