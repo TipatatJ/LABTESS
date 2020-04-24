@@ -658,7 +658,7 @@ function getLastUserLocation($userId){
     return $rtnWTH;
 }
 
-function getNearestPHHC($lat,$lng){
+function getNearestFFI($lat,$lng){
     // Make a POST Request to Wiztech LINE sms
     $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/nearestOfficer.php';
     $fields = array("lat"=>$lat,"lng"=>$lng);

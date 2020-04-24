@@ -909,11 +909,11 @@
             $lastMsg == '{ "WTH":"choose Reviewer type" }':
             $messages = $defaultMsg;
 
-            $fields = array(
+            /* $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "Query for Closseset Network Member":"find location" }', 
             "me"=>$me);
-            post2WTH($fields);
+            post2WTH($fields); */
 
             $userLL = getLastUserLocation($userId);
 
@@ -922,6 +922,16 @@
             "txt"=>'{ "Lat Lng MapId":"'.$userLL.'" }', 
             "me"=>$me);
             post2WTH($fields);
+
+            $lat = json_decode($userLL)['lat'];
+            $lng = json_decode($userLL)['lng'];
+            
+
+            $officerName = getNearestFFI($lat,$lng);
+            $arrPostData['messages'][1]['type'] = "text";
+            $arrPostData['messages'][1]['text'] = 'NEAREST OFFICER
+            '.$officerName;
+
 
             /* $fields = array(
             "userId"=>$userId,
