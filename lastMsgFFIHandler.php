@@ -918,7 +918,7 @@
             $userLL = getLastUserLocation($userId);
 
             $lat = json_decode($userLL,true)['lat']; 
-            $lng = json_decode($userLL,true)['long'];
+            $lng = json_decode($userLL,true)['long']; 
 
             $fields = array(
             "userId"=>$userId,

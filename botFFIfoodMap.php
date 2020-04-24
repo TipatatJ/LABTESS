@@ -660,7 +660,7 @@ function getLastUserLocation($userId){
 
 function getNearestFFI($lat,$lng){
     // Make a POST Request to Wiztech LINE sms
-    $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/nearestOfficer.php';
+    $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/nearestNetwork.php';
     $fields = array("lat"=>$lat,"lng"=>$lng);
 
 
@@ -668,7 +668,7 @@ function getNearestFFI($lat,$lng){
     foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
     rtrim($fields_string,'&');
 
-    $rtnWTH = file_get_contents($url.'?lat='.$lat.'&lng='.$lng.'&mapType=TTM');
+    $rtnWTH = file_get_contents($url.'?lat='.$lat.'&lng='.$lng.'&mapType=FFI');
     //$lastSMS = json_decode($rtnWTH);
     return $rtnWTH;
 }
