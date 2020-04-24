@@ -908,7 +908,7 @@
             $lastMsg == '{ "WTH":"choose Marketing consultant" }' ||
             $lastMsg == '{ "WTH":"choose Reviewer type" }' ||
             substr($lastMsg,0,18) == '{ "Lat Lng MapId":' ||
-            substr($lastMsg,0,18) == '{ "Lat Lng MapId":':
+            substr($lastMsg,0,23) == '{ "Nearest Network is":':
             $messages = $defaultMsg;
 
             /* $fields = array(
@@ -962,7 +962,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "Nearest Network is":"'.$officerName.'" }', 
+            "txt"=>'{ "Nearest Network is":"'.$officerName.'", "KW":"'.$search.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
