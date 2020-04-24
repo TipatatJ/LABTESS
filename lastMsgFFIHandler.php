@@ -946,12 +946,13 @@
                     break;
             }
 
-            $officerName = getNearestFFI($lat,$lng, $text);
+            $officerName = getNearestFFI($lat,$lng, $search);
 
             $messages = [
                 'type' => 'text',
                 'text' => ' 
-                 FOOD NETWORK ที่อยู่ใกล้คุณที่สุดคือ
+                 FOOD NETWORK 
+                 '.$text.' ที่อยู่ใกล้คุณที่สุดคือ
                  '.$officerName.'
                 ',
             ];
