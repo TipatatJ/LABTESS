@@ -661,14 +661,14 @@ function getLastUserLocation($userId){
 function getNearestFFI($lat,$lng, $lookFor,$group){
     // Make a POST Request to Wiztech LINE sms
     $url = 'https://www.venitaclinic.com/Qweb/site1_wiztech/WiztechSolution/include/nearestNetwork.php';
-    $fields = array("lat"=>$lat,"lng"=>$lng,"lookFor"=>$lookFor,"group"=>$group);
+    //$fields = array("lat"=>$lat,"lng"=>$lng,"lookFor"=>$lookFor,"group"=>$group);
 
 
     //url-ify the data for the POST
     foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
     rtrim($fields_string,'&');
 
-    $rtnWTH = file_get_contents($url.'?lat='.$lat.'&lng='.$lng.'&mapType=FFI');
+    $rtnWTH = file_get_contents($url.'?lat='.$lat.'&lng='.$lng.'&lookFor='.$lookFor.'&group='.$group.'&mapType=FFI');
     //$lastSMS = json_decode($rtnWTH);
     return $rtnWTH;
 }
