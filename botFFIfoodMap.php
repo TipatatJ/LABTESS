@@ -654,8 +654,8 @@ function getLastUserLocation($userId){
     rtrim($fields_string,'&');
 
     $rtnWTH = file_get_contents($url.'?userId='.$userId.'&mapType=FFI');
-    $lastSMS = json_decode($rtnWTH, true);
-    return $lastSMS['my location'];
+    //$lastSMS = json_decode($rtnWTH, true);
+    return $rtnWTH;
 }
 
 function getNearestPHHC($lat,$lng){
