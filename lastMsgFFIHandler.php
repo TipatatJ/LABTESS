@@ -909,7 +909,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "Query for Closseset Network Member":"'.$text.'" }', 
+            "txt"=>'{ "Query for Closseset Network Member":"find location" }', 
             "me"=>$me);
             post2WTH($fields);
 
