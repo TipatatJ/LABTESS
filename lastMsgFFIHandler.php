@@ -907,7 +907,8 @@
         case $lastMsg == '{ "WTH":"choose Supplier type" }' ||
             $lastMsg == '{ "WTH":"choose Marketing consultant" }' ||
             $lastMsg == '{ "WTH":"choose Reviewer type" }' ||
-            $lastMsg == '{ "Lat Lng MapId":' :
+            substr($lastMsg,0,18) == '{ "Lat Lng MapId":' ||
+            substr($lastMsg,0,18) == '{ "Lat Lng MapId":':
             $messages = $defaultMsg;
 
             /* $fields = array(
