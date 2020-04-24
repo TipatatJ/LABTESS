@@ -48,6 +48,31 @@
             post2WTH($fields);
             exit;
             break;
+        case $text == 'Share location ของคุณ เพื่อคนหา Network':
+            $jsonMsg = '{
+            "type": "image",
+            "originalContentUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/ShareLocate.jpg",
+            "previewImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/ShareLocate.jpg",
+            "animated": false
+            }';
+
+            $msg1 = json_decode($jsonMsg, true);
+
+            $arrPostData = array();
+            $arrPostData['replyToken'] = $replyToken;
+            $arrPostData['messages'] = [$msg1];
+            //$arrPostData['messages'][0]['type'] = "text";
+            //$arrPostData['messages'][0]['text'] = '$messages';
+
+            multiMsg($access_token, $replyToken, $arrPostData);
+
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'SEARCH FOR NETWORK', 
+            "me"=>$me);
+            post2WTH($fields);
+            exit;
+            break;
         case $text == 'Supplier':
             $jsonMsg = '{
                 "template": {

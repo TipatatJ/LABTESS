@@ -465,22 +465,24 @@ if (!is_null($events['events'])) {
                     die;
                 }
 
-                $messages = [
+                /* $messages = [
                     'type' => 'text',
                     'text' => '
                     เรายังไม่สามารถเข้าใจ '.$userMsgType.' ได้
                     ต้องรบกวนตอบคำถามด้วยการพิมพ์ตอบอีกครั้ง
                     ',
                 ];
+                */
 
                 
-                /* $fields = array(
+                $fields = array(
                 "userId"=>$userId,
-                "txt"=>json_encode(array('WTH'=>'use case experience'),JSON_UNESCAPED_UNICODE), 
+                "txt"=>json_encode(array('NoReaction'=>$userMsgType),JSON_UNESCAPED_UNICODE), 
                 "me"=>$me);
-                post2WTH($fields); */
+                post2WTH($fields);
 
-                justMsg($messages, $replyToken, $access_token);
+                /*
+                justMsg($messages, $replyToken, $access_token); */
                 exit;
                 break;
             //}
