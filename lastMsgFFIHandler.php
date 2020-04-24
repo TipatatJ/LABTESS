@@ -919,7 +919,7 @@
 
             $fields = array(
             "userId"=>$userId,
-            "txt"=>'{ "Lat Lng MapId":"'.$userLL['lat'].'" }', 
+            "txt"=>'{ "Lat Lng MapId":"'.$userLL.'" }', 
             "me"=>$me);
             post2WTH($fields);
 
