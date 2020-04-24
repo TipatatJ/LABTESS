@@ -947,15 +947,14 @@
                     break;
             }
 
-            $officerName = getNearestFFI($lat,$lng, $search, $text);
+            $matchName = getNearestFFI($lat,$lng, $search, $text);
 
             $messages = [
                 'type' => 'text',
                 'text' => ' 
                  FOOD NETWORK ('.$text.') 
                  
-                 ที่อยู่ใกล้คุณที่สุดคือ
-                 '.$officerName.'
+                 '.$matchName.'
                 ',
             ];
 
