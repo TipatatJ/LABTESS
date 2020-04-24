@@ -923,8 +923,8 @@
             "me"=>$me);
             post2WTH($fields);
 
-            $lat = json_decode($userLL)['lat']; 
-            $lng = json_decode($userLL)['lng'];
+            $lat = json_decode($userLL,true)['lat']; 
+            $lng = json_decode($userLL,true)['lng'];
             
 
             $officerName = getNearestFFI($lat,$lng);
