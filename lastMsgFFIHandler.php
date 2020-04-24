@@ -906,7 +906,8 @@
             break;
         case $lastMsg == '{ "WTH":"choose Supplier type" }' ||
             $lastMsg == '{ "WTH":"choose Marketing consultant" }' ||
-            $lastMsg == '{ "WTH":"choose Reviewer type" }':
+            $lastMsg == '{ "WTH":"choose Reviewer type" }' ||
+            $lastMsg == '{ "Lat Lng MapId":' :
             $messages = $defaultMsg;
 
             /* $fields = array(
@@ -927,7 +928,23 @@
             post2WTH($fields);
 
             
-            
+            switch($text){
+                case 'Meat supply': $search = "supply,1"; break;
+                case 'Veg & Fruit': $search = "supply,2"; break;
+                case 'Seasoning': $search = "supply,3"; break;
+                case 'Bakery supply': $search = "supply,4"; break;
+                case 'Equipment': $search = "supply,5"; break;
+                case 'Packaging': $search = "supply,6"; break;
+                case 'Food R&D': $search = "supply,7"; break;
+                case 'Logistic': $search = "supply,8"; break;
+                case 'Architect': $search = "supply,9"; break;
+                case 'Interior': $search = "supply,10"; break;
+                case 'Contractor': $search = "supply,11"; break;
+                
+                default:
+                    $search = $text;
+                    break;
+            }
 
             $officerName = getNearestFFI($lat,$lng, $text);
 
