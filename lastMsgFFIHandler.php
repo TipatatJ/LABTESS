@@ -908,7 +908,10 @@
             $lastMsg == '{ "WTH":"choose Marketing consultant" }' ||
             $lastMsg == '{ "WTH":"choose Reviewer type" }' ||
             substr($lastMsg,0,18) == '{ "Lat Lng MapId":' ||
-            substr($lastMsg,0,23) == '{ "Nearest Network is":':
+            substr($lastMsg,0,23) == '{ "Nearest Network is":' ||
+            $text == 'Restaurant' ||
+            $text == 'Street food' ||
+            $text == 'Find dining':
             $messages = $defaultMsg;
 
             /* $fields = array(
