@@ -947,7 +947,7 @@
                     break;
             }
 
-            $matchName = getNearestFFI($lat,$lng, $search, $text);
+            $matchName = getNearestFFI($lat,$lng, $search, $text, $userId);
 
             $messages = [
                 'type' => 'text',
