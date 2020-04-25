@@ -930,6 +930,21 @@
 
             
             switch($text){
+                case 'ฺStreet food': $search = "Shop,1"; break;
+                case 'Restaurant': $search = "Shop,2"; break;
+                case 'Fine dining': $search = "Shop,3"; break;
+
+                case 'ฺBranding': $search = "Media,1"; break;
+                case 'Creative': $search = "Media,2"; break;
+                case 'Photograph': $search = "Media,3"; break;
+                case 'Graphic': $search = "Media,4"; break;
+                case 'Video man': $search = "Media,5"; break;
+                case 'Media plan': $search = "Media,6"; break;
+                case 'Blogger': $search = "Media,7"; break;
+                case 'Youtuber': $search = "Media,8"; break;
+                case 'Live video': $search = "Media,9"; break;
+                case 'Commercial': $search = "Media,10"; break;
+
                 case 'Meat supply': $search = "supply,1"; break;
                 case 'Veg & Fruit': $search = "supply,2"; break;
                 case 'Seasoning': $search = "supply,3"; break;
@@ -940,7 +955,7 @@
                 case 'Logistic': $search = "supply,8"; break;
                 case 'Architect': $search = "supply,9"; break;
                 case 'Interior': $search = "supply,10"; break;
-                case 'Contractor': $search = "supply,11"; break;
+                case 'บ.รับเหมา': $search = "supply,11"; break;
                 
                 default:
                     $search = $text;
