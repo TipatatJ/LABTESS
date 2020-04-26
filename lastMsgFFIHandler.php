@@ -26,7 +26,7 @@
         case $text == 'Share location ของคุณเพื่อปักหมุดว่าคุณคือใคร':
             $jsonMsg = '{
             "type": "text",
-            "text": "หากท่านสะดวกที่จะลงทะเบียนผ่านอปุกรณ์ Laptop / Desktop สามารถ Login ผ่าน LINE QR code ได้ที่ https://www.venitaclinic.com/Qweb/site1_Wiztech/WiztechPartner/include/hybridauth-with-linelogin/LINExFFI.php"
+            "text": "หากท่านสะดวกที่จะลงทะเบียนผ่านอปุกรณ์ แบบฟอร์มหรือ Laptop / Desktop สามารถ Login ผ่าน LINE QR code ได้ที่ https://www.venitaclinic.com/Qweb/site1_Wiztech/WiztechPartner/include/hybridauth-with-linelogin/LINExFFI.php"
             }';
 
             $msg0 = json_decode($jsonMsg, true);
