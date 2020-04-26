@@ -25,6 +25,17 @@
     switch(true){
         case $text == 'Share location ของคุณเพื่อปักหมุดว่าคุณคือใคร':
             $jsonMsg = '{
+            "type": "text",
+            "text": "
+                หากท่านสะดวกที่จะลงทะเบียนผ่านอปุกรณ์ Laptop / Desktop สามารถ Login ผ่าน LINE QR code ได้ที่
+                https://www.venitaclinic.com/Qweb/site1_Wiztech/WiztechPartner/include/hybridauth-with-linelogin/LINExFFI.php
+            "
+            }';
+
+            $msg0 = json_decode($jsonMsg, true);
+            //###############################################
+
+            $jsonMsg = '{
             "type": "image",
             "originalContentUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/ShareLocate.jpg",
             "previewImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/ShareLocate.jpg",
@@ -32,10 +43,12 @@
             }';
 
             $msg1 = json_decode($jsonMsg, true);
+            //###############################################
+
 
             $arrPostData = array();
             $arrPostData['replyToken'] = $replyToken;
-            $arrPostData['messages'] = [$msg1];
+            $arrPostData['messages'] = [$msg0,$msg1];
             //$arrPostData['messages'][0]['type'] = "text";
             //$arrPostData['messages'][0]['text'] = '$messages';
 
