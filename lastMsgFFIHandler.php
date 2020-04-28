@@ -964,17 +964,17 @@
                 case 'Live video': $search = "Media,9"; break;
                 case 'Commercial': $search = "Media,10"; break;
 
-                case 'Meat supply': $search = "supply,1"; break;
-                case 'Veg & Fruit': $search = "supply,2"; break;
-                case 'Seasoning': $search = "supply,3"; break;
-                case 'Bakery supply': $search = "supply,4"; break;
-                case 'Equipment': $search = "supply,5"; break;
-                case 'Packaging': $search = "supply,6"; break;
-                case 'Food R&D': $search = "supply,7"; break;
-                case 'Logistic': $search = "supply,8"; break;
-                case 'Architect': $search = "supply,9"; break;
-                case 'Interior': $search = "supply,10"; break;
-                case 'บ.รับเหมา': $search = "supply,11"; break;
+                case 'Meat supply': $search = "Supply,1"; break;
+                case 'Veg & Fruit': $search = "Supply,2"; break;
+                case 'Seasoning': $search = "Supply,3"; break;
+                case 'Bakery supply': $search = "Supply,4"; break;
+                case 'Equipment': $search = "Supply,5"; break;
+                case 'Packaging': $search = "Supply,6"; break;
+                case 'Food R&D': $search = "Supply,7"; break;
+                case 'Logistic': $search = "Supply,8"; break;
+                case 'Architect': $search = "Supply,9"; break;
+                case 'Interior': $search = "Supply,10"; break;
+                case 'บ.รับเหมา': $search = "Supply,11"; break;
                 
                 default:
                     $search = $text;

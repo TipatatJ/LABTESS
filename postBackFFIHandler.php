@@ -16,19 +16,19 @@
                         "type": "postback",
                         "text": "supply Meat",
                         "label": "ขายเนื้อสัตว์",
-                        "data": "supply,1"
+                        "data": "Supply,1"
                         },
                         {
                         "type": "postback",
                         "text": "VegFruitSell",
                         "label": "ขายผัก ผลไม้",
-                        "data": "supply,2"
+                        "data": "Supply,2"
                         },
                         {
                         "type": "postback",
                         "text": "SeasonSell",
                         "label": "มีเครื่องเทศ",
-                        "data": "supply,3"
+                        "data": "Supply,3"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/RawMaterial.jpg"
@@ -41,7 +41,7 @@
                         "type": "postback",
                         "text": "ทำ Bakery",
                         "label": "ทำ Bakery",
-                        "data": "supply,4"
+                        "data": "Supply,4"
                         },
                         {
                         "type": "message",
@@ -78,13 +78,13 @@
                         "type": "postback",
                         "text": "SellEquip",
                         "label": "เครื่องครัว",
-                        "data": "supply,5"
+                        "data": "Supply,5"
                         },
                         {
                         "type": "postback",
                         "text": "SellPackage",
                         "label": "SellPackage",
-                        "data": "supply,6"
+                        "data": "Supply,6"
                         },
                         {
                         "type": "message",
@@ -103,13 +103,13 @@
                         "type": "postback",
                         "text": "รับ Food R&D",
                         "label": "รับ Food R&D",
-                        "data": "supply,7"
+                        "data": "Supply,7"
                         },
                         {
                         "type": "postback",
                         "text": "รับ Logistic",
                         "label": "รับ Logistic",
-                        "data": "supply,8"
+                        "data": "Supply,8"
                         },
                         {
                         "type": "message",
@@ -128,19 +128,19 @@
                         "type": "postback",
                         "text": "มี Architect",
                         "label": "มี Architect",
-                        "data": "supply,9"
+                        "data": "Supply,9"
                         },
                         {
                         "type": "postback",
                         "text": "มี Interior",
                         "label": "มี Interior",
-                        "data": "supply,10"
+                        "data": "Supply,10"
                         },
                         {
                         "type": "postback",
                         "text": "เป็นรับเหมา",
                         "label": "เป็นรับเหมา",
-                        "data": "supply,11"
+                        "data": "Supply,11"
                         }
                     ],
                     "thumbnailImageUrl": "https://www.venitaclinic.com/LABTESS/infoMap/images/Contractor.jpg"
@@ -169,7 +169,7 @@
             post2WTH($fields);
             exit;
             break;
-        case substr($postData,0,7) == 'supply,':
+        case substr($postData,0,7) == 'Supply,':
             $messages = [
                 'type' => 'text',
                 'text' => ' 
