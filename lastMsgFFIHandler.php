@@ -723,6 +723,12 @@
 
             $fields = array(
             "userId"=>$userId,
+            "txt"=>'{ "ShopName":"'.$text.'" }', 
+            "me"=>$me);
+            post2WTH($fields);
+
+            $fields = array(
+            "userId"=>$userId,
             "txt"=>'{ "WTH":"please input user tel" }', 
             "me"=>$me);
             post2WTH($fields);
