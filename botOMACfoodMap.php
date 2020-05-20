@@ -155,6 +155,8 @@ if (!is_null($events['events'])) {
             post2WTH($fields);
 
             $text = getNearByCAirPM($event['message']['latitude'], $event['message']['longitude']);
+
+            goto findWhat;
             //echo '#'.$text.'#';
 
             /* $messages = [
@@ -239,8 +241,11 @@ if (!is_null($events['events'])) {
                 "me"=>$me);
                 post2WTH($fields);
 
+                
+
                 exit;
             }
+            
             
             
             /*

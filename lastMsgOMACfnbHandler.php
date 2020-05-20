@@ -84,6 +84,9 @@
             exit;
             break;
         case $text == 'Supplier':
+
+findWhat:
+
             $jsonMsg = '{
                 "template": {
                 "type": "carousel",
