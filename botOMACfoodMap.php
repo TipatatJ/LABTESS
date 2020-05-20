@@ -94,6 +94,8 @@ if (!is_null($events['events'])) {
                 exit;
             }
 
+findWhat:
+            
             include_once('lastMsgOMACfnbHandler.php');
 
             //$userMessage = $text; // เก็บค่าข้อความที่ผู้ใช้พิมพ์
@@ -156,6 +158,7 @@ if (!is_null($events['events'])) {
 
             $text = getNearByCAirPM($event['message']['latitude'], $event['message']['longitude']);
 
+            $text == 'Share location ของคุณ เพื่อคนหา Network';
             goto findWhat;
             //echo '#'.$text.'#';
 
