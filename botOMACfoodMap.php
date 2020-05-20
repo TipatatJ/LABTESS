@@ -94,7 +94,7 @@ if (!is_null($events['events'])) {
                 exit;
             }
 
-findWhat:
+
             
             include_once('lastMsgOMACfnbHandler.php');
 
@@ -158,7 +158,7 @@ findWhat:
 
             $text = getNearByCAirPM($event['message']['latitude'], $event['message']['longitude']);
 
-            $text = 'Share location ของคุณ เพื่อคนหา Network';
+            //$text = 'Share location ของคุณ เพื่อคนหา Network';
             goto findWhat;
             //echo '#'.$text.'#';
 
@@ -325,6 +325,8 @@ findWhat:
                 }';
 
             $msg1 = json_decode($jsonMsg, true);  */
+
+findWhat:
 
             $jsonMsg = '{
                 "template": {
