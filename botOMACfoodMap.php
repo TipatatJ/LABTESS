@@ -158,7 +158,7 @@ findWhat:
 
             $text = getNearByCAirPM($event['message']['latitude'], $event['message']['longitude']);
 
-            $text == 'Share location ของคุณ เพื่อคนหา Network';
+            $text = 'Share location ของคุณ เพื่อคนหา Network';
             goto findWhat;
             //echo '#'.$text.'#';
 
