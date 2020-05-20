@@ -1,7 +1,7 @@
 <?php
 define('SECRET_KEY', 'thai_epigenomic');
 $me = "Ub3f6b90b35b51d817a89835f9afaf8c7";
-$access_token = 'WdFEC8WzJ/umA4WYcx0QQLwDpxARdBQEPmwx589EUHPI5XmVKOUPS1nLNol353ywi3Z0aZ5fvl0Yygdo0tkGvnaPq4u1wog1QIghtB2WdaviPMu+LuzTzXNuqU4W+DW2Ds/LK1PnzRyThwYF8FtJ3QdB04t89/1O/w1cDnyilFU=';
+$access_token = 'hEDZi+zGiSIa3KF236hviPyddJfmvzBLx8aaRV0rRY2ESb0p7Kf/JgZkvM8UMX+FoYvyqi5AhATM7UrNjfESc76DxSJ0oKywtveD2RRGwkycRMariyJIRPZ/ctDWXhsNwg99GMYnMMrqYxrTLOXF0QdB04t89/1O/w1cDnyilFU=';
 $arrBreakKW = array(
             '
             ขอบคุณที่สนใจเป็นส่วนหนึ่งของ OMAC FOOD MAP เริ่มต้นกรอกข้อมูลโดยการเลือกที่ Rich menu ด้านล่าง
