@@ -156,7 +156,7 @@ if (!is_null($events['events'])) {
 
             $text = getNearByCAirPM($event['message']['latitude'], $event['message']['longitude']);
             //echo '#'.$text.'#';
-
+            goto findWhat;
             /* $messages = [
                 'type' => 'text',
                 'text' => ' 
@@ -317,7 +317,7 @@ if (!is_null($events['events'])) {
                 }';
 
             $msg1 = json_decode($jsonMsg, true);  */
-
+findWhat:
             $jsonMsg = '{
                 "template": {
                 "type": "carousel",
