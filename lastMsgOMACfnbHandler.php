@@ -1121,7 +1121,18 @@
                 ];
             }
 
+            $messages = [
+                'type' => 'text',
+                'text' => ' 
+                    พิมพ์ 
+                    
+                    "omac" 
+                    
+                    เพื่อเข้าสู่เมนูหลัก
+                ',
+            ];
 
+            justMsg($messages, $replyToken, $access_token);
 
             break;            
     }
