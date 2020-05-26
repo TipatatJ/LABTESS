@@ -992,6 +992,13 @@
                  FOOD NETWORK ('.$text.') 
                  
                  '.$matchName.'
+                
+                ท่านสามรถย้อนขึ้นไปหาตัวเลือกอื่นๆ ได้
+                หรือพิมพ์
+
+                "end"
+
+                เพื่อสิ้นสุดและปิดการค้นหา
                 ',
             ];
 
@@ -1046,6 +1053,15 @@
             "me"=>$me);
             post2WTH($fields);
 
+            /* $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "End conversation":"End conversation" }', 
+            "me"=>$me);
+            post2WTH($fields); */
+            
+            exit;
+            break;
+        case $text == 'end':
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "End conversation":"End conversation" }', 
