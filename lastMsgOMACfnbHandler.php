@@ -986,7 +986,7 @@
 
             $matchName = getNearestOMACfnb($lat,$lng, $search, $text, $userId);
 
-            /* $messages = [
+            $messages = [
                 'type' => 'text',
                 'text' => ' 
                  FOOD NETWORK ('.$text.') 
@@ -996,9 +996,9 @@
             ];
 
             justMsg($messages, $replyToken, $access_token);
-            */
+            
 
-            $jsonMsg = '{
+            /* $jsonMsg = '{
 
                 "type": "text",
                 "text": " 
@@ -1008,11 +1008,11 @@
                 "
             }';
             $msg0 = json_decode($jsonMsg, true);
-            //########################################## */
+            //##########################################
 
             
 
-            /* $jsonMsg = '{
+            $jsonMsg = '{
             "type": "template",
             "altText": "this is a buttons template",
             "template": {
@@ -1029,26 +1029,22 @@
             }
             }';
             $msg1 = json_decode($jsonMsg, true);
-            //########################################## */
+            //##########################################
              
 
             $arrPostData = array();
             $arrPostData['replyToken'] = $replyToken;
-            $arrPostData['messages'] = [$msg0];
+            $arrPostData['messages'] = [$msg0, $msg1];
             //$arrPostData['messages'][0]['type'] = "text";
             //$arrPostData['messages'][0]['text'] = '$messages';
 
-            multiMsg($access_token, $replyToken, $arrPostData);
+            multiMsg($access_token, $replyToken, $arrPostData); */
 
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "Nearest Network is":"'.$officerName.'", "KW":"'.$text.'" }', 
             "me"=>$me);
             post2WTH($fields);
-
-            exit;
-            break;
-        case $text == 'เลิกค้นหา':
 
             $fields = array(
             "userId"=>$userId,
