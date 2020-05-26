@@ -1046,6 +1046,10 @@
             "me"=>$me);
             post2WTH($fields);
 
+            exit;
+            break;
+        case $text == 'เลิกค้นหา':
+
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "End conversation":"End conversation" }', 
