@@ -986,6 +986,12 @@
 
             $matchName = getNearestOMACfnb($lat,$lng, $search, $text, $userId);
 
+            if($matchName == ''){
+                $matchName = ' ยังไม่มีสมาชิก Packaging ใน Network 
+                หากคุณรู้จักใครที่ทำสิ่งนี้ 
+                โปรดแนะนำให้เราได้รู้จักเขาด้วยครับ';
+            }
+
             $messages = [
                 'type' => 'text',
                 'text' => ' 
