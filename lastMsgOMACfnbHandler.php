@@ -986,7 +986,7 @@
 
             $matchName = getNearestOMACfnb($lat,$lng, $search, $text, $userId);
 
-            $messages = [
+            /* $messages = [
                 'type' => 'text',
                 'text' => ' 
                  FOOD NETWORK ('.$text.') 
@@ -996,6 +996,49 @@
             ];
 
             justMsg($messages, $replyToken, $access_token);
+            */
+
+            $jsonMsg = '{
+
+                "type": "text",
+                "text": " 
+                 FOOD NETWORK ('.$text.') 
+                 
+                 '.$matchName.'
+                "
+            }';
+            $msg0 = json_decode($jsonMsg, true);
+            //########################################## */
+
+            
+
+            $jsonMsg = '{
+            "type": "template",
+            "altText": "this is a buttons template",
+            "template": {
+                "type": "buttons",
+                "actions": [
+                {
+                    "type": "message",
+                    "label": "เลิกค้นหา",
+                    "text": "เลิกค้นหา"
+                }
+                ],
+                "title": "กดปุ่มสิ้นสุดการค้นหา",
+                "text": "หรือย้อนไปดูตัวเลือกอื่น"
+            }
+            }';
+            $msg1 = json_decode($jsonMsg, true);
+            //##########################################
+             
+
+            $arrPostData = array();
+            $arrPostData['replyToken'] = $replyToken;
+            $arrPostData['messages'] = [$msg0, $msg1];
+            //$arrPostData['messages'][0]['type'] = "text";
+            //$arrPostData['messages'][0]['text'] = '$messages';
+
+            multiMsg($access_token, $replyToken, $arrPostData);
 
             $fields = array(
             "userId"=>$userId,
