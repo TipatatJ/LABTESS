@@ -923,6 +923,15 @@
             justMsg($messages, $replyToken, $access_token);
             exit;
             break;
+        case $text == 'end':
+            $fields = array(
+            "userId"=>$userId,
+            "txt"=>'{ "End conversation":"End conversation" }', 
+            "me"=>$me);
+            post2WTH($fields);
+            
+            exit;
+            break;
         case $lastMsg == '{ "WTH":"choose Supplier type" }' ||
             $lastMsg == '{ "WTH":"choose Marketing consultant" }' ||
             $lastMsg == '{ "WTH":"choose Reviewer type" }' ||
@@ -1067,7 +1076,7 @@
             
             exit;
             break;
-        case $text == 'end':
+        /* case $text == 'end':
             $fields = array(
             "userId"=>$userId,
             "txt"=>'{ "End conversation":"End conversation" }', 
@@ -1075,7 +1084,7 @@
             post2WTH($fields);
             
             exit;
-            break;
+            break; */
         case $userId != $me:
             // Build message to reply back
             $messages = [
