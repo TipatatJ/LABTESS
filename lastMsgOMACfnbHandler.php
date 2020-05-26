@@ -26,7 +26,7 @@
         case $text == 'กด Link ไปยังหน้าลงทะเบียน':
             $jsonMsg = '{
             "type": "text",
-            "text": "เปิดลิงค์นี้ในลงทะเบียนผ่านอุปกรณ์ แบบฟอร์มหรือ Laptop / Desktop สามารถ Login ผ่าน LINE QR code ได้ที่ https://www.venitaclinic.com/Qweb/site1_Wiztech/WiztechPartner/include/hybridauth-with-linelogin/LINExOMACfnb.php"
+            "text": "เปิดลิงค์นี้เพื่อลงทะเบียนผ่านอุปกรณ์มือถือ หรือหากเปิดใน Laptop / Desktop สามารถ Login ผ่าน LINE QR code ได้ที่ https://www.venitaclinic.com/Qweb/site1_Wiztech/WiztechPartner/include/hybridauth-with-linelogin/LINExOMACfnb.php"
             }';
 
             $msg0 = json_decode($jsonMsg, true);
