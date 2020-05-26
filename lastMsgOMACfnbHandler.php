@@ -1012,7 +1012,7 @@
 
             
 
-            $jsonMsg = '{
+            /* $jsonMsg = '{
             "type": "template",
             "altText": "this is a buttons template",
             "template": {
@@ -1029,12 +1029,12 @@
             }
             }';
             $msg1 = json_decode($jsonMsg, true);
-            //##########################################
+            //########################################## */
              
 
             $arrPostData = array();
             $arrPostData['replyToken'] = $replyToken;
-            $arrPostData['messages'] = [$msg0, $msg1];
+            $arrPostData['messages'] = [$msg0];
             //$arrPostData['messages'][0]['type'] = "text";
             //$arrPostData['messages'][0]['text'] = '$messages';
 
